@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="2" tilewidth="50" tileheight="18">
+  <image source="2.png" width="50" height="18"/>
+ </tileset>
+ <tileset firstgid="2" name="42" tilewidth="50" tileheight="18">
+  <image source="42.png" width="50" height="18"/>
+ </tileset>
+ <tileset firstgid="3" name="41" tilewidth="17" tileheight="23">
+  <image source="41.png" width="17" height="23"/>
+ </tileset>
+ <objectgroup name="blue" width="0" height="0">
+  <object type="1" gid="1" x="257" y="159"/>
+  <object type="1" gid="1" x="653" y="159"/>
+  <object type="1" gid="1" x="97" y="243"/>
+  <object type="1" gid="1" x="813" y="243"/>
+  <object type="1" gid="1" x="193" y="307"/>
+  <object type="1" gid="1" x="717" y="307"/>
+  <object type="1" gid="1" x="269" y="415"/>
+  <object type="1" gid="1" x="641" y="415"/>
+  <object type="1" gid="1" x="222" y="431"/>
+  <object type="1" gid="1" x="174" y="445"/>
+  <object type="1" gid="1" x="33" y="511"/>
+  <object type="1" gid="1" x="65" y="529"/>
+  <object type="1" gid="1" x="737" y="443"/>
+  <object type="1" gid="1" x="689" y="429"/>
+  <object type="1" gid="1" x="845" y="529"/>
+  <object type="1" gid="1" x="877" y="511"/>
+  <object type="1" gid="1" x="213" y="595"/>
+  <object type="1" gid="1" x="263" y="595"/>
+  <object type="1" gid="1" x="647" y="595"/>
+  <object type="1" gid="1" x="697" y="595"/>
+  <object type="1" gid="1" x="439" y="351"/>
+  <object type="1" gid="1" x="414" y="595"/>
+  <object type="1" gid="1" x="464" y="595"/>
+ </objectgroup>
+ <objectgroup name="yellow" width="0" height="0">
+  <object type="3" gid="2" x="438" y="243"/>
+  <object type="4" gid="3" x="461" y="226"/>
+ </objectgroup>
+ <objectgroup name="hero" width="30" height="20">
+  <object name="hero" x="245" y="565" width="26" height="14"/>
+ </objectgroup>
+</map>
