@@ -10,6 +10,24 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\dialog">
+      <UniqueIdentifier>{63a2f2fd-8a8b-4a27-aa8e-2c6e1ac612c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\layer">
+      <UniqueIdentifier>{f318498a-333f-4a32-875a-e2497d3eb4aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\component">
+      <UniqueIdentifier>{362e5450-d319-42e8-9e62-6e9943578adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\wall">
+      <UniqueIdentifier>{33818a45-3c08-46a9-9d21-5f54744bdd3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\logic">
+      <UniqueIdentifier>{753f52e7-7e01-4c0b-8a3e-9040bb38ef8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\utils">
+      <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,59 +39,65 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ArrowSprite.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Background.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BlueWall.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\BoxSprite.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CheckBox.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ContactLogic.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameMap.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameUI.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\GameWorld.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MenuLayer.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Obstacle.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\PlayGameMenu.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\TestLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Utils.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\Dialog.cpp">
+      <Filter>Classes\dialog</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\VisibleRect.cpp">
-      <Filter>Classes</Filter>
+    <ClCompile Include="..\Classes\ArrowSprite.cpp">
+      <Filter>Classes\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Background.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BoxSprite.cpp">
+      <Filter>Classes\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BlueWall.cpp">
+      <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CheckBox.cpp">
+      <Filter>Classes\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ContactLogic.cpp">
+      <Filter>Classes\logic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameMap.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameUI.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameWorld.cpp">
+      <Filter>Classes\layer</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Wall.cpp">
-      <Filter>Classes</Filter>
+      <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Utils.cpp">
+      <Filter>Classes\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VisibleRect.cpp">
+      <Filter>Classes\utils</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Welcome.cpp">
-      <Filter>Classes</Filter>
+      <Filter>Classes\layer</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\YellowWall.cpp">
-      <Filter>Classes</Filter>
+      <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MenuLayer.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayGameMenu.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DialogManager.cpp">
+      <Filter>Classes\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelComplete.cpp">
+      <Filter>Classes\dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -86,59 +110,65 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ArrowSprite.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Background.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BlueWall.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\BoxSprite.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CheckBox.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ContactLogic.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameMap.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameUI.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameWorld.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MenuLayer.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Obstacle.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\PlayGameMenu.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\TestLayer.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Utils.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\Dialog.h">
+      <Filter>Classes\dialog</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\VisibleRect.h">
-      <Filter>Classes</Filter>
+    <ClInclude Include="..\Classes\ArrowSprite.h">
+      <Filter>Classes\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Background.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BoxSprite.h">
+      <Filter>Classes\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BlueWall.h">
+      <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CheckBox.h">
+      <Filter>Classes\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ContactLogic.h">
+      <Filter>Classes\logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameMap.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameUI.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameWorld.h">
+      <Filter>Classes\layer</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Wall.h">
-      <Filter>Classes</Filter>
+      <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Utils.h">
+      <Filter>Classes\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>Classes\utils</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Welcome.h">
-      <Filter>Classes</Filter>
+      <Filter>Classes\layer</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\YellowWall.h">
-      <Filter>Classes</Filter>
+      <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuLayer.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayGameMenu.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DialogManager.h">
+      <Filter>Classes\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelComplete.h">
+      <Filter>Classes\dialog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
