@@ -2,6 +2,7 @@
 #include "GameWorld.h"
 
 ContactLogic::ContactLogic()
+:m_bIsWin(false)
 {
 }
 
@@ -31,6 +32,9 @@ bool ContactLogic::initWithGameWorld(const GameWorld *gameWorld)
 	physicsListener->onContactPreSolve = CC_CALLBACK_2(ContactLogic::onContactPreSolve, this);
 	physicsListener->onContactSeperate = CC_CALLBACK_1(ContactLogic::onContactSeperate, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(physicsListener, this);
+
+	this->scheduleUpdate();
+
 	return true;
 }
 
@@ -45,7 +49,7 @@ bool ContactLogic::onContactBegin(PhysicsContact& contact)
 	}
 	else
 	{
-		CCLOG("%s", "win enter next level");
+		this->m_bIsWin = true;
 	}
 	return false;
 } 
@@ -70,4 +74,13 @@ void ContactLogic::onContactSeperate(PhysicsContact& contact)
 	PhysicsBody *body1 = contact.getShapeA()->getBody();
 	PhysicsBody *body2 = contact.getShapeB()->getBody();
 	//CCLOG("-------------------------------- onContactSeperate ---------------------------- %d %d", body1->getTag(), body2->getTag());
+}
+
+void ContactLogic::update(float dt)
+{
+	if (this->m_bIsWin)
+	{
+		this->unscheduleUpdate();
+		CCLOG("oh win !, enter next level");
+	}
 }

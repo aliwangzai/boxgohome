@@ -61,10 +61,6 @@ bool PlayGameMenu::onContactBegin(PhysicsContact& contact)
 	{
 		return true;
 	}
-	else
-	{
-
-	}
 	return false;
 }
 
@@ -85,8 +81,9 @@ void PlayGameMenu::onContactSeperate(PhysicsContact& contact)
 	float length = bodyB->getVelocity().getLength();
 	if (length > 0 && length < 15)
 	{
-		float force = (CCRANDOM_0_1() - 0.5) * 2 * 20 + 5;
-		bodyB->applyForce(bodyB->getVelocity() * force);
+		float x = (CCRANDOM_0_1() - 0.5) * 2;
+		float y = (CCRANDOM_0_1() - 0.5) * 2;
+		bodyB->applyImpulse(Vec2(x, y) * 500);
 	}
 }
 
@@ -95,6 +92,8 @@ void PlayGameMenu::update(float dt)
 	if (this->m_pBoxSprite->getPositionY() < this->m_pBoxSprite->getContentSize().height / 2)
 	{
 		float x = CCRANDOM_0_1() * Utils::getWinSize().width / 2 + Utils::getWinSize().width / 2;
-		this->m_pBoxSprite->setPosition(x - m_pBoxSprite->getContentSize().width / 2, Utils::getWinSize().height);
+		this->m_pBoxSprite->setPosition(x - m_pBoxSprite->getContentSize().width / 2, Utils::getWinSize().height + 
+			m_pBoxSprite->getContentSize().height);
+		this->m_pBoxSprite->getPhysicsBody()->setVelocity(Vec2());
 	}
 }

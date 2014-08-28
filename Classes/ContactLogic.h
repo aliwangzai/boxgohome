@@ -20,8 +20,11 @@ public:
 	void onContactPostSolve(PhysicsContact& contact, const PhysicsContactPostSolve& solve);
 	void onContactSeperate(PhysicsContact& contact);
 
+	void update(float dt);
+
 private:
 	const GameWorld		*m_pGameWorld;
+	bool				m_bIsWin;
 };
 
 #endif
