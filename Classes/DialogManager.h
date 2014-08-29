@@ -4,10 +4,14 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+typedef std::function<bool(void *data)> DialogCallback;
+
 class DialogManager: public Ref
 {
 public:
 	static DialogManager* getInstance();
+
+	void showLvelComplete(void *data, DialogCallback callback);
 };
 
 #endif
