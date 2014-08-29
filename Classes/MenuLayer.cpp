@@ -127,13 +127,22 @@ bool MenuLayer::initWithMenu()
 		Director::getInstance()->replaceScene(GameWorld::createScene());
 	});
 	auto highScoreItem = MenuItemFont::create("Highscores", [=](Ref *pSender){
-		
+		this->m_pCurrentNode->removeFromParent();
+		this->m_pCurrentNode = PlayGameMenu::create();
+		this->addChild(this->m_pCurrentNode);
+		m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 	});
 	auto instructionItem = MenuItemFont::create("Instructions", [=](Ref *pSender){
-		
+		this->m_pCurrentNode->removeFromParent();
+		this->m_pCurrentNode = Sprite::create("38.png");
+		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
+		this->addChild(m_pCurrentNode);
 	});
 	auto tutorialItem = MenuItemFont::create("Tutorial", [=](Ref *pSender){
-		
+		this->m_pCurrentNode->removeFromParent();
+		this->m_pCurrentNode = Sprite::create("37.png");
+		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
+		this->addChild(m_pCurrentNode);
 	});
 	auto walkthroughItem = MenuItemFont::create("Walkthrough", [=](Ref *pSender){
 	
