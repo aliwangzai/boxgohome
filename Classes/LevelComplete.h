@@ -2,9 +2,9 @@
 #define __LEVELCOMPLETE_H__
 
 #include "cocos2d.h"
+#include "Dialog.h"
 USING_NS_CC;
 
-class Dialog;
 class LevelComplete: public Node
 {
 public:
@@ -15,8 +15,13 @@ public:
 
 	static LevelComplete* create(Dialog *dialog);
 
+	void databind(void *data);
+
+	void setResultCallback(DialogCallback callback);
+
 private:
-	Dialog		*m_pDialog;
+	Dialog			*m_pDialog;
+	DialogCallback	m_fCallback;
 };
 
 #endif

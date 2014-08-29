@@ -5,6 +5,7 @@
 #include "GameMap.h"
 #include "BoxSprite.h"
 #include "MenuLayer.h"
+#include "DialogManager.h"
 
 Scene* Welcome::createScene()
 {
@@ -49,7 +50,9 @@ bool Welcome::initEdgeMap()
 bool Welcome::initMenu()
 {
 	auto moreGameItem = MenuItemFont::create("More Game", [=](Ref *pSender){
-		
+		DialogManager::getInstance()->showLvelComplete(NULL, [=](void *result){
+			
+		});
 	});
 	auto startItem = MenuItemFont::create("Play", [](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());

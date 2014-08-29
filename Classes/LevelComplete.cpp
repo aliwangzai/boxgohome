@@ -1,10 +1,8 @@
 #include "LevelComplete.h"
-#include "Dialog.h"
 
 LevelComplete::LevelComplete()
 {
 }
-
 
 LevelComplete::~LevelComplete()
 {
@@ -26,7 +24,23 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 {
 	this->m_pDialog = dialog;
 
+	this->ignoreAnchorPointForPosition(false);
+	this->setAnchorPoint(Vec2(.5, .5));
 
+	auto sprite = Sprite::create("HelloWorld.png");
+	this->addChild(sprite);
+	this->setContentSize(sprite->getContentSize());
+	sprite->setPosition(this->getContentSize() / 2);
 
 	return true;
+}
+
+void LevelComplete::databind(void *data)
+{
+
+}
+
+void LevelComplete::setResultCallback(DialogCallback callback)
+{
+	this->m_fCallback = callback;
 }

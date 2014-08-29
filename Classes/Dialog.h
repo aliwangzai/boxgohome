@@ -4,7 +4,9 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-class Dialog: public Node
+typedef std::function<void(void *data)> DialogCallback;
+
+class Dialog: public Layer
 {
 public:
 	Dialog();
@@ -19,9 +21,11 @@ public:
 	void onTouchEnded(Touch *pTouch, Event *pEvent);
 
 	void setContentPanel(Node *node);
-	void setTouchPriority(int priority);
-	void setOrderZ(int orderZ);
 	void setEnableClickClose(bool enable);
+	void setTouchEnabled(bool enable);
+
+	void showDialog();
+	void hideDialog();
 
 private:
 	Node*			m_pContentPanel;
