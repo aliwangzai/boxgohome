@@ -18,6 +18,10 @@ bool GameUI::init()
 	this->initMenu();
 	this->initMoreGame();
 	this->initSound();
+	this->setDefaultValue();
+
+	this->scheduleUpdate();
+
 	return true;
 }
 
@@ -90,26 +94,55 @@ bool GameUI::initScoreUI()
 	this->m_pJumpsLabel = Label::createWithBMFont("fonts/fonts.fnt", "Jumps:5");
 	m_pJumpsLabel->setAnchorPoint(Point(0, 1));
 	this->addChild(m_pJumpsLabel);
-	m_pJumpsLabel->setPosition(VisibleRect::leftTop() + Point(410, -10));
+	m_pJumpsLabel->setPosition(VisibleRect::leftTop() + Point(430, -10));
 	return true;
+}
+
+void GameUI::setDefaultValue()
+{
+	this->setLevel(1);
+	this->setScore(0);
+	this->setBonus(9000);
+	this->setJumps(5);
 }
 
 void GameUI::setLevel(int level)
 {
+	this->m_nLevel = level;
 	m_pLevelLabel->setString("Level: " + std::to_string(level));
 }
 
 void GameUI::setScore(int score)
 {
+	this->m_nScore = score;
 	m_pScoreLabel->setString("Score: " + std::to_string(score));
 }
 void GameUI::setBonus(int bonus)
 {
+	this->m_nBonus = bonus;
 	m_pBonusLabel->setString("Bonus: " + std::to_string(bonus));
 }
 
 void GameUI::setJumps(int jumps)
 {
+	this->m_nJump = jumps;
 	m_pJumpsLabel->setString("Jumps: " + std::to_string(jumps));
+}
+
+void GameUI::update(float dt)
+{
+	if (this->m_nBonus > 0)
+	{
+		this->setBonus(--this->m_nBonus);
+	}
+	else
+	{
+		this->unscheduleUpdate();
+	}
+}
+
+void GameUI::jumpsSelfSub()
+{
+	this->setJumps(--this->m_nJump);
 }
 

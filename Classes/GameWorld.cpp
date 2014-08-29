@@ -131,12 +131,17 @@ void GameWorld::onTouchMoved(Touch *pTouch, Event *pEvent)
 }
 void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 {
+
 	m_pArrowSprite->setVisible(false);
 	Point localPoint = pTouch->getLocation();
 	Point targetPoint = this->m_pBoxSprite->getPosition();
 	m_vNormalDir = (localPoint - targetPoint).getNormalized();
 	int distance = (int)(localPoint - targetPoint).getLength();
-	this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 20);
+	if (distance > 20)
+	{
+		this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 20);
+		this->m_pGameUI->jumpsSelfSub();
+	}
 }
 
 void GameWorld::onEnter()
