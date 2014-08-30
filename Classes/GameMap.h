@@ -11,12 +11,14 @@ public:
 	~GameMap();
 
 	bool init();
-	bool initWithTmxFile(const char *szTmxFile);
+	bool initWithTmxFile(std::string &szTmxFile);
 	bool initBlueBrick();
 	bool initYellowBrick();
 	ValueMap getHeroValueMap();
 
-	static GameMap* createWithFile(const char *szTmxFile);
+	void loadDefaultData();
+
+	static GameMap* createWithFile(std::string &szTmxFile);
 
 	CREATE_FUNC(GameMap);
 

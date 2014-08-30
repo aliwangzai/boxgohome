@@ -11,9 +11,10 @@ public:
 	ContactLogic();
 	~ContactLogic();
 
-	bool initWithGameWorld(const GameWorld *gameWorld);
+	bool initWithGameWorld(GameWorld *gameWorld);
+	void loadDefaultData();
 
-	static ContactLogic* create(const GameWorld *gameWorld);
+	static ContactLogic* create(GameWorld *gameWorld);
 
 	bool onContactBegin(PhysicsContact& contact);
 	bool onContactPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve);
@@ -23,7 +24,7 @@ public:
 	void update(float dt);
 
 private:
-	const GameWorld		*m_pGameWorld;
+	GameWorld		*m_pGameWorld;
 	bool				m_bIsWin;
 };
 

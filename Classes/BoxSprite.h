@@ -14,12 +14,14 @@ public:
 	static BoxSprite* create(const ValueMap &valueMap);
 
 	bool init();
-	bool initWithGameWorld(const ValueMap &valueMap);
+	bool initWithMap(const ValueMap &valueMap);
 	bool initBoxAnimate();
 	void applyForce(const Vec2 &force);
 	void setContactTestBitmask(int mask);
 	void setCategoryBitmask(int mask);
 	void setCollisionBitmask(int mask);
+
+	void loadDefaultData(const ValueMap &valueMap);
 
 private:
 	GameWorld	*m_pGameWorld;

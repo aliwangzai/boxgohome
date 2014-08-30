@@ -36,7 +36,8 @@ bool PlayGameMenu::initBoxSprite()
 
 bool PlayGameMenu::initGameMap()
 {
-	this->m_pGameMap = GameMap::createWithFile("maps/playgame_menu.tmx");
+	std::string filename = "maps/playgame_menu.tmx";
+	this->m_pGameMap = GameMap::createWithFile(filename);
 	this->m_pGameMap->setPosition(VisibleRect::leftBottom());
 	this->addChild(this->m_pGameMap);
 	return true;

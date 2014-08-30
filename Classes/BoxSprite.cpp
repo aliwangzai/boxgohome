@@ -5,7 +5,7 @@
 BoxSprite* BoxSprite::create(const ValueMap &valueMap)
 {
 	auto boxSprite = new BoxSprite();
-	if (boxSprite && boxSprite->initWithGameWorld(valueMap))
+	if (boxSprite && boxSprite->initWithMap(valueMap))
 	{
 		boxSprite->autorelease();
 		return boxSprite;
@@ -13,22 +13,29 @@ BoxSprite* BoxSprite::create(const ValueMap &valueMap)
 	return nullptr;
 }
 
-bool BoxSprite::initWithGameWorld(const ValueMap &valueMap)
+bool BoxSprite::initWithMap(const ValueMap &valueMap)
 {
 	if (!this->init())return false;
 
+	this->loadDefaultData(valueMap);
+
+	return true;
+}
+
+void BoxSprite::loadDefaultData(const ValueMap &valueMap)
+{
 	float x = valueMap.find("x")->second.asFloat();
 	float y = valueMap.find("y")->second.asFloat();
 	this->setPosition(Point(x, y) + this->getContentSize() / 2);
-
-	return true;
+	this->getPhysicsBody()->setVelocity(Vec2());
+	this->getPhysicsBody()->setAngularVelocity(0);
 }
 
 bool BoxSprite::init()
 {
 	if (!Sprite::initWithFile("3.png")) return false;
 	this->m_fMaxForce = 6400;
-	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize()));
+	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.5f, 0.5f)));
 	this->getPhysicsBody()->setMass(10.0f);
 
 	this->initBoxAnimate();

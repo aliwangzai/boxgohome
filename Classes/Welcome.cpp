@@ -41,7 +41,8 @@ bool Welcome::initLoadResource()
 
 bool Welcome::initEdgeMap()
 {
-	m_pGameMap = GameMap::createWithFile("maps/welcome.tmx");
+	std::string filename = "maps/welcome.tmx";
+	m_pGameMap = GameMap::createWithFile(filename);
 	m_pGameMap->setPosition(VisibleRect::leftBottom());
 	this->addChild(m_pGameMap);
 	return true;
@@ -54,9 +55,11 @@ bool Welcome::initMenu()
 			
 		});
 	});
+	moreGameItem->setColor(Color3B(0, 0, 0));
 	auto startItem = MenuItemFont::create("Play", [](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
+	startItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(moreGameItem, startItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(10);

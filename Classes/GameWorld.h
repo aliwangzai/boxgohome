@@ -38,14 +38,15 @@ public:
 	void onTouchMoved(Touch *pTouch, Event* event);
 	void onTouchEnded(Touch *pTouch, Event* event);
 
-	ArrowSprite* getArrowSprite() { return m_pArrowSprite; }
+	ArrowSprite* getArrowSprite() const { return m_pArrowSprite; }
 	BoxSprite* getBoxSprite() const { return m_pBoxSprite; }
+	GameUI*	getGameUI() const { return m_pGameUI; }
 
 	void win();
 	void lose();
+	void restart();
 	
 private:
-
 	PhysicsWorld *_physicsWorld;
 	ArrowSprite *m_pArrowSprite;
 	BoxSprite	*m_pBoxSprite;

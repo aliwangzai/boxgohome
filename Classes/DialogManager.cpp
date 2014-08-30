@@ -1,5 +1,6 @@
 #include "DialogManager.h"
 #include "LevelComplete.h"
+#include "LevelCompleteLoss.h"
 
 static DialogManager* dialogManager = nullptr;
 
@@ -12,13 +13,25 @@ DialogManager* DialogManager::getInstance()
 	return dialogManager;
 }
 
-LevelComplete* DialogManager::showLvelComplete(void *data, DialogCallback callback)
+Dialog* DialogManager::showLvelComplete(void *data, DialogCallback callback)
 {
 	auto dialog = Dialog::create();
 	auto layer = LevelComplete::create(dialog);
 	layer->databind(data);
+	layer->setResultCallback(callback);
 	dialog->setContentPanel(layer);
 	dialog->setEnableClickClose(true);
 	dialog->showDialog();
-	return layer;
+	return dialog;
+}
+
+Dialog* DialogManager::showLevelCompleteLoss(void *data, DialogCallback callback)
+{
+	auto dialog = Dialog::create();
+	auto layer = LevelCompleteLoss::create(dialog);
+	layer->databind(data);
+	layer->setResultCallback(callback);
+	dialog->setContentPanel(layer);
+	dialog->showDialog();
+	return dialog;
 }

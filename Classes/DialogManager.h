@@ -6,13 +6,15 @@
 USING_NS_CC;
 
 class LevelComplete;
-
+class LevelCompleteLoss;
 class DialogManager: public Ref
 {
 public:
 	static DialogManager* getInstance();
 
-	LevelComplete* showLvelComplete(void *data, DialogCallback callback);
+	Dialog* showLvelComplete(void *data, DialogCallback callback);
+
+	Dialog* showLevelCompleteLoss(void *data, DialogCallback callback);
 };
 
 #endif

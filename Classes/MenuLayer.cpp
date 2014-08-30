@@ -126,30 +126,36 @@ bool MenuLayer::initWithMenu()
 	auto playItem = MenuItemFont::create("Play Game", [=](Ref *pSender){
 		Director::getInstance()->replaceScene(GameWorld::createScene());
 	});
+	playItem->setColor(Color3B(0, 0, 0));
 	auto highScoreItem = MenuItemFont::create("Highscores", [=](Ref *pSender){
 		this->m_pCurrentNode->removeFromParent();
 		this->m_pCurrentNode = PlayGameMenu::create();
 		this->addChild(this->m_pCurrentNode);
 		m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 	});
+	highScoreItem->setColor(Color3B(0, 0, 0));
 	auto instructionItem = MenuItemFont::create("Instructions", [=](Ref *pSender){
 		this->m_pCurrentNode->removeFromParent();
 		this->m_pCurrentNode = Sprite::create("38.png");
 		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
 		this->addChild(m_pCurrentNode);
 	});
+	instructionItem->setColor(Color3B(0, 0, 0));
 	auto tutorialItem = MenuItemFont::create("Tutorial", [=](Ref *pSender){
 		this->m_pCurrentNode->removeFromParent();
 		this->m_pCurrentNode = Sprite::create("37.png");
 		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
 		this->addChild(m_pCurrentNode);
 	});
+	tutorialItem->setColor(Color3B(0, 0, 0));
 	auto walkthroughItem = MenuItemFont::create("Walkthrough", [=](Ref *pSender){
 	
 	});
+	walkthroughItem->setColor(Color3B(0, 0, 0));
 	auto moreGameItem = MenuItemFont::create("More Games", [=](Ref *pSender){
 		
 	});
+	moreGameItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(playItem, highScoreItem, instructionItem, tutorialItem, walkthroughItem, moreGameItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(20);

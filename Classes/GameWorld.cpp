@@ -6,6 +6,7 @@
 #include "ArrowSprite.h"
 #include "GameUI.h"
 #include "ContactLogic.h"
+#include "DialogManager.h"
 
 GameWorld::GameWorld()
 :m_pArrowSprite(nullptr),
@@ -59,7 +60,7 @@ bool GameWorld::initContactLogic()
 
 bool GameWorld::initGameUI()
 {
-	m_pGameUI = GameUI::create();
+	m_pGameUI = GameUI::create(this);
 	this->addChild(m_pGameUI);
 	return true;
 }
@@ -89,7 +90,8 @@ bool GameWorld::initBackground()
 
 bool GameWorld::initGameMap()
 {
-	m_pGameMap = GameMap::createWithFile("maps/map_2.tmx");
+	std::string filename = "maps/map_2.tmx";
+	m_pGameMap = GameMap::createWithFile(filename);
 	m_pGameMap->setPosition(VisibleRect::leftBottom());
 	this->addChild(m_pGameMap);
 	return true;
@@ -131,7 +133,7 @@ void GameWorld::onTouchMoved(Touch *pTouch, Event *pEvent)
 }
 void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 {
-
+	
 	m_pArrowSprite->setVisible(false);
 	Point localPoint = pTouch->getLocation();
 	Point targetPoint = this->m_pBoxSprite->getPosition();
@@ -139,8 +141,11 @@ void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 	int distance = (int)(localPoint - targetPoint).getLength();
 	if (distance > 20)
 	{
-		this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 20);
-		this->m_pGameUI->jumpsSelfSub();
+		bool isSubJump = this->m_pGameUI->jumpsSelfSub();
+		if (isSubJump)
+		{
+			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 20);
+		}
 	}
 }
 
@@ -170,10 +175,30 @@ void GameWorld::update(float dt)
 
 void GameWorld::win()
 {
-
+	CCLOG("oh win !, enter next level");
 }
 
 void GameWorld::lose()
 {
+	DialogManager::getInstance()->showLevelCompleteLoss(NULL, [=](void* data){
+		int type = (int)data;
+		switch (type)
+		{
+		case 1://more Game
+			break;
+		case 2://restart game
+			this->restart();
+			break;
+		}
+	});
+}
 
+void GameWorld::restart()
+{
+	CCLOG("game over ,  restart game");
+	this->m_pGameMap->loadDefaultData();
+	this->m_pContactLogic->loadDefaultData();
+	this->m_pGameUI->setDefaultValue();
+	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
+	this->m_pBoxSprite->loadDefaultData(valueMap);
 }

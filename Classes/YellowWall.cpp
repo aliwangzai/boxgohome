@@ -29,7 +29,7 @@ bool YellowWall::init(const ValueMap &valueMap)
 	this->setPosition(this->m_initPos + this->getContentSize() / 2);
 	if (this->m_nType == 3)
 	{
-		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize()));
+		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.2f, 1.0f), 0));
 		this->setContactTestBitmask(0x0001);
 	}
 	else if (this->m_nType == 4)

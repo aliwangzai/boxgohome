@@ -2,6 +2,7 @@
 #include "VisibleRect.h"
 #include "Welcome.h"
 #include "CheckBox.h"
+#include "GameWorld.h"
 
 GameUI::GameUI()
 {
@@ -9,6 +10,24 @@ GameUI::GameUI()
 
 GameUI::~GameUI()
 {
+}
+
+GameUI* GameUI::create(GameWorld* gameWorld)
+{
+	auto gameUI = new (std::nothrow) GameUI;
+	if (gameUI && gameUI->initWithGameWorld(gameWorld))
+	{
+		gameUI->autorelease();
+		return gameUI;
+	}
+	CC_SAFE_RELEASE(gameUI);
+	return nullptr;
+}
+
+bool GameUI::initWithGameWorld(GameWorld* gameWorld)
+{
+	this->m_pGameWorld = gameWorld;
+	return this->init();
 }
 
 bool GameUI::init()
@@ -61,11 +80,13 @@ bool GameUI::initMoreGame()
 bool GameUI::initMenu()
 {
 	auto restartItem = MenuItemFont::create("Restart", [=](Ref *pSender){
-		
+		this->m_pGameWorld->restart();
 	});
+	restartItem->setColor(Color3B(0, 0, 0));
 	auto menuItem = MenuItemFont::create("Menu", [=](Ref *pSender){
 		Director::getInstance()->replaceScene(Welcome::createScene());
 	});
+	menuItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(restartItem, menuItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsHorizontallyWithPadding(20);
@@ -137,12 +158,18 @@ void GameUI::update(float dt)
 	}
 	else
 	{
+		this->m_pGameWorld->lose();
 		this->unscheduleUpdate();
 	}
 }
 
-void GameUI::jumpsSelfSub()
+bool GameUI::jumpsSelfSub()
 {
-	this->setJumps(--this->m_nJump);
+	if (this->m_nJump >= 1)
+	{
+		this->setJumps(--this->m_nJump);
+		return true;
+	}
+	return false;
 }
 

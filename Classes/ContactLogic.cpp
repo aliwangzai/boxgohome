@@ -1,5 +1,7 @@
 #include "ContactLogic.h"
 #include "GameWorld.h"
+#include "BoxSprite.h"
+#include "GameUI.h"
 
 ContactLogic::ContactLogic()
 :m_bIsWin(false)
@@ -11,7 +13,7 @@ ContactLogic::~ContactLogic()
 {
 }
 
-ContactLogic* ContactLogic::create(const GameWorld *gameWorld)
+ContactLogic* ContactLogic::create(GameWorld *gameWorld)
 {
 	auto contactLogic = new ContactLogic();
 	if (contactLogic && contactLogic->initWithGameWorld(gameWorld))
@@ -22,7 +24,7 @@ ContactLogic* ContactLogic::create(const GameWorld *gameWorld)
 	return nullptr;
 }
 
-bool ContactLogic::initWithGameWorld(const GameWorld *gameWorld)
+bool ContactLogic::initWithGameWorld(GameWorld *gameWorld)
 {
 	this->m_pGameWorld = gameWorld;
 
@@ -56,8 +58,8 @@ bool ContactLogic::onContactBegin(PhysicsContact& contact)
 
 bool ContactLogic::onContactPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve)
 {
-	PhysicsBody *body1 = contact.getShapeA()->getBody();
-	PhysicsBody *body2 = contact.getShapeB()->getBody();
+	PhysicsShape *shape1= contact.getShapeA();
+	PhysicsShape *shape2 = contact.getShapeB();
 	//CCLOG("-------------------------------- onContactPreSolve ----------------------------- %d %d", body1->getTag(), body2->getTag());
 	return true;
 }
@@ -81,6 +83,19 @@ void ContactLogic::update(float dt)
 	if (this->m_bIsWin)
 	{
 		this->unscheduleUpdate();
-		CCLOG("oh win !, enter next level");
+		this->m_pGameWorld->win();
 	}
+	
+	Vec2 velocity = this->m_pGameWorld->getBoxSprite()->getPhysicsBody()->getVelocity();
+	if (velocity.getLengthSq() < 5 * 5 && this->m_pGameWorld->getGameUI()->getJumpCount() <= 0)
+	{
+		this->unscheduleUpdate();
+		this->m_pGameWorld->lose();
+	}
+}
+
+void ContactLogic::loadDefaultData()
+{
+	this->m_bIsWin = false;
+	this->scheduleUpdate();
 }

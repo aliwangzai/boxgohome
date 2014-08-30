@@ -27,7 +27,7 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	this->ignoreAnchorPointForPosition(false);
 	this->setAnchorPoint(Vec2(.5, .5));
 
-	auto sprite = Sprite::create("HelloWorld.png");
+	auto sprite = Sprite::create("dialog/dialog_1.png");
 	this->addChild(sprite);
 	this->setContentSize(sprite->getContentSize());
 	sprite->setPosition(this->getContentSize() / 2);

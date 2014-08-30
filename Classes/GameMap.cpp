@@ -15,7 +15,7 @@ GameMap::~GameMap()
 {
 }
 
-GameMap* GameMap::createWithFile(const char *szTmxFile)
+GameMap* GameMap::createWithFile(std::string &szTmxFile)
 {
 	auto gameMap = new GameMap();
 	if (gameMap && gameMap->initWithTmxFile(szTmxFile))
@@ -26,9 +26,9 @@ GameMap* GameMap::createWithFile(const char *szTmxFile)
 	return nullptr;
 }
 
-bool GameMap::initWithTmxFile(const char *szTmxFile)
+bool GameMap::initWithTmxFile(std::string &szTmxFile)
 {
-	if (szTmxFile == nullptr)
+	if (szTmxFile.size() == 0)
 	{
 		szTmxFile = "maps/map_2.tmx";
 	}
@@ -71,4 +71,10 @@ bool GameMap::initBlueBrick()
 		this->addChild(wall);
 	}
 	return true;
+}
+
+void GameMap::loadDefaultData()
+{
+	this->removeAllChildren();
+	this->initWithTmxFile(this->_szTmxFile);
 }
