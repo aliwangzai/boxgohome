@@ -176,6 +176,7 @@ void GameWorld::update(float dt)
 void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
+	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(nullptr, [=](void* data){
 		
 	});
