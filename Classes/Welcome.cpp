@@ -50,6 +50,7 @@ bool Welcome::initEdgeMap()
 
 bool Welcome::initMenu()
 {
+	MenuItemFont::setFontSize(32);
 	auto moreGameItem = MenuItemFont::create("More Game", [=](Ref *pSender){
 		DialogManager::getInstance()->showLvelComplete(NULL, [=](void *result){
 			

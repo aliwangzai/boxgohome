@@ -124,6 +124,7 @@ bool MenuLayer::initWithMenu()
 	this->addChild(this->m_pCurrentNode);
 	m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 
+	MenuItemFont::setFontSize(32);
 	auto playItem = MenuItemFont::create("Play Game", [=](Ref *pSender){
 		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		//Director::getInstance()->replaceScene(GameWorld::createScene());

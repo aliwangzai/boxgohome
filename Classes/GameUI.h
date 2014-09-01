@@ -4,6 +4,8 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+#define JUMPSTEPSCORE 1000
+
 class GameWorld;
 class GameUI: public Node
 {
@@ -34,10 +36,15 @@ public:
 	int getLevel() const { return this->m_nLevel; }
 	int getScore() const { return this->m_nScore; }
 	int getBonus() const { return this->m_nBonus; }
+	int getJumpScore() const { return JUMPSTEPSCORE * m_nJump; }
+
+	int getOldScore() const;
+	void setNewScore(int newScore);
 
 	virtual void update(float dt);
 
 	void restart();
+	void stop();
 
 private:
 	GameWorld*	m_pGameWorld;
