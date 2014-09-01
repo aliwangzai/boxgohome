@@ -114,7 +114,7 @@ void CheckBox::select()
 {
 	if (this->m_sSelectSprite.size() != 0)
 	{
-		this->setDisplayFrame(Utils::getSpriteFrame(this->m_sSelectSprite));
+		this->setSpriteFrame(Utils::getSpriteFrame(this->m_sSelectSprite));
 	}
 	if (this->m_cCallback)
 	{
@@ -126,7 +126,7 @@ void CheckBox::unSelect()
 {
 	if (this->m_sNormalSprite.size() != 0)
 	{
-		this->setDisplayFrame(Utils::getSpriteFrame(this->m_sNormalSprite));
+		this->setSpriteFrame(Utils::getSpriteFrame(this->m_sNormalSprite));
 	}
 	if (this->m_cCallback)
 	{

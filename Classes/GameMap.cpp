@@ -2,6 +2,7 @@
 #include "VisibleRect.h"
 #include "BlueWall.h"
 #include "YellowWall.h"
+#include "WoodenCrate.h"
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
@@ -42,6 +43,7 @@ bool GameMap::init()
 	this->addChild(this->_map, 10);
 	this->initBlueBrick();
 	this->initYellowBrick();
+	this->initWoodenCrate();
 	return true;
 }
 
@@ -69,6 +71,21 @@ bool GameMap::initBlueBrick()
 	{
 		BlueWall *wall = BlueWall::create(blueValues.at(v).asValueMap());
 		this->addChild(wall);
+	}
+	return true;
+}
+
+bool GameMap::initWoodenCrate()
+{
+	TMXObjectGroup *objectGroup = this->_map->getObjectGroup("wooden");
+	if (objectGroup != nullptr)
+	{
+		ValueVector woodenValues = objectGroup->getObjects();
+		for (unsigned int v = 0; v < woodenValues.size(); v++)
+		{
+			WoodenCrate *wooden = WoodenCrate::create(woodenValues.at(v).asValueMap());
+			this->addChild(wooden);
+		}
 	}
 	return true;
 }

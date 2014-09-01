@@ -25,7 +25,7 @@ void ArrowSprite::showCurrentFrame(int distance)
 		char buffer[128];
 		sprintf(buffer, "arrow/%d.png", distance);
 		auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(buffer);
-		this->setDisplayFrame(frame);
+		this->setSpriteFrame(frame);
 		BlendFunc blendFun = { 1, 1 };
 		this->setBlendFunc(blendFun);
 	}
@@ -35,7 +35,7 @@ void ArrowSprite::show()
 {
 	this->setVisible(true);
 	auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName("arrow/7.png");
-	this->setDisplayFrame(frame);
+	this->setSpriteFrame(frame);
 	BlendFunc blendFun = { 1, 1 };
 	this->setBlendFunc(blendFun);
 }

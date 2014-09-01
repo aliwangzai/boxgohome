@@ -43,6 +43,10 @@ std::string Utils::getWallByType(int type)
 		break;
 	case 4://Æì×Ó
 		fileName = "maps/41.png";
+		break;
+	case 5://Ä¾Ïä
+		fileName = "maps/woodenCrate_01.png";
+		break;
 	}
 	return fileName;
 }

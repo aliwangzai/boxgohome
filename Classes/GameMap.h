@@ -14,6 +14,7 @@ public:
 	bool initWithTmxFile(std::string &szTmxFile);
 	bool initBlueBrick();
 	bool initYellowBrick();
+	bool initWoodenCrate();
 	ValueMap getHeroValueMap();
 
 	void loadDefaultData();
