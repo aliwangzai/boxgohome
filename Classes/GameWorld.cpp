@@ -16,13 +16,13 @@ m_pGameMap(nullptr),
 m_pGameUI(nullptr)
 {
 
-}
+} 
 
 GameWorld::~GameWorld()
 {
 	
 }
-
+ 
 Scene* GameWorld::createScene()
 {
 	auto scene = Scene::createWithPhysics();
@@ -184,7 +184,7 @@ void GameWorld::win()
 		case 1://more game
 			break;
 		case 2://next level
-
+			this->nextLevel();
 			break;
 		default:
 			break;
@@ -206,6 +206,12 @@ void GameWorld::lose()
 			break;
 		}
 	});
+}
+
+void GameWorld::nextLevel()
+{
+	CCLOG("enter level");
+	
 }
 
 void GameWorld::restart()

@@ -46,7 +46,6 @@ bool LevelComplete::initMenu()
 	auto moreGameItem = MenuItemFont::create("More Game", [=](Ref *pSender){
 		if (this->m_fCallback)
 		{
-			this->m_pDialog->hideDialog();
 			m_fCallback((void*)1);
 		}
 	});

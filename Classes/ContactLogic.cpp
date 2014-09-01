@@ -90,6 +90,12 @@ void ContactLogic::update(float dt)
 		this->unscheduleUpdate();
 		this->m_pGameWorld->lose();
 	}
+	Vec2 position = this->m_pGameWorld->getBoxSprite()->getPosition();
+	if (position.y < m_pGameWorld->getBoxSprite()->getContentSize().height / 2)
+	{
+		this->unscheduleUpdate();
+		this->m_pGameWorld->lose();
+	}
 }
 
 void ContactLogic::loadDefaultData()
