@@ -1,5 +1,1 @@
-﻿  MciPlayer.cpp
-  SimpleAudioEngine.cpp
-e:\mytest\boxgohome\cocos2d\cocos\base\ccutils.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (..\win32\SimpleAudioEngine.cpp)
-e:\mytest\boxgohome\cocos2d\cocos\2d\cclabel.h(276): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据 (..\win32\SimpleAudioEngine.cpp)
-  CocosDenshion.vcxproj -> E:\mytest\boxgohome\proj.win32\Debug.win32\libAudio.lib
+﻿  CocosDenshion.vcxproj -> E:\mytest\boxgohome\proj.win32\Debug.win32\libAudio.lib

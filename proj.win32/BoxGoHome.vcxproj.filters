@@ -28,6 +28,9 @@
     <Filter Include="Classes\utils">
       <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\misc">
+      <UniqueIdentifier>{ae23a38c-db58-4196-86fc-e6fad4884d54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LevelSelector.h">
       <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelState.h">
+      <Filter>Classes\misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

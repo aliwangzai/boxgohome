@@ -20,7 +20,6 @@ class LevelSelector : public Node
 	int cur;
 	int max;
 	Vec2 padding;
-	LevelItem * items;
 
 	int numColumns;
 	int numRows;

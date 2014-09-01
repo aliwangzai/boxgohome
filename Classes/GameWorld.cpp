@@ -7,6 +7,7 @@
 #include "GameUI.h"
 #include "ContactLogic.h"
 #include "DialogManager.h"
+#include "LevelState.h"
 
 GameWorld::GameWorld()
 :m_pArrowSprite(nullptr),
@@ -34,6 +35,9 @@ Scene* GameWorld::createScene()
 	}
 	return nullptr;
 }
+
+
+
 
 bool GameWorld::init()
 {
@@ -90,7 +94,9 @@ bool GameWorld::initBackground()
 
 bool GameWorld::initGameMap()
 {
-	std::string filename = "maps/map_2.tmx";
+	//getConfig 
+	//getMapName(level)
+	std::string filename = LevelState::getInstance()->getMapName();
 	m_pGameMap = GameMap::createWithFile(filename);
 	m_pGameMap->setPosition(VisibleRect::leftBottom());
 	this->addChild(m_pGameMap);
