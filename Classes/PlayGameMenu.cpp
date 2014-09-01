@@ -38,7 +38,7 @@ bool PlayGameMenu::initGameMap()
 {
 	std::string filename = "maps/playgame_menu.tmx";
 	this->m_pGameMap = GameMap::createWithFile(filename);
-	this->m_pGameMap->setPosition(VisibleRect::leftBottom());
+	this->m_pGameMap->setPosition(VisibleRect::center());
 	this->addChild(this->m_pGameMap);
 	return true;
 }

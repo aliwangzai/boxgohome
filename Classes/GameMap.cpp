@@ -7,6 +7,9 @@
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
 
+#define MAP_TAG 10
+
+
 GameMap::GameMap()
 {
 }
@@ -29,6 +32,11 @@ GameMap* GameMap::createWithFile(std::string &szTmxFile)
 
 bool GameMap::initWithTmxFile(std::string &szTmxFile)
 {
+	this->setContentSize(Size(960, 640));
+
+	this->ignoreAnchorPointForPosition(false);
+	this->setAnchorPoint(Vec2(0.5, 0.5));
+
 	if (szTmxFile.size() == 0)
 	{
 		szTmxFile = "maps/map_2.tmx";
@@ -40,10 +48,11 @@ bool GameMap::initWithTmxFile(std::string &szTmxFile)
 bool GameMap::init()
 {
 	this->_map = experimental::TMXTiledMap::create(this->_szTmxFile);
-	this->addChild(this->_map, 10);
+	this->addChild(this->_map, MAP_TAG);
 	this->initBlueBrick();
 	this->initYellowBrick();
 	this->initWoodenCrate();
+
 	return true;
 }
 

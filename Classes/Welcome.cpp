@@ -43,7 +43,7 @@ bool Welcome::initEdgeMap()
 {
 	std::string filename = "maps/welcome.tmx";
 	m_pGameMap = GameMap::createWithFile(filename);
-	m_pGameMap->setPosition(VisibleRect::leftBottom());
+	m_pGameMap->setPosition(VisibleRect::center());
 	this->addChild(m_pGameMap);
 	return true;
 }

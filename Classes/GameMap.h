@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+class BoxSprite;
 class GameMap : public Node
 {
 public:

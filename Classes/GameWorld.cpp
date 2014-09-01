@@ -81,6 +81,8 @@ bool GameWorld::initBoxSprite()
 {
 	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
 	this->m_pBoxSprite = BoxSprite::create(valueMap);
+	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
+	this->m_pBoxSprite->setPosition(point);
 	this->addChild(this->m_pBoxSprite);
 	return true;
 }
@@ -98,7 +100,7 @@ bool GameWorld::initGameMap()
 	//getMapName(level)
 	std::string filename = LevelState::getInstance()->getMapName();
 	m_pGameMap = GameMap::createWithFile(filename);
-	m_pGameMap->setPosition(VisibleRect::leftBottom());
+	m_pGameMap->setPosition(VisibleRect::center());
 	this->addChild(m_pGameMap);
 	return true;
 }
@@ -231,6 +233,8 @@ void GameWorld::nextLevel()
 	this->m_pContactLogic->loadDefaultData();
 	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
 	this->m_pBoxSprite->loadDefaultData(valueMap);
+	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
+	this->m_pBoxSprite->setPosition(point);
 }
 
 void GameWorld::restart()
@@ -241,4 +245,6 @@ void GameWorld::restart()
 	this->m_pGameUI->setDefaultValue();
 	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
 	this->m_pBoxSprite->loadDefaultData(valueMap);
+	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
+	this->m_pBoxSprite->setPosition(point);
 }
