@@ -62,10 +62,6 @@ bool LevelSelector::init()
 	
 	Menu * menu = Menu::create();
 	addChild(menu);
-	//background 
-	Sprite * bg = Sprite::create("39.png");
-	addChild(bg , -2);
-	bg->setPosition(VisibleRect::center());
 	//cloud.
 
 	auto bgcloud = Background::create();
