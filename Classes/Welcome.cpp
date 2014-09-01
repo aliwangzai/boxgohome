@@ -50,14 +50,16 @@ bool Welcome::initEdgeMap()
 
 bool Welcome::initMenu()
 {
-	MenuItemFont::setFontSize(32);
-	auto moreGameItem = MenuItemFont::create("More Game", [=](Ref *pSender){
+	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
+	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
 		DialogManager::getInstance()->showLvelComplete(NULL, [=](void *result){
 			
 		});
 	});
 	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto startItem = MenuItemFont::create("Play", [](Ref *pSender){
+	auto startLabel = Label::createWithTTF(ttfConfig, "Play");
+	auto startItem = MenuItemLabel::create(startLabel, [](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
 	startItem->setColor(Color3B(0, 0, 0));
