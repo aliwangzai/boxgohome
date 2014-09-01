@@ -178,6 +178,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LevelComplete.h" />
     <ClInclude Include="..\Classes\LevelCompleteLoss.h" />
+    <ClInclude Include="..\Classes\LevelState.h" />
     <ClInclude Include="..\Classes\LevelSelector.h" />
     <ClInclude Include="..\Classes\MenuLayer.h" />
     <ClInclude Include="..\Classes\PlayGameMenu.h" />

@@ -1,6 +1,8 @@
 #include "LevelSelector.h"
 #include "VisibleRect.h"
 #include "GameWorld.h"
+#include "Background.h"
+#include "LevelState.h"
 
 LevelSelector::LevelSelector()
 {
@@ -13,7 +15,6 @@ LevelSelector::LevelSelector()
 	padding = Vec2(10 , 10);
 
 	//calc
-	items = new LevelItem[max];
 	numRows = max / numColumns ;
 	if (max % numColumns != 0)
 		numRows ++;
@@ -22,7 +23,6 @@ LevelSelector::LevelSelector()
 
 LevelSelector::~LevelSelector()
 {
-	CC_SAFE_DELETE_ARRAY(items);
 }
 
 MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
@@ -50,6 +50,7 @@ void LevelSelector::onClickMenuItem( Ref * sender )
 	MenuItemImage * item = (MenuItemImage*)sender;
 	int level = item->getTag();
 	CCLOG("goto level:%d" ,  level);
+	LevelState::getInstance()->setSelectedLevel(level);
 	Director::getInstance()->replaceScene(GameWorld::createScene());
 }
 
@@ -58,9 +59,23 @@ void LevelSelector::onClickMenuItem( Ref * sender )
  * */
 bool LevelSelector::init()
 {
-	cur = UserDefault::getInstance()->getIntegerForKey("User.Level" , 1);
+	
 	Menu * menu = Menu::create();
+	addChild(menu);
+	//background 
+	Sprite * bg = Sprite::create("39.png");
+	addChild(bg , -2);
+	bg->setPosition(VisibleRect::center());
+	//cloud.
+
+	auto bgcloud = Background::create();
+	addChild(bgcloud , -1);
+
+	//back main buttons
 	//menu->setPosition(Vec2::ZERO);
+
+	cur = LevelState::getInstance()->getCurrentLevel();
+	
 	for (int i = 0 ; i < numRows ; i ++)
 	{
 		for (int j = 0 ; j < numColumns ; j++)
@@ -68,22 +83,14 @@ bool LevelSelector::init()
 			int pos = i * numColumns + j + 1;
 			if (pos > max)
 			{
-				break;
+				return true;
 			}
-			items[i] = LevelItem();
-			items[i].item = createMenuItem(menu , pos , j , i );
-			items[i].index = pos;
+			auto item = createMenuItem(menu , pos , j , i );
 			if (pos > cur)
-				items[i].item->setEnabled(false);
+				item->setEnabled(false);
 		}
 	}
-	addChild(menu);
-	//background 
-	Sprite * bg = Sprite::create("39.png");
-	addChild(bg , -1);
-	bg->setPosition(VisibleRect::center());
-	//back main buttons
-
+	
 
 	return true;
 }

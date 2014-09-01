@@ -12,6 +12,9 @@
  <tileset firstgid="4" name="41" tilewidth="17" tileheight="23">
   <image source="41.png" width="17" height="23"/>
  </tileset>
+ <tileset firstgid="5" name="woodenCrate_01" tilewidth="68" tileheight="68">
+  <image source="woodenCrate_01.png" width="68" height="68"/>
+ </tileset>
  <objectgroup name="blue">
   <object type="1" gid="1" x="193" y="144"/>
   <object type="1" gid="1" x="293" y="144"/>
@@ -65,5 +68,8 @@
  </objectgroup>
  <objectgroup name="hero">
   <object name="hero" x="678" y="339"/>
+ </objectgroup>
+ <objectgroup name="wooden">
+  <object name="wooden_01" type="5" gid="5" x="458" y="373"/>
  </objectgroup>
 </map>
