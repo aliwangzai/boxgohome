@@ -4,6 +4,7 @@
 #include "CheckBox.h"
 #include "GameWorld.h"
 #include "PlayGameMenu.h"
+#include "LevelSelector.h"
 
 MenuLayer::MenuLayer()
 :m_pCurrentNode(nullptr)
@@ -124,7 +125,8 @@ bool MenuLayer::initWithMenu()
 	m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 
 	auto playItem = MenuItemFont::create("Play Game", [=](Ref *pSender){
-		Director::getInstance()->replaceScene(GameWorld::createScene());
+		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
+		//Director::getInstance()->replaceScene(GameWorld::createScene());
 	});
 	playItem->setColor(Color3B(0, 0, 0));
 	auto highScoreItem = MenuItemFont::create("Highscores", [=](Ref *pSender){
@@ -153,7 +155,7 @@ bool MenuLayer::initWithMenu()
 	});
 	walkthroughItem->setColor(Color3B(0, 0, 0));
 	auto moreGameItem = MenuItemFont::create("More Games", [=](Ref *pSender){
-		
+		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 	});
 	moreGameItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(playItem, highScoreItem, instructionItem, tutorialItem, walkthroughItem, moreGameItem, nullptr);

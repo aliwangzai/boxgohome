@@ -99,6 +99,12 @@
     <ClCompile Include="..\Classes\LevelComplete.cpp">
       <Filter>Classes\dialog</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\LevelCompleteLoss.cpp">
+      <Filter>Classes\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelSelector.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -169,6 +175,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LevelComplete.h">
       <Filter>Classes\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelCompleteLoss.h">
+      <Filter>Classes\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelSelector.h">
+      <Filter>Classes\layer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
