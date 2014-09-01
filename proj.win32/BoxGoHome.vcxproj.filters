@@ -105,6 +105,9 @@
     <ClCompile Include="..\Classes\LevelSelector.cpp">
       <Filter>Classes\layer</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\WoodenCrate.cpp">
+      <Filter>Classes\wall</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LevelSelector.h">
       <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WoodenCrate.h">
+      <Filter>Classes\wall</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
