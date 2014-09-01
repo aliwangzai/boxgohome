@@ -27,10 +27,16 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	this->ignoreAnchorPointForPosition(false);
 	this->setAnchorPoint(Vec2(.5, .5));
 
-	auto sprite = Sprite::create("dialog/dialog_1.png");
+	auto sprite = Sprite::create("dialog/dialog_2.png");
 	this->addChild(sprite);
 	this->setContentSize(sprite->getContentSize());
 	sprite->setPosition(this->getContentSize() / 2);
+
+	return true;
+}
+
+bool LevelComplete::initMenu()
+{
 
 	return true;
 }

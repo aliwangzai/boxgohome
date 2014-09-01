@@ -38,6 +38,7 @@ public:
 	virtual void update(float dt);
 
 	void restart();
+	void stop();
 
 private:
 	GameWorld*	m_pGameWorld;

@@ -39,8 +39,6 @@ bool GameUI::init()
 	this->initSound();
 	this->setDefaultValue();
 
-	this->scheduleUpdate();
-
 	return true;
 }
 
@@ -96,7 +94,6 @@ bool GameUI::initMenu()
 
 bool GameUI::initScoreUI()
 {
-	//Label::createWithSystemFont("Level: 1", "", 20);
 	this->m_pLevelLabel = Label::createWithBMFont("fonts/fonts.fnt", "Level:1");
 	m_pLevelLabel->setAnchorPoint(Point(0, 1));
 	this->addChild(m_pLevelLabel);
@@ -121,10 +118,12 @@ bool GameUI::initScoreUI()
 
 void GameUI::setDefaultValue()
 {
+	this->unscheduleUpdate();
 	this->setLevel(1);
 	this->setScore(0);
 	this->setBonus(9000);
 	this->setJumps(5);
+	this->scheduleUpdate();
 }
 
 void GameUI::setLevel(int level)
@@ -171,5 +170,10 @@ bool GameUI::jumpsSelfSub()
 		return true;
 	}
 	return false;
+}
+
+void GameUI::stop()
+{
+	this->unscheduleUpdate();
 }
 

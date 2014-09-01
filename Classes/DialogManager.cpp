@@ -20,7 +20,6 @@ Dialog* DialogManager::showLvelComplete(void *data, DialogCallback callback)
 	layer->databind(data);
 	layer->setResultCallback(callback);
 	dialog->setContentPanel(layer);
-	dialog->setEnableClickClose(true);
 	dialog->showDialog();
 	return dialog;
 }

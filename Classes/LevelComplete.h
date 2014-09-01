@@ -12,6 +12,7 @@ public:
 	~LevelComplete();
 
 	bool initWithDialog(Dialog* dialog);
+	bool initMenu();
 
 	static LevelComplete* create(Dialog *dialog);
 
