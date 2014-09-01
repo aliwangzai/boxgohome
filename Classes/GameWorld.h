@@ -45,6 +45,7 @@ public:
 	void win();
 	void lose();
 	void restart();
+	void nextLevel();
 	
 private:
 	PhysicsWorld *_physicsWorld;

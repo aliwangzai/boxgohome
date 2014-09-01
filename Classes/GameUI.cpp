@@ -4,6 +4,8 @@
 #include "CheckBox.h"
 #include "GameWorld.h"
 
+#define SCORERECOARD_LEVEL(level) "user_score_" + level
+
 GameUI::GameUI()
 {
 }
@@ -102,17 +104,17 @@ bool GameUI::initScoreUI()
 	this->m_pScoreLabel = Label::createWithBMFont("fonts/fonts.fnt", "Score:1");
 	m_pScoreLabel->setAnchorPoint(Point(0, 1));
 	this->addChild(m_pScoreLabel);
-	m_pScoreLabel->setPosition(VisibleRect::leftTop() + Point(150, -10));
+	m_pScoreLabel->setPosition(VisibleRect::leftTop() + Point(120, -10));
 
 	this->m_pBonusLabel = Label::createWithBMFont("fonts/fonts.fnt", "Bonus:5");
 	m_pBonusLabel->setAnchorPoint(Point(0, 1));
 	this->addChild(m_pBonusLabel);
-	m_pBonusLabel->setPosition(VisibleRect::leftTop() + Point(280, -10));
+	m_pBonusLabel->setPosition(VisibleRect::leftTop() + Point(300, -10));
 
 	this->m_pJumpsLabel = Label::createWithBMFont("fonts/fonts.fnt", "Jumps:5");
 	m_pJumpsLabel->setAnchorPoint(Point(0, 1));
 	this->addChild(m_pJumpsLabel);
-	m_pJumpsLabel->setPosition(VisibleRect::leftTop() + Point(430, -10));
+	m_pJumpsLabel->setPosition(VisibleRect::leftTop() + Point(470, -10));
 	return true;
 }
 
@@ -120,7 +122,7 @@ void GameUI::setDefaultValue()
 {
 	this->unscheduleUpdate();
 	this->setLevel(1);
-	this->setScore(0);
+	this->setScore(getOldScore());
 	this->setBonus(9000);
 	this->setJumps(5);
 	this->scheduleUpdate();
@@ -175,5 +177,20 @@ bool GameUI::jumpsSelfSub()
 void GameUI::stop()
 {
 	this->unscheduleUpdate();
+}
+
+int GameUI::getOldScore() const
+{
+	int oldScore = 0;
+	for (int i = 1; i <= m_nLevel; i++)
+	{
+		oldScore = UserDefault::getInstance()->getIntegerForKey(SCORERECOARD_LEVEL(i));
+	}
+	return oldScore;
+}
+
+void GameUI::setNewScore(int newScore)
+{
+	UserDefault::getInstance()->setIntegerForKey(SCORERECOARD_LEVEL(m_nLevel + 1), newScore);
 }
 

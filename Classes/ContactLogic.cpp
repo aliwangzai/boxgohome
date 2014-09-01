@@ -45,15 +45,9 @@ bool ContactLogic::onContactBegin(PhysicsContact& contact)
 	PhysicsBody *body1 = contact.getShapeA()->getBody();
 	PhysicsBody *body2 = contact.getShapeB()->getBody();
 	//CCLOG("-------------------------------- onContactBegin -------------------------------- %d %d", body1->getTag(), body2->getTag());
-	if (body1->getTag() != 4 && body2->getTag() != 4)
-	{
-		return true;
-	}
-	else
-	{
-		this->m_bIsWin = true;
-	}
-	return false;
+	if (body1->getTag() == 4 || body2->getTag() == 4)
+		return false;
+	return true;
 } 
 
 bool ContactLogic::onContactPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve)
@@ -76,6 +70,10 @@ void ContactLogic::onContactSeperate(PhysicsContact& contact)
 	PhysicsBody *body1 = contact.getShapeA()->getBody();
 	PhysicsBody *body2 = contact.getShapeB()->getBody();
 	//CCLOG("-------------------------------- onContactSeperate ---------------------------- %d %d", body1->getTag(), body2->getTag());
+	if (body1->getTag() == 4 || body2->getTag() == 4)
+	{
+		this->m_bIsWin = true;
+	}
 }
 
 void ContactLogic::update(float dt)

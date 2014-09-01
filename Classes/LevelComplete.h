@@ -13,6 +13,7 @@ public:
 
 	bool initWithDialog(Dialog* dialog);
 	bool initMenu();
+	bool initDataLabel();
 
 	static LevelComplete* create(Dialog *dialog);
 
