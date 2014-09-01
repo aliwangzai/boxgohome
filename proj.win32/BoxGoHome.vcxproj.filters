@@ -28,6 +28,9 @@
     <Filter Include="Classes\utils">
       <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\layer\menu">
+      <UniqueIdentifier>{fbe87643-4cca-441d-bbd5-3837a9216a37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -90,13 +93,16 @@
     <ClCompile Include="..\Classes\MenuLayer.cpp">
       <Filter>Classes\layer</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\PlayGameMenu.cpp">
-      <Filter>Classes\layer</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\DialogManager.cpp">
       <Filter>Classes\dialog</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\LevelComplete.cpp">
+      <Filter>Classes\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\PlayGameMenu.cpp">
+      <Filter>Classes\layer\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LevelCompleteLoss.cpp">
       <Filter>Classes\dialog</Filter>
     </ClCompile>
   </ItemGroup>
@@ -161,13 +167,16 @@
     <ClInclude Include="..\Classes\MenuLayer.h">
       <Filter>Classes\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\PlayGameMenu.h">
-      <Filter>Classes\layer</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\DialogManager.h">
       <Filter>Classes\dialog</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\LevelComplete.h">
+      <Filter>Classes\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\PlayGameMenu.h">
+      <Filter>Classes\layer\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LevelCompleteLoss.h">
       <Filter>Classes\dialog</Filter>
     </ClInclude>
   </ItemGroup>
