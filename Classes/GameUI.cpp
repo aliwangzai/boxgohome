@@ -3,6 +3,7 @@
 #include "Welcome.h"
 #include "CheckBox.h"
 #include "GameWorld.h"
+#include "LevelState.h"
 
 #define SCORERECOARD_LEVEL(level) "user_score_" + level
 
@@ -121,7 +122,7 @@ bool GameUI::initScoreUI()
 void GameUI::setDefaultValue()
 {
 	this->unscheduleUpdate();
-	this->setLevel(1);
+	this->setLevel(LevelState::getInstance()->getSelectedLevel());
 	this->setScore(getOldScore());
 	this->setBonus(9000);
 	this->setJumps(5);
@@ -184,7 +185,7 @@ int GameUI::getOldScore() const
 	int oldScore = 0;
 	for (int i = 1; i <= m_nLevel; i++)
 	{
-		oldScore = UserDefault::getInstance()->getIntegerForKey(SCORERECOARD_LEVEL(i));
+		oldScore += UserDefault::getInstance()->getIntegerForKey(SCORERECOARD_LEVEL(i));
 	}
 	return oldScore;
 }

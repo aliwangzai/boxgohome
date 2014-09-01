@@ -95,3 +95,9 @@ void GameMap::loadDefaultData()
 	this->removeAllChildren();
 	this->initWithTmxFile(this->_szTmxFile);
 }
+
+void GameMap::loadMapFile(std::string &filename)
+{
+	this->removeAllChildren();
+	this->initWithTmxFile(filename);
+}

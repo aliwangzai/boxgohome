@@ -217,7 +217,20 @@ void GameWorld::lose()
 void GameWorld::nextLevel()
 {
 	CCLOG("enter level");
-	
+	int currentSelectLevel = LevelState::getInstance()->getSelectedLevel();
+	int currentMaxLevel = LevelState::getInstance()->getCurrentLevel();
+	if (currentSelectLevel + 1 > currentMaxLevel)
+	{
+		LevelState::getInstance()->unlockNewLevel();
+
+	}
+	LevelState::getInstance()->setSelectedLevel(currentSelectLevel + 1);
+	std::string currentMap = LevelState::getInstance()->getMapName();
+	this->m_pGameMap->loadMapFile(currentMap);
+	this->m_pGameUI->setDefaultValue();
+	this->m_pContactLogic->loadDefaultData();
+	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
+	this->m_pBoxSprite->loadDefaultData(valueMap);
 }
 
 void GameWorld::restart()

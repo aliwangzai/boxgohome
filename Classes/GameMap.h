@@ -18,6 +18,7 @@ public:
 	ValueMap getHeroValueMap();
 
 	void loadDefaultData();
+	void loadMapFile(std::string &filename);
 
 	static GameMap* createWithFile(std::string &szTmxFile);
 
