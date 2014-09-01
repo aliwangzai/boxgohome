@@ -124,38 +124,45 @@ bool MenuLayer::initWithMenu()
 	this->addChild(this->m_pCurrentNode);
 	m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 
-	MenuItemFont::setFontSize(32);
-	auto playItem = MenuItemFont::create("Play Game", [=](Ref *pSender){
+	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+	auto playLabel = Label::createWithTTF(ttfConfig, "Play Game");
+	auto playItem = MenuItemLabel::create(playLabel, [=](Ref *pSender){
 		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		//Director::getInstance()->replaceScene(GameWorld::createScene());
 	});
 	playItem->setColor(Color3B(0, 0, 0));
-	auto highScoreItem = MenuItemFont::create("Highscores", [=](Ref *pSender){
+	auto highScoreLabel = Label::createWithTTF(ttfConfig, "Highscores");
+	auto highScoreItem = MenuItemLabel::create(highScoreLabel, [=](Ref *pSender){
 		this->m_pCurrentNode->removeFromParent();
 		this->m_pCurrentNode = PlayGameMenu::create();
 		this->addChild(this->m_pCurrentNode);
 		m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 	});
 	highScoreItem->setColor(Color3B(0, 0, 0));
-	auto instructionItem = MenuItemFont::create("Instructions", [=](Ref *pSender){
+
+	auto instructionLabel = Label::createWithTTF(ttfConfig, "Instructions");
+	auto instructionItem = MenuItemLabel::create(instructionLabel, [=](Ref *pSender){
 		this->m_pCurrentNode->removeFromParent();
 		this->m_pCurrentNode = Sprite::create("38.png");
 		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
 		this->addChild(m_pCurrentNode);
 	});
 	instructionItem->setColor(Color3B(0, 0, 0));
-	auto tutorialItem = MenuItemFont::create("Tutorial", [=](Ref *pSender){
+	auto tutorialLabel = Label::createWithTTF(ttfConfig, "Tutorial");
+	auto tutorialItem = MenuItemLabel::create(tutorialLabel, [=](Ref *pSender){
 		this->m_pCurrentNode->removeFromParent();
 		this->m_pCurrentNode = Sprite::create("37.png");
 		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
 		this->addChild(m_pCurrentNode);
 	});
 	tutorialItem->setColor(Color3B(0, 0, 0));
-	auto walkthroughItem = MenuItemFont::create("Walkthrough", [=](Ref *pSender){
+	auto walkthroughLabel = Label::createWithTTF(ttfConfig, "Walkthrough");
+	auto walkthroughItem = MenuItemLabel::create(walkthroughLabel, [=](Ref *pSender){
 	
 	});
 	walkthroughItem->setColor(Color3B(0, 0, 0));
-	auto moreGameItem = MenuItemFont::create("More Games", [=](Ref *pSender){
+	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Games");
+	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
 		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 	});
 	moreGameItem->setColor(Color3B(0, 0, 0));

@@ -90,7 +90,7 @@ bool GameWorld::initBackground()
 
 bool GameWorld::initGameMap()
 {
-	std::string filename = "maps/map_2.tmx";
+	std::string filename = "maps/map_4.tmx";
 	m_pGameMap = GameMap::createWithFile(filename);
 	m_pGameMap->setPosition(VisibleRect::leftBottom());
 	this->addChild(m_pGameMap);
