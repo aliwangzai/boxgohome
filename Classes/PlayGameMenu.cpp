@@ -85,6 +85,7 @@ void PlayGameMenu::onContactSeperate(PhysicsContact& contact)
 		float x = (CCRANDOM_0_1() - 0.5) * 2;
 		float y = (CCRANDOM_0_1() - 0.5) * 2;
 		bodyB->applyImpulse(Vec2(x, y) * 500);
+		CCLOG("boxsprite auto move");
 	}
 }
 

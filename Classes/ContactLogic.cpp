@@ -79,10 +79,10 @@ void ContactLogic::update(float dt)
 {
 	if (this->m_bIsWin)
 	{
-		this->unscheduleUpdate();
+		CCLOG("call gameworld win() function");
 		this->m_pGameWorld->win();
+		this->unscheduleUpdate();
 	}
-	
 	Vec2 velocity = this->m_pGameWorld->getBoxSprite()->getPhysicsBody()->getVelocity();
 	if (velocity.getLengthSq() < 5 * 5 && this->m_pGameWorld->getGameUI()->getJumpCount() <= 0)
 	{

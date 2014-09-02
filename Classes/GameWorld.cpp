@@ -96,11 +96,9 @@ bool GameWorld::initBackground()
 
 bool GameWorld::initGameMap()
 {
-	//getConfig 
-	//getMapName(level)
 	std::string filename = LevelState::getInstance()->getMapName();
 	m_pGameMap = GameMap::createWithFile(filename);
-	m_pGameMap->setPosition(VisibleRect::center());
+	m_pGameMap->setPosition(VisibleRect::center());	
 	this->addChild(m_pGameMap);
 	return true;
 }
@@ -152,7 +150,7 @@ void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 		bool isSubJump = this->m_pGameUI->jumpsSelfSub();
 		if (isSubJump)
 		{
-			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 20);
+			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 2);
 		}
 	}
 }

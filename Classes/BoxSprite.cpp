@@ -36,7 +36,7 @@ bool BoxSprite::init()
 	if (!Sprite::initWithFile("3.png")) return false;
 	this->m_fMaxForce = 6400;
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.0f, 0.5f, 0.5f)));
-	this->getPhysicsBody()->setMass(10.0f);
+	this->getPhysicsBody()->setMass(1.0);
 
 	this->initBoxAnimate();
 
