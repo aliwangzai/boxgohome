@@ -30,6 +30,7 @@ public:
 	static LevelSelector * create();
 
 	bool init();
+	bool initSound();
 	MenuItem * createMenuItem(Menu * m , int level , int x, int y );
 	void onClickMenuItem(Ref * sender);
 };

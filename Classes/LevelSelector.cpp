@@ -3,6 +3,7 @@
 #include "GameWorld.h"
 #include "Background.h"
 #include "LevelState.h"
+#include "CheckBox.h"
 
 LevelSelector::LevelSelector()
 {
@@ -87,7 +88,30 @@ bool LevelSelector::init()
 		}
 	}
 	
+	this->initSound();
 
+	return true;
+}
+
+bool LevelSelector::initSound()
+{
+	auto soundCheckBox = CheckBox::create("49.png", "50.png");
+	auto size = soundCheckBox->getContentSize();
+	soundCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(20, 10));
+	this->addChild(soundCheckBox);
+	soundCheckBox->setCallback([=](bool state){
+		if (!state) CCLOG("%s", "play sound");
+		else CCLOG("%s", "close sound");
+	});
+
+	auto musicCheckBox = CheckBox::create("47.png", "48.png");
+	size = musicCheckBox->getContentSize();
+	musicCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(70, 10));
+	this->addChild(musicCheckBox);
+	musicCheckBox->setCallback([=](bool state){
+		if (!state) CCLOG("%s", "play music");
+		else CCLOG("%s", "close music");
+	});
 	return true;
 }
 

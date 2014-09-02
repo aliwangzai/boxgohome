@@ -100,7 +100,7 @@ bool MenuLayer::initSound()
 {
 	auto soundCheckBox = CheckBox::create("49.png", "50.png");
 	auto size = soundCheckBox->getContentSize();
-	soundCheckBox->setPosition(Point(size / 2) + Point(20, 10));
+	soundCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(20, 10));
 	this->addChild(soundCheckBox);
 	soundCheckBox->setCallback([=](bool state){
 		if (!state) CCLOG("%s", "play sound");
@@ -109,7 +109,7 @@ bool MenuLayer::initSound()
 
 	auto musicCheckBox = CheckBox::create("47.png", "48.png");
 	size = musicCheckBox->getContentSize();
-	musicCheckBox->setPosition(Point(size / 2) + Point(70, 10));
+	musicCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(70, 10));
 	this->addChild(musicCheckBox);
 	musicCheckBox->setCallback([=](bool state){
 		if (!state) CCLOG("%s", "play music");

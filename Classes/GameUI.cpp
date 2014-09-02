@@ -1,6 +1,6 @@
 #include "GameUI.h"
 #include "VisibleRect.h"
-#include "Welcome.h"
+#include "MenuLayer.h"
 #include "CheckBox.h"
 #include "GameWorld.h"
 #include "LevelState.h"
@@ -49,7 +49,7 @@ bool GameUI::initSound()
 {
 	auto soundCheckBox = CheckBox::create("49.png", "50.png");
 	auto size = soundCheckBox->getContentSize();
-	soundCheckBox->setPosition(Point(size / 2) + Point(20, 10));
+	soundCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(20, 10));
 	this->addChild(soundCheckBox);
 	soundCheckBox->setCallback([=](bool state){
 		if (!state) CCLOG("%s", "play sound");
@@ -58,7 +58,7 @@ bool GameUI::initSound()
 
 	auto musicCheckBox = CheckBox::create("47.png", "48.png");
 	size = musicCheckBox->getContentSize();
-	musicCheckBox->setPosition(Point(size / 2) + Point(70, 10));
+	musicCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(70, 10));
 	this->addChild(musicCheckBox);
 	musicCheckBox->setCallback([=](bool state){
 		if (!state) CCLOG("%s", "play music");
@@ -85,7 +85,7 @@ bool GameUI::initMenu()
 	});
 	restartItem->setColor(Color3B(0, 0, 0));
 	auto menuItem = MenuItemFont::create("Menu", [=](Ref *pSender){
-		Director::getInstance()->replaceScene(Welcome::createScene());
+		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
 	menuItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(restartItem, menuItem, nullptr);
