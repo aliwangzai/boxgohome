@@ -188,6 +188,9 @@
     <ClInclude Include="..\Classes\WoodenCrate.h">
       <Filter>Classes\wall</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\LevelState.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
