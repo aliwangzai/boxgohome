@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="2" tilewidth="50" tileheight="18">
+  <image source="2.png" width="50" height="18"/>
+ </tileset>
+ <tileset firstgid="2" name="woodenCrate_01" tilewidth="68" tileheight="68">
+  <image source="woodenCrate_01.png" width="68" height="68"/>
+ </tileset>
+ <tileset firstgid="3" name="42" tilewidth="50" tileheight="18">
+  <image source="42.png" width="50" height="18"/>
+ </tileset>
+ <tileset firstgid="4" name="41" tilewidth="17" tileheight="23">
+  <image source="41.png" width="17" height="23"/>
+ </tileset>
+ <objectgroup name="blue">
+  <object type="1" gid="1" x="375" y="191"/>
+  <object type="1" gid="1" x="425" y="191"/>
+  <object type="1" gid="1" x="475" y="191"/>
+  <object type="1" gid="1" x="525" y="191"/>
+  <object type="1" gid="1" x="763" y="367"/>
+  <object type="1" gid="1" x="813" y="367"/>
+  <object type="1" gid="1" x="97" y="367"/>
+  <object type="1" gid="1" x="147" y="367"/>
+  <object type="1" gid="1" x="394" y="511"/>
+  <object type="1" gid="1" x="444" y="511"/>
+  <object type="1" gid="1" x="494" y="511"/>
+ </objectgroup>
+ <objectgroup name="yellow">
+  <object type="3" gid="3" x="451" y="173"/>
+  <object type="4" gid="4" x="475" y="156"/>
+ </objectgroup>
+ <objectgroup name="hero">
+  <object name="hero" x="456" y="477"/>
+ </objectgroup>
+ <objectgroup name="wooden">
+  <object type="5" gid="2" x="79" y="349"/>
+  <object type="5" gid="2" x="79" y="281"/>
+  <object type="5" gid="2" x="809" y="349"/>
+  <object type="5" gid="2" x="809" y="281"/>
+ </objectgroup>
+</map>

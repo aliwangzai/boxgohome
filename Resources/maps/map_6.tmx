@@ -58,7 +58,7 @@
   <object name="hero" x="671" y="352"/>
  </objectgroup>
  <objectgroup name="wooden">
-  <object type="5" gid="5" x="423" y="389"/>
-  <object type="5" gid="5" x="423" y="320"/>
+  <object type="5" gid="5" x="423" y="388"/>
+  <object type="5" gid="5" x="423" y="318"/>
  </objectgroup>
 </map>
