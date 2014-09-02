@@ -26,6 +26,8 @@ public:
 	void onContactPostSolve(PhysicsContact& contact, const PhysicsContactPostSolve& solve);
 	void onContactSeperate(PhysicsContact& contact);
 
+	virtual void onExit();
+
 private:
 
 	GameMap			*m_pGameMap;

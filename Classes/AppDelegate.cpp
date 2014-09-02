@@ -2,12 +2,6 @@
 #include "GameWorld.h"
 #include "Welcome.h"
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-#include "platform\android\jni\JniHelper.h"
-#include "PluginJniHelper.h"
-using namespace anysdk::framework;
-#endif
-
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -24,7 +18,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-		glview = GLView::createWithRect("My Game", Rect(0.0f, 0.0f, 960, 540));
+		glview = GLView::createWithRect("My Game", Rect(0.0f, 0.0f, 960, 640));
         director->setOpenGLView(glview);
     }
 
@@ -83,8 +77,4 @@ void AppDelegate::applicationWillEnterForeground() {
 
 void AppDelegate::initAnySDK()
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-	auto vm = JniHelper::getJavaVM();
-	PluginJniHelper::setJavaVM(vm);
-#endif
 }

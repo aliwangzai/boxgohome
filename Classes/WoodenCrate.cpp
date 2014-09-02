@@ -29,7 +29,7 @@ bool WoodenCrate::init(const ValueMap &valueMap)
 	std::string img = Utils::getWallByType(this->m_nType);
 	if (!Wall::initWithFile(img)) return false;
 	this->setPosition(this->m_initPos + this->getContentSize() / 2);
-	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.5f, 0.5f)));
+	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.01f, 0.5f, 0.5f)));
 
 	return true;
 }

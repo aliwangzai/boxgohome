@@ -98,3 +98,10 @@ void PlayGameMenu::update(float dt)
 		this->m_pBoxSprite->getPhysicsBody()->setVelocity(Vec2());
 	}
 }
+
+void PlayGameMenu::onExit()
+{
+	Node::onExit();
+	_eventDispatcher->removeEventListenersForTarget(this);
+	this->unscheduleUpdate();
+}
