@@ -6,6 +6,7 @@
 #include "BoxSprite.h"
 #include "MenuLayer.h"
 #include "DialogManager.h"
+#include "ShareManager.h"
 
 Scene* Welcome::createScene()
 {
@@ -53,9 +54,13 @@ bool Welcome::initMenu()
 	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
 	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
 	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
-		DialogManager::getInstance()->showLvelComplete(NULL, [=](void *result){
-			
-		});
+		ShareManager::getInstance()->setShareAttribute("content", "这是一条测试内容");
+		ShareManager::getInstance()->setShareAttribute("image", "http://img0.bdstatic.com/img/image/308342ac65c10385343da168d569113b07ecb8088ef.jpg");
+		ShareManager::getInstance()->setShareAttribute("title", "测试标题");
+		ShareManager::getInstance()->setShareAttribute("description", "测试描述");
+		ShareManager::getInstance()->setShareAttribute("url", "http://sharesdk.cn");
+		ShareManager::getInstance()->setShareAttribute("type", std::to_string(C2DXContentTypeNews));
+		ShareManager::getInstance()->sendShare();
 	});
 	moreGameItem->setColor(Color3B(0, 0, 0));
 	auto startLabel = Label::createWithTTF(ttfConfig, "Play");

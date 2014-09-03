@@ -35,8 +35,17 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Wall.cpp \
 				   ../../Classes/WoodenCrate.cpp \
 				   ../../Classes/YellowWall.cpp \
-
+				   ../../Classes/ShareManager.cpp \
+				   ../../Classes/C2DXShareSDK/Android/JSON/cJSON/cJSON.c \
+				   ../../Classes/C2DXShareSDK/Android/JSON/CCJSONConverter.cpp \
+				   ../../Classes/C2DXShareSDK/Android/ShareSDKUtils.cpp \
+				   ../../Classes/C2DXShareSDK/C2DXShareSDK.cpp \
+				   
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Classes/C2DXShareSDK
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Classes/C2DXShareSDK/Android
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Classes/C2DXShareSDK/Android/JSON
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../Classes/C2DXShareSDK/Android/JSON/cJSON
 
 LOCAL_WHOLE_STATIC_LIBRARIES := cocos2dx_static
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static

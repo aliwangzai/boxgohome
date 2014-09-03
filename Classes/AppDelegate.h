@@ -33,7 +33,7 @@ public:
     */
     virtual void applicationWillEnterForeground();
 
-	void initAnySDK();
+	void initShareSDK();
 };
 
 #endif // _APP_DELEGATE_H_

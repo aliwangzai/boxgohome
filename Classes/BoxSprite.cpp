@@ -28,6 +28,7 @@ void BoxSprite::loadDefaultData(const ValueMap &valueMap)
 	float y = valueMap.find("y")->second.asFloat();
 	this->setPosition(Point(x, y) + this->getContentSize() / 2);
 	this->getPhysicsBody()->setVelocity(Vec2());
+	this->getPhysicsBody()->setAngularVelocity(0.0f);
 	this->setRotation(0);
 }
 
@@ -37,7 +38,6 @@ bool BoxSprite::init()
 	this->m_fMaxForce = 1000;
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.0f, 0.5f, 0.5f)));
 	this->getPhysicsBody()->setMass(1.0);
-
 	this->initBoxAnimate();
 
 	return true;

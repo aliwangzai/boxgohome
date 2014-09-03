@@ -5,7 +5,7 @@
 #include "GameWorld.h"
 #include "LevelState.h"
 
-#define SCORERECOARD_LEVEL(level) "user_score_" + level
+#define SCORERECOARD_LEVEL(level) "user_score_" + std::to_string(level)
 
 GameUI::GameUI()
 {
@@ -185,13 +185,17 @@ int GameUI::getOldScore() const
 	int oldScore = 0;
 	for (int i = 1; i <= m_nLevel; i++)
 	{
-		oldScore += UserDefault::getInstance()->getIntegerForKey(SCORERECOARD_LEVEL(i));
+		char buffer[128];
+		sprintf(buffer, "user_score_%d", i);
+		oldScore += UserDefault::getInstance()->getIntegerForKey(buffer);
 	}
 	return oldScore;
 }
 
 void GameUI::setNewScore(int newScore)
 {
-	UserDefault::getInstance()->setIntegerForKey(SCORERECOARD_LEVEL(m_nLevel + 1), newScore);
+	char buffer[128];
+	sprintf(buffer, "user_score_%d", m_nLevel + 1);
+	UserDefault::getInstance()->setIntegerForKey(buffer, newScore);
 }
 

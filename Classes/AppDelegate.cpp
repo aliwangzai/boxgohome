@@ -1,6 +1,8 @@
 #include "AppDelegate.h"
 #include "GameWorld.h"
 #include "Welcome.h"
+#include "C2DXShareSDK\C2DXShareSDK.h"
+using namespace cn::sharesdk;
 
 USING_NS_CC;
 
@@ -13,7 +15,7 @@ AppDelegate::~AppDelegate()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
-	this->initAnySDK();
+	this->initShareSDK();
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
@@ -75,6 +77,13 @@ void AppDelegate::applicationWillEnterForeground() {
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
 
-void AppDelegate::initAnySDK()
+void AppDelegate::initShareSDK()
 {
+	C2DXShareSDK::open(CCString::create("api20"), false);
+
+	CCDictionary *sinaConfigDict = CCDictionary::create();
+	sinaConfigDict->setObject(CCString::create("568898243"), "app_key");
+	sinaConfigDict->setObject(CCString::create("38a4f8204cc784f81f9f0daaf31e02e3"), "app_secret");
+	sinaConfigDict->setObject(CCString::create("http://www.sharesdk.cn"), "redirect_uri");
+	C2DXShareSDK::setPlatformConfig(C2DXPlatTypeSinaWeibo, sinaConfigDict);
 }
