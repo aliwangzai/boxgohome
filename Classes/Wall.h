@@ -21,6 +21,7 @@ protected:
 	int			 m_nType;
 	std::string	 m_sName;
 	Point		 m_initPos;
+	float		 m_rotation;
 };
 
 #endif
