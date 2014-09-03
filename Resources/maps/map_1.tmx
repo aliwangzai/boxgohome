@@ -12,7 +12,7 @@
  <tileset firstgid="4" name="41" tilewidth="17" tileheight="23">
   <image source="41.png" width="17" height="23"/>
  </tileset>
- <objectgroup name="blue" width="0" height="0">
+ <objectgroup name="blue">
   <object name="brick_blue_01" type="1" gid="1" x="198" y="255"/>
   <object name="brick_blue_02" type="1" gid="1" x="248" y="255"/>
   <object name="brick_blue_03" type="1" gid="1" x="647" y="255"/>
@@ -23,25 +23,25 @@
   <object name="brick_blue_08" type="1" gid="1" x="498" y="255"/>
   <object name="brick_blue_09" type="1" gid="1" x="547" y="255"/>
   <object name="brick_blue_10" type="1" gid="1" x="597" y="255"/>
-  <object name="brick_blue_11" type="2" gid="2" x="697" y="287"/>
-  <object name="brick_blue_12" type="2" gid="2" x="697" y="337"/>
-  <object name="brick_blue_13" type="2" gid="2" x="180" y="288"/>
-  <object name="brick_blue_14" type="2" gid="2" x="180" y="337"/>
   <object name="brick_blue_15" type="1" gid="1" x="648" y="336"/>
   <object name="brick_blue_16" type="1" gid="1" x="498" y="337"/>
-  <object name="brick_blue_17" type="1" gid="1" x="448" y="337"/>
-  <object name="brick_blue_18" type="1" gid="1" x="398" y="337"/>
+  <object name="brick_blue_17" type="1" gid="1" x="448" y="316" rotation="45"/>
+  <object name="brick_blue_18" type="1" gid="1" x="432" y="304" rotation="135"/>
   <object name="brick_blue_19" type="1" gid="1" x="548" y="337"/>
   <object name="brick_blue_20" type="1" gid="1" x="198" y="337"/>
   <object name="brick_blue_21" type="1" gid="1" x="248" y="337"/>
   <object name="brick_blue_22" type="1" gid="1" x="298" y="337"/>
   <object name="brick_blue_23" type="1" gid="1" x="348" y="337"/>
+  <object type="1" gid="1" x="180" y="221" rotation="90"/>
+  <object type="1" gid="1" x="180" y="303" rotation="90"/>
+  <object type="1" gid="1" x="696" y="222" rotation="90"/>
+  <object type="1" gid="1" x="696" y="300" rotation="90"/>
  </objectgroup>
- <objectgroup name="yellow" width="0" height="0">
+ <objectgroup name="yellow">
   <object name="brick_yellow_01" type="3" gid="3" x="598" y="336"/>
   <object name="flag" type="4" gid="4" x="619" y="319"/>
  </objectgroup>
- <objectgroup name="hero" width="0" height="0">
+ <objectgroup name="hero">
   <object name="hero" x="261" y="304" width="13" height="5"/>
  </objectgroup>
 </map>

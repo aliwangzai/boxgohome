@@ -437,7 +437,7 @@ void TMXMapInfo::startElement(void *ctx, const char *name, const char **atts)
         // Create an instance of TMXObjectInfo to store the object and its properties
         ValueMap dict;
         // Parse everything automatically
-        const char* array[] = {"name", "type", "width", "height", "gid"};
+        const char* array[] = {"name", "type", "width", "height", "gid" , "rotation"};
         
         for(size_t i = 0; i < sizeof(array)/sizeof(array[0]); ++i )
         {
@@ -468,7 +468,7 @@ void TMXMapInfo::startElement(void *ctx, const char *name, const char **atts)
         objectGroup->getObjects().push_back(Value(dict));
 
          // The parent element is now "object"
-         tmxMapInfo->setParentElement(TMXPropertyObject);
+        tmxMapInfo->setParentElement(TMXPropertyObject);
 
     } 
     else if (elementName == "property")
