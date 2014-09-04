@@ -60,7 +60,9 @@ ValueMap GameMap::getHeroValueMap()
 
 void GameMap::initObjects()
 {
-	ValueVector objects = this->_map->getObjectGroup("game")->getObjects();
+	TMXObjectGroup *objectGroup = this->_map->getObjectGroup("game");
+	if (objectGroup == nullptr) return;
+	ValueVector objects = objectGroup->getObjects();
 	for (unsigned int i = 0; i < objects.size(); i++)
 	{
 		ValueMap objProperties = objects.at(i).asValueMap();

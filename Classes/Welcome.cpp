@@ -42,7 +42,7 @@ bool Welcome::initLoadResource()
 
 bool Welcome::initEdgeMap()
 {
-	std::string filename = "maps/welcome.tmx";
+	std::string filename = "maps/nwelcome.tmx";
 	m_pGameMap = GameMap::createWithFile(filename);
 	m_pGameMap->setPosition(VisibleRect::center());
 	this->addChild(m_pGameMap);
@@ -71,7 +71,7 @@ bool Welcome::initMenu()
 	auto menu = Menu::create(moreGameItem, startItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(10);
-	menu->setPosition(VisibleRect::center() + Point(0, -100));
+	menu->setPosition(VisibleRect::center() + Point(0, 0));
 	return true;
 }
 
@@ -157,46 +157,43 @@ void Welcome::playHeroAnimate()
 		JumpBy::create(0.5f, Point(10, 0), 5, 2),
 		MoveBy::create(0.5f, Point(30, 0)),
 		MoveBy::create(0.2f, Point(-80, 0)),
-		JumpBy::create(0.4f, Point(-120, 68), 60, 1),
+		JumpBy::create(0.4f, Point(-130, 71), 60, 1),
 		DelayTime::create(0.2f),
-		JumpBy::create(0.3f, Point(-20, 18), 30, 1),
+		JumpBy::create(0.3f, Point(-20, 25), 40, 1),
 		MoveBy::create(0.2f, Point(12, 0)),
-		JumpBy::create(0.2f, Point(10, -18), 0, 1),
+		JumpBy::create(0.2f, Point(10, -25), 0, 1),
 		DelayTime::create(0.2f),
-		JumpBy::create(0.3f, Point(-50, 18), 30, 1),
+		JumpBy::create(0.3f, Point(-65, 25), 30, 1),
 		JumpBy::create(0.5f, Point(15, 0), 5, 2),
-		JumpBy::create(0.5f, Point(120, 65), 50, 1),
+		JumpBy::create(0.5f, Point(100, 77), 50, 1),
 		MoveBy::create(0.2f, Point(12, 0)),
-		JumpBy::create(0.4f, Point(40, 15), 50, 1),
+		JumpBy::create(0.4f, Point(70, 23), 50, 1),
 		MoveBy::create(0.2f, Point(10, 0)),
-		JumpBy::create(0.4f, Point(40, 15), 50, 1),
-		MoveBy::create(0.2f, Point(15, 0)),
-		JumpBy::create(0.9f, Point(180, -180), 100, 1),
+		JumpBy::create(0.4f, Point(40, 25), 50, 1),
+		MoveBy::create(0.2f, Point(35, 0)),
+		JumpBy::create(0.9f, Point(220, -222), 100, 1),
 		MoveBy::create(0.2f, Point(10, 0)),
-		JumpBy::create(1.2f, Point(-60, 0), 15, 2),
-		JumpBy::create(0.5f, Point(0, 0), 5, 2),
+		JumpBy::create(0.5f, Point(10, 0), 5, 2),
 		MoveBy::create(0.2f, Point(60, 0)),
-		JumpBy::create(0.8f, Point(200, 0), 100, 1),
-		JumpBy::create(0.5f, Point(0, 0), 5, 2),
-		MoveBy::create(0.2f, Point(50, 0)),
-		JumpBy::create(0.6f, Point(95, 68), 60, 1),
+		
+		JumpBy::create(0.6f, Point(125, 74), 60, 1),
 		JumpBy::create(0.5f, Point(5, 0), 5, 2),
 		MoveBy::create(0.2f, Point(10, 0)),
-		JumpBy::create(0.3f, Point(50, 18), 20, 1),
+		JumpBy::create(0.3f, Point(80, 25), 20, 1),
 		MoveBy::create(0.2f, Point(-5, 0)),
-		JumpBy::create(0.5f, Point(-130, 68), 60, 1),
+		JumpBy::create(0.5f, Point(-130, 74), 60, 1),
 		MoveBy::create(0.2f, Point(-5, 0)),
-		JumpBy::create(0.3f, Point(-50, 14), 20, 1),
-		JumpBy::create(0.3f, Point(-50, 14), 20, 1),
+		JumpBy::create(0.3f, Point(-70, 25), 20, 1),
+		JumpBy::create(0.3f, Point(-80, 24), 20, 1),
 		JumpBy::create(0.5f, Point(0, 0), 5, 2),
-		JumpBy::create(0.5f, Point(80, 107), 50, 1),
+		JumpBy::create(0.5f, Point(140, 100), 50, 1),
 		MoveBy::create(0.2f, Point(10, 0)),
-		JumpBy::create(0.5f, Point(80, 65), 50, 1),
+		JumpBy::create(0.5f, Point(80, 75), 50, 1),
 		MoveBy::create(0.2f, Point(10, 0)),
 		MoveBy::create(0.2f, Point(-5, 0)),
-		JumpBy::create(0.5f, Point(-150, 84), 50, 1),
+		JumpBy::create(0.5f, Point(-150, 77), 50, 1),
 		MoveBy::create(0.2f, Point(-15, 0)),
-		JumpBy::create(0.5f, Point(-210, -85), 50, 1),
+		JumpBy::create(0.5f, Point(-180, -77), 50, 1),/**/
 		DelayTime::create(0.2f),
 		Hide::create(),
 		Place::create(this->m_vHeroInitPos),

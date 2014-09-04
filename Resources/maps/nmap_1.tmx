@@ -51,7 +51,7 @@
   <object gid="2" x="54" y="216.75" rotation="90"/>
   <object gid="2" x="880" y="216.5" rotation="90"/>
   <object gid="1" x="640" y="375"/>
-  <object gid="3" x="680" y="350"/>
-  <object gid="4" x="100" y="300"/>
+  <object gid="3" x="680" y="351"/>
+  <object gid="4" x="113" y="313"/>
  </objectgroup>
 </map>
