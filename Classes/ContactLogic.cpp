@@ -2,9 +2,11 @@
 #include "GameWorld.h"
 #include "BoxSprite.h"
 #include "GameUI.h"
+#include "Wall.h"
 
 ContactLogic::ContactLogic()
-:m_bIsWin(false)
+:m_bIsWin(false),
+m_bIsLose(false)
 {
 }
 
@@ -45,7 +47,7 @@ bool ContactLogic::onContactBegin(PhysicsContact& contact)
 	PhysicsBody *body1 = contact.getShapeA()->getBody();
 	PhysicsBody *body2 = contact.getShapeB()->getBody();
 	//CCLOG("-------------------------------- onContactBegin -------------------------------- %d %d", body1->getTag(), body2->getTag());
-	if (body1->getTag() == 4 || body2->getTag() == 4)
+	if (body1->getTag() == wallType_Flag || body2->getTag() == wallType_Flag)
 	{
 		this->m_bIsWin = true;
 		return false;
@@ -73,10 +75,16 @@ void ContactLogic::onContactSeperate(PhysicsContact& contact)
 	PhysicsBody *body1 = contact.getShapeA()->getBody();
 	PhysicsBody *body2 = contact.getShapeB()->getBody();
 	//CCLOG("-------------------------------- onContactSeperate ---------------------------- %d %d", body1->getTag(), body2->getTag());
+	if (body1->getTag() == wallType_Enemy || body2->getTag() == wallType_Enemy)
+	{
+		this->m_bIsLose = true;
+	}
 }
 
 void ContactLogic::update(float dt)
 {
+	Node::update(dt);
+
 	if (this->m_bIsWin)
 	{
 		CCLOG("call gameworld win() function");
@@ -90,7 +98,7 @@ void ContactLogic::update(float dt)
 		this->m_pGameWorld->lose();
 	}
 	Vec2 position = this->m_pGameWorld->getBoxSprite()->getPosition();
-	if (position.y < m_pGameWorld->getBoxSprite()->getContentSize().height / 2)
+	if (position.y < m_pGameWorld->getBoxSprite()->getContentSize().height / 2 || m_bIsLose)
 	{
 		this->unscheduleUpdate();
 		this->m_pGameWorld->lose();
@@ -100,5 +108,6 @@ void ContactLogic::update(float dt)
 void ContactLogic::loadDefaultData()
 {
 	this->m_bIsWin = false;
+	this->m_bIsLose = false;
 	this->scheduleUpdate();
 }

@@ -26,6 +26,7 @@ public:
 private:
 	GameWorld		*m_pGameWorld;
 	bool				m_bIsWin;
+	bool				m_bIsLose;
 };
 
 #endif

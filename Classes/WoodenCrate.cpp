@@ -30,6 +30,8 @@ bool WoodenCrate::init(const ValueMap &valueMap, const ValueMap & gidProperties)
 	if (!Wall::initWithFile(img)) return false;
 	this->setPosition(this->m_initPos + this->getContentSize() / 2);
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.001f, 0.5f, 0.5f)));
+	this->m_wallType = wallType_Wood;
+	this->getPhysicsBody()->setTag(this->m_wallType);
 	
 	return true;
 }

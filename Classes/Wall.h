@@ -4,6 +4,15 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+enum WallType
+{
+	wallType_Normal,
+	wallType_Yellow,
+	wallType_Flag,
+	wallType_Wood,
+	wallType_Enemy
+};
+
 class Wall: public Sprite
 {
 public:
@@ -16,12 +25,15 @@ public:
 	void setCategoryBitmask(int mask);
 	void setCollisionBitmask(int mask);
 
+	WallType getWallType() const { return m_wallType; }
+
 protected:
 	int			 m_nGid;
 	int			 m_nType;
 	std::string	 m_sName;
 	Point		 m_initPos;
 	float		 m_rotation;
+	WallType     m_wallType;
 };
 
 #endif

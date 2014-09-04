@@ -46,8 +46,8 @@ bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 	{
 		this->setPosition(this->m_initPos + this->getContentSize()/2 );
 	}
+	this->m_wallType = wallType_Normal;
 	this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.4f, 1.0f), 0));//ÃÜ¶È µ¯Á¦ Ä¦²ÁÁ¦
-	this->getPhysicsBody()->setTag(this->m_nType);
-	this->setContactTestBitmask(0x0002);
+	this->getPhysicsBody()->setTag(this->m_wallType);
 	return true;
 }

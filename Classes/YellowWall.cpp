@@ -33,14 +33,16 @@ bool YellowWall::init( const ValueMap &valueMap, const ValueMap & gidProperties 
 	{
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.2f, 1.0f), 0));
 		this->setContactTestBitmask(0x0001);
-		this->getPhysicsBody()->setTag(3);
+		this->m_wallType = wallType_Yellow;
+		this->getPhysicsBody()->setTag(this->m_wallType);
 	}
 	else if (type == "flag")
 	{
 		this->playFlagAnimate();
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize()));
 		this->setContactTestBitmask(0x0002);
-		this->getPhysicsBody()->setTag(4);
+		this->m_wallType = wallType_Flag;
+		this->getPhysicsBody()->setTag(this->m_wallType);
 	}
 	
 	return true;

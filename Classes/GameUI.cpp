@@ -89,7 +89,8 @@ bool GameUI::initMenu()
 		this->m_pGameWorld->restart();
 	});
 	restartItem->setColor(Color3B(0, 0, 0));
-	auto menuItem = MenuItemFont::create("Menu", [=](Ref *pSender){
+	auto menuLabel = Label::createWithTTF(ttfConfig, "Menu");
+	auto menuItem = MenuItemLabel::create(menuLabel, [=](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
 	menuItem->setColor(Color3B(0, 0, 0));
