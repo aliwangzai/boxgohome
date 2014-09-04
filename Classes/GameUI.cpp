@@ -69,9 +69,12 @@ bool GameUI::initSound()
 
 bool GameUI::initMoreGame()
 {
-	auto moreGameItem = MenuItemFont::create("MoreGame", [=](Ref *pSender){
+	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
+	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
 		
 	});
+	moreGameItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(moreGameItem, nullptr);
 	this->addChild(menu);
 	menu->setPosition(VisibleRect::rightBottom() + Point(-80, 20));
@@ -80,7 +83,9 @@ bool GameUI::initMoreGame()
 
 bool GameUI::initMenu()
 {
-	auto restartItem = MenuItemFont::create("Restart", [=](Ref *pSender){
+	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+	auto restartLabel = Label::createWithTTF(ttfConfig, "Restart");
+	auto restartItem = MenuItemLabel::create(restartLabel, [=](Ref *pSender){
 		this->m_pGameWorld->restart();
 	});
 	restartItem->setColor(Color3B(0, 0, 0));

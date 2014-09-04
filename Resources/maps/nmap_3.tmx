@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="68">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="wood"/>
+   </properties>
+   <image width="68" height="68" source="woodenCrate_01.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="2" x="147" y="77" rotation="90"/>
+  <object gid="2" x="147" y="155" rotation="90"/>
+  <object gid="2" x="147" y="234" rotation="90"/>
+  <object gid="2" x="147" y="312" rotation="90"/>
+  <object gid="2" x="147" y="415" rotation="90"/>
+  <object gid="2" x="147" y="494" rotation="90"/>
+  <object gid="2" x="147" y="416"/>
+  <object gid="2" x="171" y="103"/>
+  <object gid="2" x="250" y="103"/>
+  <object gid="2" x="329" y="103"/>
+  <object gid="2" x="408" y="103"/>
+  <object gid="2" x="487" y="103"/>
+  <object gid="2" x="566" y="103"/>
+  <object gid="2" x="645" y="103"/>
+  <object gid="2" x="724" y="103"/>
+  <object gid="2" x="803" y="78" rotation="90"/>
+  <object gid="2" x="803" y="416" rotation="90"/>
+  <object gid="2" x="803" y="313" rotation="90"/>
+  <object gid="2" x="748" y="417"/>
+  <object gid="2" x="803" y="495" rotation="90"/>
+  <object gid="2" x="803" y="235" rotation="90"/>
+  <object gid="2" x="803" y="156" rotation="90"/>
+  <object gid="2" x="170" y="573"/>
+  <object gid="2" x="249" y="573"/>
+  <object gid="2" x="486" y="573"/>
+  <object gid="2" x="328" y="573"/>
+  <object gid="2" x="407" y="573"/>
+  <object gid="2" x="565" y="573"/>
+  <object gid="2" x="723" y="573"/>
+  <object gid="2" x="590" y="417"/>
+  <object gid="2" x="432" y="417"/>
+  <object gid="2" x="511" y="417"/>
+  <object gid="2" x="669" y="417"/>
+  <object gid="2" x="352" y="417"/>
+  <object gid="5" x="427" y="391"/>
+  <object gid="4" x="576" y="393"/>
+  <object gid="3" x="680" y="550"/>
+  <object gid="1" x="644" y="573"/>
+ </objectgroup>
+</map>

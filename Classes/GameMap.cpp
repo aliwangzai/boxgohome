@@ -3,6 +3,7 @@
 #include "BlueWall.h"
 #include "YellowWall.h"
 #include "WoodenCrate.h"
+#include "Enemy.h"
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
@@ -87,6 +88,11 @@ void GameMap::initObjects()
 		}else if (type == "hero")
 		{
 			this->m_heroValueMap = objProperties;
+		}
+		else if (type == "enemy_gray")
+		{
+			auto enemy_gray = Enemy::create(objProperties, gidProperties);
+			this->addChild(enemy_gray);
 		}
 		//auto yellowWall = YellowWall::create(yellowValues.at(i).asValueMap());
 		//this->addChild(yellowWall);

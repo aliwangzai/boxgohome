@@ -26,5 +26,22 @@
    <image width="45" height="45" source="hero/avatar_01.png"/>
   </tile>
  </tileset>
- <objectgroup name="game"/>
+ <objectgroup name="game">
+  <object gid="2" x="321.797" y="177.409" rotation="90"/>
+  <object gid="2" x="322" y="257" rotation="90"/>
+  <object gid="2" x="322" y="336" rotation="90"/>
+  <object gid="2" x="322" y="415" rotation="90"/>
+  <object gid="2" x="322" y="493" rotation="90"/>
+  <object gid="2" x="348" y="573"/>
+  <object gid="2" x="506" y="573"/>
+  <object gid="2" x="586" y="493" rotation="90"/>
+  <object gid="2" x="587" y="414" rotation="90"/>
+  <object gid="2" x="587" y="334" rotation="90"/>
+  <object gid="2" x="586" y="334"/>
+  <object gid="4" x="599" y="309"/>
+  <object gid="1" x="427" y="548"/>
+  <object gid="3" x="463" y="524"/>
+  <object gid="2" x="427" y="573"/>
+  <object gid="2" x="322" y="97" rotation="90"/>
+ </objectgroup>
 </map>

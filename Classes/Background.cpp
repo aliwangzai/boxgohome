@@ -13,9 +13,13 @@ Background::~Background()
 
 bool Background::init()
 {
-	auto bgSprite = Sprite::create("39.png");
+	Size visibleSize = Director::getInstance()->getVisibleSize();
+
+	auto bgSprite = Sprite::create("blue_land.png");
 	this->addChild(bgSprite);
 	bgSprite->setPosition(VisibleRect::center());
+	bgSprite->setScaleX(visibleSize.width / bgSprite->getContentSize().width);
+	bgSprite->setScaleY(visibleSize.height / bgSprite->getContentSize().height);
 
 	this->initCloud();
 
