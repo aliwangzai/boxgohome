@@ -9,9 +9,9 @@ public:
 	WoodenCrate();
 	~WoodenCrate();
 
-	bool init(const ValueMap &valueMap);
+	bool init(const ValueMap &valueMap , const ValueMap &valueMap2);
 
-	static WoodenCrate* create(const ValueMap &valueMap);
+	static WoodenCrate* create(const ValueMap &valueMap , const ValueMap &valueMap2);
 };
 
 #endif

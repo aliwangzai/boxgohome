@@ -9,11 +9,11 @@ public:
 	YellowWall();
 	~YellowWall();
 
-	bool init(const ValueMap &valueMap);
+	bool init(const ValueMap &valueMap, const ValueMap & gidProperties);;
 
 	void playFlagAnimate();
 
-	static YellowWall* create(const ValueMap &valueMap);
+	static YellowWall* create(const ValueMap &valueMap, const ValueMap & gidProperties);
 };
 
 #endif

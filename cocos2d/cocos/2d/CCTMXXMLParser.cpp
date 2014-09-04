@@ -307,6 +307,7 @@ void TMXMapInfo::startElement(void *ctx, const char *name, const char **atts)
             tmxMapInfo->getTilesets().pushBack(tileset);
             tileset->release();
         }
+		tmxMapInfo->setParentElement(TMXPropertyTileSet);
     }
     else if (elementName == "tile")
     {
@@ -384,10 +385,20 @@ void TMXMapInfo::startElement(void *ctx, const char *name, const char **atts)
         {
             string dir = _TMXFileName.substr(0, _TMXFileName.find_last_of("/") + 1);
             tileset->_sourceImage = dir + imagename;
+			if ( tmxMapInfo->getParentElement() == TMXPropertyTile ) 
+			{
+				ValueMap& dict = tmxMapInfo->getTileProperties().at(tmxMapInfo->getParentGID()).asValueMap();
+				dict["source"] = std::string(dir+imagename);
+			}
         }
         else 
         {
             tileset->_sourceImage = _resources + (_resources.size() ? "/" : "") + imagename;
+			if ( tmxMapInfo->getParentElement() == TMXPropertyTile ) 
+			{
+				ValueMap& dict = tmxMapInfo->getTileProperties().at(tmxMapInfo->getParentGID()).asValueMap();
+				dict["source"] = std::string(_resources + (_resources.size() ? "/" : "")+imagename);
+			}
         }
     } 
     else if (elementName == "data")

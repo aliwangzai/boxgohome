@@ -10,10 +10,10 @@ BlueWall::~BlueWall()
 {
 }
 
-BlueWall* BlueWall::create(const ValueMap &valueMap)
+BlueWall* BlueWall::create(const ValueMap &valueMap , const ValueMap &gidProperties)
 {
 	auto blueWall = new BlueWall();
-	if (blueWall && blueWall->init(valueMap))
+	if (blueWall && blueWall->init(valueMap , gidProperties))
 	{
 		blueWall->autorelease();
 		return blueWall;
@@ -21,10 +21,11 @@ BlueWall* BlueWall::create(const ValueMap &valueMap)
 	return nullptr;
 }
 
-bool BlueWall::init(const ValueMap &valueMap)
+bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 {
-	if (!Wall::initWithMap(valueMap)) return false;
-	std::string img = Utils::getWallByType(this->m_nType);
+	if (!Wall::initWithMap(valueMap )) return false;
+	//std::string img = Utils::getWallByType(this->m_nType);
+	std::string img = gidProperties.find("source")->second.asString();
 	if (!Wall::initWithFile(img)) return false;
 	if (this->m_rotation != 0.0f)
 	{

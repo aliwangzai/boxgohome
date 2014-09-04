@@ -49,55 +49,49 @@ bool GameMap::init()
 {
 	this->_map = experimental::TMXTiledMap::create(this->_szTmxFile);
 	this->addChild(this->_map, MAP_TAG);
-	this->initBlueBrick();
-	this->initYellowBrick();
-	this->initWoodenCrate();
-
+	this->initObjects();
 	return true;
 }
 
 ValueMap GameMap::getHeroValueMap()
 {
-	ValueMap boxValues = this->_map->getObjectGroup("hero")->getObject("hero");
-	return boxValues;
+	return m_heroValueMap;
 }
 
-bool GameMap::initYellowBrick()
+void GameMap::initObjects()
 {
-	ValueVector yellowValues = this->_map->getObjectGroup("yellow")->getObjects();
-	for (unsigned int i = 0; i < yellowValues.size(); i++)
+	ValueVector objects = this->_map->getObjectGroup("game")->getObjects();
+	for (unsigned int i = 0; i < objects.size(); i++)
 	{
-		auto yellowWall = YellowWall::create(yellowValues.at(i).asValueMap());
-		this->addChild(yellowWall);
-	}
-	return true;
-}
-
-bool GameMap::initBlueBrick()
-{
-	ValueVector blueValues = this->_map->getObjectGroup("blue")->getObjects();
-	for (unsigned int v = 0; v < blueValues.size(); v++)
-	{
-		BlueWall *wall = BlueWall::create(blueValues.at(v).asValueMap());
-		this->addChild(wall);
-	}
-	return true;
-}
-
-bool GameMap::initWoodenCrate()
-{
-	TMXObjectGroup *objectGroup = this->_map->getObjectGroup("wooden");
-	if (objectGroup != nullptr)
-	{
-		ValueVector woodenValues = objectGroup->getObjects();
-		for (unsigned int v = 0; v < woodenValues.size(); v++)
+		ValueMap objProperties = objects.at(i).asValueMap();
+		ValueMap gidProperties = this->_map->getPropertiesForGID(objProperties["gid"].asInt()).asValueMap();
+		std::string type = gidProperties["type"].asString();
+		if (type == "brick")
 		{
-			WoodenCrate *wooden = WoodenCrate::create(woodenValues.at(v).asValueMap());
+			BlueWall *wall = BlueWall::create(objProperties , gidProperties);
+			this->addChild(wall);
+		}else if (type == "target")
+		{
+			auto yellowWall = YellowWall::create(objProperties , gidProperties);
+			this->addChild(yellowWall);
+		}else if (type == "flag")
+		{
+			auto yellowWall = YellowWall::create(objProperties , gidProperties);
+			this->addChild(yellowWall);
+		}else if (type == "wood")
+		{
+			WoodenCrate *wooden = WoodenCrate::create(objProperties , gidProperties);
 			this->addChild(wooden);
+		}else if (type == "hero")
+		{
+			this->m_heroValueMap = objProperties;
 		}
+		//auto yellowWall = YellowWall::create(yellowValues.at(i).asValueMap());
+		//this->addChild(yellowWall);
 	}
-	return true;
 }
+
+
 
 void GameMap::loadDefaultData()
 {

@@ -68,7 +68,8 @@ enum {
     TMXPropertyLayer,
     TMXPropertyObjectGroup,
     TMXPropertyObject,
-    TMXPropertyTile
+    TMXPropertyTile,
+	TMXPropertyTileSet
 };
 
 typedef enum TMXTileFlags_ {

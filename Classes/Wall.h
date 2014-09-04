@@ -10,7 +10,7 @@ public:
 	Wall();
 	~Wall();
 
-	bool initWithMap(const ValueMap &valueMap);
+	bool initWithMap(const ValueMap &valueMap );
 
 	void setContactTestBitmask(int mask);
 	void setCategoryBitmask(int mask);

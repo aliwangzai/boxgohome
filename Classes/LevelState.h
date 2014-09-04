@@ -45,7 +45,7 @@ public:
 	std::string getMapName()
 	{
 		int level = getSelectedLevel();
-		return CCString::createWithFormat("maps/map_%d.tmx" , level)->getCString();
+		return CCString::createWithFormat("maps/nmap_%d.tmx" , level)->getCString();
 	}
 
 	~LevelState(){}

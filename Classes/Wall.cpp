@@ -18,7 +18,6 @@ bool Wall::initWithMap(const ValueMap &valueMap)
 	this->m_sName = valueMap.find("name")->second.asString();
 	this->m_rotation = valueMap.find("rotation")->second.asFloat();
 	this->m_initPos = Point(x, y);
-
 	return true;
 }
 

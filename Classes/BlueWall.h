@@ -9,9 +9,9 @@ public:
 	BlueWall();
 	~BlueWall();
 
-	bool init(const ValueMap &valueMap);
+	bool init(const ValueMap &valueMap,const ValueMap &valueMap2);
 
-	static BlueWall* create(const ValueMap &valueMap);
+	static BlueWall* create(const ValueMap &valueMap , const ValueMap &valueMap2);
 };
 
 #endif

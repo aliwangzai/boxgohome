@@ -13,6 +13,8 @@ public:
 
 	bool init();
 	bool initWithTmxFile(std::string &szTmxFile);
+
+	void initObjects();
 	bool initBlueBrick();
 	bool initYellowBrick();
 	bool initWoodenCrate();
@@ -24,10 +26,11 @@ public:
 	static GameMap* createWithFile(std::string &szTmxFile);
 
 	CREATE_FUNC(GameMap);
-
+	
 private:
 	std::string		_szTmxFile;
 	experimental::TMXTiledMap	*_map;
+	ValueMap m_heroValueMap;
 };
 
 #endif

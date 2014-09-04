@@ -10,10 +10,10 @@ YellowWall::~YellowWall()
 {
 }
 
-YellowWall* YellowWall::create(const ValueMap &valueMap)
+YellowWall* YellowWall::create(const ValueMap &valueMap, const ValueMap & gidProperties)
 {
 	auto blueWall = new YellowWall();
-	if (blueWall && blueWall->init(valueMap))
+	if (blueWall && blueWall->init(valueMap , gidProperties))
 	{
 		blueWall->autorelease();
 		return blueWall;
@@ -21,24 +21,26 @@ YellowWall* YellowWall::create(const ValueMap &valueMap)
 	return nullptr;
 }
 
-bool YellowWall::init(const ValueMap &valueMap)
+bool YellowWall::init( const ValueMap &valueMap, const ValueMap & gidProperties )
 {
-	if (!Wall::initWithMap(valueMap)) return false;
-	std::string img = Utils::getWallByType(this->m_nType);
+	if (!Wall::initWithMap(valueMap )) return false;
+	//std::string img = Utils::getWallByType(this->m_nType);
+	std::string img = gidProperties.find("source")->second.asString();
 	if (!Wall::initWithFile(img)) return false;
 	this->setPosition(this->m_initPos + this->getContentSize() / 2);
-	if (this->m_nType == 3)
+	std::string type = gidProperties.find("type")->second.asString();
+	if (type == "target")
 	{
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.2f, 1.0f), 0));
 		this->setContactTestBitmask(0x0001);
 	}
-	else if (this->m_nType == 4)
+	else if (type == "flag")
 	{
 		this->playFlagAnimate();
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize()));
 		this->setContactTestBitmask(0x0002);
 	}
-	this->getPhysicsBody()->setTag(m_nType);
+	this->getPhysicsBody()->setTag(4);
 	return true;
 }
 
