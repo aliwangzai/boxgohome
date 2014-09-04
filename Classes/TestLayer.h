@@ -14,7 +14,7 @@ public:
 
 	bool init();
 
-	CREATE_FUNC(TestLayer);
+	CREATE_FUNC(TestLayer);  
 };
 
 #endif

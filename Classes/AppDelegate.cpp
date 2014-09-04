@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "GameWorld.h"
 #include "Welcome.h"
+#include "TestLayer.h"
 #include "C2DXShareSDK\C2DXShareSDK.h"
 using namespace cn::sharesdk;
 
@@ -53,7 +54,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = Welcome::createScene();
+	auto scene = Welcome::createScene();
+
+	//auto scene = TestLayer::createScene();
 
     // run
     director->runWithScene(scene);
@@ -79,11 +82,5 @@ void AppDelegate::applicationWillEnterForeground() {
 
 void AppDelegate::initShareSDK()
 {
-	C2DXShareSDK::open(CCString::create("api20"), false);
-
-	CCDictionary *sinaConfigDict = CCDictionary::create();
-	sinaConfigDict->setObject(CCString::create("568898243"), "app_key");
-	sinaConfigDict->setObject(CCString::create("38a4f8204cc784f81f9f0daaf31e02e3"), "app_secret");
-	sinaConfigDict->setObject(CCString::create("http://www.sharesdk.cn"), "redirect_uri");
-	C2DXShareSDK::setPlatformConfig(C2DXPlatTypeSinaWeibo, sinaConfigDict);
+	C2DXShareSDK::open(CCString::create("2f5d7a211988"), true);
 }
