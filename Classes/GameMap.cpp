@@ -4,6 +4,7 @@
 #include "YellowWall.h"
 #include "WoodenCrate.h"
 #include "Enemy.h"
+#include "JumpsItem.h"
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
@@ -69,7 +70,6 @@ void GameMap::initObjects()
 		ValueMap objProperties = objects.at(i).asValueMap();
 		ValueMap gidProperties = this->_map->getPropertiesForGID(objProperties["gid"].asInt()).asValueMap();
 		std::string type = gidProperties["type"].asString();
-		CCLOG("%s", type.c_str());
 		if (type == "brick")
 		{
 			BlueWall *wall = BlueWall::create(objProperties , gidProperties);
@@ -94,6 +94,11 @@ void GameMap::initObjects()
 		{
 			auto enemy_gray = Enemy::create(objProperties, gidProperties);
 			this->addChild(enemy_gray);
+		}
+		else if (type == "jumps_item")
+		{
+			auto jumpsItem = JumpsItem::create(objProperties, gidProperties);
+			this->addChild(jumpsItem);
 		}
 		//auto yellowWall = YellowWall::create(yellowValues.at(i).asValueMap());
 		//this->addChild(yellowWall);

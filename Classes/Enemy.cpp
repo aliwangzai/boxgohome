@@ -36,7 +36,7 @@ bool Enemy::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 		this->getPhysicsBody()->setContactTestBitmask(0x0001);
 
 	
-	float delayTime = CCRANDOM_0_1() * 2;
+	float delayTime = CCRANDOM_0_1() * 1.5;
 	this->schedule(schedule_selector(Enemy::updateVelocity), delayTime);
 
 	return true;
@@ -49,4 +49,10 @@ void Enemy::updateVelocity(float dt)
 	this->unschedule(schedule_selector(Enemy::updateVelocity));
 	this->schedule(schedule_selector(Enemy::updateVelocity), delayTime);
 	this->getPhysicsBody()->setVelocity(Vec2(0, distance));
+}
+
+void Enemy::onExit()
+{
+	Wall::onExit();
+	this->unschedule(schedule_selector(Enemy::updateVelocity));
 }

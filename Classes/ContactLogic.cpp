@@ -87,7 +87,6 @@ void ContactLogic::update(float dt)
 
 	if (this->m_bIsWin)
 	{
-		CCLOG("call gameworld win() function");
 		this->m_pGameWorld->win();
 		this->unscheduleUpdate();
 	}

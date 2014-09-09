@@ -15,6 +15,8 @@ public:
 
 	void updateVelocity(float dt);
 
+	void onExit();
+
 private:
 };
 
