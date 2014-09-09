@@ -150,6 +150,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameUI.cpp" />
     <ClCompile Include="..\Classes\GameWorld.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\JumpsItem.cpp" />
     <ClCompile Include="..\Classes\LevelComplete.cpp" />
     <ClCompile Include="..\Classes\LevelCompleteLoss.cpp" />
     <ClCompile Include="..\Classes\LevelSelector.cpp" />
@@ -182,6 +183,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameUI.h" />
     <ClInclude Include="..\Classes\GameWorld.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\JumpsItem.h" />
     <ClInclude Include="..\Classes\LevelComplete.h" />
     <ClInclude Include="..\Classes\LevelCompleteLoss.h" />
     <ClInclude Include="..\Classes\LevelState.h" />
