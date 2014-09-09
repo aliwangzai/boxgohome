@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="1500"
+   height="2100"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -53,7 +53,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#81c9f9;fill-opacity:1;stroke:none"
+       style="fill:#FFFFFF;fill-opacity:1;stroke:none"
        id="rect3352"
        width="490.93414"
        height="406.0813"

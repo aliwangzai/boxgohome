@@ -28,8 +28,9 @@ public:
 
 	int  getCurrentLevel()
 	{
-		int level = CCUserDefault::getInstance()->getIntegerForKey("User.Level" , 1);
-		return level;
+		//int level = CCUserDefault::getInstance()->getIntegerForKey("User.Level" , 1);
+		//return level;
+		return 30;
 	}
 
 	void setSelectedLevel(int level)

@@ -7,7 +7,7 @@
 class BrokableWall : public  BaseEntity
 {
 private :
-	int brokenLevel;
+	int m_durability;
 
 public:
 	BrokableWall();
@@ -16,6 +16,10 @@ public:
 	static BrokableWall* create(const ValueMap &valueMap , const ValueMap &gidProperties);
 
 	bool init(const ValueMap &valueMap , const ValueMap &gidProperties);
+
+	virtual bool contactLogicBegin( PhysicsContact &contact, ContactLogic *logic );
+
+	virtual void contactLogicSeperate( PhysicsContact &contact, ContactLogic *logic );
 
 };
 

@@ -8,7 +8,7 @@
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
-#include "BrokenWall.h"
+#include "BrokableWall.h"
 
 #define MAP_TAG 10
 
@@ -95,10 +95,10 @@ void GameMap::initObjects()
 		{
 			auto enemy_gray = Enemy::create(objProperties, gidProperties);
 			this->addChild(enemy_gray);
-		}else if (type == "broken_wall")
+		}else if (type == "brokable")
 		{
-			auto broken_wall = BrokenWall::create(objProperties,gidProperties);
-			addChild(broken_wall);
+			auto brokable_wall = BrokableWall::create(objProperties,gidProperties);
+			addChild(brokable_wall);
 		}
 		else if (type == "jumps_item")
 		{
