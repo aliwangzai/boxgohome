@@ -69,6 +69,7 @@ void GameMap::initObjects()
 		ValueMap objProperties = objects.at(i).asValueMap();
 		ValueMap gidProperties = this->_map->getPropertiesForGID(objProperties["gid"].asInt()).asValueMap();
 		std::string type = gidProperties["type"].asString();
+		CCLOG("%s", type.c_str());
 		if (type == "brick")
 		{
 			BlueWall *wall = BlueWall::create(objProperties , gidProperties);
@@ -89,7 +90,7 @@ void GameMap::initObjects()
 		{
 			this->m_heroValueMap = objProperties;
 		}
-		else if (type == "enemy_gray")
+		else if (type == "enemy_gray" || type == "enemy_purple")
 		{
 			auto enemy_gray = Enemy::create(objProperties, gidProperties);
 			this->addChild(enemy_gray);

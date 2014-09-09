@@ -12,6 +12,10 @@ public:
 	static Enemy* create(const ValueMap &valueMap, const ValueMap &gidProperties);
 
 	bool init(const ValueMap &valueMap, const ValueMap &gidProperties);
+
+	void updateVelocity(float dt);
+
+private:
 };
 
 #endif

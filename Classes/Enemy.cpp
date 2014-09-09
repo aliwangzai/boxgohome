@@ -27,24 +27,26 @@ bool Enemy::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 	if (!Wall::initWithMap(valueMap)) return false;
 	std::string img = gidProperties.find("source")->second.asString();
 	if (!Wall::initWithFile(img)) return false;
-
+	std::string type = gidProperties.find("type")->second.asString();
 	this->setPosition(m_initPos + this->getContentSize() / 2);
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.0f, 0.4f, 1.0f)));
 	this->m_wallType = wallType_Enemy;
 	this->getPhysicsBody()->setTag(this->m_wallType);
-	this->getPhysicsBody()->setContactTestBitmask(0x0001);
+	if (type == "enemy_gray")
+		this->getPhysicsBody()->setContactTestBitmask(0x0001);
 
-	//this->scheduleUpdate();
-	static float distance = 350.0f;
-	auto seqAction = Sequence::create(
-		CallFunc::create([=](){
-			this->getPhysicsBody()->setVelocity(Vec2(0, distance));
-			distance = CCRANDOM_0_1() * 50 + 300;
-		}),
-		DelayTime::create(4.0f),
-		nullptr
-		);
-	this->runAction(RepeatForever::create(seqAction));
+	
+	float delayTime = CCRANDOM_0_1() * 2;
+	this->schedule(schedule_selector(Enemy::updateVelocity), delayTime);
 
 	return true;
+}
+
+void Enemy::updateVelocity(float dt)
+{
+	float distance = CCRANDOM_0_1() * 200 + 150;
+	float delayTime = distance / 100;
+	this->unschedule(schedule_selector(Enemy::updateVelocity));
+	this->schedule(schedule_selector(Enemy::updateVelocity), delayTime);
+	this->getPhysicsBody()->setVelocity(Vec2(0, distance));
 }
