@@ -1,9 +1,9 @@
 #ifndef __BLUEWALL_H__
 #define __BLUEWALL_H__
 
-#include "Wall.h"
+#include "BaseEntity.h"
 
-class BlueWall: public Wall
+class BlueWall : public BaseEntity
 {
 public:
 	BlueWall();
@@ -12,6 +12,7 @@ public:
 	bool init(const ValueMap &valueMap,const ValueMap &valueMap2);
 
 	static BlueWall* create(const ValueMap &valueMap , const ValueMap &valueMap2);
+
 };
 
 #endif

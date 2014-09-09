@@ -1,5 +1,6 @@
 #include "YellowWall.h"
 #include "Utils.h"
+#include "ContactLogic.h"
 
 YellowWall::YellowWall()
 {
@@ -23,26 +24,24 @@ YellowWall* YellowWall::create(const ValueMap &valueMap, const ValueMap & gidPro
 
 bool YellowWall::init( const ValueMap &valueMap, const ValueMap & gidProperties )
 {
-	if (!Wall::initWithMap(valueMap )) return false;
+	if (!BaseEntity::initWithMap(valueMap)) return false;
 	//std::string img = Utils::getWallByType(this->m_nType);
 	std::string img = gidProperties.find("source")->second.asString();
-	if (!Wall::initWithFile(img)) return false;
-	this->setPosition(this->m_initPos + this->getContentSize() / 2);
+	if (!BaseEntity::initWithFile(img)) return false;
+	setPositionAndRotation();
 	std::string type = gidProperties.find("type")->second.asString();
 	if (type == "target")
 	{
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.2f, 1.0f), 0));
 		this->setContactTestBitmask(0x0001);
-		this->m_wallType = wallType_Yellow;
-		this->getPhysicsBody()->setTag(this->m_wallType);
+		setEntityType(Type_Yellow);
 	}
 	else if (type == "flag")
 	{
 		this->playFlagAnimate();
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize()));
 		this->setContactTestBitmask(0x0002);
-		this->m_wallType = wallType_Flag;
-		this->getPhysicsBody()->setTag(this->m_wallType);
+		setEntityType(Type_Flag);
 	}
 	
 	return true;
@@ -61,4 +60,18 @@ void YellowWall::playFlagAnimate()
 	auto animation = Animation::createWithSpriteFrames(frames, 0.1f);
 	auto animate = Animate::create(animation);
 	this->runAction(RepeatForever::create(animate));
+}
+
+bool YellowWall::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
+{
+	if (this->m_entityType == Type_Flag)
+	{
+		logic->setWinState(true);
+		return false;
+	}
+	return true;
+}
+void YellowWall::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic)
+{
+
 }

@@ -103,25 +103,51 @@ bool GameUI::initMenu()
 
 bool GameUI::initScoreUI()
 {
-	this->m_pLevelLabel = Label::createWithBMFont("fonts/fonts.fnt", "Level:1");
-	m_pLevelLabel->setAnchorPoint(Point(0, 1));
+	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 25);
+	//--------------------------------------level-----------------------------------
+	auto levelNameLabel = Label::createWithTTF(ttfConfig, "Level:");
+	this->addChild(levelNameLabel);
+	levelNameLabel->setPosition(VisibleRect::leftTop() + Point(50, -30));
+	levelNameLabel->setColor(Color3B(0, 0, 0));
+
+	m_pLevelLabel = Label::createWithTTF(ttfConfig, "");
 	this->addChild(m_pLevelLabel);
-	m_pLevelLabel->setPosition(VisibleRect::leftTop() + Point(20, -10));
+	m_pLevelLabel->setPosition(VisibleRect::leftTop() + Point(85, -30));
+	m_pLevelLabel->setColor(Color3B(0, 0, 0));
 
-	this->m_pScoreLabel = Label::createWithBMFont("fonts/fonts.fnt", "Score:1");
-	m_pScoreLabel->setAnchorPoint(Point(0, 1));
+	//--------------------------------------score-----------------------------------
+	auto scoreNameLabel = Label::createWithTTF(ttfConfig, "Score:");
+	this->addChild(scoreNameLabel);
+	scoreNameLabel->setPosition(VisibleRect::leftTop() + Point(150, -30));
+	scoreNameLabel->setColor(Color3B(0, 0, 0));
+
+	m_pScoreLabel = Label::createWithTTF(ttfConfig, "1");
 	this->addChild(m_pScoreLabel);
-	m_pScoreLabel->setPosition(VisibleRect::leftTop() + Point(120, -10));
+	m_pScoreLabel->setPosition(VisibleRect::leftTop() + Point(215, -30));
+	m_pScoreLabel->setColor(Color3B(0, 0, 0));
 
-	this->m_pBonusLabel = Label::createWithBMFont("fonts/fonts.fnt", "Bonus:5");
-	m_pBonusLabel->setAnchorPoint(Point(0, 1));
+
+	//--------------------------------------bonus-----------------------------------
+	auto bonusNameLabel = Label::createWithTTF(ttfConfig, "Bonus:");
+	this->addChild(bonusNameLabel);
+	bonusNameLabel->setPosition(VisibleRect::leftTop() + Point(305, -30));
+	bonusNameLabel->setColor(Color3B(0, 0, 0));
+
+	m_pBonusLabel = Label::createWithTTF(ttfConfig, "1");
 	this->addChild(m_pBonusLabel);
-	m_pBonusLabel->setPosition(VisibleRect::leftTop() + Point(300, -10));
+	m_pBonusLabel->setPosition(VisibleRect::leftTop() + Point(365, -30));
+	m_pBonusLabel->setColor(Color3B(0, 0, 0));
 
-	this->m_pJumpsLabel = Label::createWithBMFont("fonts/fonts.fnt", "Jumps:5");
-	m_pJumpsLabel->setAnchorPoint(Point(0, 1));
+	//--------------------------------------jumps-----------------------------------
+	auto jumpsNameLabel = Label::createWithTTF(ttfConfig, "Jumps:");
+	this->addChild(jumpsNameLabel);
+	jumpsNameLabel->setPosition(VisibleRect::leftTop() + Point(500, -30));
+	jumpsNameLabel->setColor(Color3B(0, 0, 0));
+
+	m_pJumpsLabel = Label::createWithTTF(ttfConfig, "5");
 	this->addChild(m_pJumpsLabel);
-	m_pJumpsLabel->setPosition(VisibleRect::leftTop() + Point(470, -10));
+	m_pJumpsLabel->setPosition(VisibleRect::leftTop() + Point(545, -30));
+	m_pJumpsLabel->setColor(Color3B(0, 0, 0));
 	return true;
 }
 
@@ -130,32 +156,41 @@ void GameUI::setDefaultValue()
 	this->unscheduleUpdate();
 	this->setLevel(LevelState::getInstance()->getSelectedLevel());
 	this->setScore(getOldScore());
-	this->setBonus(9000);
-	this->setJumps(5);
+	this->setBonus(6000);
+	this->setJumps(3);
 	this->scheduleUpdate();
 }
 
 void GameUI::setLevel(int level)
 {
 	this->m_nLevel = level;
-	m_pLevelLabel->setString("Level: " + std::to_string(level));
+	m_pLevelLabel->setString(std::to_string(level));
 }
 
 void GameUI::setScore(int score)
 {
 	this->m_nScore = score;
-	m_pScoreLabel->setString("Score: " + std::to_string(score));
+	m_pScoreLabel->setString(std::to_string(score));
 }
 void GameUI::setBonus(int bonus)
 {
 	this->m_nBonus = bonus;
-	m_pBonusLabel->setString("Bonus: " + std::to_string(bonus));
+	m_pBonusLabel->setString(std::to_string(bonus));
 }
 
-void GameUI::setJumps(int jumps)
+void GameUI::setJumps(int jumps, bool isShowAni)
 {
 	this->m_nJump = jumps;
-	m_pJumpsLabel->setString("Jumps: " + std::to_string(jumps));
+	m_pJumpsLabel->setString(std::to_string(jumps));
+	if (isShowAni)
+	{
+		auto seqAction = Sequence::create(
+			ScaleTo::create(0.2f, 1.4f),
+			ScaleTo::create(0.2f, 1.0f),
+			nullptr
+			);
+		m_pJumpsLabel->runAction(seqAction);
+	}
 }
 
 void GameUI::update(float dt)
@@ -203,5 +238,11 @@ void GameUI::setNewScore(int newScore)
 	char buffer[128];
 	sprintf(buffer, "user_score_%d", m_nLevel + 1);
 	UserDefault::getInstance()->setIntegerForKey(buffer, newScore);
+}
+
+void GameUI::addJumps(int count)
+{
+	this->m_nJump += this->m_nJump + count;
+	this->setJumps(this->m_nJump, true);
 }
 
