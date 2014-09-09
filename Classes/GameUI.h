@@ -28,9 +28,10 @@ public:
 	void setLevel(int level);
 	void setScore(int score);
 	void setBonus(int bonus);
-	void setJumps(int jumps);
+	void setJumps(int jumps, bool isShowAni = false);
 
 	bool jumpsSelfSub();
+	void addJumps(int count);
 
 	int getJumpCount() const { return this->m_nJump; }
 	int getLevel() const { return this->m_nLevel; }

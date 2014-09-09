@@ -91,7 +91,7 @@ void PlayGameMenu::update(float dt)
 		float y = (CCRANDOM_0_1() - 0.5) * 2;
 		this->m_pBoxSprite->getPhysicsBody()->applyImpulse(Vec2(x, y) * 50);
 	}
-	if (this->m_pBoxSprite->getPositionY() < this->m_pBoxSprite->getContentSize().height / 2)
+	if (this->m_pBoxSprite->getPositionY() < -this->m_pBoxSprite->getContentSize().height / 2)
 	{
 		float x = CCRANDOM_0_1() * Utils::getWinSize().width / 2 + Utils::getWinSize().width / 2;
 		this->m_pBoxSprite->setPosition(x - m_pBoxSprite->getContentSize().width / 2, Utils::getWinSize().height + 

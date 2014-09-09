@@ -1,5 +1,7 @@
 #include "JumpsItem.h"
-
+#include "ContactLogic.h"
+#include "GameWorld.h"
+#include "GameUI.h"
 
 JumpsItem::JumpsItem()
 {
@@ -36,6 +38,7 @@ bool JumpsItem::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 
 bool JumpsItem::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 {
+	logic->getGameWorld()->getGameUI()->addJumps(3);
 	this->removeFromParent();
 	return false;
 }

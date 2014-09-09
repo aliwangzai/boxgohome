@@ -26,6 +26,8 @@ public:
 	void setWinState(bool isWin){ this->m_bIsWin = isWin; }
 	void setLoseState(bool isLose){ this->m_bIsLose = isLose; }
 
+	GameWorld* getGameWorld() const { return m_pGameWorld; }
+
 private:
 	GameWorld		*m_pGameWorld;
 	bool				m_bIsWin;
