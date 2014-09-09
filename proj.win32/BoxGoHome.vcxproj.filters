@@ -72,9 +72,6 @@
     <ClCompile Include="..\Classes\GameWorld.cpp">
       <Filter>Classes\layer</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Wall.cpp">
-      <Filter>Classes\wall</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Utils.cpp">
       <Filter>Classes\utils</Filter>
     </ClCompile>
@@ -115,6 +112,10 @@
       <Filter>Classes\wall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\BrokableWall.cpp">
+      <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JumpsItem.cpp" />
+    <ClCompile Include="..\Classes\BaseEntity.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
   </ItemGroup>
@@ -161,9 +162,6 @@
     <ClInclude Include="..\Classes\GameWorld.h">
       <Filter>Classes\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Wall.h">
-      <Filter>Classes\wall</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Utils.h">
       <Filter>Classes\utils</Filter>
     </ClInclude>
@@ -208,6 +206,10 @@
       <Filter>Classes\wall</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\BrokableWall.h">
+      <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JumpsItem.h" />
+    <ClInclude Include="..\Classes\BaseEntity.h">
       <Filter>Classes\wall</Filter>
     </ClInclude>
   </ItemGroup>

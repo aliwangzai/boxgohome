@@ -1,26 +1,20 @@
-#ifndef __ENEMY_H__
-#define __ENEMY_H__
+#ifndef __JUMPSITEM_H__
+#define __JUMPSITEM_H__
 
 #include "BaseEntity.h"
 
-class Enemy : public BaseEntity
+class JumpsItem : public BaseEntity
 {
 public:
-	Enemy();
-	~Enemy();
+	JumpsItem();
+	~JumpsItem();
 
-	static Enemy* create(const ValueMap &valueMap, const ValueMap &gidProperties);
+	static JumpsItem* create(const ValueMap &valueMap, const ValueMap &gidProperties);
 
 	bool init(const ValueMap &valueMap, const ValueMap &gidProperties);
 
-	void updateVelocity(float dt);
-
-	void onExit();
-
 	bool contactLogicBegin(PhysicsContact &contact, ContactLogic *logic);
 	void contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic);
-
-private:
 };
 
 #endif

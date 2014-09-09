@@ -5,6 +5,7 @@
 #include "GameWorld.h"
 #include "PlayGameMenu.h"
 #include "LevelSelector.h"
+#include "Welcome.h"
 
 MenuLayer::MenuLayer()
 :m_pCurrentNode(nullptr)
@@ -166,7 +167,13 @@ bool MenuLayer::initWithMenu()
 		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 	});
 	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto menu = Menu::create(playItem, highScoreItem, instructionItem, tutorialItem, walkthroughItem, moreGameItem, nullptr);
+	auto backLabel = Label::createWithTTF(ttfConfig, "Back");
+	auto backItem = MenuItemLabel::create(backLabel, [=](Ref *pSender){
+		Director::getInstance()->replaceScene(Welcome::createScene());
+	});
+	backItem->setColor(Color3B(0, 0, 0));
+	auto menu = Menu::create(playItem, highScoreItem, instructionItem, 
+		tutorialItem, walkthroughItem, moreGameItem, backItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(20);
 	menu->setPosition(VisibleRect::left() + Point(150, 0));

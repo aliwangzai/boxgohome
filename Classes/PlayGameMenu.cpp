@@ -3,6 +3,7 @@
 #include "VisibleRect.h"
 #include "BoxSprite.h"
 #include "Utils.h"
+#include "BaseEntity.h"
 
 PlayGameMenu::PlayGameMenu()
 :m_pBoxSprite(nullptr),
@@ -58,7 +59,7 @@ bool PlayGameMenu::onContactBegin(PhysicsContact& contact)
 {
 	PhysicsBody *bodyA = contact.getShapeA()->getBody();
 	PhysicsBody *bodyB = contact.getShapeB()->getBody();
-	if (bodyA->getTag() != 4 && bodyB->getTag() != 4)
+	if (bodyA->getTag() != Type_Flag && bodyB->getTag() != Type_Flag)
 	{
 		return true;
 	}
@@ -78,19 +79,18 @@ void PlayGameMenu::onContactPostSolve(PhysicsContact& contact, const PhysicsCont
 
 void PlayGameMenu::onContactSeperate(PhysicsContact& contact)
 {
-	PhysicsBody* bodyB = contact.getShapeB()->getBody();
-	float length = bodyB->getVelocity().getLength();
-	if (length > 0 && length < 15)
-	{
-		float x = (CCRANDOM_0_1() - 0.5) * 2;
-		float y = (CCRANDOM_0_1() - 0.5) * 2;
-		bodyB->applyImpulse(Vec2(x, y) * 500);
-		CCLOG("boxsprite auto move");
-	}
+	
 }
 
 void PlayGameMenu::update(float dt)
 {
+	float length = this->m_pBoxSprite->getPhysicsBody()->getVelocity().getLengthSq();
+	if (length <= 15 * 15)
+	{
+		float x = (CCRANDOM_0_1() - 0.5) * 2;
+		float y = (CCRANDOM_0_1() - 0.5) * 2;
+		this->m_pBoxSprite->getPhysicsBody()->applyImpulse(Vec2(x, y) * 50);
+	}
 	if (this->m_pBoxSprite->getPositionY() < this->m_pBoxSprite->getContentSize().height / 2)
 	{
 		float x = CCRANDOM_0_1() * Utils::getWinSize().width / 2 + Utils::getWinSize().width / 2;

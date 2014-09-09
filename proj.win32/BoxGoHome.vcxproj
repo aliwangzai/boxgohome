@@ -138,6 +138,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\ArrowSprite.cpp" />
     <ClCompile Include="..\Classes\Background.cpp" />
+    <ClCompile Include="..\Classes\BaseEntity.cpp" />
     <ClCompile Include="..\Classes\BlueWall.cpp" />
     <ClCompile Include="..\Classes\BoxSprite.cpp" />
     <ClCompile Include="..\Classes\BrokableWall.cpp" />
@@ -151,6 +152,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameUI.cpp" />
     <ClCompile Include="..\Classes\GameWorld.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\JumpsItem.cpp" />
     <ClCompile Include="..\Classes\LevelComplete.cpp" />
     <ClCompile Include="..\Classes\LevelCompleteLoss.cpp" />
     <ClCompile Include="..\Classes\LevelSelector.cpp" />
@@ -160,7 +162,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\TestLayer.cpp" />
     <ClCompile Include="..\Classes\Utils.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
-    <ClCompile Include="..\Classes\Wall.cpp" />
     <ClCompile Include="..\Classes\Welcome.cpp" />
     <ClCompile Include="..\Classes\WoodenCrate.cpp" />
     <ClCompile Include="..\Classes\BrokenWall.cpp" />
@@ -171,6 +172,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\ArrowSprite.h" />
     <ClInclude Include="..\Classes\Background.h" />
+    <ClInclude Include="..\Classes\BaseEntity.h" />
     <ClInclude Include="..\Classes\BlueWall.h" />
     <ClInclude Include="..\Classes\BoxSprite.h" />
     <ClInclude Include="..\Classes\BrokableWall.h" />
@@ -185,6 +187,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\GameUI.h" />
     <ClInclude Include="..\Classes\GameWorld.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\JumpsItem.h" />
     <ClInclude Include="..\Classes\LevelComplete.h" />
     <ClInclude Include="..\Classes\LevelCompleteLoss.h" />
     <ClInclude Include="..\Classes\LevelState.h" />
@@ -195,7 +198,6 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\TestLayer.h" />
     <ClInclude Include="..\Classes\Utils.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />
-    <ClInclude Include="..\Classes\Wall.h" />
     <ClInclude Include="..\Classes\Welcome.h" />
     <ClInclude Include="..\Classes\WoodenCrate.h" />
     <ClInclude Include="..\Classes\BrokenWall.h" />

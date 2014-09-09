@@ -1,15 +1,15 @@
-#include "Wall.h"
+#include "BaseEntity.h"
 
 
-Wall::Wall()
+BaseEntity::BaseEntity()
 {
 }
 
-Wall::~Wall()
+BaseEntity::~BaseEntity()
 {
 }
 
-bool Wall::initWithMap(const ValueMap &valueMap)
+bool BaseEntity::initWithMap(const ValueMap &valueMap)
 {
 	float x = valueMap.find("x")->second.asFloat();
 	float y = valueMap.find("y")->second.asFloat();
@@ -22,7 +22,7 @@ bool Wall::initWithMap(const ValueMap &valueMap)
 }
 
 
-void Wall::setPositionAndRotation()
+void BaseEntity::setPositionAndRotation()
 {
 	if (this->m_rotation != 0.0f)
 	{
@@ -45,23 +45,24 @@ void Wall::setPositionAndRotation()
 	}
 }
 
-void Wall::setWallType(WallType type)
+void BaseEntity::setEntityType(EntityType type)
 {
-	this->m_wallType = type;
-	this->getPhysicsBody()->setTag(this->m_wallType);
+	this->m_entityType = type;
+	this->getPhysicsBody()->setTag(this->m_entityType);
 }
 
-void Wall::setCollisionBitmask(int mask)
+void BaseEntity::setCollisionBitmask(int mask)
 {
 	this->getPhysicsBody()->setCollisionBitmask(mask);
 }
 
-void Wall::setContactTestBitmask(int mask)
+void BaseEntity::setContactTestBitmask(int mask)
 {
 	this->getPhysicsBody()->setContactTestBitmask(mask);
 }
 
-void Wall::setCategoryBitmask(int mask)
+void BaseEntity::setCategoryBitmask(int mask)
 {
 	this->getPhysicsBody()->setCategoryBitmask(mask);
 }
+ 

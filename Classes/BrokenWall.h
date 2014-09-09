@@ -1,10 +1,10 @@
 #ifndef BrokenWall_h__
 #define BrokenWall_h__
-#include "Wall.h"
+#include "BaseEntity.h"
 
 
 
-class BrokenWall : public  Wall
+class BrokenWall : public  BaseEntity
 {
 public:
 	BrokenWall();

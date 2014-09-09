@@ -3,10 +3,11 @@
 
 #include "cocos2d.h"
 #include "chipmunk.h"
+#include "BaseEntity.h"
 USING_NS_CC;
 
 class GameWorld;
-class BoxSprite : public Sprite
+class BoxSprite : public BaseEntity
 {
 public:
 	CREATE_FUNC(BoxSprite);

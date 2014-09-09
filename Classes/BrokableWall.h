@@ -1,10 +1,10 @@
 #ifndef BrokableWall_h
 #define BrokableWall_h
-#include "Wall.h"
+#include "BaseEntity.h"
 
 
 
-class BrokableWall : public  Wall
+class BrokableWall : public  BaseEntity
 {
 private :
 	int brokenLevel;

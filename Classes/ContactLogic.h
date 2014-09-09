@@ -23,6 +23,9 @@ public:
 
 	void update(float dt);
 
+	void setWinState(bool isWin){ this->m_bIsWin = isWin; }
+	void setLoseState(bool isLose){ this->m_bIsLose = isLose; }
+
 private:
 	GameWorld		*m_pGameWorld;
 	bool				m_bIsWin;

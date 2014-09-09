@@ -1,9 +1,9 @@
 #ifndef __WOODENCRATE_H__
 #define __WOODENCRATE_H__
 
-#include "Wall.h"
+#include "BaseEntity.h"
 
-class WoodenCrate: public Wall
+class WoodenCrate : public BaseEntity
 {
 public:
 	WoodenCrate();

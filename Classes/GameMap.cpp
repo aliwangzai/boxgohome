@@ -4,6 +4,7 @@
 #include "YellowWall.h"
 #include "WoodenCrate.h"
 #include "Enemy.h"
+#include "JumpsItem.h"
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
@@ -90,7 +91,7 @@ void GameMap::initObjects()
 		{
 			this->m_heroValueMap = objProperties;
 		}
-		else if (type == "enemy_gray")
+		else if (type == "enemy_gray" || type == "enemy_purple")
 		{
 			auto enemy_gray = Enemy::create(objProperties, gidProperties);
 			this->addChild(enemy_gray);
@@ -99,6 +100,13 @@ void GameMap::initObjects()
 			auto broken_wall = BrokenWall::create(objProperties,gidProperties);
 			addChild(broken_wall);
 		}
+		else if (type == "jumps_item")
+		{
+			auto jumpsItem = JumpsItem::create(objProperties, gidProperties);
+			this->addChild(jumpsItem);
+		}
+		//auto yellowWall = YellowWall::create(yellowValues.at(i).asValueMap());
+		//this->addChild(yellowWall);
 	}
 }
 
