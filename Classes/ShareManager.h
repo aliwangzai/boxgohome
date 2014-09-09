@@ -2,7 +2,7 @@
 #define __SHAREMANAGER_H__
 
 #include "cocos2d.h"
-#include "C2DXShareSDK\C2DXShareSDK.h"
+#include "C2DXShareSDK.h"
 USING_NS_CC;
 using namespace cn::sharesdk;
 

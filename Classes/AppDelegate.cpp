@@ -2,7 +2,7 @@
 #include "GameWorld.h"
 #include "Welcome.h"
 #include "TestLayer.h"
-#include "C2DXShareSDK\C2DXShareSDK.h"
+#include "C2DXShareSDK.h"
 using namespace cn::sharesdk;
 
 USING_NS_CC;

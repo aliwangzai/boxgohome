@@ -5,8 +5,8 @@
 #include "WoodenCrate.h"
 #include "Enemy.h"
 
-#include "2d\CCFastTMXTiledMap.h"
-#include "2d\CCFastTMXLayer.h"
+#include "CCFastTMXTiledMap.h"
+#include "CCFastTMXLayer.h"
 
 #define MAP_TAG 10
 
