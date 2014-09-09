@@ -2,7 +2,7 @@
 #include "GameWorld.h"
 #include "BoxSprite.h"
 #include "GameUI.h"
-#include "Wall.h"
+#include "BaseEntity.h"
 
 ContactLogic::ContactLogic()
 :m_bIsWin(false),
@@ -44,41 +44,32 @@ bool ContactLogic::initWithGameWorld(GameWorld *gameWorld)
 
 bool ContactLogic::onContactBegin(PhysicsContact& contact)
 {
-	PhysicsBody *body1 = contact.getShapeA()->getBody();
-	PhysicsBody *body2 = contact.getShapeB()->getBody();
-	//CCLOG("-------------------------------- onContactBegin -------------------------------- %d %d", body1->getTag(), body2->getTag());
-	if (body1->getTag() == wallType_Flag || body2->getTag() == wallType_Flag)
+	auto baseEntity1 = static_cast<BaseEntity*>(contact.getShapeA()->getBody()->getNode());
+	auto baseEntity2 = static_cast<BaseEntity*>(contact.getShapeB()->getBody()->getNode());
+	if (baseEntity1->contactLogicBegin(contact,this) && baseEntity2->contactLogicBegin(contact,this))
 	{
-		this->m_bIsWin = true;
-		return false;
+		return true;
 	}
-	return true;
+	return false;
 } 
 
 bool ContactLogic::onContactPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve)
 {
-	PhysicsShape *shape1= contact.getShapeA();
-	PhysicsShape *shape2 = contact.getShapeB();
-	//CCLOG("-------------------------------- onContactPreSolve ----------------------------- %d %d", body1->getTag(), body2->getTag());
 	return true;
 }
 
 void ContactLogic::onContactPostSolve(PhysicsContact& contact, const PhysicsContactPostSolve& solve)
 {
-	PhysicsBody *body1 = contact.getShapeA()->getBody();
-	PhysicsBody *body2 = contact.getShapeB()->getBody();
-	//CCLOG("-------------------------------- onContactPostSolve --------------------------- %d %d", body1->getTag(), body2->getTag());
 }
 
 void ContactLogic::onContactSeperate(PhysicsContact& contact)
 {
-	PhysicsBody *body1 = contact.getShapeA()->getBody();
-	PhysicsBody *body2 = contact.getShapeB()->getBody();
-	//CCLOG("-------------------------------- onContactSeperate ---------------------------- %d %d", body1->getTag(), body2->getTag());
-	if (body1->getTag() == wallType_Enemy || body2->getTag() == wallType_Enemy)
-	{
-		this->m_bIsLose = true;
-	}
+	auto baseEntity1 = static_cast<BaseEntity*>(contact.getShapeA()->getBody()->getNode());
+	auto baseEntity2 = static_cast<BaseEntity*>(contact.getShapeB()->getBody()->getNode());
+	if ( baseEntity1 != nullptr)
+		baseEntity1->contactLogicSeperate(contact,this);
+	if ( baseEntity2 != nullptr)
+		baseEntity2->contactLogicSeperate(contact,this);
 }
 
 void ContactLogic::update(float dt)

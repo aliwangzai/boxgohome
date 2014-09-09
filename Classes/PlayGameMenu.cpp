@@ -3,7 +3,7 @@
 #include "VisibleRect.h"
 #include "BoxSprite.h"
 #include "Utils.h"
-#include "Wall.h"
+#include "BaseEntity.h"
 
 PlayGameMenu::PlayGameMenu()
 :m_pBoxSprite(nullptr),
@@ -59,7 +59,7 @@ bool PlayGameMenu::onContactBegin(PhysicsContact& contact)
 {
 	PhysicsBody *bodyA = contact.getShapeA()->getBody();
 	PhysicsBody *bodyB = contact.getShapeB()->getBody();
-	if (bodyA->getTag() != wallType_Flag && bodyB->getTag() != wallType_Flag)
+	if (bodyA->getTag() != Type_Flag && bodyB->getTag() != Type_Flag)
 	{
 		return true;
 	}

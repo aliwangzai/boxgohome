@@ -23,10 +23,10 @@ BlueWall* BlueWall::create(const ValueMap &valueMap , const ValueMap &gidPropert
 
 bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 {
-	if (!Wall::initWithMap(valueMap )) return false;
+	if (!BaseEntity::initWithMap(valueMap )) return false;
 	//std::string img = Utils::getWallByType(this->m_nType);
 	std::string img = gidProperties.find("source")->second.asString();
-	if (!Wall::initWithFile(img)) return false;
+	if (!BaseEntity::initWithFile(img)) return false;
 	if (this->m_rotation != 0.0f)
 	{
 		//this->setAnchorPoint(Vec2(0 , 0));
@@ -46,8 +46,8 @@ bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 	{
 		this->setPosition(this->m_initPos + this->getContentSize()/2 );
 	}
-	this->m_wallType = wallType_Normal;
+	this->m_entityType = Type_Normal;
 	this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.4f, 1.0f), 0));//ÃÜ¶È µ¯Á¦ Ä¦²ÁÁ¦
-	this->getPhysicsBody()->setTag(this->m_wallType);
+	this->getPhysicsBody()->setTag(this->m_entityType);
 	return true;
 }

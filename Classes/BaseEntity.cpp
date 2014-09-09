@@ -1,15 +1,15 @@
-#include "Wall.h"
+#include "BaseEntity.h"
 
 
-Wall::Wall()
+BaseEntity::BaseEntity()
 {
 }
 
-Wall::~Wall()
+BaseEntity::~BaseEntity()
 {
 }
 
-bool Wall::initWithMap(const ValueMap &valueMap)
+bool BaseEntity::initWithMap(const ValueMap &valueMap)
 {
 	float x = valueMap.find("x")->second.asFloat();
 	float y = valueMap.find("y")->second.asFloat();
@@ -21,17 +21,17 @@ bool Wall::initWithMap(const ValueMap &valueMap)
 	return true;
 }
 
-void Wall::setCollisionBitmask(int mask)
+void BaseEntity::setCollisionBitmask(int mask)
 {
 	this->getPhysicsBody()->setCollisionBitmask(mask);
 }
 
-void Wall::setContactTestBitmask(int mask)
+void BaseEntity::setContactTestBitmask(int mask)
 {
 	this->getPhysicsBody()->setContactTestBitmask(mask);
 }
 
-void Wall::setCategoryBitmask(int mask)
+void BaseEntity::setCategoryBitmask(int mask)
 {
 	this->getPhysicsBody()->setCategoryBitmask(mask);
 }

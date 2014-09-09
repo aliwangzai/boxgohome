@@ -1,5 +1,5 @@
 #include "Enemy.h"
-
+#include "ContactLogic.h"
 
 Enemy::Enemy()
 {
@@ -24,14 +24,14 @@ Enemy* Enemy::create(const ValueMap &valueMap, const ValueMap &gidProperties)
 
 bool Enemy::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 {
-	if (!Wall::initWithMap(valueMap)) return false;
+	if (!BaseEntity::initWithMap(valueMap)) return false;
 	std::string img = gidProperties.find("source")->second.asString();
-	if (!Wall::initWithFile(img)) return false;
+	if (!BaseEntity::initWithFile(img)) return false;
 	std::string type = gidProperties.find("type")->second.asString();
 	this->setPosition(m_initPos + this->getContentSize() / 2);
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.0f, 0.4f, 1.0f)));
-	this->m_wallType = wallType_Enemy;
-	this->getPhysicsBody()->setTag(this->m_wallType);
+	this->m_entityType = Type_Enemy;
+	this->getPhysicsBody()->setTag(this->m_entityType);
 	if (type == "enemy_gray")
 		this->getPhysicsBody()->setContactTestBitmask(0x0001);
 
@@ -53,6 +53,15 @@ void Enemy::updateVelocity(float dt)
 
 void Enemy::onExit()
 {
-	Wall::onExit();
+	BaseEntity::onExit();
 	this->unschedule(schedule_selector(Enemy::updateVelocity));
+}
+
+bool Enemy::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
+{
+	return true;
+}
+void Enemy::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic)
+{
+	logic->setLoseState(true);
 }

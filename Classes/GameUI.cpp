@@ -130,8 +130,8 @@ void GameUI::setDefaultValue()
 	this->unscheduleUpdate();
 	this->setLevel(LevelState::getInstance()->getSelectedLevel());
 	this->setScore(getOldScore());
-	this->setBonus(9000);
-	this->setJumps(5);
+	this->setBonus(6000);
+	this->setJumps(3);
 	this->scheduleUpdate();
 }
 

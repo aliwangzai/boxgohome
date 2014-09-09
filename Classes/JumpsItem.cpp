@@ -24,11 +24,22 @@ JumpsItem* JumpsItem::create(const ValueMap &valueMap, const ValueMap &gidProper
 
 bool JumpsItem::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 {
-	if (!Wall::initWithMap(valueMap)) return false;
+	if (!BaseEntity::initWithMap(valueMap)) return false;
 	std::string img = gidProperties.find("source")->second.asString();
-	if (!Wall::initWithFile(img)) return false;
+	if (!BaseEntity::initWithFile(img)) return false;
 	this->setPosition(this->m_initPos + this->getContentSize() / 2);
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize()));
-
+	this->getPhysicsBody()->setTag(Type_Item_Jump_3);
+	this->setContactTestBitmask(0x0001);
 	return true;
+}
+
+bool JumpsItem::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
+{
+	this->removeFromParent();
+	return false;
+}
+void JumpsItem::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic)
+{
+
 }

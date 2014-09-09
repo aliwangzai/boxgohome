@@ -1,9 +1,9 @@
 #ifndef __ENEMY_H__
 #define __ENEMY_H__
 
-#include "Wall.h"
+#include "BaseEntity.h"
 
-class Enemy: public Wall
+class Enemy : public BaseEntity
 {
 public:
 	Enemy();
@@ -16,6 +16,9 @@ public:
 	void updateVelocity(float dt);
 
 	void onExit();
+
+	bool contactLogicBegin(PhysicsContact &contact, ContactLogic *logic);
+	void contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic);
 
 private:
 };
