@@ -70,6 +70,15 @@ void ContactLogic::onContactSeperate(PhysicsContact& contact)
 		baseEntity1->contactLogicSeperate(contact,this);
 	if ( baseEntity2 != nullptr)
 		baseEntity2->contactLogicSeperate(contact,this);
+// 	if(body1->getTag() == wallType_broken)
+// 	{
+// 		//remove brick
+// 		body1->getNode()->removeFromParentAndCleanup(true);
+// 		//remove body1
+// 		//NotificationCenter::sharedNotificationCenter()->postNotification("ContactLogic." , this);
+// 	}
+// 	if(body2->getTag() == wallType_broken)
+// 		body1->getNode()->removeFromParentAndCleanup(true);
 }
 
 void ContactLogic::update(float dt)

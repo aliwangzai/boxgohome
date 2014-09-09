@@ -7,6 +7,8 @@ USING_NS_CC;
 enum EntityType
 {
 	Type_Normal,
+	Type_Broken,
+	Type_Brokable,
 	Type_Yellow,
 	Type_Flag,
 	Type_Wood,
@@ -32,6 +34,8 @@ public:
 
 	EntityType getEntityType() const { return m_entityType; }
 
+	void setEntityType(EntityType typ);
+	void setPositionAndRotation();
 protected:
 	int			 m_nGid;
 	int			 m_nType;

@@ -8,6 +8,7 @@
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
+#include "BrokableWall.h"
 
 #define MAP_TAG 10
 
@@ -94,6 +95,10 @@ void GameMap::initObjects()
 		{
 			auto enemy_gray = Enemy::create(objProperties, gidProperties);
 			this->addChild(enemy_gray);
+		}else if (type == "brokable")
+		{
+			auto brokable_wall = BrokableWall::create(objProperties,gidProperties);
+			addChild(brokable_wall);
 		}
 		else if (type == "jumps_item")
 		{
@@ -104,7 +109,6 @@ void GameMap::initObjects()
 		//this->addChild(yellowWall);
 	}
 }
-
 
 
 void GameMap::loadDefaultData()
