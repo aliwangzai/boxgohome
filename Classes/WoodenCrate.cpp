@@ -28,10 +28,9 @@ bool WoodenCrate::init(const ValueMap &valueMap, const ValueMap & gidProperties)
 	//std::string img = Utils::getWallByType(this->m_nType);
 	std::string img = gidProperties.find("source")->second.asString();
 	if (!Wall::initWithFile(img)) return false;
-	this->setPosition(this->m_initPos + this->getContentSize() / 2);
+	this->setPositionAndRotation();
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.001f, 0.5f, 0.5f)));
-	this->m_wallType = wallType_Wood;
-	this->getPhysicsBody()->setTag(this->m_wallType);
+	setWallType(wallType_Wood);
 	
 	return true;
 }

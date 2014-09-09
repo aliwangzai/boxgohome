@@ -7,6 +7,8 @@ USING_NS_CC;
 enum WallType
 {
 	wallType_Normal,
+	wallType_broken , 
+	wallType_brokable,
 	wallType_Yellow,
 	wallType_Flag,
 	wallType_Wood,
@@ -26,7 +28,8 @@ public:
 	void setCollisionBitmask(int mask);
 
 	WallType getWallType() const { return m_wallType; }
-
+	void setPositionAndRotation();
+	void setWallType(WallType wallType);
 protected:
 	int			 m_nGid;
 	int			 m_nType;

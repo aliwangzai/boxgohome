@@ -7,6 +7,7 @@
 
 #include "2d\CCFastTMXTiledMap.h"
 #include "2d\CCFastTMXLayer.h"
+#include "BrokenWall.h"
 
 #define MAP_TAG 10
 
@@ -93,12 +94,13 @@ void GameMap::initObjects()
 		{
 			auto enemy_gray = Enemy::create(objProperties, gidProperties);
 			this->addChild(enemy_gray);
+		}else if (type == "broken_wall")
+		{
+			auto broken_wall = BrokenWall::create(objProperties,gidProperties);
+			addChild(broken_wall);
 		}
-		//auto yellowWall = YellowWall::create(yellowValues.at(i).asValueMap());
-		//this->addChild(yellowWall);
 	}
 }
-
 
 
 void GameMap::loadDefaultData()

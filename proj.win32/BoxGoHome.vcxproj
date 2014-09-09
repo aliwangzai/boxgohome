@@ -31,7 +31,7 @@
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '10.0'">v100</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0'">v110</PlatformToolset>
     <PlatformToolset Condition="'$(VisualStudioVersion)' == '11.0' and exists('$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A')">v110_xp</PlatformToolset>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -140,6 +140,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Background.cpp" />
     <ClCompile Include="..\Classes\BlueWall.cpp" />
     <ClCompile Include="..\Classes\BoxSprite.cpp" />
+    <ClCompile Include="..\Classes\BrokableWall.cpp" />
     <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp" />
     <ClCompile Include="..\Classes\CheckBox.cpp" />
     <ClCompile Include="..\Classes\ContactLogic.cpp" />
@@ -162,6 +163,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Wall.cpp" />
     <ClCompile Include="..\Classes\Welcome.cpp" />
     <ClCompile Include="..\Classes\WoodenCrate.cpp" />
+    <ClCompile Include="..\Classes\BrokenWall.cpp" />
     <ClCompile Include="..\Classes\YellowWall.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -171,6 +173,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Background.h" />
     <ClInclude Include="..\Classes\BlueWall.h" />
     <ClInclude Include="..\Classes\BoxSprite.h" />
+    <ClInclude Include="..\Classes\BrokableWall.h" />
     <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h" />
     <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h" />
     <ClInclude Include="..\Classes\CheckBox.h" />
@@ -195,6 +198,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Wall.h" />
     <ClInclude Include="..\Classes\Welcome.h" />
     <ClInclude Include="..\Classes\WoodenCrate.h" />
+    <ClInclude Include="..\Classes\BrokenWall.h" />
     <ClInclude Include="..\Classes\YellowWall.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

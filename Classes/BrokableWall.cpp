@@ -1,18 +1,18 @@
-#include "BlueWall.h"
-#include "Utils.h"
+#include "BrokableWall.h"
 
-BlueWall::BlueWall()
+BrokableWall::BrokableWall()
 {
+
 }
 
-
-BlueWall::~BlueWall()
+BrokableWall::~BrokableWall()
 {
+
 }
 
-BlueWall* BlueWall::create(const ValueMap &valueMap , const ValueMap &gidProperties)
+BrokableWall* BrokableWall::create( const ValueMap &valueMap , const ValueMap &gidProperties )
 {
-	auto blueWall = new BlueWall();
+	auto blueWall = new BrokableWall();
 	if (blueWall && blueWall->init(valueMap , gidProperties))
 	{
 		blueWall->autorelease();
@@ -21,7 +21,7 @@ BlueWall* BlueWall::create(const ValueMap &valueMap , const ValueMap &gidPropert
 	return nullptr;
 }
 
-bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
+bool BrokableWall::init( const ValueMap &valueMap , const ValueMap &gidProperties )
 {
 	if (!Wall::initWithMap(valueMap )) return false;
 	//std::string img = Utils::getWallByType(this->m_nType);
@@ -30,6 +30,7 @@ bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 	setPositionAndRotation();
 	this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.4f, 1.0f), 0));//ÃÜ¶È µ¯Á¦ Ä¦²ÁÁ¦
 
-	setWallType(wallType_Normal);
+	setWallType(wallType_brokable);
 	return true;
 }
+

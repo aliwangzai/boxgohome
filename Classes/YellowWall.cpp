@@ -27,22 +27,20 @@ bool YellowWall::init( const ValueMap &valueMap, const ValueMap & gidProperties 
 	//std::string img = Utils::getWallByType(this->m_nType);
 	std::string img = gidProperties.find("source")->second.asString();
 	if (!Wall::initWithFile(img)) return false;
-	this->setPosition(this->m_initPos + this->getContentSize() / 2);
+	setPositionAndRotation();
 	std::string type = gidProperties.find("type")->second.asString();
 	if (type == "target")
 	{
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.2f, 1.0f), 0));
 		this->setContactTestBitmask(0x0001);
-		this->m_wallType = wallType_Yellow;
-		this->getPhysicsBody()->setTag(this->m_wallType);
+		setWallType(wallType_Yellow);
 	}
 	else if (type == "flag")
 	{
 		this->playFlagAnimate();
 		this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize()));
 		this->setContactTestBitmask(0x0002);
-		this->m_wallType = wallType_Flag;
-		this->getPhysicsBody()->setTag(this->m_wallType);
+		setWallType(wallType_Flag);
 	}
 	
 	return true;
