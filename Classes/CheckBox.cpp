@@ -146,6 +146,25 @@ void CheckBox::changeSelectState()
 	this->m_bCurrentState = !this->m_bCurrentState;
 }
 
+void CheckBox::setCurrentState(bool flag)
+{
+	this->m_bCurrentState = !flag;
+	if (!flag)
+	{
+		if (this->m_sSelectSprite.size() != 0)
+		{
+			this->setSpriteFrame(Utils::getSpriteFrame(this->m_sSelectSprite));
+		}
+	}
+	else
+	{
+		if (this->m_sNormalSprite.size() != 0)
+		{
+			this->setSpriteFrame(Utils::getSpriteFrame(this->m_sNormalSprite));
+		}
+	}
+}
+
 void CheckBox::setCallback(const CheckBoxCallback &callback)
 {
 	this->m_cCallback = callback;
