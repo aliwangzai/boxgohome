@@ -233,6 +233,9 @@
     <ClInclude Include="..\Classes\AdManager.h">
       <Filter>Classes\manager</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\UIButton.h">
+      <Filter>Classes\dialog</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
