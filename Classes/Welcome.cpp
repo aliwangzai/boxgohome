@@ -7,6 +7,7 @@
 #include "MenuLayer.h"
 #include "DialogManager.h"
 #include "ShareManager.h"
+#include "AdManager.h"
 
 Scene* Welcome::createScene()
 {
@@ -72,6 +73,7 @@ bool Welcome::initMenu()
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(10);
 	menu->setPosition(VisibleRect::center() + Point(0, 0));
+
 	return true;
 }
 

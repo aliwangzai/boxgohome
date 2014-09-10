@@ -94,12 +94,12 @@ namespace cn
          */
         enum C2DXMenuArrowDirection
         {
-            C2DXMenuArrowDirectionUp = 1UL << 0, /**< 向上 */
-            C2DXMenuArrowDirectionDown = 1UL << 1, /**< 向下 */
-            C2DXMenuArrowDirectionLeft = 1UL << 2, /**< 向左 */
-            C2DXMenuArrowDirectionRight = 1UL << 3, /**< 向右 */
-            C2DXMenuArrowDirectionAny = C2DXMenuArrowDirectionUp | C2DXMenuArrowDirectionDown | C2DXMenuArrowDirectionLeft | C2DXMenuArrowDirectionRight, /**< 任意 */
-            C2DXMenuArrowDirectionUnknown = UINT32_MAX /**< 未知 */
+			C2DXMenuArrowDirectionUp = 1UL << 0, /**< 向上 */
+			C2DXMenuArrowDirectionDown = 1UL << 1, /**< 向下 */
+			C2DXMenuArrowDirectionLeft = 1UL << 2, /**< 向左 */
+			C2DXMenuArrowDirectionRight = 1UL << 3, /**< 向右 */
+			C2DXMenuArrowDirectionAny = C2DXMenuArrowDirectionUp | C2DXMenuArrowDirectionDown | C2DXMenuArrowDirectionLeft | C2DXMenuArrowDirectionRight, /**< 任意 */
+			C2DXMenuArrowDirectionUnknown = 1UL << 31 /**< 未知 */
         };
         
         /**
