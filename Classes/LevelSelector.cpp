@@ -28,7 +28,7 @@ LevelSelector::~LevelSelector()
 
 MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 {
-	auto item = MenuItemImage::create("level_item_bg.png" ,"level_item_bg_selected.png" ,"level_item_bg_diabled.png" , [=](Ref * sender){this->onClickMenuItem(sender);});
+	auto item = MenuItemImage::create("ui/lv_normal.png" ,"ui/lv_selected.png" ,"ui/lv_locked.png" , [=](Ref * sender){this->onClickMenuItem(sender);});
 	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 18);
 	auto label = Label::createWithTTF(ttfConfig , CCString::createWithFormat("%d" , level)->getCString());
 	label->setPosition(item->getContentSize()/2);

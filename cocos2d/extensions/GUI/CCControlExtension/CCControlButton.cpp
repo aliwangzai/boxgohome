@@ -82,7 +82,6 @@ bool ControlButton::initWithLabelAndBackgroundSprite(Node* node, Scale9Sprite* b
 
         // Adjust the background image by default
         setAdjustBackgroundImage(true);
-        setPreferredSize(Size::ZERO);
         // Zooming button by default
         _zoomOnTouchDown = true;
         _scaleRatio = 1.1f;

@@ -188,8 +188,12 @@ void GameWorld::win()
 		switch (type)
 		{
 		case 1://more game
+			
 			break;
-		case 2://next level
+		case 2://more game
+			this->restart();
+			break;
+		case 3://next level
 			this->nextLevel();
 			break;
 		default:

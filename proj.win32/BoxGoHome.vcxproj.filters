@@ -28,6 +28,9 @@
     <Filter Include="Classes\utils">
       <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\ui">
+      <UniqueIdentifier>{a12c7127-5bc0-45c7-92d4-599cbcb4f3ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -114,6 +117,9 @@
     <ClCompile Include="..\Classes\JumpsItem.cpp" />
     <ClCompile Include="..\Classes\BaseEntity.cpp">
       <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AdManager.cpp">
+      <Filter>Classes\component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +211,12 @@
     <ClInclude Include="..\Classes\JumpsItem.h" />
     <ClInclude Include="..\Classes\BaseEntity.h">
       <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AdManager.h">
+      <Filter>Classes\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UIButton.h">
+      <Filter>Classes\ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

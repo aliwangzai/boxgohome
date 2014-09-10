@@ -1,5 +1,6 @@
 #include "LevelComplete.h"
 #include "GameUI.h"
+#include "UIButton.h"
 
 LevelComplete::LevelComplete()
 {
@@ -28,9 +29,14 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	this->ignoreAnchorPointForPosition(false);
 	this->setAnchorPoint(Vec2(.5, .5));
 
-	auto sprite = Sprite::create("dialog/dialog_2.png");
+	auto light = Sprite::create("ui/bg_light.png");
+	auto sprite = Sprite::create("ui/bg_result.png");
 	this->addChild(sprite);
+	//this->addChild(light);
 	this->setContentSize(sprite->getContentSize());
+	light->setScale(3.0f);
+
+	light->setPosition(this->getContentSize() / 2);
 	sprite->setPosition(this->getContentSize() / 2);
 
 	this->initMenu();
@@ -43,25 +49,40 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 bool LevelComplete::initMenu()
 {
 	MenuItemFont::setFontSize(22);
-	auto moreGameItem = MenuItemFont::create("More Game", [=](Ref *pSender){
+	auto moreGameItem = UIButton::create("ui/btn_menu.png", [=](Ref *pSender ){
 		if (this->m_fCallback)
 		{
+			this->m_pDialog->hideDialog();
 			m_fCallback((void*)1);
 		}
 	});
-	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto nextLevelItem = MenuItemFont::create("Next Level", [=](Ref *pSender){
+
+	auto resetLevelItem = UIButton::create("ui/btn_reset.png", [=](Ref *pSender){
 		if (this->m_fCallback)
 		{
 			this->m_pDialog->hideDialog();
 			m_fCallback((void*)2);
 		}
 	});
+
+
+	auto nextLevelItem = UIButton::create("ui/btn_next.png", [=](Ref *pSender){
+		if (this->m_fCallback)
+		{
+			this->m_pDialog->hideDialog();
+			m_fCallback((void*)3);
+		}
+	});
 	nextLevelItem->setColor(Color3B(0, 0, 0));
-	auto menu = Menu::create(moreGameItem, nextLevelItem, nullptr);
-	menu->alignItemsHorizontallyWithPadding(70);
-	menu->setPosition(170, 38);
-	this->addChild(menu);
+	//auto menu = Menu::create(moreGameItem, nextLevelItem, nullptr);
+	//menu->alignItemsHorizontallyWithPadding(70);
+	moreGameItem->setPosition(85, 45);
+	resetLevelItem->setPosition(185, 45);
+	nextLevelItem->setPosition(285, 45);
+	//this->addChild(menu);
+	addChild(moreGameItem);
+	addChild(resetLevelItem);
+	addChild(nextLevelItem);
 	return true;
 }
 

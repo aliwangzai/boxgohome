@@ -30,7 +30,7 @@ public:
 	{
 		//int level = CCUserDefault::getInstance()->getIntegerForKey("User.Level" , 1);
 		//return level;
-		return 30;
+		return 15;
 	}
 
 	void setSelectedLevel(int level)
