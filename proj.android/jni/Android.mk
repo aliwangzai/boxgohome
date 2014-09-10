@@ -33,10 +33,14 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/Utils.cpp \
 				   ../../Classes/VisibleRect.cpp \
 				   ../../Classes/BlueWall.cpp \
-				   ../../Classes/Wall.cpp \
+				   ../../Classes/BaseEntity.cpp \
 				   ../../Classes/WoodenCrate.cpp \
 				   ../../Classes/YellowWall.cpp \
+				   ../../Classes/Enemy.cpp \
+				   ../../Classes/JumpsItem.cpp \
+				   ../../Classes/BrokableWall.cpp \
 				   ../../Classes/ShareManager.cpp \
+				   ../../Classes/AdManager.cpp \
 				   ../../Classes/C2DXShareSDK/Android/JSON/cJSON/cJSON.c \
 				   ../../Classes/C2DXShareSDK/Android/JSON/CCJSONConverter.cpp \
 				   ../../Classes/C2DXShareSDK/Android/ShareSDKUtils.cpp \
