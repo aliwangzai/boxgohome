@@ -107,8 +107,7 @@ bool MenuLayer::initSound()
 	this->addChild(soundCheckBox);
 	
 	auto musicCheckBox = Utils::createMusic();
-	size = musicCheckBox->getContentSize();
-	musicCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(70, 10));
+	musicCheckBox->setPosition(soundCheckBox->getPosition() + Point(80, 0));
 	this->addChild(musicCheckBox);
 	return true;
 }

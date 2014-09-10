@@ -59,7 +59,7 @@ void CheckBox::playClickAnimate()
 	if (this->m_bIsPlayAnimate)
 	{
 		this->stopAllActions();
-		auto scaleBy = ScaleTo::create(0.1f, 1.5f);
+		auto scaleBy = ScaleTo::create(0.1f, 1.3f);
 		this->runAction(scaleBy);
 		this->m_bIsPlayAnimate = false;
 	}
