@@ -6,6 +6,9 @@ USING_NS_CC;
 
 class Utils: public Ref
 {
+private:
+	static bool		m_bSoundSwitch;
+	static bool		m_bMusicSwitch;
 public:
 	static SpriteFrame* getSpriteFrame(std::string szSpriteFrameName);
 
@@ -14,6 +17,15 @@ public:
 	static std::string getWallByType(int type);
 
 	static Size getWinSize();
+
+	static bool getSoundSwitch() { return Utils::m_bSoundSwitch; }
+	static bool getMusicSwitch() { return Utils::m_bMusicSwitch; }
+
+	static void reverseSound(){ Utils::m_bSoundSwitch = !Utils::m_bSoundSwitch; }
+	static void reverseMusic(){ Utils::m_bMusicSwitch = !Utils::m_bMusicSwitch; }
+
+	static Node* createSound();
+	static Node* createMusic();
 };
 
 #endif

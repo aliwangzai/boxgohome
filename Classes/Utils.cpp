@@ -1,4 +1,10 @@
 #include "Utils.h"
+#include "CheckBox.h"
+#include "AdManager.h"
+
+bool Utils::m_bMusicSwitch = true;
+bool Utils::m_bSoundSwitch = true;
+
 
 SpriteFrame* Utils::getSpriteFrame(std::string szSpriteFrameName)
 {
@@ -49,4 +55,43 @@ std::string Utils::getWallByType(int type)
 		break;
 	}
 	return fileName;
+}
+
+Node* Utils::createSound()
+{
+	auto soundCheckBox = CheckBox::create("49.png", "50.png");
+	soundCheckBox->setCallback([=](bool state){
+		Utils::reverseSound();
+		if (!state){
+			CCLOG("%s", "play sound");
+			AdManager::getInstance()->showBannerAD();
+		}
+		else
+		{
+			CCLOG("%s", "close sound");
+			AdManager::getInstance()->hideBannerAD();
+		}
+	});
+	soundCheckBox->setCurrentState(Utils::getSoundSwitch());
+	return soundCheckBox;
+}
+
+Node* Utils::createMusic()
+{
+	auto musicCheckBox = CheckBox::create("47.png", "48.png");
+	musicCheckBox->setCallback([=](bool state){
+		Utils::reverseMusic();
+		if (!state)
+		{
+			CCLOG("%s", "play music");
+			AdManager::getInstance()->showBannerAD();
+		}
+		else
+		{
+			CCLOG("%s", "close music");
+			AdManager::getInstance()->hideBannerAD();
+		}
+	});
+	musicCheckBox->setCurrentState(Utils::getMusicSwitch());
+	return musicCheckBox;
 }

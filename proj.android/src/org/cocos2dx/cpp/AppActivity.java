@@ -28,15 +28,88 @@ package org.cocos2dx.cpp;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 import cn.sharesdk.ShareSDKUtils;
 
-import android.os.Bundle;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 public class AppActivity extends Cocos2dxActivity {
+	
+	protected static final int GUIUPDATEIDENTIFIER = 0x101;
+	
+	private static AdView adBannerView;
+	private static int adViewVisibility = View.GONE; 
+	
+	private static Handler adViewHandler = new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			switch(msg.what){
+			case GUIUPDATEIDENTIFIER:
+				adBannerView.setVisibility(adViewVisibility);
+				break;
+			}
+			super.handleMessage(msg);
+		};
+	};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		adBannerView = new AdView(this);
+		adBannerView.setAdUnitId("ca-app-pub-2906542859743654/2173098523");
+		adBannerView.setAdSize(AdSize.BANNER);
+	    AdRequest adRequest = new AdRequest.Builder().addTestDevice("37AD57E769A2AEB5D85343BAD6B050A8").build();
+	    adBannerView.loadAd(adRequest);
+	    
+	    RelativeLayout relativeLayout = new RelativeLayout(this);
+	    mFrameLayout.addView(relativeLayout);
+	    LayoutParams layoutParams = new LayoutParams(
+	    		LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+	    layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+	    layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+	    relativeLayout.addView(adBannerView, layoutParams);
+	    
 		ShareSDKUtils.prepare();
+	}
+	
+	public static void showBannerAD(){
+		System.out.println("showBannerAD---------------------------------------");
+		adViewVisibility = View.VISIBLE;
+		Message msg = new Message();
+		msg.what = GUIUPDATEIDENTIFIER;
+		adViewHandler.sendMessage(msg);
+	}
+	
+	public static void hideBannerAD(){
+		System.out.println("hideBannerAD---------------------------------------");
+		adViewVisibility = View.GONE;
+		Message msg = new Message();
+		msg.what = GUIUPDATEIDENTIFIER;
+		adViewHandler.sendMessage(msg);
+	}
+	
+	@Override
+	protected void onPause() {
+		if( adBannerView != null) adBannerView.pause();
+		super.onPause();
+	}
+	
+	@Override
+	protected void onResume() {
+		if(adBannerView != null) adBannerView.resume();
+		super.onResume();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		if(adBannerView != null) adBannerView.destroy();
+		super.onDestroy();
 	}
 }

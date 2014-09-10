@@ -7,6 +7,7 @@
 #include "LevelSelector.h"
 #include "Welcome.h"
 #include "AdManager.h"
+#include "Utils.h"
 
 MenuLayer::MenuLayer()
 :m_pCurrentNode(nullptr)
@@ -100,38 +101,15 @@ bool MenuLayer::initBackground()
 
 bool MenuLayer::initSound()
 {
-	auto soundCheckBox = CheckBox::create("49.png", "50.png");
+	auto soundCheckBox = Utils::createSound();
 	auto size = soundCheckBox->getContentSize();
 	soundCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(20, 10));
 	this->addChild(soundCheckBox);
-	soundCheckBox->setCallback([=](bool state){
-		if (!state){
-			CCLOG("%s", "play sound");
-			AdManager::getInstance()->showBannerAD();
-		}
-		else
-		{
-			CCLOG("%s", "close sound");
-			AdManager::getInstance()->hideBannerAD();
-		}
-	});
-
-	auto musicCheckBox = CheckBox::create("47.png", "48.png");
+	
+	auto musicCheckBox = Utils::createMusic();
 	size = musicCheckBox->getContentSize();
 	musicCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(70, 10));
 	this->addChild(musicCheckBox);
-	musicCheckBox->setCallback([=](bool state){
-		if (!state)
-		{
-			CCLOG("%s", "play music");
-			AdManager::getInstance()->showBannerAD();
-		}
-		else
-		{
-			CCLOG("%s", "close music");
-			AdManager::getInstance()->hideBannerAD();
-		}
-	});
 	return true;
 }
 

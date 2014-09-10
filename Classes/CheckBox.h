@@ -29,6 +29,7 @@ public:
 	bool getCurrentState() const{ return m_bCurrentState; }
 	void changeNormalState();
 	void changeSelectState();
+	void setCurrentState(bool flag);
 
 	void setCallback(const CheckBoxCallback &callback);
 
