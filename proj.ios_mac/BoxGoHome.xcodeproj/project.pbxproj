@@ -20,6 +20,9 @@
 		1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */; };
 		1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1D740C4E19BF396F00BC4238 /* BaseEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4719BF396F00BC4238 /* BaseEntity.cpp */; };
+		1D740C4F19BF396F00BC4238 /* BrokableWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4919BF396F00BC4238 /* BrokableWall.cpp */; };
+		1D740C5119BF396F00BC4238 /* JumpsItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4C19BF396F00BC4238 /* JumpsItem.cpp */; };
 		1DDD610819BB609B000BA225 /* ArrowSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD60D219BB609A000BA225 /* ArrowSprite.cpp */; };
 		1DDD610919BB609B000BA225 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD60D419BB609A000BA225 /* Background.cpp */; };
 		1DDD610A19BB609B000BA225 /* BlueWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD60D619BB609A000BA225 /* BlueWall.cpp */; };
@@ -42,7 +45,6 @@
 		1DDD611C19BB609B000BA225 /* TestLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD60FA19BB609A000BA225 /* TestLayer.cpp */; };
 		1DDD611D19BB609B000BA225 /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD60FC19BB609B000BA225 /* Utils.cpp */; };
 		1DDD611E19BB609B000BA225 /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD60FE19BB609B000BA225 /* VisibleRect.cpp */; };
-		1DDD611F19BB609B000BA225 /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD610019BB609B000BA225 /* Wall.cpp */; };
 		1DDD612019BB609B000BA225 /* Welcome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD610219BB609B000BA225 /* Welcome.cpp */; };
 		1DDD612119BB609B000BA225 /* WoodenCrate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD610419BB609B000BA225 /* WoodenCrate.cpp */; };
 		1DDD612219BB609B000BA225 /* YellowWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD610619BB609B000BA225 /* YellowWall.cpp */; };
@@ -341,6 +343,12 @@
 		1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* BoxGoHome iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BoxGoHome iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D740C4719BF396F00BC4238 /* BaseEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseEntity.cpp; path = ../Classes/BaseEntity.cpp; sourceTree = "<group>"; };
+		1D740C4819BF396F00BC4238 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEntity.h; path = ../Classes/BaseEntity.h; sourceTree = "<group>"; };
+		1D740C4919BF396F00BC4238 /* BrokableWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BrokableWall.cpp; path = ../Classes/BrokableWall.cpp; sourceTree = "<group>"; };
+		1D740C4A19BF396F00BC4238 /* BrokableWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrokableWall.h; path = ../Classes/BrokableWall.h; sourceTree = "<group>"; };
+		1D740C4C19BF396F00BC4238 /* JumpsItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JumpsItem.cpp; path = ../Classes/JumpsItem.cpp; sourceTree = "<group>"; };
+		1D740C4D19BF396F00BC4238 /* JumpsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JumpsItem.h; path = ../Classes/JumpsItem.h; sourceTree = "<group>"; };
 		1DDD60D219BB609A000BA225 /* ArrowSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArrowSprite.cpp; path = ../Classes/ArrowSprite.cpp; sourceTree = "<group>"; };
 		1DDD60D319BB609A000BA225 /* ArrowSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrowSprite.h; path = ../Classes/ArrowSprite.h; sourceTree = "<group>"; };
 		1DDD60D419BB609A000BA225 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Background.cpp; path = ../Classes/Background.cpp; sourceTree = "<group>"; };
@@ -386,8 +394,6 @@
 		1DDD60FD19BB609B000BA225 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = ../Classes/Utils.h; sourceTree = "<group>"; };
 		1DDD60FE19BB609B000BA225 /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		1DDD60FF19BB609B000BA225 /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
-		1DDD610019BB609B000BA225 /* Wall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wall.cpp; path = ../Classes/Wall.cpp; sourceTree = "<group>"; };
-		1DDD610119BB609B000BA225 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wall.h; path = ../Classes/Wall.h; sourceTree = "<group>"; };
 		1DDD610219BB609B000BA225 /* Welcome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Welcome.cpp; path = ../Classes/Welcome.cpp; sourceTree = "<group>"; };
 		1DDD610319BB609B000BA225 /* Welcome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Welcome.h; path = ../Classes/Welcome.h; sourceTree = "<group>"; };
 		1DDD610419BB609B000BA225 /* WoodenCrate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WoodenCrate.cpp; path = ../Classes/WoodenCrate.cpp; sourceTree = "<group>"; };
@@ -675,6 +681,12 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1D740C4719BF396F00BC4238 /* BaseEntity.cpp */,
+				1D740C4819BF396F00BC4238 /* BaseEntity.h */,
+				1D740C4919BF396F00BC4238 /* BrokableWall.cpp */,
+				1D740C4A19BF396F00BC4238 /* BrokableWall.h */,
+				1D740C4C19BF396F00BC4238 /* JumpsItem.cpp */,
+				1D740C4D19BF396F00BC4238 /* JumpsItem.h */,
 				1DDD612519BB60ED000BA225 /* C2DXShareSDK */,
 				1DDD60D219BB609A000BA225 /* ArrowSprite.cpp */,
 				1DDD60D319BB609A000BA225 /* ArrowSprite.h */,
@@ -721,8 +733,6 @@
 				1DDD60FD19BB609B000BA225 /* Utils.h */,
 				1DDD60FE19BB609B000BA225 /* VisibleRect.cpp */,
 				1DDD60FF19BB609B000BA225 /* VisibleRect.h */,
-				1DDD610019BB609B000BA225 /* Wall.cpp */,
-				1DDD610119BB609B000BA225 /* Wall.h */,
 				1DDD610219BB609B000BA225 /* Welcome.cpp */,
 				1DDD610319BB609B000BA225 /* Welcome.h */,
 				1DDD610419BB609B000BA225 /* WoodenCrate.cpp */,
@@ -1323,6 +1333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D740C5119BF396F00BC4238 /* JumpsItem.cpp in Sources */,
 				1DDD613919BB60ED000BA225 /* C2DXShareSDK.cpp in Sources */,
 				1DDD610819BB609B000BA225 /* ArrowSprite.cpp in Sources */,
 				1DDD610B19BB609B000BA225 /* BoxSprite.cpp in Sources */,
@@ -1330,6 +1341,7 @@
 				1DDD611119BB609B000BA225 /* Enemy.cpp in Sources */,
 				1DDD611719BB609B000BA225 /* LevelSelector.cpp in Sources */,
 				1DDD612119BB609B000BA225 /* WoodenCrate.cpp in Sources */,
+				1D740C4F19BF396F00BC4238 /* BrokableWall.cpp in Sources */,
 				1DDD611319BB609B000BA225 /* GameUI.cpp in Sources */,
 				1DDD610D19BB609B000BA225 /* CheckBox.cpp in Sources */,
 				1DDD611519BB609B000BA225 /* LevelComplete.cpp in Sources */,
@@ -1340,8 +1352,8 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				1DDD612019BB609B000BA225 /* Welcome.cpp in Sources */,
 				1DDD611A19BB609B000BA225 /* PlayGameMenu.cpp in Sources */,
-				1DDD611F19BB609B000BA225 /* Wall.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				1D740C4E19BF396F00BC4238 /* BaseEntity.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1DDD612219BB609B000BA225 /* YellowWall.cpp in Sources */,
