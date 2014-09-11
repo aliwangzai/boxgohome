@@ -58,3 +58,22 @@ void AdManager::hideBannerAD()
 #endif
 }
 
+void AdManager::displayInterstitial()
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+	JniMethodInfo minfo;
+	bool isHave = JniHelper::getStaticMethodInfo(minfo, "org/cocos2dx/cpp/AppActivity", "displayInterstitial", "()V");
+	if (isHave)
+	{
+		CCLOG("the displayInterstitial method is exits");
+		minfo.env->CallStaticVoidMethod(minfo.classID, minfo.methodID);
+	}
+	else
+	{
+		CCLOG("the displayInterstitial method is not exits");
+	}
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+
+#endif
+}
+
