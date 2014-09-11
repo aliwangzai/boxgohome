@@ -4,6 +4,8 @@
 #include "TestLayer.h"
 #include "C2DXShareSDK.h"
 using namespace cn::sharesdk;
+#include "cocostudio\CCSGUIReader.h"
+#include "cocostudio\DictionaryHelper.h"
 
 USING_NS_CC;
 
@@ -13,6 +15,8 @@ AppDelegate::AppDelegate() {
 
 AppDelegate::~AppDelegate() 
 {	
+	cocostudio::GUIReader::destroyInstance();
+	cocostudio::DictionaryHelper::destroyInstance();
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {

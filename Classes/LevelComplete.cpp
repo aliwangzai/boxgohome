@@ -2,6 +2,13 @@
 #include "GameUI.h"
 #include "UIButton.h"
 #include "AdManager.h"
+#include "cocostudio/CCSGUIReader.h"
+#include "ui/UIWidget.h"
+#include "ui/UILayout.h"
+#include "cocos/ui/UIText.h"
+#include "cocos/ui/UIButton.h"
+
+
 
 LevelComplete::LevelComplete()
 {
@@ -26,11 +33,13 @@ LevelComplete* LevelComplete::create(Dialog* dialog)
 bool LevelComplete::initWithDialog(Dialog* dialog)
 {
 	this->m_pDialog = dialog;
+	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Win.json"));
+	addChild(layout);
 
-	this->ignoreAnchorPointForPosition(false);
-	this->setAnchorPoint(Vec2(.5, .5));
+	layout->setAnchorPoint(ccp(0.5,0.5));
 
-	auto light = Sprite::create("ui/bg_light.png");
+
+	/*auto light = Sprite::create("ui/bg_light.png");
 	auto sprite = Sprite::create("ui/bg_result.png");
 	this->addChild(sprite);
 	//this->addChild(light);
@@ -38,10 +47,21 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	light->setScale(3.0f);
 
 	light->setPosition(this->getContentSize() / 2);
-	sprite->setPosition(this->getContentSize() / 2);
+	sprite->setPosition(this->getContentSize() / 2);;*/
 
-	this->initMenu();
 
+	Text * txt = static_cast<Text*>(layout->getChildByName("label_score"));
+	txt->setString("123456789");
+
+	Button * btn_menu = static_cast<Button*>(layout->getChildByName("btn_menu"));
+	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
+	Button * btn_next = static_cast<Button*>(layout->getChildByName("btn_next"));
+
+	btn_menu->addTouchEventListener(this, toucheventselector(LevelComplete::btn_menuCallback));
+	btn_reset->addTouchEventListener(this, toucheventselector(LevelComplete::btn_resetCallback));
+	btn_next->addTouchEventListener(this, toucheventselector(LevelComplete::btn_nextCallback));
+
+	//this->initMenu();
 	this->initDataLabel();
 
 	AdManager::getInstance()->displayInterstitial();
@@ -49,45 +69,25 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	return true;
 }
 
-bool LevelComplete::initMenu()
+void LevelComplete::btn_menuCallback(Ref*sender,TouchEventType)
 {
-	MenuItemFont::setFontSize(22);
-	auto moreGameItem = UIButton::create("ui/btn_menu.png", [=](Ref *pSender ){
-		if (this->m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)1);
-		}
-	});
-
-	auto resetLevelItem = UIButton::create("ui/btn_reset.png", [=](Ref *pSender){
-		if (this->m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)2);
-		}
-	});
-
-
-	auto nextLevelItem = UIButton::create("ui/btn_next.png", [=](Ref *pSender){
-		if (this->m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)3);
-		}
-	});
-	nextLevelItem->setColor(Color3B(0, 0, 0));
-	//auto menu = Menu::create(moreGameItem, nextLevelItem, nullptr);
-	//menu->alignItemsHorizontallyWithPadding(70);
-	moreGameItem->setPosition(85, 45);
-	resetLevelItem->setPosition(185, 45);
-	nextLevelItem->setPosition(285, 45);
-	//this->addChild(menu);
-	addChild(moreGameItem);
-	addChild(resetLevelItem);
-	addChild(nextLevelItem);
-	return true;
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)1);
 }
+
+void LevelComplete::btn_resetCallback(Ref*sender,TouchEventType)
+{
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)2);
+}
+
+
+void LevelComplete::btn_nextCallback(Ref*sender,TouchEventType)
+{
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)3);
+}
+
 
 bool LevelComplete::initDataLabel()
 {
