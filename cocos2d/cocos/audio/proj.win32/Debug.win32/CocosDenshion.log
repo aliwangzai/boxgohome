@@ -1,17 +1,17 @@
-﻿生成启动时间为 2014/9/4 星期四 下午 5:59:56。
-     1>项目“D:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj”在节点 4 上(Build 个目标)。
+﻿生成启动时间为 2014/9/10 20:55:57。
+     1>项目“E:\GameDev\git_res\boxgohome\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj”在节点 4 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include" /I..\Include /ID:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\2d\..\..\cocos /ID:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\2d\..\..\cocos\platform\win32 /ID:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\2d\..\..\cocos\platform\desktop /ID:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"D:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4251 /analyze- /errorReport:prompt ..\win32\MciPlayer.cpp ..\win32\SimpleAudioEngine.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files\Microsoft SDKs\Windows\v7.1A\include" /I..\Include /IE:\GameDev\git_res\boxgohome\cocos2d\cocos\2d\..\..\cocos /IE:\GameDev\git_res\boxgohome\cocos2d\cocos\2d\..\..\cocos\platform\win32 /IE:\GameDev\git_res\boxgohome\cocos2d\cocos\2d\..\..\cocos\platform\desktop /IE:\GameDev\git_res\boxgohome\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"E:\GameDev\git_res\boxgohome\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _USING_V110_SDK71_ /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4251 /analyze- /errorReport:prompt ..\win32\MciPlayer.cpp ..\win32\SimpleAudioEngine.cpp
          MciPlayer.cpp
          SimpleAudioEngine.cpp
-     1>d:\work\cocos\workspace\boxgohome\cocos2d\cocos\base\ccutils.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (..\win32\SimpleAudioEngine.cpp)
-     1>d:\work\cocos\workspace\boxgohome\cocos2d\cocos\2d\cclabel.h(276): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据 (..\win32\SimpleAudioEngine.cpp)
+     1>e:\gamedev\git_res\boxgohome\cocos2d\cocos\base\ccutils.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (..\win32\SimpleAudioEngine.cpp)
+     1>e:\gamedev\git_res\boxgohome\cocos2d\cocos\2d\cclabel.h(276): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据 (..\win32\SimpleAudioEngine.cpp)
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Work\cocos\WorkSpace\boxgohome\proj.win32\Debug.win32\libAudio.lib" /NOLOGO Debug.win32\MciPlayer.obj
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"E:\GameDev\git_res\boxgohome\proj.win32\Debug.win32\libAudio.lib" /NOLOGO Debug.win32\MciPlayer.obj
          Debug.win32\SimpleAudioEngine.obj
-         CocosDenshion.vcxproj -> D:\Work\cocos\WorkSpace\boxgohome\proj.win32\Debug.win32\libAudio.lib
-     1>已完成生成项目“D:\Work\cocos\WorkSpace\boxgohome\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj”(Build 个目标)的操作。
+         CocosDenshion.vcxproj -> E:\GameDev\git_res\boxgohome\proj.win32\Debug.win32\libAudio.lib
+     1>已完成生成项目“E:\GameDev\git_res\boxgohome\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:01:50.08
+已用时间 00:00:12.67
