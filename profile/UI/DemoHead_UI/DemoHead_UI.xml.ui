@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>C:\Users\Administrator\Documents\DemoHead_UI</ProjectDir>
+  <Version>1.5.0.1</Version>
+  <Resources>C:\Users\Administrator\Documents\DemoHead_UI\Resources</Resources>
+  <Name>ui</Name>
+  <JsonFileName>ui.json</JsonFileName>
+  <JsonFolder>C:\Users\Administrator\Documents\DemoHead_UI\Json</JsonFolder>
+  <JsonList>
+    <string>Win.json</string>
+    <string>Lose.json</string>
+  </JsonList>
+  <CanvasSize>
+    <Width>480</Width>
+    <Height>320</Height>
+  </CanvasSize>
+  <filePath>C:\Users\Administrator\Documents\DemoHead_UI\DemoHead_UI.xml.ui</filePath>
+  <ProjectType>UIProject</ProjectType>
+  <ResRelativePath />
+  <imageFileList />
+  <imagePngList>
+    <string>star2_full.png</string>
+    <string>bg_result.png</string>
+    <string>btn_menu.png</string>
+    <string>btn_next.png</string>
+    <string>btn_reset.png</string>
+    <string>star2_blank.png</string>
+    <string>record_cup_icon.png</string>
+    <string>bg_result2.png</string>
+    <string>btn_menu.png</string>
+    <string>btn_reset.png</string>
+  </imagePngList>
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson>Win.json</CurrentUIJson>
+</UIProject>
