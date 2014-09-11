@@ -23,7 +23,7 @@
 #ifndef __PHYSICSNODES_DEBUGNODE_H__
 #define __PHYSICSNODES_DEBUGNODE_H__
 
-#include "ExtensionMacros.h"
+#include "extensions/ExtensionMacros.h"
 #include "2d/CCDrawNode.h"
 
 struct cpSpace;
