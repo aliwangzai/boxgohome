@@ -60,6 +60,7 @@ std::string Utils::getWallByType(int type)
 Node* Utils::createSound()
 {
 	auto soundCheckBox = CheckBox::create("ui/btn_music.png", "ui/btn_music2.png");
+	soundCheckBox->setOpacity(100);
 	soundCheckBox->setCallback([=](bool state){
 		Utils::reverseSound();
 		if (!state){
@@ -79,6 +80,7 @@ Node* Utils::createSound()
 Node* Utils::createMusic()
 {
 	auto musicCheckBox = CheckBox::create("ui/btn_sound.png", "ui/btn_sound2.png");
+	musicCheckBox->setOpacity(100);
 	musicCheckBox->setCallback([=](bool state){
 		Utils::reverseMusic();
 		if (!state)
