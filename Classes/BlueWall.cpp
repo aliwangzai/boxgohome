@@ -27,6 +27,7 @@ bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 	//std::string img = Utils::getWallByType(this->m_nType);
 	std::string img = gidProperties.find("source")->second.asString();
 	if (!BaseEntity::initWithFile(img)) return false;
+	getTexture()->setAliasTexParameters();
 	setPositionAndRotation();
 	this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.4f, 1.0f), 0));//ÃÜ¶È µ¯Á¦ Ä¦²ÁÁ¦
 
