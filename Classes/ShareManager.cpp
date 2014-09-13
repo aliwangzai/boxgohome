@@ -1,4 +1,5 @@
 #include "ShareManager.h"
+#include "CCJSONConverter.h"
 
 static ShareManager* g_pShareManager = nullptr;
 
@@ -35,5 +36,4 @@ void ShareManager::setShareAttribute(std::string key, std::string value)
 void ShareManager::sendShare()
 {
 	C2DXShareSDK::showShareMenu(nullptr, m_pContent, Point(100, 100), C2DXMenuArrowDirectionLeft, shareResultHandler);
-	m_pContent->removeAllObjects();
 }

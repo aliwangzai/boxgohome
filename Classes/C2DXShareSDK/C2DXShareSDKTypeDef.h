@@ -94,28 +94,28 @@ namespace cn
          */
         enum C2DXMenuArrowDirection
         {
-			C2DXMenuArrowDirectionUp = 1UL << 0, /**< 向上 */
-			C2DXMenuArrowDirectionDown = 1UL << 1, /**< 向下 */
-			C2DXMenuArrowDirectionLeft = 1UL << 2, /**< 向左 */
-			C2DXMenuArrowDirectionRight = 1UL << 3, /**< 向右 */
-			C2DXMenuArrowDirectionAny = C2DXMenuArrowDirectionUp | C2DXMenuArrowDirectionDown | C2DXMenuArrowDirectionLeft | C2DXMenuArrowDirectionRight, /**< 任意 */
-			C2DXMenuArrowDirectionUnknown = 1UL << 31 /**< 未知 */
+            C2DXMenuArrowDirectionUp = 1UL << 0, /**< 向上 */
+            C2DXMenuArrowDirectionDown = 1UL << 1, /**< 向下 */
+            C2DXMenuArrowDirectionLeft = 1UL << 2, /**< 向左 */
+            C2DXMenuArrowDirectionRight = 1UL << 3, /**< 向右 */
+            C2DXMenuArrowDirectionAny = C2DXMenuArrowDirectionUp | C2DXMenuArrowDirectionDown | C2DXMenuArrowDirectionLeft | C2DXMenuArrowDirectionRight, /**< 任意 */
+            C2DXMenuArrowDirectionUnknown = INT_MAX /**< 未知 */
         };
         
         /**
          *	@brief	授权返回回调事件
          */
-        typedef void(*C2DXAuthResultEvent) (C2DXResponseState state, C2DXPlatType platType, CCDictionary *error);
+        typedef void(*C2DXAuthResultEvent) (C2DXResponseState state, C2DXPlatType platType, Dictionary *error);
         
         /**
          *	@brief	获取用户信息返回回调事件
          */
-        typedef void(*C2DXGetUserInfoResultEvent) (C2DXResponseState state, C2DXPlatType platType, CCDictionary *userInfo, CCDictionary *error);
+        typedef void(*C2DXGetUserInfoResultEvent) (C2DXResponseState state, C2DXPlatType platType, Dictionary *userInfo, Dictionary *error);
         
         /**
          *	@brief	分享返回回调事件
          */
-        typedef void(*C2DXShareResultEvent) (C2DXResponseState state, C2DXPlatType platType, CCDictionary *shareInfo, CCDictionary *error);
+        typedef void(*C2DXShareResultEvent) (C2DXResponseState state, C2DXPlatType platType, Dictionary *shareInfo, Dictionary *error);
     }
 }
 

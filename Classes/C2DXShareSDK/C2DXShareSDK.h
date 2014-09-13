@@ -32,7 +32,7 @@ namespace cn
              *	@param 	appKey 	应用Key
              *	@param 	useAppTrusteeship 	是否使用应用信息托管
              */
-            static void open(CCString *appKey, bool useAppTrusteeship);
+            static void open(const char *appKey, bool useAppTrusteeship);
 
             /**
              *	@brief	关闭ShareSDK
@@ -86,7 +86,7 @@ namespace cn
              *	@param 	content 	分享内容
              *	@param 	callback 	回调方法
              */
-            static void shareContent(C2DXPlatType platType, CCDictionary *content, C2DXShareResultEvent callback);
+            static void shareContent(C2DXPlatType platType, Dictionary *content, C2DXShareResultEvent callback);
             
             /**
              *	@brief	一键分享内容
@@ -95,7 +95,7 @@ namespace cn
              *	@param 	content 	分享内容
              *	@param 	callback 	回调方法
              */
-            static void oneKeyShareContent(CCArray *platTypes, CCDictionary *content, C2DXShareResultEvent callback);
+            static void oneKeyShareContent(Array *platTypes, Dictionary *content, C2DXShareResultEvent callback);
             
             /**
              *	@brief	显示分享菜单
@@ -104,7 +104,7 @@ namespace cn
              *	@param 	content 	分享内容
              *	@param 	callback 	回调方法
              */
-            static void showShareMenu(CCArray *platTypes, CCDictionary *content, C2DXShareResultEvent callback);
+            static void showShareMenu(Array *platTypes, Dictionary *content, C2DXShareResultEvent callback);
             
             /**
              *	@brief	显示分享菜单
@@ -115,7 +115,7 @@ namespace cn
              *  @param  direction   弹出分享菜单指向，仅用于设置iPad分享菜单弹出
              *	@param 	callback 	回调方法
              */
-            static void showShareMenu(CCArray *platTypes, CCDictionary *content, CCPoint pt, C2DXMenuArrowDirection direction, C2DXShareResultEvent callback);
+            static void showShareMenu(Array *platTypes, Dictionary *content, Point pt, C2DXMenuArrowDirection direction, C2DXShareResultEvent callback);
             
             /**
              *	@brief	显示分享视图
@@ -124,13 +124,15 @@ namespace cn
              *	@param 	content 	分享内容
              *	@param 	callback 	回调方法
              */
-            static void showShareView(C2DXPlatType platType, CCDictionary *content, C2DXShareResultEvent callback);
+            static void showShareView(C2DXPlatType platType, Dictionary *content, C2DXShareResultEvent callback);
 
-
+            /**
+             * @brief 显示一个消息
+             * @param msg 消息内容
+             */
+            static void toast(const char *msg);
         };
     }
 }
-
-
 
 #endif /* defined(__C2DXShareSDKSample__C2DXShareSDK__) */

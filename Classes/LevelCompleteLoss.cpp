@@ -1,10 +1,7 @@
 #include "LevelCompleteLoss.h"
 #include "Utils.h"
-
-#include "cocos/ui/UIText.h"
-#include "cocos/ui/UIButton.h"
+#include "ui\CocosGUI.h"
 #include "cocostudio/CCSGUIReader.h"
-#include "cocos/ui/UILayout.h"
 
 
 LevelCompleteLoss::LevelCompleteLoss()

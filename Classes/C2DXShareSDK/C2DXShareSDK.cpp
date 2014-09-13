@@ -21,12 +21,12 @@
 
 using namespace cn::sharesdk;
 
-void C2DXShareSDK::open(CCString *appKey, bool useAppTrusteeship)
+void C2DXShareSDK::open(const char *appKey, bool useAppTrusteeship)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
     //TODO: Andorid
-    initShareSDK(appKey->getCString(), useAppTrusteeship);
+    initShareSDK(appKey, useAppTrusteeship);
 
     
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
@@ -52,7 +52,7 @@ void C2DXShareSDK::close()
 #endif
 }
 
-void C2DXShareSDK::setPlatformConfig(C2DXPlatType platType, CCDictionary *configInfo)
+void C2DXShareSDK::setPlatformConfig(C2DXPlatType platType, Dictionary *configInfo)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
@@ -129,7 +129,7 @@ void C2DXShareSDK::getUserInfo(C2DXPlatType platType, C2DXGetUserInfoResultEvent
 #endif
 }
 
-void C2DXShareSDK::shareContent(C2DXPlatType platType, CCDictionary *content, C2DXShareResultEvent callback)
+void C2DXShareSDK::shareContent(C2DXPlatType platType, Dictionary *content, C2DXShareResultEvent callback)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
@@ -144,7 +144,7 @@ void C2DXShareSDK::shareContent(C2DXPlatType platType, CCDictionary *content, C2
 #endif
 }
 
-void C2DXShareSDK::oneKeyShareContent(CCArray *platTypes, CCDictionary *content, C2DXShareResultEvent callback)
+void C2DXShareSDK::oneKeyShareContent(Array *platTypes, Dictionary *content, C2DXShareResultEvent callback)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
@@ -159,7 +159,7 @@ void C2DXShareSDK::oneKeyShareContent(CCArray *platTypes, CCDictionary *content,
 #endif
 }
 
-void C2DXShareSDK::showShareMenu(CCArray *platTypes, CCDictionary *content, C2DXShareResultEvent callback)
+void C2DXShareSDK::showShareMenu(Array *platTypes, Dictionary *content, C2DXShareResultEvent callback)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
@@ -174,7 +174,7 @@ void C2DXShareSDK::showShareMenu(CCArray *platTypes, CCDictionary *content, C2DX
 #endif
 }
 
-void C2DXShareSDK::showShareMenu(CCArray *platTypes, CCDictionary *content, CCPoint pt, C2DXMenuArrowDirection direction, C2DXShareResultEvent callback)
+void C2DXShareSDK::showShareMenu(Array *platTypes, Dictionary *content, Point pt, C2DXMenuArrowDirection direction, C2DXShareResultEvent callback)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
@@ -189,7 +189,7 @@ void C2DXShareSDK::showShareMenu(CCArray *platTypes, CCDictionary *content, CCPo
 #endif
 }
 
-void C2DXShareSDK::showShareView(C2DXPlatType platType, CCDictionary *content, C2DXShareResultEvent callback)
+void C2DXShareSDK::showShareView(C2DXPlatType platType, Dictionary *content, C2DXShareResultEvent callback)
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
     
@@ -201,5 +201,19 @@ void C2DXShareSDK::showShareView(C2DXPlatType platType, CCDictionary *content, C
     //TODO: iOS
     C2DXiOSShareSDK::showShareView(platType, content, callback);
     
+#endif
+}
+
+void C2DXShareSDK::toast(const char *msg)
+{
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+
+    //TODO: Android
+    toastShow(msg);
+
+#elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+
+    //TODO: iOS
+
 #endif
 }

@@ -85,5 +85,5 @@ void AppDelegate::applicationWillEnterForeground() {
 
 void AppDelegate::initShareSDK()
 {
-	C2DXShareSDK::open(CCString::create("2f5d7a211988"), true);
+	C2DXShareSDK::open("2f5d7a211988", true);
 }
