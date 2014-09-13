@@ -2,20 +2,23 @@ package cn.sharesdk;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+
 import m.framework.utils.Hashon;
 import m.framework.utils.UIHandler;
+
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.cocos2dx.plugin.PluginWrapper;
 
+import android.content.Context;
+import android.os.Handler.Callback;
+import android.os.Message;
+import android.text.TextUtils;
 import cn.sharesdk.framework.Platform;
 import cn.sharesdk.framework.Platform.ShareParams;
 import cn.sharesdk.framework.PlatformActionListener;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
-import android.content.Context;
-import android.os.Message;
-import android.os.Handler.Callback;
-import android.text.TextUtils;
 
 public class ShareSDKUtils {
 	private static boolean DEBUG = true;
@@ -112,7 +115,7 @@ public class ShareSDKUtils {
 	
 	public static void initSDK(final String appKey, final boolean enableStatistics) {
 		if (DEBUG) {
-			System.out.println("initSDK");
+			System.out.println("initSDK appKey:" + appKey + " enableStatistics:" + enableStatistics);
 		}
 		UIHandler.sendEmptyMessage(1, new Callback() {			
 			@Override
@@ -196,14 +199,23 @@ public class ShareSDKUtils {
 	
 	private static HashMap<String, Object> nativeMapToJavaMap(
 			HashMap<String, Object> content) {
+		Iterator<String> iter = content.keySet().iterator(); 
+		while (iter.hasNext()) { 
+		    String key = iter.next(); 
+		    String val = (String)content.get(key);
+		    System.out.println("key:" + key +" val:"+val);
+		} 
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("text", content.get("content"));
 		String image = (String) content.get("image");
-		if (image != null && image.startsWith("/")) {
-			map.put("imagePath", image);
-		} else if(!TextUtils.isEmpty(image)){
-			map.put("imageUrl", image);
+		if (!TextUtils.isEmpty(image)) {
+			if (image != null && image.startsWith("/")) {
+				map.put("imagePath", image);
+			} else {
+				map.put("imageUrl", image);
+			}
 		}
+		
 		map.put("title", content.get("title"));
 		map.put("comment", content.get("description"));
 		map.put("url", content.get("url"));
@@ -215,6 +227,7 @@ public class ShareSDKUtils {
 			int shareType = iosTypeToAndroidType(Integer.parseInt(type));
 			map.put("shareType", shareType);
 		}
+		
 		return map;
 	}
 	
@@ -233,18 +246,23 @@ public class ShareSDKUtils {
 	}
 	
 	public static void onekeyShare(String contentJson) {
+		System.out.println("---------------------------------------oneKeyShare");
+		System.out.println("Java接收到的Json:" + contentJson);
 		onekeyShare(0, contentJson);
 	}
 	
 	public static void onekeyShare(int platformId, String contentJson) {
+		System.out.println("---------------------------------------onekeyShare");
 		if (DEBUG) {
 			System.out.println("OnekeyShare");
 		}
 		HashMap<String, Object> content = hashon.fromJson(contentJson);
+		//content = nativeMapToJavaMap(content);
 		HashMap<String, Object> map = nativeMapToJavaMap(content);
 		
 		OnekeyShare oks = new OnekeyShare();
 		if (map.containsKey("text")) {
+			System.out.println("设置OneKeyShare Text:" + map.get("text"));
 			oks.setText(String.valueOf(map.get("text")));
 		}
 		if (map.containsKey("imagePath")) {
