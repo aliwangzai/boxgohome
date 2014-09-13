@@ -1,6 +1,6 @@
 #include "LevelCompleteLoss.h"
 #include "Utils.h"
-#include "ui\CocosGUI.h"
+#include "ui/CocosGUI.h"
 #include "cocostudio/CCSGUIReader.h"
 
 

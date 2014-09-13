@@ -3,7 +3,7 @@
 #include "UIButton.h"
 #include "AdManager.h"
 #include "cocostudio/CCSGUIReader.h"
-#include "ui\CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 
 
