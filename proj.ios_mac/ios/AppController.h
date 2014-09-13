@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "GADBannerView.h"
 
 @class RootViewController;
 
@@ -7,6 +8,10 @@
 }
 
 @property(nonatomic, readonly) RootViewController* viewController;
+
++(void) showBannerView;
+
++(void) hideBannerView;
 
 @end
 

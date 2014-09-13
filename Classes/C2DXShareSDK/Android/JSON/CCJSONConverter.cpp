@@ -20,17 +20,17 @@ CCJSONConverter * CCJSONConverter::sharedConverter()
     return &_sharedConverter;
 }
 
-char * CCJSONConverter::strFrom(CCDictionary *dictionary)
+char * CCJSONConverter::strFrom(Dictionary *dictionary)
 {
     CCAssert(dictionary, "CCJSONConverter:can not convert a null pointer");
     cJSON * json = cJSON_CreateObject();
     convertDictionaryToJson(dictionary, json);
-    char* returnStr = cJSON_Print(json);
+    char* returnStr = cJSON_PrintUnformatted(json);
     cJSON_Delete(json);
     return returnStr;
 }
 
-CCDictionary * CCJSONConverter::dictionaryFrom(const char *str)
+Dictionary * CCJSONConverter::dictionaryFrom(const char *str)
 {
     cJSON * json = cJSON_Parse(str);
     if (!json || json->type!=cJSON_Object) {
@@ -40,13 +40,13 @@ CCDictionary * CCJSONConverter::dictionaryFrom(const char *str)
         return NULL;
     }
     CCAssert(json && json->type==cJSON_Object, "CCJSONConverter:wrong json format");
-    CCDictionary * dictionary = new CCDictionary();
+    Dictionary * dictionary = new Dictionary();
     convertJsonToDictionary(json, dictionary);
     cJSON_Delete(json);
     return dictionary;
 }
 
-void CCJSONConverter::convertJsonToDictionary(cJSON *json, CCDictionary *dictionary)
+void CCJSONConverter::convertJsonToDictionary(cJSON *json, Dictionary *dictionary)
 {
     dictionary->removeAllObjects();
     cJSON * j = json->child;
@@ -57,9 +57,13 @@ void CCJSONConverter::convertJsonToDictionary(cJSON *json, CCDictionary *diction
     }
 }
 
-void CCJSONConverter::convertDictionaryToJson(CCDictionary *dictionary, cJSON *json)
+void CCJSONConverter::convertDictionaryToJson(Dictionary *dictionary, cJSON *json)
 {
+#if COCOS2D_VERSION >= 0x00030000
     DictElement * pElement = NULL;
+#else
+    CCDictElement * pElement = NULL;
+#endif
     CCDICT_FOREACH(dictionary, pElement){
         CCObject * obj = pElement->getObject();
         cJSON * jsonItem = getObjJson(obj);
@@ -90,16 +94,16 @@ void CCJSONConverter::convertArrayToJson(CCArray * array, cJSON * json)
 cJSON * CCJSONConverter::getObjJson(CCObject * obj)
 {
     std::string s = typeid(*obj).name();
-    if(s.find("CCDictionary")!=std::string::npos){
+    if(s.find("Dictionary")!=std::string::npos){
         cJSON * json = cJSON_CreateObject();
-        convertDictionaryToJson((CCDictionary *)obj, json);
+        convertDictionaryToJson((Dictionary *)obj, json);
         return json;
-    }else if(s.find("CCArray")!=std::string::npos){
+    }else if(s.find("Array")!=std::string::npos){
         cJSON * json = cJSON_CreateArray();
         convertArrayToJson((CCArray *)obj, json);
         return json;
-    }else if(s.find("CCString")!=std::string::npos){
-        CCString * s = (CCString *)obj;
+    }else if(s.find("String")!=std::string::npos){
+        String * s = (String *)obj;
         cJSON * json = cJSON_CreateString(s->getCString());
         return json;
     }else if(s.find("CCNumber")!=std::string::npos){
@@ -119,19 +123,19 @@ CCObject * CCJSONConverter::getJsonObj(cJSON * json)
     switch (json->type) {
         case cJSON_Object:
         {
-            CCDictionary * dictionary = new CCDictionary();
+            Dictionary * dictionary = new Dictionary();
             convertJsonToDictionary(json, dictionary);
             return dictionary;
         }
         case cJSON_Array:
         {
-            CCArray * array = new CCArray();
+            Array * array = new Array();
             convertJsonToArray(json, array);
             return array;
         }
         case cJSON_String:
         {
-            CCString * string = new CCString(json->valuestring);
+            String * string = new String(json->valuestring);
             return string;
         }
         case cJSON_Number:

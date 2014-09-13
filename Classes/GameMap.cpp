@@ -6,8 +6,8 @@
 #include "Enemy.h"
 #include "JumpsItem.h"
 
-#include "2d\CCFastTMXTiledMap.h"
-#include "2d\CCFastTMXLayer.h"
+#include "2d/CCFastTMXTiledMap.h"
+#include "2d/CCFastTMXLayer.h"
 #include "BrokableWall.h"
 
 #define MAP_TAG 10

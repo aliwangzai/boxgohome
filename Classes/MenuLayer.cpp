@@ -9,6 +9,14 @@
 #include "AdManager.h"
 #include "Utils.h"
 
+#include "cocostudio/CCSGUIReader.h"
+#include "ui/UIWidget.h"
+#include "ui/UILayout.h"
+#include "cocos/ui/UIText.h"
+#include "cocos/ui/UIButton.h"
+using namespace  cocos2d::ui;
+
+
 MenuLayer::MenuLayer()
 :m_pCurrentNode(nullptr)
 {
@@ -118,7 +126,28 @@ bool MenuLayer::initWithMenu()
 	this->addChild(this->m_pCurrentNode);
 	m_pCurrentNode->setPosition(VisibleRect::leftBottom());
 
-	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+
+	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Menu.json"));
+	addChild(layout);
+	layout->setAnchorPoint(Vec2(0,0.5f));
+	layout->setPosition(VisibleRect::left() + Vec2(30,0) );
+
+	Button * btn_play = static_cast<Button *>(layout->getChildByName("btn_play"));
+	Button * btn_tur = static_cast<Button *>(layout->getChildByName("btn_tur"));
+	Button * btn_more = static_cast<Button *>(layout->getChildByName("btn_more"));
+	Button * btn_credit = static_cast<Button *>(layout->getChildByName("btn_credit"));
+
+
+	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
+		if ((int)type == 2)
+		{
+			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
+		}
+		
+	});
+
+	
+	/*TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
 	auto playLabel = Label::createWithTTF(ttfConfig, "Play Game");
 	auto playItem = MenuItemLabel::create(playLabel, [=](Ref *pSender){
 		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
@@ -169,6 +198,8 @@ bool MenuLayer::initWithMenu()
 		tutorialItem, walkthroughItem, moreGameItem, backItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(20);
-	menu->setPosition(VisibleRect::left() + Point(150, 0));
+	menu->setPosition(VisibleRect::left() + Point(150, 0));*/
+
+
 	return true;
 }

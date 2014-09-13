@@ -28,6 +28,8 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+GADBannerView *bannerView_;
+
 @implementation AppController
 
 #pragma mark -
@@ -56,6 +58,28 @@ static AppDelegate s_sharedApplication;
     _viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     _viewController.wantsFullScreenLayout = YES;
     _viewController.view = eaglView;
+    
+    //------------------- Add Admob
+    bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    
+    bannerView_.rootViewController = _viewController;
+    
+    bannerView_.adUnitID = @"ca-app-pub-2906542859743654/6985074520";
+    
+    GADRequest *request = [GADRequest request];
+    bannerView_.hidden = NO;
+    [bannerView_ setFrame:CGRectMake(90, 0, 320, 50)];
+    
+    request.testDevices = [NSArray arrayWithObjects:
+    
+                               GAD_SIMULATOR_ID,
+    
+                               @"YOU IPAD IDF",
+    
+                               nil];
+    //----------------------------
+
+    
 
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
@@ -68,6 +92,10 @@ static AppDelegate s_sharedApplication;
         // use this method on ios6
         [window setRootViewController:_viewController];
     }
+    
+    [_viewController.view addSubview: bannerView_];
+    [_viewController.view bringSubviewToFront:bannerView_];
+
 
     [window makeKeyAndVisible];
 
@@ -76,7 +104,9 @@ static AppDelegate s_sharedApplication;
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
     cocos2d::GLView *glview = cocos2d::GLView::createWithEAGLView(eaglView);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
-
+    
+    [bannerView_ loadRequest: request];
+    
     cocos2d::Application::getInstance()->run();
 
     return YES;
@@ -134,8 +164,19 @@ static AppDelegate s_sharedApplication;
 
 
 - (void)dealloc {
+    [bannerView_ release];
     [window release];
     [super dealloc];
+}
+
++ (void)showBannerView
+{
+    bannerView_.hidden = NO;
+}
+
++ (void)hideBannerView
+{
+    bannerView_.hidden = YES;
 }
 
 

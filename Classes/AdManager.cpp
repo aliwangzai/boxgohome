@@ -6,7 +6,7 @@ extern "C"
 #include "jni/JniHelper.h"
 #include <android/log.h>
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
+#include "IOSUtils.h"
 #endif
 
 static AdManager* g_pAdManager = nullptr;
@@ -35,7 +35,7 @@ void AdManager::showBannerAD()
 		CCLOG("the showBannerAD method is not exits");
 	}
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
+    IOSUtils::showBannerView();
 #endif
 }
 
@@ -54,7 +54,7 @@ void AdManager::hideBannerAD()
 		CCLOG("the hideBannerAD method is not exits");
 	}
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
+    IOSUtils::hideBannerView();
 #endif
 }
 

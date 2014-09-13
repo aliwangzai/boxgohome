@@ -1,4 +1,5 @@
 #include "ShareManager.h"
+#include "CCJSONConverter.h"
 
 static ShareManager* g_pShareManager = nullptr;
 

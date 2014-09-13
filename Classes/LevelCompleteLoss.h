@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "Dialog.h"
-#include "cocos\ui\UIWidget.h"
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 

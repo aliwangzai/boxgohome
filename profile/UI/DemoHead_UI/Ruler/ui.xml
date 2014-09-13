@@ -8,4 +8,8 @@
     <Project>Lose</Project>
     <GuidesList />
   </GuidesProject>
+  <GuidesProject>
+    <Project>Menu</Project>
+    <GuidesList />
+  </GuidesProject>
 </ArrayOfGuidesProject>
