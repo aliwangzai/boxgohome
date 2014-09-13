@@ -1,6 +1,7 @@
 #ifndef UIButton_h__
 #define UIButton_h__
-#include "cocos-ext.h"
+
+#include "extensions/cocos-ext.h"
 USING_NS_CC_EXT;
 
 

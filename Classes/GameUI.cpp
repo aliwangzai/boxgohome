@@ -216,19 +216,16 @@ void GameUI::stop()
 int GameUI::getOldScore() const
 {
 	int oldScore = 0;
-	for (int i = 1; i <= m_nLevel; i++)
-	{
-		char buffer[128];
-		sprintf(buffer, "user_score_%d", i);
-		oldScore += UserDefault::getInstance()->getIntegerForKey(buffer);
-	}
+	char buffer[128];
+	sprintf(buffer, "user_score_%d", m_nLevel);
+	oldScore += UserDefault::getInstance()->getIntegerForKey(buffer);
 	return oldScore;
 }
 
 void GameUI::setNewScore(int newScore)
 {
 	char buffer[128];
-	sprintf(buffer, "user_score_%d", m_nLevel + 1);
+	sprintf(buffer, "user_score_%d", m_nLevel);
 	UserDefault::getInstance()->setIntegerForKey(buffer, newScore);
 }
 

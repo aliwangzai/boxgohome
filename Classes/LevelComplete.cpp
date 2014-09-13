@@ -1,6 +1,14 @@
 #include "LevelComplete.h"
 #include "GameUI.h"
 #include "UIButton.h"
+#include "AdManager.h"
+#include "cocostudio/CCSGUIReader.h"
+#include "ui/UIWidget.h"
+#include "ui/UILayout.h"
+#include "cocos/ui/UIText.h"
+#include "cocos/ui/UIButton.h"
+
+
 
 LevelComplete::LevelComplete()
 {
@@ -25,11 +33,13 @@ LevelComplete* LevelComplete::create(Dialog* dialog)
 bool LevelComplete::initWithDialog(Dialog* dialog)
 {
 	this->m_pDialog = dialog;
+	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Win.json"));
+	addChild(layout);
 
-	this->ignoreAnchorPointForPosition(false);
-	this->setAnchorPoint(Vec2(.5, .5));
+	layout->setAnchorPoint(ccp(0.5,0.5));
 
-	auto light = Sprite::create("ui/bg_light.png");
+
+	/*auto light = Sprite::create("ui/bg_light.png");
 	auto sprite = Sprite::create("ui/bg_result.png");
 	this->addChild(sprite);
 	//this->addChild(light);
@@ -37,74 +47,62 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	light->setScale(3.0f);
 
 	light->setPosition(this->getContentSize() / 2);
-	sprite->setPosition(this->getContentSize() / 2);
+	sprite->setPosition(this->getContentSize() / 2);;*/
 
-	this->initMenu();
 
+	Text * txt = static_cast<Text*>(layout->getChildByName("label_score"));
+	txt->setString("123456789");
+
+	Button * btn_menu = static_cast<Button*>(layout->getChildByName("btn_menu"));
+	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
+	Button * btn_next = static_cast<Button*>(layout->getChildByName("btn_next"));
+
+	btn_menu->addTouchEventListener(this, toucheventselector(LevelComplete::btn_menuCallback));
+	btn_reset->addTouchEventListener(this, toucheventselector(LevelComplete::btn_resetCallback));
+	btn_next->addTouchEventListener(this, toucheventselector(LevelComplete::btn_nextCallback));
+
+	//this->initMenu();
 	this->initDataLabel();
 
+	AdManager::getInstance()->displayInterstitial();
+
 	return true;
 }
 
-bool LevelComplete::initMenu()
+void LevelComplete::btn_menuCallback(Ref*sender,TouchEventType)
 {
-	MenuItemFont::setFontSize(22);
-	auto moreGameItem = UIButton::create("ui/btn_menu.png", [=](Ref *pSender ){
-		if (this->m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)1);
-		}
-	});
-
-	auto resetLevelItem = UIButton::create("ui/btn_reset.png", [=](Ref *pSender){
-		if (this->m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)2);
-		}
-	});
-
-
-	auto nextLevelItem = UIButton::create("ui/btn_next.png", [=](Ref *pSender){
-		if (this->m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)3);
-		}
-	});
-	nextLevelItem->setColor(Color3B(0, 0, 0));
-	//auto menu = Menu::create(moreGameItem, nextLevelItem, nullptr);
-	//menu->alignItemsHorizontallyWithPadding(70);
-	moreGameItem->setPosition(85, 45);
-	resetLevelItem->setPosition(185, 45);
-	nextLevelItem->setPosition(285, 45);
-	//this->addChild(menu);
-	addChild(moreGameItem);
-	addChild(resetLevelItem);
-	addChild(nextLevelItem);
-	return true;
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)1);
 }
+
+void LevelComplete::btn_resetCallback(Ref*sender,TouchEventType)
+{
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)2);
+}
+
+
+void LevelComplete::btn_nextCallback(Ref*sender,TouchEventType)
+{
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)3);
+}
+
 
 bool LevelComplete::initDataLabel()
 {
-	auto oldScore = Label::createWithSystemFont("7434", "", 21);
-	oldScore->setPosition(300, 210);
-	oldScore->setColor(Color3B(0, 0, 0));
-	oldScore->setAnchorPoint(Vec2(1, 0.5));
-	this->addChild(oldScore, 0, 0x01);
 	auto bonusLabel = Label::createWithSystemFont("7373", "", 21);
-	bonusLabel->setPosition(300, 174);
+	bonusLabel->setPosition(320, 188);
 	bonusLabel->setColor(Color3B(0, 0, 0));
 	bonusLabel->setAnchorPoint(Vec2(1, 0.5));
 	this->addChild(bonusLabel, 0, 0x02);
 	auto jumpLabel = Label::createWithSystemFont("3X1000=3000", "", 21);
-	jumpLabel->setPosition(300, 142);
+	jumpLabel->setPosition(320, 162);
 	jumpLabel->setColor(Color3B(0, 0, 0));
 	jumpLabel->setAnchorPoint(Vec2(1, 0.5));
 	this->addChild(jumpLabel, 0, 0x03);
 	auto newScore = Label::createWithSystemFont("00000", "", 21);
-	newScore->setPosition(300, 96);
+	newScore->setPosition(320, 123);
 	newScore->setColor(Color3B(0, 0, 0));
 	newScore->setAnchorPoint(Vec2(1, 0.5));
 	this->addChild(newScore, 0, 0x04);
@@ -116,9 +114,7 @@ void LevelComplete::databind(void *data)
 	if (data != nullptr)
 	{
 		auto gameUI = (GameUI*)data;
-		auto label = static_cast<Label*>(this->getChildByTag(0x01));
-		label->setString(std::to_string(gameUI->getOldScore()));
-		label = static_cast<Label*>(this->getChildByTag(0x02));
+		auto label = static_cast<Label*>(this->getChildByTag(0x02));
 		label->setString(std::to_string(gameUI->getBonus()));
 
 		char buffer[128];
@@ -127,9 +123,8 @@ void LevelComplete::databind(void *data)
 		label->setString(buffer);
 
 		int currentLevelNewScore = gameUI->getBonus() + gameUI->getJumpScore();
-		int newScore = currentLevelNewScore + gameUI->getOldScore();
 		label = static_cast<Label*>(this->getChildByTag(0x04));
-		label->setString(std::to_string(newScore));
+		label->setString(std::to_string(currentLevelNewScore));
 		gameUI->setNewScore(currentLevelNewScore);
 	}
 }

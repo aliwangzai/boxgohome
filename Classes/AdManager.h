@@ -11,6 +11,8 @@ public:
 
 	void showBannerAD();
 	void hideBannerAD();
+
+	void displayInterstitial();
 };
 
 #endif

@@ -1,6 +1,12 @@
 #include "LevelCompleteLoss.h"
 #include "Utils.h"
 
+#include "cocos/ui/UIText.h"
+#include "cocos/ui/UIButton.h"
+#include "cocostudio/CCSGUIReader.h"
+#include "cocos/ui/UILayout.h"
+
+
 LevelCompleteLoss::LevelCompleteLoss()
 {
 }
@@ -27,44 +33,34 @@ bool LevelCompleteLoss::initWithDialog(Dialog* dialog)
 	//if (!LayerColor::initWithColor(Color4B(255, 0, 0, 255))) return false;
 	this->m_pDialog = dialog;
 
-	this->ignoreAnchorPointForPosition(false);
-	this->setAnchorPoint(Vec2(.5, .5));
+	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Lose.json"));
+	addChild(layout);
 
-	auto sprite = Utils::createSprite("dialog/dialog_1.png");
-	this->setContentSize(sprite->getContentSize());
-	this->addChild(sprite);
-	sprite->setPosition(this->getContentSize() / 2);
+	Button * btn_menu = static_cast<Button*>(layout->getChildByName("btn_menu"));
+	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
+	Button * btn_next = static_cast<Button*>(layout->getChildByName("btn_next"));
 
-	this->initWithMenu();
-	this->initWithTitle();
+	btn_menu->addTouchEventListener(this, toucheventselector(LevelCompleteLoss::btn_menuCallback));
+	btn_reset->addTouchEventListener(this, toucheventselector(LevelCompleteLoss::btn_resetCallback));
+
+	layout->setAnchorPoint(ccp(0.5,0.5));
 	
 	return true;
 }
 
-bool LevelCompleteLoss::initWithMenu()
+void LevelCompleteLoss::btn_menuCallback( Ref*sender,TouchEventType a )
 {
-	MenuItemFont::setFontSize(22);
-	auto moreGameItem = MenuItemFont::create("More Game", [=](Ref *pSender){
-		if (m_fCallback)
-		{
-			m_fCallback((void*)1);
-		}
-	});
-	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto restartItem = MenuItemFont::create("Restart", [=](Ref *pSender){
-		if (m_fCallback)
-		{
-			this->m_pDialog->hideDialog();
-			m_fCallback((void*)2);
-		}
-	});
-	restartItem->setColor(Color3B(0, 0, 0));
-	auto menu = Menu::create(moreGameItem, restartItem, nullptr);
-	menu->alignItemsHorizontallyWithPadding(60);
-	menu->setPosition(150, 38);
-	this->addChild(menu);
-	return true;
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)1);
 }
+
+void LevelCompleteLoss::btn_resetCallback( Ref*sender,TouchEventType a )
+{
+	this->m_pDialog->hideDialog();
+	m_fCallback((void*)2);
+}
+
+
 
 bool LevelCompleteLoss::initWithTitle()
 {
@@ -84,3 +80,4 @@ void LevelCompleteLoss::setResultCallback(DialogCallback callback)
 {
 	this->m_fCallback = callback;
 }
+
