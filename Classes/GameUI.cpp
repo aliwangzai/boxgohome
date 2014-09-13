@@ -275,7 +275,7 @@ void GameUI::setNewScore(int newScore)
 
 void GameUI::addJumps(int count)
 {
-	this->m_nJump += this->m_nJump + count;
+	this->m_nJump += count;
 	this->setJumps(this->m_nJump, true);
 }
 

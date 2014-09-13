@@ -30,6 +30,7 @@ public:
 
 	virtual void onEnterTransitionDidFinish();
 	virtual void onEnter();
+	virtual void onExit();
 
 	virtual void update(float dt);
 

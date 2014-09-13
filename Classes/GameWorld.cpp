@@ -183,6 +183,9 @@ void GameWorld::onEnter()
 void GameWorld::onEnterTransitionDidFinish()
 {
 	Node::onEnterTransitionDidFinish();
+
+	AdManager::getInstance()->showBannerAD();
+
 	/*float delayTime = 0.0f;
 	for (int i = 0; i < 3; i++)
 	{
@@ -206,6 +209,11 @@ void GameWorld::onEnterTransitionDidFinish()
 		title->runAction(seqAction);
 		title->runAction(seqAction2);
 	}*/
+}
+
+void GameWorld::onExit()
+{
+	AdManager::getInstance()->hideBannerAD();
 }
 
 void GameWorld::update(float dt)

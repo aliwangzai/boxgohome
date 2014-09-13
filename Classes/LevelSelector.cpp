@@ -5,6 +5,7 @@
 #include "LevelState.h"
 #include "CheckBox.h"
 #include "Utils.h"
+#include "AdManager.h"
 
 LevelSelector::LevelSelector()
 {
@@ -130,4 +131,16 @@ bool LevelSelectScene::init()
 	auto selector = LevelSelector::create();
 	addChild(selector);
 	return true;
+}
+
+void LevelSelectScene::onExit()
+{
+	Layer::onExit();
+
+	AdManager::getInstance()->hideBannerAD();
+}
+
+void LevelSelectScene::onEnter()
+{
+	AdManager::getInstance()->showBannerAD();
 }

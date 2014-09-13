@@ -208,3 +208,10 @@ void Welcome::playHeroAnimate()
 		);
 	this->m_pBoxSprite->runAction(RepeatForever::create(seqAction));
 }
+
+void Welcome::onEnter()
+{
+	Node::onEnter();
+	
+	AdManager::getInstance()->hideBannerAD();
+}

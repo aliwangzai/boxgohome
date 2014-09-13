@@ -12,6 +12,9 @@ public:
 
 	static Scene* createScene();
 
+	virtual void onEnter();
+	virtual void onExit();
+
 	bool init();
 	bool initBackground();
 	bool initWithMenu();

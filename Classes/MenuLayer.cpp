@@ -112,6 +112,18 @@ bool MenuLayer::initBackground()
 	return true;
 }
 
+void MenuLayer::onEnter()
+{
+	Node::onEnter();
+
+	AdManager::getInstance()->hideBannerAD();
+}
+
+void MenuLayer::onExit()
+{
+	Node::onExit();
+}
+
 bool MenuLayer::initSound()
 {
 	auto soundCheckBox = Utils::createSound();

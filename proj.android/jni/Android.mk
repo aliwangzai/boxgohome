@@ -19,6 +19,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/BoxSprite.cpp \
 				   ../../Classes/CheckBox.cpp \
 				   ../../Classes/Dialog.cpp \
+				   ../../Classes/UIButton.cpp \
 				   ../../Classes/DialogManager.cpp \
 				   ../../Classes/LevelComplete.cpp \
 				   ../../Classes/LevelCompleteLoss.cpp \

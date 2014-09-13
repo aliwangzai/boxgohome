@@ -45,6 +45,9 @@ public:
 
 	bool init();
 
+	virtual void onEnter();
+	virtual void onExit();
+
 	CREATE_FUNC(LevelSelectScene);
 
 	static Scene * createScene();
