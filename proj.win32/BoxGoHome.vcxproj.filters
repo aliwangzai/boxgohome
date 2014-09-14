@@ -37,6 +37,9 @@
     <Filter Include="Classes\manager">
       <UniqueIdentifier>{9945d8dd-e377-482e-902b-61a50df4d30a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\effect">
+      <UniqueIdentifier>{3add62a3-b8e2-4917-bd8e-615e7e340640}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -132,6 +135,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\AdManager.cpp">
       <Filter>Classes\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TailEffect.cpp">
+      <Filter>Classes\effect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +241,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\UIButton.h">
       <Filter>Classes\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ObjectPool.h">
+      <Filter>Classes\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TailEffect.h">
+      <Filter>Classes\effect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
