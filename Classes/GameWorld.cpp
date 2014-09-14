@@ -213,6 +213,8 @@ void GameWorld::onEnterTransitionDidFinish()
 
 void GameWorld::onExit()
 {
+    Node::onExit();
+    
 	AdManager::getInstance()->hideBannerAD();
 }
 

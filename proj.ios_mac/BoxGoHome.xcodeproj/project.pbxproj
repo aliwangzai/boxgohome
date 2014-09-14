@@ -24,6 +24,7 @@
 		1D740C4E19BF396F00BC4238 /* BaseEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4719BF396F00BC4238 /* BaseEntity.cpp */; };
 		1D740C4F19BF396F00BC4238 /* BrokableWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4919BF396F00BC4238 /* BrokableWall.cpp */; };
 		1D740C5119BF396F00BC4238 /* JumpsItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4C19BF396F00BC4238 /* JumpsItem.cpp */; };
+		1D829B0F19C878B700E723D8 /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D829B0E19C878B700E723D8 /* UIButton.cpp */; };
 		1DBE668F19C715FA0007A870 /* TailEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DBE668D19C715FA0007A870 /* TailEffect.cpp */; };
 		1DCE58D419C32251002D3497 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58CC19C32251002D3497 /* 1.png */; };
 		1DCE58D519C32251002D3497 /* 37.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58CD19C32251002D3497 /* 37.png */; };
@@ -336,6 +337,7 @@
 		1D740C4A19BF396F00BC4238 /* BrokableWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrokableWall.h; path = ../Classes/BrokableWall.h; sourceTree = "<group>"; };
 		1D740C4C19BF396F00BC4238 /* JumpsItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JumpsItem.cpp; path = ../Classes/JumpsItem.cpp; sourceTree = "<group>"; };
 		1D740C4D19BF396F00BC4238 /* JumpsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JumpsItem.h; path = ../Classes/JumpsItem.h; sourceTree = "<group>"; };
+		1D829B0E19C878B700E723D8 /* UIButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UIButton.cpp; path = ../Classes/UIButton.cpp; sourceTree = "<group>"; };
 		1DBE668C19C715FA0007A870 /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectPool.h; path = ../Classes/ObjectPool.h; sourceTree = "<group>"; };
 		1DBE668D19C715FA0007A870 /* TailEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TailEffect.cpp; path = ../Classes/TailEffect.cpp; sourceTree = "<group>"; };
 		1DBE668E19C715FA0007A870 /* TailEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TailEffect.h; path = ../Classes/TailEffect.h; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1D829B0E19C878B700E723D8 /* UIButton.cpp */,
 				1DBE668C19C715FA0007A870 /* ObjectPool.h */,
 				1DBE668D19C715FA0007A870 /* TailEffect.cpp */,
 				1DBE668E19C715FA0007A870 /* TailEffect.h */,
@@ -1376,6 +1379,7 @@
 				1DDD610A19BB609B000BA225 /* BlueWall.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				1DDD610919BB609B000BA225 /* Background.cpp in Sources */,
+				1D829B0F19C878B700E723D8 /* UIButton.cpp in Sources */,
 				1DBE668F19C715FA0007A870 /* TailEffect.cpp in Sources */,
 				1DDD611919BB609B000BA225 /* Obstacle.cpp in Sources */,
 				1DDD611C19BB609B000BA225 /* TestLayer.cpp in Sources */,

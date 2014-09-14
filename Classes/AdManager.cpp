@@ -73,7 +73,7 @@ void AdManager::displayInterstitial()
 		CCLOG("the displayInterstitial method is not exits");
 	}
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-
+    IOSUtils::showInterstitialView();
 #endif
 }
 
