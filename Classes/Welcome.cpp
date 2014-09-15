@@ -52,7 +52,7 @@ bool Welcome::initEdgeMap()
 
 bool Welcome::initMenu()
 {
-	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+	TTFConfig ttfConfig("ui/grobold.ttf", 32);
 	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
 	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
 		ShareManager::getInstance()->setShareAttribute("content", "this is test content");
@@ -64,11 +64,9 @@ bool Welcome::initMenu()
 		ShareManager::getInstance()->sendShare();
 	});
 	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto startLabel = Label::createWithTTF(ttfConfig, "Play");
-	auto startItem = MenuItemLabel::create(startLabel, [](Ref *pSender){
+	auto startItem = MenuItemImage::create("ui/btn_play2.png","ui/btn_play2.png","ui/btn_play2.png", [](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
-	startItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(moreGameItem, startItem, nullptr);
 	this->addChild(menu);
 	menu->alignItemsVerticallyWithPadding(10);
@@ -86,13 +84,16 @@ bool Welcome::initBackground()
 
 bool Welcome::initTitle()
 {
-	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
-	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
-	this->addChild(m_pJumpBoxTitle);
-	m_pJumpBoxTitle->setPosition(VisibleRect::center() + Point(-300, 280));
-	this->addChild(reincarTitle);
-	reincarTitle->setPosition(VisibleRect::center() + Point(-50, 230));
-	this->playFontAnimate();
+	auto title = Sprite::create("ui/title2.png");
+	title->setPosition(VisibleRect::center() + Vec2(0 , 200));
+	addChild(title ,2);
+// 	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
+// 	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
+// 	this->addChild(m_pJumpBoxTitle);
+// 	m_pJumpBoxTitle->setPosition(VisibleRect::center() + Point(-300, 280));
+// 	this->addChild(reincarTitle);
+// 	reincarTitle->setPosition(VisibleRect::center() + Point(-50, 230));
+// 	this->playFontAnimate();
 	return true;
 }
 
