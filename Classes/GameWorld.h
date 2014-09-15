@@ -28,6 +28,7 @@ public:
 	bool initGameUI();
 	bool initContactLogic();
 
+	virtual void onEnterTransitionDidFinish();
 	virtual void onEnter();
 
 	virtual void update(float dt);

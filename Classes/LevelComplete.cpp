@@ -1,7 +1,6 @@
 #include "LevelComplete.h"
 #include "GameUI.h"
 #include "UIButton.h"
-#include "AdManager.h"
 #include "cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
 
@@ -30,10 +29,10 @@ LevelComplete* LevelComplete::create(Dialog* dialog)
 bool LevelComplete::initWithDialog(Dialog* dialog)
 {
 	this->m_pDialog = dialog;
-	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Win.json"));
-	addChild(layout);
+	m_pLayout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Win.json"));
+	addChild(m_pLayout);
 
-	layout->setAnchorPoint(ccp(0.5,0.5));
+	m_pLayout->setAnchorPoint(ccp(0.5, 0.5));
 
 
 	/*auto light = Sprite::create("ui/bg_light.png");
@@ -47,22 +46,19 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	sprite->setPosition(this->getContentSize() / 2);;*/
 
 
-	Text * txt = static_cast<Text*>(layout->getChildByName("label_score"));
+	Text * txt = static_cast<Text*>(m_pLayout->getChildByName("label_score"));
 	txt->setString("123456789");
 
-	Button * btn_menu = static_cast<Button*>(layout->getChildByName("btn_menu"));
-	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
-	Button * btn_next = static_cast<Button*>(layout->getChildByName("btn_next"));
+	Button * btn_menu = static_cast<Button*>(m_pLayout->getChildByName("btn_menu"));
+	Button * btn_reset = static_cast<Button*>(m_pLayout->getChildByName("btn_reset"));
+	Button * btn_next = static_cast<Button*>(m_pLayout->getChildByName("btn_next"));
 
 	btn_menu->addTouchEventListener(this, toucheventselector(LevelComplete::btn_menuCallback));
 	btn_reset->addTouchEventListener(this, toucheventselector(LevelComplete::btn_resetCallback));
 	btn_next->addTouchEventListener(this, toucheventselector(LevelComplete::btn_nextCallback));
 
 	//this->initMenu();
-	this->initDataLabel();
-
-	AdManager::getInstance()->displayInterstitial();
-
+	//this->initDataLabel();
 	return true;
 }
 
@@ -120,16 +116,8 @@ void LevelComplete::databind(void *data)
 	if (data != nullptr)
 	{
 		auto gameUI = (GameUI*)data;
-		auto label = static_cast<Label*>(this->getChildByTag(0x02));
-		label->setString(std::to_string(gameUI->getBonus()));
-
-		char buffer[128];
-		sprintf(buffer, "%dX%d=%d", gameUI->getJumpCount(), JUMPSTEPSCORE, gameUI->getJumpScore());
-		label = static_cast<Label*>(this->getChildByTag(0x03));
-		label->setString(buffer);
-
+		Text *label = static_cast<Text*>(m_pLayout->getChildByName("label_score"));
 		int currentLevelNewScore = gameUI->getBonus() + gameUI->getJumpScore();
-		label = static_cast<Label*>(this->getChildByTag(0x04));
 		label->setString(std::to_string(currentLevelNewScore));
 		gameUI->setNewScore(currentLevelNewScore);
 	}

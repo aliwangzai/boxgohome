@@ -9,6 +9,8 @@
 #include "DialogManager.h"
 #include "LevelState.h"
 #include "TailEffect.h"
+#include "LevelSelector.h"
+#include "AdManager.h"
 
 GameWorld::GameWorld()
 :m_pArrowSprite(nullptr),
@@ -159,7 +161,7 @@ void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 		bool isSubJump = this->m_pGameUI->jumpsSelfSub();
 		if (isSubJump)
 		{
-			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 2);
+			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 3);
 		}
 	}
 }
@@ -178,6 +180,34 @@ void GameWorld::onEnter()
 	this->addChild(node);*/
 }
 
+void GameWorld::onEnterTransitionDidFinish()
+{
+	Node::onEnterTransitionDidFinish();
+	/*float delayTime = 0.0f;
+	for (int i = 0; i < 3; i++)
+	{
+		Label *title = Label::createWithBMFont("fonts/base_font.fnt", std::to_string(i + 1));
+		this->addChild(title);
+		title->setPosition(VisibleRect::left());
+		title->setScale(0.5f);
+		auto seqAction = Sequence::create(
+			DelayTime::create(delayTime),
+			EaseIn::create(MoveTo::create(1.0f, VisibleRect::center()), 2.5f),
+			DelayTime::create(0.3f),
+			EaseOut::create(MoveTo::create(1.0f, VisibleRect::right()), 2.5f),
+			nullptr);
+		auto seqAction2 = Sequence::create(
+			DelayTime::create(delayTime),
+			ScaleTo::create(1.0f, 1.5f),
+			DelayTime::create(0.3f),
+			ScaleTo::create(1.0f, 0.5f),
+			nullptr);
+		delayTime += 2.3f;
+		title->runAction(seqAction);
+		title->runAction(seqAction2);
+	}*/
+}
+
 void GameWorld::update(float dt)
 {
 	if (m_pArrowSprite->isVisible())
@@ -192,13 +222,13 @@ void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
 	this->m_pGameUI->stop();
+	AdManager::getInstance()->displayInterstitial();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = (int)data;
-		CCLOG("%d", type);
 		switch (type)
 		{
-		case 1://more game
-			
+		case 1://select game
+			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 			break;
 		case 2://restart
 			this->restart();
@@ -217,10 +247,10 @@ void GameWorld::lose()
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLevelCompleteLoss(NULL, [=](void* data){
 		int type = (int)data;
-		CCLOG("%d", type);
 		switch (type)
 		{
-		case 1://more Game
+		case 1://select Game
+			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 			break;
 		case 2://restart game
 			this->restart();
@@ -237,7 +267,6 @@ void GameWorld::nextLevel()
 	if (currentSelectLevel + 1 > currentMaxLevel)
 	{
 		LevelState::getInstance()->unlockNewLevel();
-
 	}
 	LevelState::getInstance()->setSelectedLevel(currentSelectLevel + 1);
 	std::string currentMap = LevelState::getInstance()->getMapName();
