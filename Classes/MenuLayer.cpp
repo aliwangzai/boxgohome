@@ -10,7 +10,7 @@
 #include "Utils.h"
 
 #include "cocostudio/CCSGUIReader.h"
-#include "ui\CocosGUI.h"
+#include "ui/CocosGUI.h"
 using namespace  cocos2d::ui;
 
 

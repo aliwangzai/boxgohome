@@ -1,6 +1,5 @@
 #include "Dialog.h"
 #include "VisibleRect.h"
-#include "AdManager.h"
 
 Dialog::Dialog()
 :m_bEnableClickClose(false),
@@ -73,8 +72,8 @@ void Dialog::showDialog()
 	{
 		auto seqAction = Sequence::create(
 			ScaleTo::create(0.2f, 1.0f),
-			CallFunc::create([](){
-				AdManager::getInstance()->displayInterstitial();
+			CallFunc::create([=](){
+                if(m_fCallback) m_fCallback((void*)DialogEvent::Event_show);
 			}),
 			nullptr);
 		this->m_pContentPanel->runAction(seqAction);
@@ -90,6 +89,7 @@ void Dialog::hideDialog()
 			CallFunc::create([=](){
 				_eventDispatcher->removeEventListenersForTarget(this);
 				this->removeFromParent();
+                if(m_fCallback)m_fCallback((void*)DialogEvent::Event_hide);
 			}),
 			nullptr);
 		m_pContentPanel->runAction(seqAction);
@@ -99,4 +99,9 @@ void Dialog::hideDialog()
 void Dialog::setTouchEnabled(bool enable)
 {
 	_eventDispatcher->setEnabled(enable);
+}
+
+void Dialog::setDisplayCallback(DialogCallback callback)
+{
+    this->m_fCallback = callback;
 }

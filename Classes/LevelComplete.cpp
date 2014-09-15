@@ -3,6 +3,7 @@
 #include "UIButton.h"
 #include "cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
+#include "AdManager.h"
 
 
 
@@ -59,6 +60,13 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 
 	//this->initMenu();
 	//this->initDataLabel();
+    
+    dialog->setDisplayCallback([=](void *data){
+        int tag = (int)data;
+        if(tag == DialogEvent::Event_show){
+            AdManager::getInstance()->displayInterstitial();
+        }
+    });
 	return true;
 }
 
