@@ -39,6 +39,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/YellowWall.cpp \
 				   ../../Classes/Enemy.cpp \
 				   ../../Classes/JumpsItem.cpp \
+				   ../../Classes/TailEffect.cpp \
 				   ../../Classes/BrokableWall.cpp \
 				   ../../Classes/ShareManager.cpp \
 				   ../../Classes/AdManager.cpp \

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="45">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="2" x="51" y="375"/>
+  <object gid="2" x="131" y="375"/>
+  <object gid="2" x="211" y="375"/>
+  <object gid="2" x="291" y="295.667" rotation="90"/>
+  <object gid="2" x="400" y="137.333"/>
+  <object gid="2" x="478" y="137"/>
+  <object gid="2" x="558" y="137"/>
+  <object gid="2" x="773" y="315"/>
+  <object gid="2" x="273" y="550"/>
+  <object gid="2" x="353" y="550"/>
+  <object gid="2" x="432" y="550"/>
+  <object gid="1" x="534" y="375"/>
+  <object gid="3" x="575" y="351"/>
+  <object gid="4" x="148" y="350"/>
+  <object gid="2" x="291" y="216" rotation="90"/>
+  <object gid="2" x="400" y="216.083" rotation="90"/>
+  <object gid="2" x="400" y="295.75" rotation="90"/>
+  <object gid="2" x="400.25" y="136.5" rotation="90"/>
+  <object gid="2" x="614" y="295" rotation="90"/>
+  <object gid="2" x="853" y="193.333" rotation="90"/>
+  <object gid="2" x="853" y="273" rotation="90"/>
+ </objectgroup>
+</map>

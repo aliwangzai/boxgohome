@@ -30,6 +30,7 @@ public:
 private:
 	Dialog			*m_pDialog;
 	DialogCallback	m_fCallback;
+	Layout			*m_pLayout;
 };
 
 #endif
