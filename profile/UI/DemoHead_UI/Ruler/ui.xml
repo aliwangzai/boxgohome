@@ -12,4 +12,8 @@
     <Project>Menu</Project>
     <GuidesList />
   </GuidesProject>
+  <GuidesProject>
+    <Project>GameUI_UP</Project>
+    <GuidesList />
+  </GuidesProject>
 </ArrayOfGuidesProject>
