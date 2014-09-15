@@ -10,10 +10,7 @@
 #include "Utils.h"
 
 #include "cocostudio/CCSGUIReader.h"
-#include "ui/UIWidget.h"
-#include "ui/UILayout.h"
-#include "cocos/ui/UIText.h"
-#include "cocos/ui/UIButton.h"
+#include "ui\CocosGUI.h"
 using namespace  cocos2d::ui;
 
 
@@ -139,7 +136,7 @@ bool MenuLayer::initWithMenu()
 
 
 	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
-		if ((int)type == 2)
+		if ((int)type == ui::TouchEventType::TOUCH_EVENT_ENDED)
 		{
 			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		}

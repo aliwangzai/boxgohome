@@ -3,7 +3,7 @@
 #include "UIButton.h"
 #include "AdManager.h"
 #include "cocostudio/CCSGUIReader.h"
-#include "ui\CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 
 
@@ -66,23 +66,32 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	return true;
 }
 
-void LevelComplete::btn_menuCallback(Ref*sender,TouchEventType)
+void LevelComplete::btn_menuCallback(Ref*sender,TouchEventType type)
 {
-	this->m_pDialog->hideDialog();
-	m_fCallback((void*)1);
+	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	{
+		this->m_pDialog->hideDialog();
+		m_fCallback((void*)1);
+	}
 }
 
-void LevelComplete::btn_resetCallback(Ref*sender,TouchEventType)
+void LevelComplete::btn_resetCallback(Ref*sender,TouchEventType type)
 {
-	this->m_pDialog->hideDialog();
-	m_fCallback((void*)2);
+	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	{
+		this->m_pDialog->hideDialog();
+		m_fCallback((void*)2);
+	}
 }
 
 
-void LevelComplete::btn_nextCallback(Ref*sender,TouchEventType)
+void LevelComplete::btn_nextCallback(Ref*sender,TouchEventType type)
 {
-	this->m_pDialog->hideDialog();
-	m_fCallback((void*)3);
+	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	{
+		this->m_pDialog->hideDialog();
+		m_fCallback((void*)3);
+	}
 }
 
 

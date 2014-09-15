@@ -38,6 +38,7 @@ bool BoxSprite::init()
 	this->m_fMaxForce = 1000;
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize(), PhysicsMaterial(0.0f, 0.5f, 0.5f)));
 	this->getPhysicsBody()->setMass(1.0);
+	this->getPhysicsBody()->setTag(Type_BoxSprite);
 	this->initBoxAnimate();
 
 	return true;
