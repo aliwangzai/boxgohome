@@ -27,6 +27,12 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import <ShareSDK/ShareSDK.h>
+
+#import "WXApi.h"
+#import "WeiboApi.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 
 GADBannerView *bannerView_;
 
@@ -37,6 +43,16 @@ GADBannerView *bannerView_;
 
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url sourceApplication:nil annotation:nil wxDelegate:nil];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:nil];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
@@ -58,6 +74,12 @@ static AppDelegate s_sharedApplication;
     _viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     _viewController.wantsFullScreenLayout = YES;
     _viewController.view = eaglView;
+    
+    
+    //-------------------share sdk
+    [ShareSDK importWeChatClass:[WXApi class]];
+    //[ShareSDK importTencentWeiboClass:[WBApi class]];
+    [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
     
     //------------------- Add Admob
     bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
