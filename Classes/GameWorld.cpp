@@ -222,7 +222,6 @@ void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
 	this->m_pGameUI->stop();
-	AdManager::getInstance()->displayInterstitial();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = (int)data;
 		switch (type)

@@ -1,5 +1,6 @@
 #include "Dialog.h"
 #include "VisibleRect.h"
+#include "AdManager.h"
 
 Dialog::Dialog()
 :m_bEnableClickClose(false),
@@ -70,7 +71,13 @@ void Dialog::showDialog()
 {
 	if (this->m_pContentPanel)
 	{
-		this->m_pContentPanel->runAction(ScaleTo::create(0.2f, 1.0f));
+		auto seqAction = Sequence::create(
+			ScaleTo::create(0.2f, 1.0f),
+			CallFunc::create([](){
+				AdManager::getInstance()->displayInterstitial();
+			}),
+			nullptr);
+		this->m_pContentPanel->runAction(seqAction);
 	}
 }
 
