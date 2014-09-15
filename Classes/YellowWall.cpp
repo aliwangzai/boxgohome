@@ -64,7 +64,10 @@ void YellowWall::playFlagAnimate()
 
 bool YellowWall::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 {
-	if (this->m_entityType == Type_Flag)
+	PhysicsBody* body1 = contact.getShapeA()->getBody();
+	PhysicsBody* body2 = contact.getShapeB()->getBody();
+	if ((body1->getTag() == Type_Flag && body2->getTag() == Type_BoxSprite) ||
+		(body1->getTag() == Type_BoxSprite && body2->getTag() == Type_Flag))
 	{
 		logic->setWinState(true);
 		return false;

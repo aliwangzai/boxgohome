@@ -194,12 +194,13 @@ void GameWorld::win()
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = (int)data;
+		CCLOG("%d", type);
 		switch (type)
 		{
 		case 1://more game
 			
 			break;
-		case 2://more game
+		case 2://restart
 			this->restart();
 			break;
 		case 3://next level
@@ -216,6 +217,7 @@ void GameWorld::lose()
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLevelCompleteLoss(NULL, [=](void* data){
 		int type = (int)data;
+		CCLOG("%d", type);
 		switch (type)
 		{
 		case 1://more Game

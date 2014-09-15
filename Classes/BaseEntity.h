@@ -13,6 +13,7 @@ enum EntityType
 	Type_Flag,
 	Type_Wood,
 	Type_Enemy,
+	Type_BoxSprite,
 	Type_Item_Jump_3
 };
 

@@ -45,16 +45,22 @@ bool LevelCompleteLoss::initWithDialog(Dialog* dialog)
 	return true;
 }
 
-void LevelCompleteLoss::btn_menuCallback( Ref*sender,TouchEventType a )
+void LevelCompleteLoss::btn_menuCallback( Ref*sender,TouchEventType type )
 {
-	this->m_pDialog->hideDialog();
-	m_fCallback((void*)1);
+	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	{
+		this->m_pDialog->hideDialog();
+		m_fCallback((void*)1);
+	}
 }
 
-void LevelCompleteLoss::btn_resetCallback( Ref*sender,TouchEventType a )
+void LevelCompleteLoss::btn_resetCallback( Ref*sender,TouchEventType type )
 {
-	this->m_pDialog->hideDialog();
-	m_fCallback((void*)2);
+	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	{
+		this->m_pDialog->hideDialog();
+		m_fCallback((void*)2);
+	}
 }
 
 
