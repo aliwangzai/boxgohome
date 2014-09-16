@@ -27,6 +27,14 @@ LevelSelector::~LevelSelector()
 {
 }
 
+
+void LevelSelector::setStarForLevel(int level , ProgressTimer * star)
+{
+	// getScore for level
+
+	star->setPercentage(60);
+}
+
 MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 {
 	auto item = MenuItemImage::create("ui/lv_normal.png" ,"ui/lv_selected.png" ,"ui/lv_locked.png" , [=](Ref * sender){this->onClickMenuItem(sender);});
@@ -36,6 +44,19 @@ MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 	label->setTextColor(Color4B::BLACK);
 	item->addChild(label);
 	item->setTag(level);
+	//item add progressbar _star
+	auto progress_bg = Sprite::create("ui/start_blank.png");
+	auto progress = ProgressTimer::create(Sprite::create("ui/start_full.png"));
+	progress->setMidpoint(Vec2(0, 1));
+	progress->setBarChangeRate(Vec2(1, 0));
+	progress->setType(ProgressTimer::Type::BAR);
+	progress_bg->setPosition(Point(35 , 15));
+	progress->setPosition(Point(35 ,15));
+	item->addChild(progress_bg);
+	item->addChild(progress);
+
+	setStarForLevel(level , progress);
+
 	m->addChild(item);
 	Size size = item->getContentSize();
 	//if (x == 0)

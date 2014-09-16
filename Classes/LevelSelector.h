@@ -33,6 +33,7 @@ public:
 	bool initSound();
 	MenuItem * createMenuItem(Menu * m , int level , int x, int y );
 	void onClickMenuItem(Ref * sender);
+	void setStarForLevel(int level , ProgressTimer * star);
 };
 
 
