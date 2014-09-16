@@ -85,7 +85,7 @@ bool Welcome::initBackground()
 bool Welcome::initTitle()
 {
 	auto title = Sprite::create("ui/title2.png");
-	title->setPosition(VisibleRect::center() + Vec2(0 , 200));
+	title->setPosition(VisibleRect::top() + Vec2(0 , -50));
 	addChild(title ,2);
 // 	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
 // 	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");

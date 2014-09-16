@@ -87,9 +87,9 @@ void Dialog::hideDialog()
 		auto seqAction = Sequence::create(
 			ScaleTo::create(0.2f, 0.001f),
 			CallFunc::create([=](){
+				if (m_fCallback)m_fCallback((void*)DialogEvent::Event_hide);
 				_eventDispatcher->removeEventListenersForTarget(this);
 				this->removeFromParent();
-                if(m_fCallback)m_fCallback((void*)DialogEvent::Event_hide);
 			}),
 			nullptr);
 		m_pContentPanel->runAction(seqAction);
