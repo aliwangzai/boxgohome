@@ -55,6 +55,8 @@ bool Welcome::initMenu()
 {
 	TTFConfig ttfConfig("ui/grobold.ttf", 32);
 	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
+	moreGameLabel->setTextColor(Color4B::WHITE);
+	moreGameLabel->enableOutline(Color4B::BLACK, 1);
 	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
 		ShareManager::getInstance()->setShareAttribute("content", "this is test content");
 		ShareManager::getInstance()->setShareAttribute("image", "http://img0.bdstatic.com/img/image/308342ac65c10385343da168d569113b07ecb8088ef.jpg");
@@ -66,10 +68,8 @@ bool Welcome::initMenu()
 	});
 	auto menu = Menu::create(moreGameItem, nullptr);
 	this->addChild(menu);
-	menu->setPosition(VisibleRect::rightBottom() + Point(-100, 50));
+	menu->setPosition(VisibleRect::rightBottom() + Point(-150, 50));
 
-
-	moreGameItem->setColor(Color3B(0, 0, 0));
 	auto startItem = UIButton::create("ui/btn_play2.png", [](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
