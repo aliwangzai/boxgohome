@@ -1,6 +1,7 @@
 #include "Utils.h"
 #include "CheckBox.h"
 #include "AdManager.h"
+#include <time.h>
 
 bool Utils::m_bMusicSwitch = true;
 bool Utils::m_bSoundSwitch = true;
@@ -96,4 +97,11 @@ Node* Utils::createMusic()
 	});
 	musicCheckBox->setCurrentState(Utils::getMusicSwitch());
 	return musicCheckBox;
+}
+
+long long Utils::getCurrentTime()
+{
+	struct timeval tv;
+	gettimeofday(&tv, nullptr);
+	return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
