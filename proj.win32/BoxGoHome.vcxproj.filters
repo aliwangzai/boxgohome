@@ -139,6 +139,9 @@
     <ClCompile Include="..\Classes\TailEffect.cpp">
       <Filter>Classes\effect</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\UIButton.cpp">
+      <Filter>Classes\dialog</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
