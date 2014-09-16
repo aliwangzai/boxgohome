@@ -8,6 +8,7 @@ class BrokableWall : public  BaseEntity
 {
 private :
 	int m_durability;
+	long m_lLastTime;
 
 public:
 	BrokableWall();

@@ -10,7 +10,7 @@
 #include "Utils.h"
 
 #include "cocostudio/CCSGUIReader.h"
-#include "ui\CocosGUI.h"
+#include "ui/CocosGUI.h"
 using namespace  cocos2d::ui;
 
 
@@ -47,13 +47,19 @@ bool MenuLayer::init()
 
 bool MenuLayer::initTitle()
 {
-	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
-	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
-	this->addChild(m_pJumpBoxTitle);
-	m_pJumpBoxTitle->setPosition(VisibleRect::top() + Point(-250, -m_pJumpBoxTitle->getContentSize().height / 2 - 10));
-	this->addChild(reincarTitle);
-	reincarTitle->setPosition(VisibleRect::top() + Point(0, -100));
-	this->playFontAnimate();
+
+	auto title = Sprite::create("ui/title2.png");
+	title->setPosition(VisibleRect::leftTop() + Vec2(20 , -20));
+	title->setAnchorPoint(Point(0, 1));
+	addChild(title ,2);
+
+// 	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
+// 	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
+// 	this->addChild(m_pJumpBoxTitle);
+// 	m_pJumpBoxTitle->setPosition(VisibleRect::top() + Point(-250, -m_pJumpBoxTitle->getContentSize().height / 2 - 10));
+// 	this->addChild(reincarTitle);
+// 	reincarTitle->setPosition(VisibleRect::top() + Point(0, -100));
+// 	this->playFontAnimate();
 	return true;
 }
 
@@ -101,6 +107,8 @@ bool MenuLayer::initBackground()
 {
 	auto background = Background::create();
 	this->addChild(background);
+
+
 	return true;
 }
 

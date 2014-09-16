@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #import "GADBannerView.h"
+#import "GADInterstitial.h"
 
 @class RootViewController;
 

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ProjectDir>D:\Work\cocos\WorkSpace\boxgohome\profile\UI\DemoHead_UI</ProjectDir>
+  <ProjectDir>E:\mytest\boxgohome\profile\UI\DemoHead_UI</ProjectDir>
   <Version>1.5.0.1</Version>
-  <Resources>D:\Work\cocos\WorkSpace\boxgohome\profile\UI\DemoHead_UI\Resources</Resources>
+  <Resources>E:\mytest\boxgohome\profile\UI\DemoHead_UI\Resources</Resources>
   <Name>ui</Name>
   <JsonFileName>ui.json</JsonFileName>
-  <JsonFolder>D:\Work\cocos\WorkSpace\boxgohome\profile\UI\DemoHead_UI\Json</JsonFolder>
+  <JsonFolder>E:\mytest\boxgohome\profile\UI\DemoHead_UI\Json</JsonFolder>
   <JsonList>
     <string>Win.json</string>
     <string>Lose.json</string>
@@ -13,25 +13,14 @@
     <string>GameUI_UP.json</string>
   </JsonList>
   <CanvasSize>
-    <Width>480</Width>
-    <Height>320</Height>
+    <Width>250</Width>
+    <Height>250</Height>
   </CanvasSize>
-  <filePath>D:\Work\cocos\WorkSpace\boxgohome\profile\UI\DemoHead_UI\DemoHead_UI.xml.ui</filePath>
+  <filePath>E:\mytest\boxgohome\profile\UI\DemoHead_UI\DemoHead_UI.xml.ui</filePath>
   <ProjectType>UIProject</ProjectType>
   <ResRelativePath />
   <imageFileList />
-  <imagePngList>
-    <string>star2_full.png</string>
-    <string>bg_result.png</string>
-    <string>btn_menu.png</string>
-    <string>btn_next.png</string>
-    <string>btn_reset.png</string>
-    <string>star2_blank.png</string>
-    <string>record_cup_icon.png</string>
-    <string>bg_result2.png</string>
-    <string>btn_menu.png</string>
-    <string>btn_reset.png</string>
-  </imagePngList>
+  <imagePngList />
   <JsonSuffix>.json</JsonSuffix>
-  <CurrentUIJson>GameUI_UP.json</CurrentUIJson>
+  <CurrentUIJson>Menu.json</CurrentUIJson>
 </UIProject>

@@ -1,6 +1,8 @@
 #include "BrokableWall.h"
+#include "Utils.h"
 
 BrokableWall::BrokableWall()
+:m_lLastTime(0)
 {
 
 }
@@ -43,14 +45,16 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 
 void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *logic )
 {
-	m_durability -- ;
-	if (m_durability <= 0 )
+	long long currentTime = Utils::getCurrentTime();
+	if (currentTime - m_lLastTime > 500)
 	{
-		this->removeFromParentAndCleanup(true);
-	}
-	else{
-		//set state();
-
+		m_lLastTime = currentTime;
+		m_durability--;
+		if (m_durability <= 0)
+		{
+			m_lLastTime = 0;
+			this->removeFromParent();
+		}
 	}
 }
 

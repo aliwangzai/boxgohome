@@ -38,10 +38,11 @@ void LevelSelector::setStarForLevel(int level , ProgressTimer * star)
 MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 {
 	auto item = MenuItemImage::create("ui/lv_normal.png" ,"ui/lv_selected.png" ,"ui/lv_locked.png" , [=](Ref * sender){this->onClickMenuItem(sender);});
-	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 18);
+	TTFConfig ttfConfig("ui/grobold.ttf", 18);
 	auto label = Label::createWithTTF(ttfConfig , CCString::createWithFormat("%d" , level)->getCString());
 	label->setPosition(item->getContentSize()/2);
-	label->setTextColor(Color4B::BLACK);
+	label->setTextColor(Color4B::WHITE);
+	label->enableOutline(Color4B::BLACK, 1);
 	item->addChild(label);
 	item->setTag(level);
 	//item add progressbar _star

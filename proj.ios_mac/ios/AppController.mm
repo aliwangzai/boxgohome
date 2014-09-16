@@ -35,6 +35,7 @@
 #import <TencentOpenAPI/TencentOAuth.h>
 
 GADBannerView *bannerView_;
+GADInterstitial *interstitial_;
 
 @implementation AppController
 
@@ -81,23 +82,28 @@ static AppDelegate s_sharedApplication;
     //[ShareSDK importTencentWeiboClass:[WBApi class]];
     [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
     
-    //------------------- Add Admob
+    //------------------- Add Admob interstitial
+    interstitial_ = [[GADInterstitial alloc] init];
+    interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
+    [interstitial_ presentFromRootViewController:_viewController];
+    GADRequest *interRequest = [GADRequest request];
+    interRequest.testDevices = [NSArray arrayWithObjects:
+                           GAD_SIMULATOR_ID,
+                           @"YOU IPAD IDF",
+                           nil];
+    [interstitial_ loadRequest:interRequest];
+    
+    
+    //------------------- Add Admob banner
     bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    
     bannerView_.rootViewController = _viewController;
-    
     bannerView_.adUnitID = @"ca-app-pub-2906542859743654/6985074520";
-    
     GADRequest *request = [GADRequest request];
     bannerView_.hidden = NO;
     [bannerView_ setFrame:CGRectMake(90, 0, 320, 50)];
-    
     request.testDevices = [NSArray arrayWithObjects:
-    
                                GAD_SIMULATOR_ID,
-    
                                @"YOU IPAD IDF",
-    
                                nil];
     //----------------------------
 
