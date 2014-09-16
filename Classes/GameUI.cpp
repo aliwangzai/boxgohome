@@ -96,8 +96,9 @@ bool GameUI::initMenu()
 	//menuItem->setColor(Color3B(0, 0, 0));
 	auto menu = Menu::create(restartItem, menuItem, nullptr);
 	this->addChild(menu);
-	menu->alignItemsHorizontallyWithPadding(20);
-	menu->setPosition(VisibleRect::rightTop() + Point(-100, -40));
+	//menu->alignItemsHorizontallyWithPadding(20);
+    menu->alignItemsVerticallyWithPadding(10);
+	menu->setPosition(VisibleRect::rightTop() + Point(-50, -75));
 	return true;
 }
 

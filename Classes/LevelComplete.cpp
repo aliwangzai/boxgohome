@@ -33,7 +33,7 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	m_pLayout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Win.json"));
 	addChild(m_pLayout);
 
-	m_pLayout->setAnchorPoint(ccp(0.5, 0.5));
+	m_pLayout->setAnchorPoint(Vec2(0.5, 0.5));
 
 
 	/*auto light = Sprite::create("ui/bg_light.png");

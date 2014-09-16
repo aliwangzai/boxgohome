@@ -168,5 +168,7 @@ void LevelSelectScene::onExit()
 
 void LevelSelectScene::onEnter()
 {
+    Layer::onEnter();
+    
 	AdManager::getInstance()->showBannerAD();
 }
