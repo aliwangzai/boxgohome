@@ -31,7 +31,12 @@ LevelSelector::~LevelSelector()
 void LevelSelector::setStarForLevel(int level , ProgressTimer * star)
 {
 	// getScore for level
-
+	int cur = LevelState::getInstance()->getCurrentLevel();
+	if (level > cur) 
+	{
+		star->setPercentage(0);
+		return;
+	}
 	star->setPercentage(60);
 }
 
@@ -51,8 +56,8 @@ MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 	progress->setMidpoint(Vec2(0, 1));
 	progress->setBarChangeRate(Vec2(1, 0));
 	progress->setType(ProgressTimer::Type::BAR);
-	progress_bg->setPosition(Point(35 , 15));
-	progress->setPosition(Point(35 ,15));
+	progress_bg->setPosition(Point(38 , 20));
+	progress->setPosition(Point(38 ,20));
 	item->addChild(progress_bg);
 	item->addChild(progress);
 
