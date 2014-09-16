@@ -26,6 +26,8 @@ public:
 
 	static Node* createSound();
 	static Node* createMusic();
+
+	static long long getCurrentTime();
 };
 
 #endif
