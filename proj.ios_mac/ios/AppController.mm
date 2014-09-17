@@ -30,12 +30,12 @@
 #import <ShareSDK/ShareSDK.h>
 
 #import "WXApi.h"
-#import "WeiboApi.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 
-GADBannerView *bannerView_;
-GADInterstitial *interstitial_;
+static GADBannerView *bannerView_;
+static GADInterstitial *interstitial_;
+static RootViewController *rootViewController;
 
 @implementation AppController
 
@@ -76,16 +76,17 @@ static AppDelegate s_sharedApplication;
     _viewController.wantsFullScreenLayout = YES;
     _viewController.view = eaglView;
     
+    rootViewController = _viewController;
+    
     
     //-------------------share sdk
     [ShareSDK importWeChatClass:[WXApi class]];
-    //[ShareSDK importTencentWeiboClass:[WBApi class]];
     [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
     
     //------------------- Add Admob interstitial
     interstitial_ = [[GADInterstitial alloc] init];
     interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
-    [interstitial_ presentFromRootViewController:_viewController];
+    interstitial_.delegate = self;
     GADRequest *interRequest = [GADRequest request];
     interRequest.testDevices = [NSArray arrayWithObjects:
                            GAD_SIMULATOR_ID,
@@ -123,7 +124,6 @@ static AppDelegate s_sharedApplication;
     
     [_viewController.view addSubview: bannerView_];
     [_viewController.view bringSubviewToFront:bannerView_];
-
 
     [window makeKeyAndVisible];
 
@@ -180,6 +180,23 @@ static AppDelegate s_sharedApplication;
      */
 }
 
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial
+{
+    NSLog(@"hell world");
+}
+
+-(void)interstitialDidDismissScreen:(GADInterstitial *) interstitial
+{
+    interstitial_ = [[GADInterstitial alloc] init];
+    interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
+    interstitial_.delegate = self;
+    GADRequest *interRequest = [GADRequest request];
+    interRequest.testDevices = [NSArray arrayWithObjects:
+                                GAD_SIMULATOR_ID,
+                                @"YOU IPAD IDF",
+                                nil];
+    [interstitial_ loadRequest:interRequest];}
+
 
 #pragma mark -
 #pragma mark Memory management
@@ -205,6 +222,14 @@ static AppDelegate s_sharedApplication;
 + (void)hideBannerView
 {
     bannerView_.hidden = YES;
+}
+
++(void)showInterstitialView
+{
+    if(interstitial_.isReady)
+    {
+        [interstitial_ presentFromRootViewController:rootViewController];
+    }
 }
 
 

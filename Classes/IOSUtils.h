@@ -16,6 +16,8 @@ class IOSUtils
 public:
     static void showBannerView();
     static void hideBannerView();
+    
+    static void showInterstitialView();
 };
 
 

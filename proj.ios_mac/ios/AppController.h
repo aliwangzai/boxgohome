@@ -4,7 +4,7 @@
 
 @class RootViewController;
 
-@interface AppController : NSObject <UIApplicationDelegate> {
+@interface AppController : NSObject <UIApplicationDelegate, GADInterstitialDelegate> {
     UIWindow *window;
 }
 
@@ -13,6 +13,8 @@
 +(void) showBannerView;
 
 +(void) hideBannerView;
+
++(void) showInterstitialView;
 
 @end
 
