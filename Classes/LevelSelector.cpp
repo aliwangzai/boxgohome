@@ -29,16 +29,22 @@ LevelSelector::~LevelSelector()
 }
 
 
-void LevelSelector::setStarForLevel(int level , ProgressTimer * star)
+void LevelSelector::setStarForLevel(int level , ProgressTimer * star , Sprite * bg)
 {
 	// getScore for level
 	int cur = LevelState::getInstance()->getCurrentLevel();
-	if (level > cur) 
+	if (level >= cur) 
 	{
 		star->setPercentage(0);
-		return;
+		bg->setVisible(false);
 	}
-	star->setPercentage(60);
+	else if (level < cur)
+	{
+		int starNum = UserDefault::getInstance()->getIntegerForKey(CCString::createWithFormat("stars_1_%d" ,level)->getCString() , 1);
+		star->setPercentage(33 * starNum);
+	}
+	//
+	
 }
 
 MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
@@ -62,7 +68,7 @@ MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 	item->addChild(progress_bg);
 	item->addChild(progress);
 
-	setStarForLevel(level , progress);
+	setStarForLevel(level , progress , progress_bg);
 
 	m->addChild(item);
 	Size size = item->getContentSize();

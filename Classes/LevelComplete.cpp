@@ -4,6 +4,7 @@
 #include "cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
 #include "AdManager.h"
+#include "LevelState.h"
 
 
 
@@ -128,6 +129,14 @@ void LevelComplete::databind(void *data)
 		int currentLevelNewScore = gameUI->getBonus() + gameUI->getJumpScore();
 		label->setString(std::to_string(currentLevelNewScore));
 		gameUI->setNewScore(currentLevelNewScore);
+
+		int starNum = 2;  // TODO: calculation for star count
+		ui::LoadingBar * bar =  static_cast<ui::LoadingBar*>(m_pLayout->getChildByName("progress_stars"));
+		bar->setPercent(33* starNum);
+		// save current level 'score in userdefault.xml  /
+		int currentSelectLevel = LevelState::getInstance()->getSelectedLevel();
+		UserDefault::getInstance()->setIntegerForKey(CCString::createWithFormat("stars_1_%d" ,currentSelectLevel)->getCString() , starNum);
+
 	}
 }
 
