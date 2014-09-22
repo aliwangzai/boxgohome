@@ -19,6 +19,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/BoxSprite.cpp \
 				   ../../Classes/CheckBox.cpp \
 				   ../../Classes/Dialog.cpp \
+				   ../../Classes/UIButton.cpp \
 				   ../../Classes/DialogManager.cpp \
 				   ../../Classes/LevelComplete.cpp \
 				   ../../Classes/LevelCompleteLoss.cpp \
@@ -39,6 +40,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/YellowWall.cpp \
 				   ../../Classes/Enemy.cpp \
 				   ../../Classes/JumpsItem.cpp \
+				   ../../Classes/TailEffect.cpp \
 				   ../../Classes/BrokableWall.cpp \
 				   ../../Classes/ShareManager.cpp \
 				   ../../Classes/AdManager.cpp \

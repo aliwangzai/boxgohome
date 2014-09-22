@@ -27,8 +27,15 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import <ShareSDK/ShareSDK.h>
 
-GADBannerView *bannerView_;
+#import "WXApi.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+
+static GADBannerView *bannerView_;
+static GADInterstitial *interstitial_;
+static RootViewController *rootViewController;
 
 @implementation AppController
 
@@ -37,6 +44,16 @@ GADBannerView *bannerView_;
 
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url sourceApplication:nil annotation:nil wxDelegate:nil];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:nil];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
@@ -59,23 +76,35 @@ static AppDelegate s_sharedApplication;
     _viewController.wantsFullScreenLayout = YES;
     _viewController.view = eaglView;
     
-    //------------------- Add Admob
+    rootViewController = _viewController;
+    
+    
+    //-------------------share sdk
+    [ShareSDK importWeChatClass:[WXApi class]];
+    [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
+    
+    //------------------- Add Admob interstitial
+    interstitial_ = [[GADInterstitial alloc] init];
+    interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
+    interstitial_.delegate = self;
+    GADRequest *interRequest = [GADRequest request];
+    interRequest.testDevices = [NSArray arrayWithObjects:
+                           GAD_SIMULATOR_ID,
+                           @"YOU IPAD IDF",
+                           nil];
+    [interstitial_ loadRequest:interRequest];
+    
+    
+    //------------------- Add Admob banner
     bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    
     bannerView_.rootViewController = _viewController;
-    
     bannerView_.adUnitID = @"ca-app-pub-2906542859743654/6985074520";
-    
     GADRequest *request = [GADRequest request];
     bannerView_.hidden = NO;
     [bannerView_ setFrame:CGRectMake(90, 0, 320, 50)];
-    
     request.testDevices = [NSArray arrayWithObjects:
-    
                                GAD_SIMULATOR_ID,
-    
                                @"YOU IPAD IDF",
-    
                                nil];
     //----------------------------
 
@@ -95,7 +124,6 @@ static AppDelegate s_sharedApplication;
     
     [_viewController.view addSubview: bannerView_];
     [_viewController.view bringSubviewToFront:bannerView_];
-
 
     [window makeKeyAndVisible];
 
@@ -152,6 +180,23 @@ static AppDelegate s_sharedApplication;
      */
 }
 
+- (void)interstitialDidReceiveAd:(GADInterstitial *)interstitial
+{
+    NSLog(@"hell world");
+}
+
+-(void)interstitialDidDismissScreen:(GADInterstitial *) interstitial
+{
+    interstitial_ = [[GADInterstitial alloc] init];
+    interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
+    interstitial_.delegate = self;
+    GADRequest *interRequest = [GADRequest request];
+    interRequest.testDevices = [NSArray arrayWithObjects:
+                                GAD_SIMULATOR_ID,
+                                @"YOU IPAD IDF",
+                                nil];
+    [interstitial_ loadRequest:interRequest];}
+
 
 #pragma mark -
 #pragma mark Memory management
@@ -177,6 +222,14 @@ static AppDelegate s_sharedApplication;
 + (void)hideBannerView
 {
     bannerView_.hidden = YES;
+}
+
++(void)showInterstitialView
+{
+    if(interstitial_.isReady)
+    {
+        [interstitial_ presentFromRootViewController:rootViewController];
+    }
 }
 
 

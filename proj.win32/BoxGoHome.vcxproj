@@ -71,7 +71,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot);..\Classes\C2DXShareSDK\Android\JSON\cJSON;..\Classes\C2DXShareSDK\Android\JSON;..\Classes\C2DXShareSDK\Android;..\Classes\C2DXShareSDK;..\Classes;..;$(EngineRoot)cocos\editor-support\cocostudio;$(EngineRoot)cocos\editor-support;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot);..\Classes\C2DXShareSDK\Android\JSON\cJSON;..\Classes\C2DXShareSDK\Android\JSON;..\Classes\C2DXShareSDK\Android;..\Classes\C2DXShareSDK;..\Classes;..;$(EngineRoot)cocos\editor-support\cocostudio;$(EngineRoot)cocos\2d;$(EngineRoot)cocos\editor-support;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -160,7 +160,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\MenuLayer.cpp" />
     <ClCompile Include="..\Classes\PlayGameMenu.cpp" />
     <ClCompile Include="..\Classes\ShareManager.cpp" />
+    <ClCompile Include="..\Classes\TailEffect.cpp" />
     <ClCompile Include="..\Classes\TestLayer.cpp" />
+    <ClCompile Include="..\Classes\UIButton.cpp" />
     <ClCompile Include="..\Classes\Utils.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
     <ClCompile Include="..\Classes\Welcome.cpp" />
@@ -194,8 +196,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LevelState.h" />
     <ClInclude Include="..\Classes\LevelSelector.h" />
     <ClInclude Include="..\Classes\MenuLayer.h" />
+    <ClInclude Include="..\Classes\ObjectPool.h" />
     <ClInclude Include="..\Classes\PlayGameMenu.h" />
     <ClInclude Include="..\Classes\ShareManager.h" />
+    <ClInclude Include="..\Classes\TailEffect.h" />
     <ClInclude Include="..\Classes\TestLayer.h" />
     <ClInclude Include="..\Classes\UIButton.h" />
     <ClInclude Include="..\Classes\Utils.h" />

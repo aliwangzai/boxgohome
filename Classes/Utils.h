@@ -26,6 +26,12 @@ public:
 
 	static Node* createSound();
 	static Node* createMusic();
+
+	static long long getCurrentTime();
+
+	static int getStar(int score);
+
+	static int getScore(int level);
 };
 
 #endif

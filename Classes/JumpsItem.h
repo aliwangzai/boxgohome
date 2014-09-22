@@ -5,6 +5,8 @@
 
 class JumpsItem : public BaseEntity
 {
+private:
+	int			m_nJumpCount;
 public:
 	JumpsItem();
 	~JumpsItem();

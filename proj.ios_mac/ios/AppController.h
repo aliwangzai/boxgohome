@@ -1,9 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "GADBannerView.h"
+#import "GADInterstitial.h"
 
 @class RootViewController;
 
-@interface AppController : NSObject <UIApplicationDelegate> {
+@interface AppController : NSObject <UIApplicationDelegate, GADInterstitialDelegate> {
     UIWindow *window;
 }
 
@@ -12,6 +13,8 @@
 +(void) showBannerView;
 
 +(void) hideBannerView;
+
++(void) showInterstitialView;
 
 @end
 

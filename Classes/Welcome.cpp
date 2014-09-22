@@ -8,6 +8,7 @@
 #include "DialogManager.h"
 #include "ShareManager.h"
 #include "AdManager.h"
+#include "UIButton.h"
 
 Scene* Welcome::createScene()
 {
@@ -52,8 +53,10 @@ bool Welcome::initEdgeMap()
 
 bool Welcome::initMenu()
 {
-	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
+	TTFConfig ttfConfig("ui/grobold.ttf", 32);
 	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
+	moreGameLabel->setTextColor(Color4B::WHITE);
+	moreGameLabel->enableOutline(Color4B::BLACK, 1);
 	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
 		ShareManager::getInstance()->setShareAttribute("content", "this is test content");
 		ShareManager::getInstance()->setShareAttribute("image", "http://img0.bdstatic.com/img/image/308342ac65c10385343da168d569113b07ecb8088ef.jpg");
@@ -63,16 +66,15 @@ bool Welcome::initMenu()
 		ShareManager::getInstance()->setShareAttribute("type", std::to_string(C2DXContentTypeNews));
 		ShareManager::getInstance()->sendShare();
 	});
-	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto startLabel = Label::createWithTTF(ttfConfig, "Play");
-	auto startItem = MenuItemLabel::create(startLabel, [](Ref *pSender){
+	auto menu = Menu::create(moreGameItem, nullptr);
+	this->addChild(menu);
+	menu->setPosition(VisibleRect::rightBottom() + Point(-150, 50));
+
+	auto startItem = UIButton::create("ui/btn_play2.png", [](Ref *pSender){
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
-	startItem->setColor(Color3B(0, 0, 0));
-	auto menu = Menu::create(moreGameItem, startItem, nullptr);
-	this->addChild(menu);
-	menu->alignItemsVerticallyWithPadding(10);
-	menu->setPosition(VisibleRect::center() + Point(0, 0));
+	this->addChild(startItem);
+	startItem->setPosition(VisibleRect::center() + Point(0, 0));
 
 	return true;
 }
@@ -86,13 +88,16 @@ bool Welcome::initBackground()
 
 bool Welcome::initTitle()
 {
-	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
-	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
-	this->addChild(m_pJumpBoxTitle);
-	m_pJumpBoxTitle->setPosition(VisibleRect::center() + Point(-300, 280));
-	this->addChild(reincarTitle);
-	reincarTitle->setPosition(VisibleRect::center() + Point(-50, 230));
-	this->playFontAnimate();
+	auto title = Sprite::create("ui/title2.png");
+	title->setPosition(VisibleRect::top() + Vec2(0 , -50));
+	addChild(title ,2);
+// 	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
+// 	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
+// 	this->addChild(m_pJumpBoxTitle);
+// 	m_pJumpBoxTitle->setPosition(VisibleRect::center() + Point(-300, 280));
+// 	this->addChild(reincarTitle);
+// 	reincarTitle->setPosition(VisibleRect::center() + Point(-50, 230));
+// 	this->playFontAnimate();
 	return true;
 }
 
@@ -202,4 +207,11 @@ void Welcome::playHeroAnimate()
 		nullptr
 		);
 	this->m_pBoxSprite->runAction(RepeatForever::create(seqAction));
+}
+
+void Welcome::onEnter()
+{
+	Node::onEnter();
+	
+	AdManager::getInstance()->hideBannerAD();
 }

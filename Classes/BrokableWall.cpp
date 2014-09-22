@@ -1,6 +1,8 @@
 #include "BrokableWall.h"
+#include "Utils.h"
 
 BrokableWall::BrokableWall()
+:m_lLastTime(0)
 {
 
 }
@@ -43,14 +45,24 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 
 void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *logic )
 {
-	m_durability -- ;
-	if (m_durability <= 0 )
+	PhysicsBody* body1 = contact.getShapeA()->getBody();
+	PhysicsBody* body2 = contact.getShapeB()->getBody();
+	if (body1 != nullptr && body2 != nullptr)
 	{
-		this->removeFromParentAndCleanup(true);
-	}
-	else{
-		//set state();
-
+		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
+		{
+			long long currentTime = Utils::getCurrentTime();
+			if (currentTime - m_lLastTime > 500)
+			{
+				m_lLastTime = currentTime;
+				m_durability--;
+				if (m_durability <= 0)
+				{
+					m_lLastTime = 0;
+					this->removeFromParent();
+				}
+			}
+		}
 	}
 }
 

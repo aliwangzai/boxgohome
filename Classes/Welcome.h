@@ -18,6 +18,8 @@ public:
 	bool initLoadResource();
 	bool initHero();
 
+	virtual void onEnter();
+
 	void playFontAnimate();
 	void playHeroAnimate();
 

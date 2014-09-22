@@ -32,7 +32,7 @@ void C2DXShareSDK::open(const char *appKey, bool useAppTrusteeship)
 #elif CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     
     //TODO: iOS
-    C2DXiOSShareSDK::open(appKey, useAppTrusteeship);
+    C2DXiOSShareSDK::open(CCString::create(appKey), useAppTrusteeship);
     
 #endif
 }

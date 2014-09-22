@@ -70,7 +70,13 @@ void Dialog::showDialog()
 {
 	if (this->m_pContentPanel)
 	{
-		this->m_pContentPanel->runAction(ScaleTo::create(0.2f, 1.0f));
+		auto seqAction = Sequence::create(
+			ScaleTo::create(0.2f, 1.0f),
+			CallFunc::create([=](){
+                if(m_fCallback) m_fCallback((void*)DialogEvent::Event_show);
+			}),
+			nullptr);
+		this->m_pContentPanel->runAction(seqAction);
 	}
 }
 
@@ -81,6 +87,7 @@ void Dialog::hideDialog()
 		auto seqAction = Sequence::create(
 			ScaleTo::create(0.2f, 0.001f),
 			CallFunc::create([=](){
+				if (m_fCallback)m_fCallback((void*)DialogEvent::Event_hide);
 				_eventDispatcher->removeEventListenersForTarget(this);
 				this->removeFromParent();
 			}),
@@ -92,4 +99,9 @@ void Dialog::hideDialog()
 void Dialog::setTouchEnabled(bool enable)
 {
 	_eventDispatcher->setEnabled(enable);
+}
+
+void Dialog::setDisplayCallback(DialogCallback callback)
+{
+    this->m_fCallback = callback;
 }

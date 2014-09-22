@@ -4,6 +4,12 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+enum DialogEvent
+{
+    Event_show,
+    Event_hide
+};
+
 typedef std::function<void(void *data)> DialogCallback;
 
 class Dialog: public Layer
@@ -26,12 +32,15 @@ public:
 
 	void showDialog();
 	void hideDialog();
+    
+    void setDisplayCallback(DialogCallback callback);
 
 private:
 	Node*			m_pContentPanel;
 	bool			m_bEnableClickClose;
 	int				m_nOrderZ;
 	int				m_nTouchPriority;
+    DialogCallback m_fCallback;
 };
 
 #endif

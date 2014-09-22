@@ -8,6 +8,9 @@
 #include "ContactLogic.h"
 #include "DialogManager.h"
 #include "LevelState.h"
+#include "TailEffect.h"
+#include "LevelSelector.h"
+#include "AdManager.h"
 
 GameWorld::GameWorld()
 :m_pArrowSprite(nullptr),
@@ -83,7 +86,15 @@ bool GameWorld::initBoxSprite()
 	this->m_pBoxSprite = BoxSprite::create(valueMap);
 	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
 	this->m_pBoxSprite->setPosition(point);
+
+	auto tail = TailEffect::create("maps/hero/avatar_01.png");
+	tail->bindSprite(this->m_pBoxSprite);
+	this->addChild(tail);
+
 	this->addChild(this->m_pBoxSprite);
+
+
+
 	return true;
 }
 
@@ -150,7 +161,7 @@ void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 		bool isSubJump = this->m_pGameUI->jumpsSelfSub();
 		if (isSubJump)
 		{
-			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 2);
+			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 3);
 		}
 	}
 }
@@ -169,6 +180,44 @@ void GameWorld::onEnter()
 	this->addChild(node);*/
 }
 
+void GameWorld::onEnterTransitionDidFinish()
+{
+	Node::onEnterTransitionDidFinish();
+
+	AdManager::getInstance()->showBannerAD();
+
+	/*float delayTime = 0.0f;
+	for (int i = 0; i < 3; i++)
+	{
+		Label *title = Label::createWithBMFont("fonts/base_font.fnt", std::to_string(i + 1));
+		this->addChild(title);
+		title->setPosition(VisibleRect::left());
+		title->setScale(0.5f);
+		auto seqAction = Sequence::create(
+			DelayTime::create(delayTime),
+			EaseIn::create(MoveTo::create(1.0f, VisibleRect::center()), 2.5f),
+			DelayTime::create(0.3f),
+			EaseOut::create(MoveTo::create(1.0f, VisibleRect::right()), 2.5f),
+			nullptr);
+		auto seqAction2 = Sequence::create(
+			DelayTime::create(delayTime),
+			ScaleTo::create(1.0f, 1.5f),
+			DelayTime::create(0.3f),
+			ScaleTo::create(1.0f, 0.5f),
+			nullptr);
+		delayTime += 2.3f;
+		title->runAction(seqAction);
+		title->runAction(seqAction2);
+	}*/
+}
+
+void GameWorld::onExit()
+{
+    Node::onExit();
+    
+	AdManager::getInstance()->hideBannerAD();
+}
+
 void GameWorld::update(float dt)
 {
 	if (m_pArrowSprite->isVisible())
@@ -182,15 +231,17 @@ void GameWorld::update(float dt)
 void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
+
+	
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = (int)data;
 		switch (type)
 		{
-		case 1://more game
-			
+		case 1://select game
+			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 			break;
-		case 2://more game
+		case 2://restart
 			this->restart();
 			break;
 		case 3://next level
@@ -209,7 +260,8 @@ void GameWorld::lose()
 		int type = (int)data;
 		switch (type)
 		{
-		case 1://more Game
+		case 1://select Game
+			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 			break;
 		case 2://restart game
 			this->restart();
@@ -226,8 +278,8 @@ void GameWorld::nextLevel()
 	if (currentSelectLevel + 1 > currentMaxLevel)
 	{
 		LevelState::getInstance()->unlockNewLevel();
-
 	}
+	
 	LevelState::getInstance()->setSelectedLevel(currentSelectLevel + 1);
 	std::string currentMap = LevelState::getInstance()->getMapName();
 	this->m_pGameMap->loadMapFile(currentMap);

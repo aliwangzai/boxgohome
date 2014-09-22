@@ -28,6 +28,7 @@ bool JumpsItem::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 {
 	if (!BaseEntity::initWithMap(valueMap)) return false;
 	std::string img = gidProperties.find("source")->second.asString();
+	m_nJumpCount = gidProperties.find("jumpCount")->second.asInt();
 	if (!BaseEntity::initWithFile(img)) return false;
 	this->setPosition(this->m_initPos + this->getContentSize() / 2);
 	this->setPhysicsBody(PhysicsBody::createBox(this->getContentSize()));
@@ -38,9 +39,18 @@ bool JumpsItem::init(const ValueMap &valueMap, const ValueMap &gidProperties)
 
 bool JumpsItem::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 {
-	logic->getGameWorld()->getGameUI()->addJumps(3);
-	this->removeFromParent();
-	return false;
+	PhysicsBody* body1 = contact.getShapeA()->getBody();
+	PhysicsBody* body2 = contact.getShapeB()->getBody();
+	if (body1 != nullptr && body2 != nullptr)
+	{
+		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
+		{
+			logic->getGameWorld()->getGameUI()->addJumps(m_nJumpCount);
+			this->removeFromParent();
+			return false;
+		}
+	}
+	return true;
 }
 void JumpsItem::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic)
 {

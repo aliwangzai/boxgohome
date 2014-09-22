@@ -10,10 +10,7 @@
 #include "Utils.h"
 
 #include "cocostudio/CCSGUIReader.h"
-#include "ui/UIWidget.h"
-#include "ui/UILayout.h"
-#include "cocos/ui/UIText.h"
-#include "cocos/ui/UIButton.h"
+#include "ui/CocosGUI.h"
 using namespace  cocos2d::ui;
 
 
@@ -50,13 +47,19 @@ bool MenuLayer::init()
 
 bool MenuLayer::initTitle()
 {
-	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
-	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
-	this->addChild(m_pJumpBoxTitle);
-	m_pJumpBoxTitle->setPosition(VisibleRect::top() + Point(-250, -m_pJumpBoxTitle->getContentSize().height / 2 - 10));
-	this->addChild(reincarTitle);
-	reincarTitle->setPosition(VisibleRect::top() + Point(0, -100));
-	this->playFontAnimate();
+
+	auto title = Sprite::create("ui/title2.png");
+	title->setPosition(VisibleRect::leftTop() + Vec2(20 , -20));
+	title->setAnchorPoint(Point(0, 1));
+	addChild(title ,2);
+
+// 	m_pJumpBoxTitle = Label::createWithBMFont("fonts/base_font.fnt", "Jumping Box");
+// 	auto reincarTitle = Label::createWithBMFont("fonts/base_font.fnt", "Reincarnation 2");
+// 	this->addChild(m_pJumpBoxTitle);
+// 	m_pJumpBoxTitle->setPosition(VisibleRect::top() + Point(-250, -m_pJumpBoxTitle->getContentSize().height / 2 - 10));
+// 	this->addChild(reincarTitle);
+// 	reincarTitle->setPosition(VisibleRect::top() + Point(0, -100));
+// 	this->playFontAnimate();
 	return true;
 }
 
@@ -104,7 +107,21 @@ bool MenuLayer::initBackground()
 {
 	auto background = Background::create();
 	this->addChild(background);
+
+
 	return true;
+}
+
+void MenuLayer::onEnter()
+{
+	Node::onEnter();
+
+	AdManager::getInstance()->hideBannerAD();
+}
+
+void MenuLayer::onExit()
+{
+	Node::onExit();
 }
 
 bool MenuLayer::initSound()
@@ -139,67 +156,11 @@ bool MenuLayer::initWithMenu()
 
 
 	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
-		if ((int)type == 2)
+		if ((int)type == ui::TouchEventType::TOUCH_EVENT_ENDED)
 		{
 			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		}
 		
 	});
-
-	
-	/*TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
-	auto playLabel = Label::createWithTTF(ttfConfig, "Play Game");
-	auto playItem = MenuItemLabel::create(playLabel, [=](Ref *pSender){
-		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
-		//Director::getInstance()->replaceScene(GameWorld::createScene());
-	});
-	playItem->setColor(Color3B(0, 0, 0));
-	auto highScoreLabel = Label::createWithTTF(ttfConfig, "Highscores");
-	auto highScoreItem = MenuItemLabel::create(highScoreLabel, [=](Ref *pSender){
-		this->m_pCurrentNode->removeFromParent();
-		this->m_pCurrentNode = PlayGameMenu::create();
-		this->addChild(this->m_pCurrentNode);
-		m_pCurrentNode->setPosition(VisibleRect::leftBottom());
-	});
-	highScoreItem->setColor(Color3B(0, 0, 0));
-
-	auto instructionLabel = Label::createWithTTF(ttfConfig, "Instructions");
-	auto instructionItem = MenuItemLabel::create(instructionLabel, [=](Ref *pSender){
-		this->m_pCurrentNode->removeFromParent();
-		this->m_pCurrentNode = Sprite::create("38.png");
-		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
-		this->addChild(m_pCurrentNode);
-	});
-	instructionItem->setColor(Color3B(0, 0, 0));
-	auto tutorialLabel = Label::createWithTTF(ttfConfig, "Tutorial");
-	auto tutorialItem = MenuItemLabel::create(tutorialLabel, [=](Ref *pSender){
-		this->m_pCurrentNode->removeFromParent();
-		this->m_pCurrentNode = Sprite::create("37.png");
-		m_pCurrentNode->setPosition(VisibleRect::center() + Vec2(100, -50));
-		this->addChild(m_pCurrentNode);
-	});
-	tutorialItem->setColor(Color3B(0, 0, 0));
-	auto walkthroughLabel = Label::createWithTTF(ttfConfig, "Walkthrough");
-	auto walkthroughItem = MenuItemLabel::create(walkthroughLabel, [=](Ref *pSender){
-	
-	});
-	walkthroughItem->setColor(Color3B(0, 0, 0));
-	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Games");
-	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
-		Director::getInstance()->replaceScene(LevelSelectScene::createScene());
-	});
-	moreGameItem->setColor(Color3B(0, 0, 0));
-	auto backLabel = Label::createWithTTF(ttfConfig, "Back");
-	auto backItem = MenuItemLabel::create(backLabel, [=](Ref *pSender){
-		Director::getInstance()->replaceScene(Welcome::createScene());
-	});
-	backItem->setColor(Color3B(0, 0, 0));
-	auto menu = Menu::create(playItem, highScoreItem, instructionItem, 
-		tutorialItem, walkthroughItem, moreGameItem, backItem, nullptr);
-	this->addChild(menu);
-	menu->alignItemsVerticallyWithPadding(20);
-	menu->setPosition(VisibleRect::left() + Point(150, 0));*/
-
-
 	return true;
 }

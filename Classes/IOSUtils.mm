@@ -18,3 +18,8 @@ void IOSUtils::hideBannerView()
 {
     [AppController hideBannerView];
 }
+
+void IOSUtils::showInterstitialView()
+{
+    [AppController showInterstitialView];
+}

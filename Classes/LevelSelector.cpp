@@ -5,6 +5,7 @@
 #include "LevelState.h"
 #include "CheckBox.h"
 #include "Utils.h"
+#include "AdManager.h"
 
 LevelSelector::LevelSelector()
 {
@@ -27,15 +28,49 @@ LevelSelector::~LevelSelector()
 {
 }
 
+
+void LevelSelector::setStarForLevel(int level , ProgressTimer * star , Sprite * bg)
+{
+	// getScore for level
+	int cur = LevelState::getInstance()->getCurrentLevel();
+	if (level > cur) 
+	{
+		star->setPercentage(0);
+		bg->setVisible(false);
+	}
+	else if (level <= cur)
+	{
+		int starNum = Utils::getStar(Utils::getScore(level));
+		//UserDefault::getInstance()->getIntegerForKey(CCString::createWithFormat("stars_1_%d" ,level)->getCString() , 1);
+		star->setPercentage(33 * starNum);
+	}
+	//
+	
+}
+
 MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 {
 	auto item = MenuItemImage::create("ui/lv_normal.png" ,"ui/lv_selected.png" ,"ui/lv_locked.png" , [=](Ref * sender){this->onClickMenuItem(sender);});
-	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 18);
+	TTFConfig ttfConfig("ui/grobold.ttf", 18);
 	auto label = Label::createWithTTF(ttfConfig , CCString::createWithFormat("%d" , level)->getCString());
 	label->setPosition(item->getContentSize()/2);
-	label->setTextColor(Color4B::BLACK);
+	label->setTextColor(Color4B::WHITE);
+	label->enableOutline(Color4B::BLACK, 1);
 	item->addChild(label);
 	item->setTag(level);
+	//item add progressbar _star
+	auto progress_bg = Sprite::create("ui/start_blank.png");
+	auto progress = ProgressTimer::create(Sprite::create("ui/start_full.png"));
+	progress->setMidpoint(Vec2(0, 1));
+	progress->setBarChangeRate(Vec2(1, 0));
+	progress->setType(ProgressTimer::Type::BAR);
+	progress_bg->setPosition(Point(38 , 20));
+	progress->setPosition(Point(38 ,20));
+	item->addChild(progress_bg);
+	item->addChild(progress);
+
+	setStarForLevel(level , progress , progress_bg);
+
 	m->addChild(item);
 	Size size = item->getContentSize();
 	//if (x == 0)
@@ -129,4 +164,18 @@ bool LevelSelectScene::init()
 	auto selector = LevelSelector::create();
 	addChild(selector);
 	return true;
+}
+
+void LevelSelectScene::onExit()
+{
+	Layer::onExit();
+
+	AdManager::getInstance()->hideBannerAD();
+}
+
+void LevelSelectScene::onEnter()
+{
+    Layer::onEnter();
+    
+	AdManager::getInstance()->showBannerAD();
 }

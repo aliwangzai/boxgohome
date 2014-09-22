@@ -63,5 +63,13 @@ bool Enemy::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 }
 void Enemy::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic)
 {
-	logic->setLoseState(true);
+	PhysicsBody* body1 = contact.getShapeA()->getBody();
+	PhysicsBody* body2 = contact.getShapeB()->getBody();
+	if (body1 != nullptr && body2 != nullptr)
+	{
+		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
+		{
+			logic->setLoseState(true);
+		}
+	}
 }

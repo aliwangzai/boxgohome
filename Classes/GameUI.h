@@ -2,6 +2,7 @@
 #define __GAMEUI_H__
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
 USING_NS_CC;
 
 #define JUMPSTEPSCORE 1000
@@ -50,9 +51,9 @@ public:
 private:
 	GameWorld*	m_pGameWorld;
 	Label		*m_pLevelLabel;
-	Label		*m_pScoreLabel;
-	Label		*m_pBonusLabel;
-	Label		*m_pJumpsLabel;
+	ui::Text		*m_pScoreLabel;
+	ui::Text		*m_pBonusLabel;
+	ui::Text		*m_pJumpsLabel;
 	int			m_nLevel;
 	int			m_nScore;
 	int			m_nBonus;

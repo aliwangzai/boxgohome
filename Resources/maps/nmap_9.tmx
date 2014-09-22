@@ -27,6 +27,7 @@
   </tile>
   <tile id="4">
    <properties>
+    <property name="jumpCount" value="3"/>
     <property name="type" value="jumps_item"/>
    </properties>
    <image width="33" height="33" source="items/109.png"/>
