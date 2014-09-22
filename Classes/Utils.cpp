@@ -105,3 +105,26 @@ long long Utils::getCurrentTime()
 	gettimeofday(&tv, nullptr);
 	return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
+
+int Utils::getStar(int score)
+{
+	int sumScore = 5 * 1000 + 6000;
+	if (score >= sumScore / 4 * 3){
+		return 3;
+	}else if (score >= sumScore / 4 * 2){
+		return 2;
+	}else if (score >= sumScore / 4){
+		return 1;
+	}else if(score >= 0) {
+		return 0;
+	}
+	return 0;
+}
+
+int Utils::getScore(int level)
+{
+	char buffer[128];
+	sprintf(buffer, "user_score_%d", level);
+	int oldScore = UserDefault::getInstance()->getIntegerForKey(buffer);
+	return oldScore;
+}

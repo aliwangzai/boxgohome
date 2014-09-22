@@ -33,14 +33,15 @@ void LevelSelector::setStarForLevel(int level , ProgressTimer * star , Sprite * 
 {
 	// getScore for level
 	int cur = LevelState::getInstance()->getCurrentLevel();
-	if (level >= cur) 
+	if (level > cur) 
 	{
 		star->setPercentage(0);
 		bg->setVisible(false);
 	}
-	else if (level < cur)
+	else if (level <= cur)
 	{
-		int starNum = UserDefault::getInstance()->getIntegerForKey(CCString::createWithFormat("stars_1_%d" ,level)->getCString() , 1);
+		int starNum = Utils::getStar(Utils::getScore(level));
+		//UserDefault::getInstance()->getIntegerForKey(CCString::createWithFormat("stars_1_%d" ,level)->getCString() , 1);
 		star->setPercentage(33 * starNum);
 	}
 	//

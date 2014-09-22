@@ -200,8 +200,7 @@ void GameUI::setDefaultValue()
 
 void GameUI::setLevel(int level)
 {
-	//this->m_nLevel = level;
-	//m_pLevelLabel->setString(std::to_string(level));
+	this->m_nLevel = level;
 }
 
 void GameUI::setScore(int score)
@@ -260,10 +259,9 @@ void GameUI::stop()
 
 int GameUI::getOldScore() const
 {
-	int oldScore = 0;
 	char buffer[128];
 	sprintf(buffer, "user_score_%d", m_nLevel);
-	oldScore += UserDefault::getInstance()->getIntegerForKey(buffer);
+	int oldScore = UserDefault::getInstance()->getIntegerForKey(buffer);
 	return oldScore;
 }
 
