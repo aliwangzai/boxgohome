@@ -231,6 +231,8 @@ void GameWorld::update(float dt)
 void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
+
+	
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = (int)data;
@@ -277,6 +279,7 @@ void GameWorld::nextLevel()
 	{
 		LevelState::getInstance()->unlockNewLevel();
 	}
+	
 	LevelState::getInstance()->setSelectedLevel(currentSelectLevel + 1);
 	std::string currentMap = LevelState::getInstance()->getMapName();
 	this->m_pGameMap->loadMapFile(currentMap);
