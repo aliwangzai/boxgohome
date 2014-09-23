@@ -126,7 +126,10 @@ bool GameWorld::initListener()
 
 bool GameWorld::onTouchBegan(Touch *pTouch, Event *pEvent)
 {
-	if (this->m_pBoxSprite->getBoundingBox().containsPoint(pTouch->getLocation()))
+	Rect rect = this->m_pBoxSprite->getBoundingBox();
+	rect.origin = rect.origin - Size(30, 30);
+	rect.size = rect.size + Size(30, 30);
+	if (rect.containsPoint(pTouch->getLocation()))
 	{
 		Point localPoint = pTouch->getLocation();
 		Point targetPoint = this->m_pBoxSprite->getPosition();
@@ -232,7 +235,6 @@ void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
 
-	
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = (int)data;
@@ -274,12 +276,6 @@ void GameWorld::nextLevel()
 {
 	CCLOG("enter level");
 	int currentSelectLevel = LevelState::getInstance()->getSelectedLevel();
-	int currentMaxLevel = LevelState::getInstance()->getCurrentLevel();
-	if (currentSelectLevel + 1 > currentMaxLevel)
-	{
-		LevelState::getInstance()->unlockNewLevel();
-	}
-	
 	LevelState::getInstance()->setSelectedLevel(currentSelectLevel + 1);
 	std::string currentMap = LevelState::getInstance()->getMapName();
 	this->m_pGameMap->loadMapFile(currentMap);

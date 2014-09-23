@@ -26,8 +26,8 @@ public:
 
 	void setResultCallback(DialogCallback callback);
 
-	void btn_menuCallback(Ref*sender,TouchEventType a);
-	void btn_resetCallback(Ref*sender,TouchEventType a);
+	void btn_menuCallback(Ref*sender,Widget::TouchEventType a);
+	void btn_resetCallback(Ref*sender,Widget::TouchEventType a);
 
 private:
 

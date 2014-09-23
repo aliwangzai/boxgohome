@@ -52,6 +52,7 @@ void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *
 		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
 		{
 			long long currentTime = Utils::getCurrentTime();
+			CCLOG("%d ---------------------------------------------------------", currentTime - m_lLastTime);
 			if (currentTime - m_lLastTime > 500)
 			{
 				m_lLastTime = currentTime;

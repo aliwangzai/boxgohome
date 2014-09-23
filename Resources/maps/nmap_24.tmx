@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="45">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="durability" value="1"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="3" x="133" y="144" rotation="90"/>
+  <object gid="3" x="160" y="225"/>
+  <object gid="3" x="240" y="225"/>
+  <object gid="3" x="320" y="225"/>
+  <object gid="2" x="398" y="225"/>
+  <object gid="3" x="480" y="225"/>
+  <object gid="3" x="561" y="225"/>
+  <object gid="3" x="641" y="225"/>
+  <object gid="3" x="133" y="224" rotation="90"/>
+  <object gid="3" x="133" y="305" rotation="90"/>
+  <object gid="3" x="319" y="384"/>
+  <object gid="3" x="159" y="384"/>
+  <object gid="3" x="239" y="384"/>
+  <object gid="3" x="401" y="385"/>
+  <object gid="3" x="482" y="385"/>
+  <object gid="3" x="562" y="385"/>
+  <object gid="2" x="641" y="385"/>
+  <object gid="3" x="722" y="144" rotation="90"/>
+  <object gid="3" x="722" y="224" rotation="90"/>
+  <object gid="3" x="722" y="305" rotation="90"/>
+  <object gid="5" x="416" y="200"/>
+  <object gid="2" x="126" y="549"/>
+  <object gid="3" x="448" y="550"/>
+  <object gid="3" x="366" y="550"/>
+  <object gid="3" x="286" y="549"/>
+  <object gid="3" x="529" y="550"/>
+  <object gid="3" x="609" y="550"/>
+  <object gid="3" x="206" y="549"/>
+  <object gid="1" x="410" y="524"/>
+  <object gid="4" x="447" y="501"/>
+ </objectgroup>
+</map>

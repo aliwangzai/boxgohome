@@ -37,26 +37,26 @@ bool LevelCompleteLoss::initWithDialog(Dialog* dialog)
 	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
 	Button * btn_next = static_cast<Button*>(layout->getChildByName("btn_next"));
 
-	btn_menu->addTouchEventListener(this, toucheventselector(LevelCompleteLoss::btn_menuCallback));
-	btn_reset->addTouchEventListener(this, toucheventselector(LevelCompleteLoss::btn_resetCallback));
+	btn_menu->addTouchEventListener(CC_CALLBACK_2(LevelCompleteLoss::btn_menuCallback,this));
+	btn_reset->addTouchEventListener(CC_CALLBACK_2(LevelCompleteLoss::btn_resetCallback, this));
 
-	layout->setAnchorPoint(ccp(0.5,0.5));
+	layout->setAnchorPoint(Vec2(0.5,0.5));
 	
 	return true;
 }
 
-void LevelCompleteLoss::btn_menuCallback( Ref*sender,TouchEventType type )
+void LevelCompleteLoss::btn_menuCallback( Ref*sender,Widget::TouchEventType type )
 {
-	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	if (type == Widget::TouchEventType::ENDED)
 	{
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)1);
 	}
 }
 
-void LevelCompleteLoss::btn_resetCallback( Ref*sender,TouchEventType type )
+void LevelCompleteLoss::btn_resetCallback(Ref*sender, Widget::TouchEventType type)
 {
-	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	if (type == Widget::TouchEventType::ENDED)
 	{
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)2);

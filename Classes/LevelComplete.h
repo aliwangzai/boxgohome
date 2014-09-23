@@ -24,9 +24,9 @@ public:
 	void databind(void *data);
 
 	void setResultCallback(DialogCallback callback);
-	void btn_menuCallback(Ref*sender,TouchEventType a);
-	void btn_resetCallback(Ref*sender,TouchEventType a);
-	void btn_nextCallback(Ref*sender,TouchEventType a);
+	void btn_menuCallback(Ref*sender, Widget::TouchEventType a);
+	void btn_resetCallback(Ref*sender, Widget::TouchEventType a);
+	void btn_nextCallback(Ref*sender, Widget::TouchEventType a);
 private:
 	Dialog			*m_pDialog;
 	DialogCallback	m_fCallback;

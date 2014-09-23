@@ -56,9 +56,9 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	Button * btn_reset = static_cast<Button*>(m_pLayout->getChildByName("btn_reset"));
 	Button * btn_next = static_cast<Button*>(m_pLayout->getChildByName("btn_next"));
 
-	btn_menu->addTouchEventListener(this, toucheventselector(LevelComplete::btn_menuCallback));
-	btn_reset->addTouchEventListener(this, toucheventselector(LevelComplete::btn_resetCallback));
-	btn_next->addTouchEventListener(this, toucheventselector(LevelComplete::btn_nextCallback));
+	btn_menu->addTouchEventListener(CC_CALLBACK_2( LevelComplete::btn_menuCallback, this));
+	btn_reset->addTouchEventListener(CC_CALLBACK_2( LevelComplete::btn_resetCallback, this));
+	btn_next->addTouchEventListener(CC_CALLBACK_2(LevelComplete::btn_nextCallback, this));
 
 	//this->initMenu();
 	//this->initDataLabel();
@@ -72,18 +72,18 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	return true;
 }
 
-void LevelComplete::btn_menuCallback(Ref*sender,TouchEventType type)
+void LevelComplete::btn_menuCallback(Ref*sender,Widget::TouchEventType type)
 {
-	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	if (type == Widget::TouchEventType::ENDED)
 	{
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)1);
 	}
 }
 
-void LevelComplete::btn_resetCallback(Ref*sender,TouchEventType type)
+void LevelComplete::btn_resetCallback(Ref*sender, Widget::TouchEventType type)
 {
-	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	if (type == Widget::TouchEventType::ENDED)
 	{
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)2);
@@ -91,9 +91,9 @@ void LevelComplete::btn_resetCallback(Ref*sender,TouchEventType type)
 }
 
 
-void LevelComplete::btn_nextCallback(Ref*sender,TouchEventType type)
+void LevelComplete::btn_nextCallback(Ref*sender, Widget::TouchEventType type)
 {
-	if (type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+	if (type == Widget::TouchEventType::ENDED)
 	{
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)3);
@@ -134,6 +134,13 @@ void LevelComplete::databind(void *data)
 		int starNum = Utils::getStar(currentLevelNewScore);  // TODO: calculation for star count
 		ui::LoadingBar * bar =  static_cast<ui::LoadingBar*>(m_pLayout->getChildByName("progress_stars"));
 		bar->setPercent(33* starNum);
+
+		int currentSelectLevel = LevelState::getInstance()->getSelectedLevel();
+		int currentMaxLevel = LevelState::getInstance()->getCurrentLevel();
+		if (currentSelectLevel + 1 > currentMaxLevel)
+		{
+			LevelState::getInstance()->unlockNewLevel();
+		}
 	}
 }
 
