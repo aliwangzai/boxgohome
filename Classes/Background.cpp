@@ -1,7 +1,7 @@
 #include "Background.h"
 #include "VisibleRect.h"
 
-#define CLOUD_NUM 3
+#define CLOUD_NUM 4
 
 Background::Background()
 {
@@ -33,7 +33,8 @@ bool Background::initCloud()
 	Point cloudPoss[CLOUD_NUM] = {
 		VisibleRect::center() + Point(200, 100),
 		VisibleRect::left(),
-		VisibleRect::top() + Point(-200, -100)
+		VisibleRect::top() + Point(-200, -100),
+		VisibleRect::left()
 	};
 	for (int i = 0; i < CLOUD_NUM; i++)
 	{

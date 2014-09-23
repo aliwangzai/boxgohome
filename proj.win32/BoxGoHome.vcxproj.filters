@@ -28,18 +28,6 @@
     <Filter Include="Classes\utils">
       <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\item">
-      <UniqueIdentifier>{fcd10c35-f856-4935-871e-b4460b056766}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\entity">
-      <UniqueIdentifier>{9465e75e-3dd4-4fbd-aa1a-06a453133aa9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\manager">
-      <UniqueIdentifier>{9945d8dd-e377-482e-902b-61a50df4d30a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\effect">
-      <UniqueIdentifier>{3add62a3-b8e2-4917-bd8e-615e7e340640}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -118,29 +106,14 @@
       <Filter>Classes\wall</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp" />
+    <ClCompile Include="..\Classes\Enemy.cpp" />
+    <ClCompile Include="..\Classes\ShareManager.cpp" />
     <ClCompile Include="..\Classes\BrokableWall.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\JumpsItem.cpp" />
     <ClCompile Include="..\Classes\BaseEntity.cpp">
       <Filter>Classes\wall</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\JumpsItem.cpp">
-      <Filter>Classes\item</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Enemy.cpp">
-      <Filter>Classes\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ShareManager.cpp">
-      <Filter>Classes\manager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AdManager.cpp">
-      <Filter>Classes\manager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\TailEffect.cpp">
-      <Filter>Classes\effect</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UIButton.cpp">
-      <Filter>Classes\dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -224,32 +197,14 @@
     </ClInclude>
     <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h" />
     <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h" />
+    <ClInclude Include="..\Classes\Enemy.h" />
+    <ClInclude Include="..\Classes\ShareManager.h" />
     <ClInclude Include="..\Classes\BrokableWall.h">
       <Filter>Classes\wall</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\JumpsItem.h" />
     <ClInclude Include="..\Classes\BaseEntity.h">
       <Filter>Classes\wall</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\JumpsItem.h">
-      <Filter>Classes\item</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Enemy.h">
-      <Filter>Classes\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ShareManager.h">
-      <Filter>Classes\manager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AdManager.h">
-      <Filter>Classes\manager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UIButton.h">
-      <Filter>Classes\dialog</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ObjectPool.h">
-      <Filter>Classes\effect</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\TailEffect.h">
-      <Filter>Classes\effect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
