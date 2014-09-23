@@ -46,7 +46,8 @@ bool ContactLogic::onContactBegin(PhysicsContact& contact)
 {
 	auto baseEntity1 = static_cast<BaseEntity*>(contact.getShapeA()->getBody()->getNode());
 	auto baseEntity2 = static_cast<BaseEntity*>(contact.getShapeB()->getBody()->getNode());
-	if (baseEntity1->contactLogicBegin(contact,this) && baseEntity2->contactLogicBegin(contact,this))
+	if ((baseEntity1 != nullptr && baseEntity1->contactLogicBegin(contact, this)) && 
+		(baseEntity2 != nullptr && baseEntity2->contactLogicBegin(contact, this)))
 	{
 		return true;
 	}
