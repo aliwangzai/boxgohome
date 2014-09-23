@@ -106,6 +106,7 @@ long long Utils::getCurrentTime()
 	return tv.tv_sec * 1000 + tv.tv_usec / 1000;*/
 	time_t t = time(NULL);
 	struct tm* currentTime = gmtime(&t);
+	return 1;
 }
 
 int Utils::getStar(int score)
