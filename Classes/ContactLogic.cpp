@@ -56,11 +56,24 @@ bool ContactLogic::onContactBegin(PhysicsContact& contact)
 
 bool ContactLogic::onContactPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve)
 {
-	return true;
+	auto baseEntity1 = static_cast<BaseEntity*>(contact.getShapeA()->getBody()->getNode());
+	auto baseEntity2 = static_cast<BaseEntity*>(contact.getShapeB()->getBody()->getNode());
+	if ((baseEntity1 != nullptr && baseEntity1->contactLogicPreSolve(contact, solve, this)) &&
+		(baseEntity2 != nullptr && baseEntity2->contactLogicPreSolve(contact, solve, this)))
+	{
+		return true;
+	}
+	return false;
 }
 
 void ContactLogic::onContactPostSolve(PhysicsContact& contact, const PhysicsContactPostSolve& solve)
 {
+	auto baseEntity1 = static_cast<BaseEntity*>(contact.getShapeA()->getBody()->getNode());
+	auto baseEntity2 = static_cast<BaseEntity*>(contact.getShapeB()->getBody()->getNode());
+	if (baseEntity1 != nullptr)
+		baseEntity1->contactLogicPostSolve(contact, solve, this);
+	if (baseEntity2 != nullptr)
+		baseEntity2->contactLogicPostSolve(contact, solve, this);
 }
 
 void ContactLogic::onContactSeperate(PhysicsContact& contact)
@@ -71,15 +84,6 @@ void ContactLogic::onContactSeperate(PhysicsContact& contact)
 		baseEntity1->contactLogicSeperate(contact,this);
 	if ( baseEntity2 != nullptr)
 		baseEntity2->contactLogicSeperate(contact,this);
-// 	if(body1->getTag() == wallType_broken)
-// 	{
-// 		//remove brick
-// 		body1->getNode()->removeFromParentAndCleanup(true);
-// 		//remove body1
-// 		//NotificationCenter::sharedNotificationCenter()->postNotification("ContactLogic." , this);
-// 	}
-// 	if(body2->getTag() == wallType_broken)
-// 		body1->getNode()->removeFromParentAndCleanup(true);
 }
 
 void ContactLogic::update(float dt)

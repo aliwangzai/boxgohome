@@ -127,8 +127,8 @@ bool GameWorld::initListener()
 bool GameWorld::onTouchBegan(Touch *pTouch, Event *pEvent)
 {
 	Rect rect = this->m_pBoxSprite->getBoundingBox();
-	rect.origin = rect.origin - Size(30, 30);
-	rect.size = rect.size + Size(30, 30);
+	rect.origin = rect.origin - Size(20, 20);
+	rect.size = rect.size + Size(40, 40);
 	if (rect.containsPoint(pTouch->getLocation()))
 	{
 		Point localPoint = pTouch->getLocation();

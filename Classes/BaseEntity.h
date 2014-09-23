@@ -31,6 +31,8 @@ public:
 	void setCollisionBitmask(int mask);
 
 	virtual bool contactLogicBegin(PhysicsContact &contact, ContactLogic *logic){ return true; };
+	virtual bool contactLogicPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve, ContactLogic *logic){ return true; }
+	virtual void contactLogicPostSolve(PhysicsContact& contact, const PhysicsContactPostSolve& solve, ContactLogic *logic){};
 	virtual void contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic){};
 
 	EntityType getEntityType() const { return m_entityType; }
