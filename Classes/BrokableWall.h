@@ -8,7 +8,7 @@ class BrokableWall : public  BaseEntity
 {
 private :
 	int m_durability;
-	long m_lLastTime;
+	bool m_bIsCanContact;
 
 public:
 	BrokableWall();
@@ -21,6 +21,8 @@ public:
 	virtual bool contactLogicBegin( PhysicsContact &contact, ContactLogic *logic );
 
 	virtual void contactLogicSeperate( PhysicsContact &contact, ContactLogic *logic );
+
+	void updateContactState(float dt);
 
 };
 
