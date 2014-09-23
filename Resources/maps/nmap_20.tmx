@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="45">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="durability" value="3"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementWood012.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="2" x="558" y="279"/>
+  <object gid="2" x="479" y="149"/>
+  <object gid="2" x="558" y="149"/>
+  <object gid="2" x="400" y="279"/>
+  <object gid="2" x="479" y="279"/>
+  <object gid="2" x="638" y="124" rotation="90"/>
+  <object gid="2" x="502.333" y="433.667"/>
+  <object gid="1" x="423.333" y="434"/>
+  <object gid="3" x="464.333" y="410"/>
+  <object gid="2" x="639.667" y="549.667"/>
+  <object gid="2" x="719.667" y="549.667"/>
+  <object gid="2" x="638" y="199" rotation="90"/>
+  <object gid="2" x="400" y="353.667" rotation="90"/>
+  <object gid="2" x="400" y="278.667" rotation="90"/>
+  <object gid="4" x="497" y="254"/>
+  <object gid="5" x="159" y="575"/>
+  <object gid="6" x="133" y="495" rotation="90"/>
+  <object gid="6" x="133" y="414" rotation="90"/>
+  <object gid="6" x="134" y="252" rotation="90"/>
+  <object gid="6" x="134" y="333" rotation="90"/>
+  <object gid="6" x="800" y="469" rotation="90"/>
+  <object gid="6" x="801" y="226" rotation="90"/>
+  <object gid="6" x="800" y="388" rotation="90"/>
+  <object gid="6" x="801" y="307" rotation="90"/>
+ </objectgroup>
+</map>
