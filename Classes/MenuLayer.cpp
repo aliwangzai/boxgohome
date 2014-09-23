@@ -141,7 +141,7 @@ bool MenuLayer::initWithMenu()
 	Widget* widget = static_cast<Widget*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Menu.json"));
 	widget->setAnchorPoint(Vec2(0, 0.5f));
 	widget->setPosition(VisibleRect::left() + Vec2(30, 0));
-	this->addChild(widget);
+	this->addChild(widget, 10);
 
 	Button * btn_play = static_cast<Button *>(widget->getChildByName("btn_play"));
 	Button * btn_tur = static_cast<Button *>(widget->getChildByName("btn_tur"));
@@ -155,19 +155,16 @@ bool MenuLayer::initWithMenu()
 			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		}
 	});
-	btn_tur->addTouchEventListener(CC_CALLBACK_2( MenuLayer::menuClickCallback, this));
+	btn_tur->addTouchEventListener([=](Ref* pSender, Widget::TouchEventType type){
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			this->m_pCurrentNode->removeFromParent();
+			this->m_pCurrentNode = TutorialMenu::create();
+			this->addChild(this->m_pCurrentNode);
+		}
+	});
 
 	this->m_pCurrentNode = PlayGameMenu::create();
 	this->addChild(this->m_pCurrentNode);
 	return true;
-}
-
-void MenuLayer::menuClickCallback(Ref* pSender, Widget::TouchEventType type)
-{
-	if (type == Widget::TouchEventType::ENDED)
-	{
-		this->m_pCurrentNode->removeFromParent();
-		auto sprite = TutorialMenu::create();
-		this->addChild(sprite);
-	}
 }

@@ -25,8 +25,6 @@ public:
 
 	void playFontAnimate();
 
-	void menuClickCallback(Ref* pSender, Widget::TouchEventType type);
-
 	CREATE_FUNC(MenuLayer);
 
 private:
