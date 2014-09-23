@@ -15,12 +15,14 @@ public:
 	bool init();
 	bool initGameMap();
 	bool initBoxSprite();
+	bool initHand();
 
 	CREATE_FUNC(TutorialMenu);
 
 private:
 	GameMap *m_pGameMap;
 	BoxSprite *m_pBoxSprite;
+	Sprite*	m_pHand;
 };
 
 #endif
