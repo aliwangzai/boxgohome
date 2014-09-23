@@ -108,12 +108,8 @@ Node* Utils::createMusic()
 
 long long Utils::getCurrentTime()
 {
-	/*struct timeval tv;
-	gettimeofday(&tv, nullptr);
-	return tv.tv_sec * 1000 + tv.tv_usec / 1000;*/
-	time_t t = time(NULL);
-	struct tm* currentTime = gmtime(&t);
-	return 1;
+	clock_t time = clock();
+	return time;
 }
 
 int Utils::getStar(int score)

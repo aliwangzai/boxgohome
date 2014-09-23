@@ -8,6 +8,7 @@
 #include "Welcome.h"
 #include "AdManager.h"
 #include "Utils.h"
+#include "TutorialMenu.h"
 
 #include "cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
@@ -140,15 +141,16 @@ bool MenuLayer::initSound()
 
 bool MenuLayer::initWithMenu()
 {
-	this->m_pCurrentNode = PlayGameMenu::create();
-	this->addChild(this->m_pCurrentNode);
-	m_pCurrentNode->setPosition(VisibleRect::leftBottom());
+	Widget* widget = static_cast<Widget*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Menu.json"));
+	widget->setAnchorPoint(Vec2(0, 0.5f));
+	widget->setPosition(VisibleRect::left() + Vec2(30, 0));
+	this->addChild(widget, 10);
 
+	Button * btn_play = static_cast<Button *>(widget->getChildByName("btn_play"));
+	Button * btn_tur = static_cast<Button *>(widget->getChildByName("btn_tur"));
+	Button * btn_more = static_cast<Button *>(widget->getChildByName("btn_more"));
+	Button * btn_credit = static_cast<Button *>(widget->getChildByName("btn_credit"));
 
-	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Menu.json"));
-	addChild(layout);
-	layout->setAnchorPoint(Vec2(0,0.5f));
-	layout->setPosition(VisibleRect::left() + Vec2(30,0) );
 
 	Button * btn_play = static_cast<Button *>(layout->getChildByName("btn_play"));
 	Button * btn_tur = static_cast<Button *>(layout->getChildByName("btn_tur"));
@@ -157,11 +159,10 @@ bool MenuLayer::initWithMenu()
 
 
 	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
-		if ((int)type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+		if (type == Widget::TouchEventType::ENDED)
 		{
 			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		}
-		
 	});
 
 	if (!btn_settings)

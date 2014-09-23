@@ -163,6 +163,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ShareManager.cpp" />
     <ClCompile Include="..\Classes\TailEffect.cpp" />
     <ClCompile Include="..\Classes\TestLayer.cpp" />
+    <ClCompile Include="..\Classes\TutorialMenu.cpp" />
     <ClCompile Include="..\Classes\UIButton.cpp" />
     <ClCompile Include="..\Classes\Utils.cpp" />
     <ClCompile Include="..\Classes\VisibleRect.cpp" />
@@ -203,6 +204,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ShareManager.h" />
     <ClInclude Include="..\Classes\TailEffect.h" />
     <ClInclude Include="..\Classes\TestLayer.h" />
+    <ClInclude Include="..\Classes\TutorialMenu.h" />
     <ClInclude Include="..\Classes\UIButton.h" />
     <ClInclude Include="..\Classes\Utils.h" />
     <ClInclude Include="..\Classes\VisibleRect.h" />

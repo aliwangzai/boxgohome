@@ -2,7 +2,7 @@
 #include "Utils.h"
 
 BrokableWall::BrokableWall()
-:m_lLastTime(0)
+:m_bIsCanContact(true)
 {
 
 }
@@ -51,19 +51,27 @@ void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *
 	{
 		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
 		{
-			long long currentTime = Utils::getCurrentTime();
-			CCLOG("%d ---------------------------------------------------------", currentTime - m_lLastTime);
-			if (currentTime - m_lLastTime > 500)
+			Vec2 velocity = body1->getVelocity() + body2->getVelocity();
+			if (m_bIsCanContact && velocity.getLengthSq() > 10 * 10)
 			{
-				m_lLastTime = currentTime;
 				m_durability--;
 				if (m_durability <= 0)
 				{
-					m_lLastTime = 0;
 					this->removeFromParent();
+				}
+				else
+				{
+					m_bIsCanContact = false;
+					this->schedule(schedule_selector(BrokableWall::updateContactState), 0.1f);
 				}
 			}
 		}
 	}
+}
+
+void BrokableWall::updateContactState(float dt)
+{
+	this->unschedule(schedule_selector(BrokableWall::updateContactState));
+	this->m_bIsCanContact = true;
 }
 
