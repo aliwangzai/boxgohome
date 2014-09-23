@@ -11,16 +11,33 @@
     <string>Lose.json</string>
     <string>Menu.json</string>
     <string>GameUI_UP.json</string>
+    <string>Settings.json</string>
   </JsonList>
   <CanvasSize>
-    <Width>200</Width>
-    <Height>150</Height>
+    <Width>480</Width>
+    <Height>320</Height>
   </CanvasSize>
   <filePath>D:\Work\cocos\WorkSpace\boxgohome\profile\UI\DemoHead_UI\DemoHead_UI.xml.ui</filePath>
   <ProjectType>UIProject</ProjectType>
   <ResRelativePath />
   <imageFileList />
-  <imagePngList />
+  <imagePngList>
+    <string>star2_full.png</string>
+    <string>bg_result.png</string>
+    <string>btn_menu.png</string>
+    <string>btn_next.png</string>
+    <string>btn_reset.png</string>
+    <string>star2_blank.png</string>
+    <string>record_cup_icon.png</string>
+    <string>bg_result2.png</string>
+    <string>btn_menu.png</string>
+    <string>btn_reset.png</string>
+    <string>btn_play.png</string>
+    <string>btn_tur.png</string>
+    <string>btn_more.png</string>
+    <string>btn_settings.png</string>
+    <string>settings.png</string>
+  </imagePngList>
   <JsonSuffix>.json</JsonSuffix>
-  <CurrentUIJson>Lose.json</CurrentUIJson>
+  <CurrentUIJson>Menu.json</CurrentUIJson>
 </UIProject>

@@ -26,12 +26,15 @@ public:
 
 	static Node* createSound();
 	static Node* createMusic();
+	static Node* createTrail();
+
 
 	static long long getCurrentTime();
 
 	static int getStar(int score);
 
 	static int getScore(int level);
+	
 };
 
 #endif

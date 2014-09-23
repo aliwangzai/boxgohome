@@ -16,4 +16,8 @@
     <Project>GameUI_UP</Project>
     <GuidesList />
   </GuidesProject>
+  <GuidesProject>
+    <Project>Settings</Project>
+    <GuidesList />
+  </GuidesProject>
 </ArrayOfGuidesProject>

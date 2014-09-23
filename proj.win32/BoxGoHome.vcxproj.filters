@@ -105,15 +105,21 @@
     <ClCompile Include="..\Classes\WoodenCrate.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp" />
-    <ClCompile Include="..\Classes\Enemy.cpp" />
-    <ClCompile Include="..\Classes\ShareManager.cpp" />
     <ClCompile Include="..\Classes\BrokableWall.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\JumpsItem.cpp" />
     <ClCompile Include="..\Classes\BaseEntity.cpp">
       <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AdManager.cpp" />
+    <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp" />
+    <ClCompile Include="..\Classes\Enemy.cpp" />
+    <ClCompile Include="..\Classes\JumpsItem.cpp" />
+    <ClCompile Include="..\Classes\ShareManager.cpp" />
+    <ClCompile Include="..\Classes\TailEffect.cpp" />
+    <ClCompile Include="..\Classes\UIButton.cpp" />
+    <ClCompile Include="..\Classes\SettingsDiaog.cpp">
+      <Filter>Classes\dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -195,16 +201,23 @@
     <ClInclude Include="..\Classes\LevelState.h">
       <Filter>Classes\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h" />
-    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h" />
-    <ClInclude Include="..\Classes\Enemy.h" />
-    <ClInclude Include="..\Classes\ShareManager.h" />
     <ClInclude Include="..\Classes\BrokableWall.h">
       <Filter>Classes\wall</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\JumpsItem.h" />
     <ClInclude Include="..\Classes\BaseEntity.h">
       <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UIButton.h" />
+    <ClInclude Include="..\Classes\AdManager.h" />
+    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h" />
+    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h" />
+    <ClInclude Include="..\Classes\Enemy.h" />
+    <ClInclude Include="..\Classes\JumpsItem.h" />
+    <ClInclude Include="..\Classes\ObjectPool.h" />
+    <ClInclude Include="..\Classes\ShareManager.h" />
+    <ClInclude Include="..\Classes\TailEffect.h" />
+    <ClInclude Include="..\Classes\SettingsDiaog.h">
+      <Filter>Classes\dialog</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

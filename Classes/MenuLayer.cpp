@@ -11,6 +11,7 @@
 
 #include "cocostudio/CCSGUIReader.h"
 #include "ui/CocosGUI.h"
+#include "DialogManager.h"
 using namespace  cocos2d::ui;
 
 
@@ -152,7 +153,7 @@ bool MenuLayer::initWithMenu()
 	Button * btn_play = static_cast<Button *>(layout->getChildByName("btn_play"));
 	Button * btn_tur = static_cast<Button *>(layout->getChildByName("btn_tur"));
 	Button * btn_more = static_cast<Button *>(layout->getChildByName("btn_more"));
-	Button * btn_credit = static_cast<Button *>(layout->getChildByName("btn_credit"));
+	Button * btn_settings = static_cast<Button *>(layout->getChildByName("btn_settings"));
 
 
 	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
@@ -162,5 +163,20 @@ bool MenuLayer::initWithMenu()
 		}
 		
 	});
+
+	if (!btn_settings)
+	{
+		return true;
+	}
+
+	btn_settings->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
+		if ((int)type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+		{
+			//pop setting dialog
+			DialogManager::getInstance()->showSettingDialog();
+		}
+
+	});
+
 	return true;
 }

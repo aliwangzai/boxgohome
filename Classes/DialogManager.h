@@ -15,6 +15,9 @@ public:
 	Dialog* showLvelComplete(void *data, DialogCallback callback);
 
 	Dialog* showLevelCompleteLoss(void *data, DialogCallback callback);
+
+
+	Dialog* showSettingDialog();
 };
 
 #endif
