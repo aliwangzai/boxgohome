@@ -39,5 +39,5 @@
     <string>settings.png</string>
   </imagePngList>
   <JsonSuffix>.json</JsonSuffix>
-  <CurrentUIJson>Menu.json</CurrentUIJson>
+  <CurrentUIJson>Settings.json</CurrentUIJson>
 </UIProject>
