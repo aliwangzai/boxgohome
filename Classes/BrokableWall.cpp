@@ -51,7 +51,8 @@ void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *
 	{
 		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
 		{
-			if (m_bIsCanContact)
+			Vec2 velocity = body1->getVelocity() + body2->getVelocity();
+			if (m_bIsCanContact && velocity.getLengthSq() > 10 * 10)
 			{
 				m_durability--;
 				if (m_durability <= 0)

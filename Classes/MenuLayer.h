@@ -2,7 +2,9 @@
 #define __MENULAYER_H__
 
 #include "cocos2d.h"
+#include "ui/CocosGUI.h"
 USING_NS_CC;
+using namespace  cocos2d::ui;
 
 class MenuLayer: public Node
 {
@@ -22,6 +24,8 @@ public:
 	bool initTitle();
 
 	void playFontAnimate();
+
+	void menuClickCallback(Ref* pSender, Widget::TouchEventType type);
 
 	CREATE_FUNC(MenuLayer);
 

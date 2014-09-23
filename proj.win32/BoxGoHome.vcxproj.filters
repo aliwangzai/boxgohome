@@ -28,6 +28,21 @@
     <Filter Include="Classes\utils">
       <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\manager">
+      <UniqueIdentifier>{5ce6f3af-9ce5-42a6-a74f-0162c42ba921}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\item">
+      <UniqueIdentifier>{362ba199-2a3a-4ade-aa78-3b321f03ebf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\effect">
+      <UniqueIdentifier>{3b3598d4-7736-4b99-9a33-dcab6a1d4223}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\enemy">
+      <UniqueIdentifier>{70c14999-8e76-432d-8d7e-54aecd5e6cc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\C2DXShareSDK">
+      <UniqueIdentifier>{bdf9d36b-8e1c-4f01-a90c-465d44870e7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,15 +120,35 @@
     <ClCompile Include="..\Classes\WoodenCrate.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp" />
-    <ClCompile Include="..\Classes\Enemy.cpp" />
-    <ClCompile Include="..\Classes\ShareManager.cpp" />
     <ClCompile Include="..\Classes\BrokableWall.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\JumpsItem.cpp" />
     <ClCompile Include="..\Classes\BaseEntity.cpp">
       <Filter>Classes\wall</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AdManager.cpp">
+      <Filter>Classes\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ShareManager.cpp">
+      <Filter>Classes\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JumpsItem.cpp">
+      <Filter>Classes\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TailEffect.cpp">
+      <Filter>Classes\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Enemy.cpp">
+      <Filter>Classes\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UIButton.cpp">
+      <Filter>Classes\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp">
+      <Filter>Classes\C2DXShareSDK</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TutorialMenu.cpp">
+      <Filter>Classes\layer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -195,16 +230,41 @@
     <ClInclude Include="..\Classes\LevelState.h">
       <Filter>Classes\layer</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h" />
-    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h" />
-    <ClInclude Include="..\Classes\Enemy.h" />
-    <ClInclude Include="..\Classes\ShareManager.h" />
     <ClInclude Include="..\Classes\BrokableWall.h">
       <Filter>Classes\wall</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\JumpsItem.h" />
     <ClInclude Include="..\Classes\BaseEntity.h">
       <Filter>Classes\wall</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AdManager.h">
+      <Filter>Classes\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShareManager.h">
+      <Filter>Classes\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JumpsItem.h">
+      <Filter>Classes\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TailEffect.h">
+      <Filter>Classes\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Enemy.h">
+      <Filter>Classes\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UIButton.h">
+      <Filter>Classes\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h">
+      <Filter>Classes\C2DXShareSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h">
+      <Filter>Classes\C2DXShareSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ObjectPool.h">
+      <Filter>Classes\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TutorialMenu.h">
+      <Filter>Classes\layer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
