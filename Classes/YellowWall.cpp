@@ -3,6 +3,8 @@
 #include "ContactLogic.h"
 
 YellowWall::YellowWall()
+:m_bIsContactFlag(false),
+m_bIsWin(false)
 {
 }
 
@@ -64,17 +66,37 @@ void YellowWall::playFlagAnimate()
 
 bool YellowWall::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 {
+	return true;
+}
+
+bool YellowWall::contactLogicPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve, ContactLogic *logic)
+{
 	PhysicsBody* body1 = contact.getShapeA()->getBody();
 	PhysicsBody* body2 = contact.getShapeB()->getBody();
 	if ((body1->getTag() == Type_Flag && body2->getTag() == Type_BoxSprite) ||
 		(body1->getTag() == Type_BoxSprite && body2->getTag() == Type_Flag))
 	{
-		logic->setWinState(true);
+		if (!this->m_bIsContactFlag)
+		{
+			this->m_bIsContactFlag = true;
+			this->schedule(schedule_selector(YellowWall::updateState), 0.2f);
+
+		}
+		if (this->m_bIsWin)
+		{
+			logic->setWinState(true);
+		}
 		return false;
 	}
 	return true;
 }
+
 void YellowWall::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic)
 {
 
+}
+
+void YellowWall::updateState(float dt)
+{
+	this->m_bIsWin = true;
 }

@@ -28,6 +28,21 @@
     <Filter Include="Classes\utils">
       <UniqueIdentifier>{679db563-3b8b-4ccc-b2e1-c4b388929519}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\manager">
+      <UniqueIdentifier>{89b2247a-a78e-40c3-8bd8-fe5cb36a6ae8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\enemy">
+      <UniqueIdentifier>{ee4f141b-3d81-40af-b398-d9cde14dd814}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\effect">
+      <UniqueIdentifier>{c22d37aa-561e-4059-ad33-3585e369e78d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\item">
+      <UniqueIdentifier>{992338a7-29ed-4b2d-8f8a-8fffff4940f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\C2DXShareSDK">
+      <UniqueIdentifier>{3d1113db-3541-48f3-8c03-696d13b73080}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,15 +126,32 @@
     <ClCompile Include="..\Classes\BaseEntity.cpp">
       <Filter>Classes\wall</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AdManager.cpp" />
-    <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp" />
-    <ClCompile Include="..\Classes\Enemy.cpp" />
-    <ClCompile Include="..\Classes\JumpsItem.cpp" />
-    <ClCompile Include="..\Classes\ShareManager.cpp" />
-    <ClCompile Include="..\Classes\TailEffect.cpp" />
-    <ClCompile Include="..\Classes\UIButton.cpp" />
     <ClCompile Include="..\Classes\SettingsDiaog.cpp">
       <Filter>Classes\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TutorialMenu.cpp">
+      <Filter>Classes\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UIButton.cpp">
+      <Filter>Classes\component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AdManager.cpp">
+      <Filter>Classes\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ShareManager.cpp">
+      <Filter>Classes\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Enemy.cpp">
+      <Filter>Classes\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\TailEffect.cpp">
+      <Filter>Classes\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\JumpsItem.cpp">
+      <Filter>Classes\item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp">
+      <Filter>Classes\C2DXShareSDK</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,17 +239,38 @@
     <ClInclude Include="..\Classes\BaseEntity.h">
       <Filter>Classes\wall</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\UIButton.h" />
-    <ClInclude Include="..\Classes\AdManager.h" />
-    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h" />
-    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h" />
-    <ClInclude Include="..\Classes\Enemy.h" />
-    <ClInclude Include="..\Classes\JumpsItem.h" />
-    <ClInclude Include="..\Classes\ObjectPool.h" />
-    <ClInclude Include="..\Classes\ShareManager.h" />
-    <ClInclude Include="..\Classes\TailEffect.h" />
     <ClInclude Include="..\Classes\SettingsDiaog.h">
       <Filter>Classes\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TutorialMenu.h">
+      <Filter>Classes\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UIButton.h">
+      <Filter>Classes\component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ObjectPool.h">
+      <Filter>Classes\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AdManager.h">
+      <Filter>Classes\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ShareManager.h">
+      <Filter>Classes\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Enemy.h">
+      <Filter>Classes\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\TailEffect.h">
+      <Filter>Classes\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\JumpsItem.h">
+      <Filter>Classes\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDK.h">
+      <Filter>Classes\C2DXShareSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h">
+      <Filter>Classes\C2DXShareSDK</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

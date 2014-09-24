@@ -141,6 +141,9 @@ bool MenuLayer::initSound()
 
 bool MenuLayer::initWithMenu()
 {
+	this->m_pCurrentNode = PlayGameMenu::create();
+	this->addChild(this->m_pCurrentNode);
+
 	Widget* widget = static_cast<Widget*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Menu.json"));
 	widget->setAnchorPoint(Vec2(0, 0.5f));
 	widget->setPosition(VisibleRect::left() + Vec2(30, 0));
@@ -159,13 +162,22 @@ bool MenuLayer::initWithMenu()
 		}
 	});
 
+	btn_tur->addTouchEventListener([=](Ref* pSender, Widget::TouchEventType type){
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			this->m_pCurrentNode->removeFromParent();
+			this->m_pCurrentNode = TutorialMenu::create();
+			this->addChild(this->m_pCurrentNode);
+		}
+	});
+
 	if (!btn_settings)
 	{
 		return true;
 	}
 
 	btn_settings->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
-		if ((int)type == ui::TouchEventType::TOUCH_EVENT_ENDED)
+		if (type == Widget::TouchEventType::ENDED)
 		{
 			//pop setting dialog
 			DialogManager::getInstance()->showSettingDialog();
