@@ -104,7 +104,6 @@ void TutorialMenu::playAnimate()
 				JumpBy::create(1.0f, m_moveDatas[m_nCurrentIdx].m_JumpPoint, 80, 1),
 				DelayTime::create(0.2f),
 				CallFunc::create([=](){
-					//this->m_pHand->runAction(MoveTo::create(1.0f, this->m_pBoxSprite->getPosition()));
 					this->m_nCurrentIdx++;
 					if (this->m_nCurrentIdx < 4)
 					{
