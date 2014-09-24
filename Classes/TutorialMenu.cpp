@@ -20,6 +20,7 @@ bool TutorialMenu::init()
 	this->initBoxSprite();
 	this->initArrowSprite();
 	this->initHand();
+	this->initMoveData();
 	this->playAnimate();
 	return true;
 }
@@ -72,6 +73,15 @@ void TutorialMenu::update(float dt)
 	this->m_pArrowSprite->changeDir(m_vNormalDir);
 }
 
+bool TutorialMenu::initMoveData()
+{
+	this->m_nCurrentIdx = 0;
+	this->m_moveDatas[0] = MoveData(Point(-5, -35), Point(-15, -35), Point(150, 70));
+	this->m_moveDatas[1] = MoveData(Point(-5, -35), Point(-5, -35), Point(140, 80));
+	this->m_moveDatas[2] = MoveData(Point(-5, -35), Point(-5, -35), Point(120, 80));
+	return true;
+}
+
 void TutorialMenu::playAnimate()
 {
 	m_pHand->runAction(Sequence::create(
@@ -82,18 +92,22 @@ void TutorialMenu::playAnimate()
 			this->m_pArrowSprite->show();
 			this->scheduleUpdate();
 		}),
-		MoveBy::create(0.5f, Point(-5, -35)),
-		MoveBy::create(0.5f, Point(-15, -35)),
+		MoveBy::create(0.5f, m_moveDatas[m_nCurrentIdx].m_ArrowPointOne),
+		MoveBy::create(0.5f, m_moveDatas[m_nCurrentIdx].m_ArrowPointTwo),
 		DelayTime::create(0.5f),
 		CallFunc::create([=]{
 		this->unscheduleUpdate();
 		this->m_pArrowSprite->hide();
 		this->m_pBoxSprite->runAction(Sequence::create(
-			JumpBy::create(1.0f, Point(150, 70), 80, 1),
+			JumpBy::create(1.0f, m_moveDatas[m_nCurrentIdx].m_JumpPoint, 80, 1),
 			DelayTime::create(0.2f),
 			CallFunc::create([=](){
 				//this->m_pHand->runAction(MoveTo::create(1.0f, this->m_pBoxSprite->getPosition()));
-				this->playAnimate();
+				this->m_nCurrentIdx++;
+				if (this->m_nCurrentIdx < 3)
+				{
+					this->playAnimate();
+				}
 			}),
 			nullptr));
 	}),
