@@ -153,6 +153,7 @@ bool MenuLayer::initWithMenu()
 	Button * btn_tur = static_cast<Button *>(widget->getChildByName("btn_tur"));
 	Button * btn_more = static_cast<Button *>(widget->getChildByName("btn_more"));
 	Button * btn_settings = static_cast<Button *>(widget->getChildByName("btn_settings"));
+	Button * btn_back = static_cast<Button *>(widget->getChildByName("btn_back"));
 
 
 	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {

@@ -24,7 +24,8 @@
     "btn_play.png",
     "btn_tur.png",
     "btn_more.png",
-    "btn_settings.png"
+    "btn_settings.png",
+    "btn_back.png"
   ],
   "version": "1.5.0.1",
   "widgetTree": {
