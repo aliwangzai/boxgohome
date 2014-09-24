@@ -399,9 +399,3 @@
 /proj.win32/Debug.win32/websockets.dll
 /proj.win32/Debug.win32/websockets.lib
 /proj.win32/Debug.win32/zlib1.dll
-
-Classes/GameMap.cpp
-
-*.cpp
-
-Classes/GameMap.cpp
