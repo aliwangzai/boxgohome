@@ -44,6 +44,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/BrokableWall.cpp \
 				   ../../Classes/ShareManager.cpp \
 				   ../../Classes/AdManager.cpp \
+				   ../../Classes/SettingsDiaog.cpp \
+				   ../../Classes/TutorialMenu.cpp \
 				   ../../Classes/C2DXShareSDK/Android/JSON/cJSON/cJSON.c \
 				   ../../Classes/C2DXShareSDK/Android/JSON/CCJSONConverter.cpp \
 				   ../../Classes/C2DXShareSDK/Android/ShareSDKUtils.cpp \
