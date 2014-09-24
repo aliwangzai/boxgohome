@@ -6,6 +6,7 @@ USING_NS_CC;
 
 class GameMap;
 class BoxSprite;
+class ArrowSprite;
 class TutorialMenu: public Node
 {
 public:
@@ -27,6 +28,7 @@ private:
 	GameMap *m_pGameMap;
 	BoxSprite *m_pBoxSprite;
 	Sprite*	m_pHand;
+	ArrowSprite *m_pArrowSprite;
 };
 
 #endif
