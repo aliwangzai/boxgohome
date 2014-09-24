@@ -33,6 +33,7 @@ public:
 	bool initArrowSprite();
 	bool initHand();
 	bool initMoveData();
+	void animateFinish();
 
 	void playAnimate();
 	
@@ -45,7 +46,7 @@ private:
 	BoxSprite *m_pBoxSprite;
 	Sprite*	m_pHand;
 	ArrowSprite *m_pArrowSprite;
-	MoveData	m_moveDatas[3];
+	MoveData	m_moveDatas[4];
 	int			m_nCurrentIdx;
 };
 

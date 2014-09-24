@@ -43,6 +43,7 @@ bool TutorialMenu::initBoxSprite()
 		m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
 	m_pBoxSprite->setPosition(point);
 	this->m_pBoxSprite->getPhysicsBody()->setGravityEnable(false);
+	this->m_pBoxSprite->getPhysicsBody()->removeAllShapes();
 	return true;
 }
 
@@ -77,8 +78,9 @@ bool TutorialMenu::initMoveData()
 {
 	this->m_nCurrentIdx = 0;
 	this->m_moveDatas[0] = MoveData(Point(-5, -35), Point(-15, -35), Point(150, 70));
-	this->m_moveDatas[1] = MoveData(Point(-5, -35), Point(-5, -35), Point(140, 80));
-	this->m_moveDatas[2] = MoveData(Point(-5, -35), Point(-5, -35), Point(120, 80));
+	this->m_moveDatas[1] = MoveData(Point(-5, -35), Point(-5, -35), Point(140, 85));
+	this->m_moveDatas[2] = MoveData(Point(-5, -35), Point(-5, -35), Point(120, 89));
+	this->m_moveDatas[3] = MoveData(Point(15, -35), Point(20, -55), Point(-200, 127));
 	return true;
 }
 
@@ -96,20 +98,36 @@ void TutorialMenu::playAnimate()
 		MoveBy::create(0.5f, m_moveDatas[m_nCurrentIdx].m_ArrowPointTwo),
 		DelayTime::create(0.5f),
 		CallFunc::create([=]{
-		this->unscheduleUpdate();
-		this->m_pArrowSprite->hide();
-		this->m_pBoxSprite->runAction(Sequence::create(
-			JumpBy::create(1.0f, m_moveDatas[m_nCurrentIdx].m_JumpPoint, 80, 1),
-			DelayTime::create(0.2f),
-			CallFunc::create([=](){
-				//this->m_pHand->runAction(MoveTo::create(1.0f, this->m_pBoxSprite->getPosition()));
-				this->m_nCurrentIdx++;
-				if (this->m_nCurrentIdx < 3)
-				{
-					this->playAnimate();
-				}
+			this->unscheduleUpdate();
+			this->m_pArrowSprite->hide();
+			this->m_pBoxSprite->runAction(Sequence::create(
+				JumpBy::create(1.0f, m_moveDatas[m_nCurrentIdx].m_JumpPoint, 80, 1),
+				DelayTime::create(0.2f),
+				CallFunc::create([=](){
+					//this->m_pHand->runAction(MoveTo::create(1.0f, this->m_pBoxSprite->getPosition()));
+					this->m_nCurrentIdx++;
+					if (this->m_nCurrentIdx < 4)
+					{
+						this->playAnimate();
+					}
+					if (this->m_nCurrentIdx == 4)
+					{
+						this->animateFinish();
+					}
+				}),
+				nullptr));
 			}),
-			nullptr));
-	}),
 		nullptr));
+}
+
+void TutorialMenu::animateFinish()
+{
+	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
+	this->m_pBoxSprite->loadDefaultData(valueMap);
+	Point point = m_pBoxSprite->getPosition() +
+		m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
+	m_pBoxSprite->setPosition(point);
+	this->m_pBoxSprite->setPosition(point);
+	this->m_nCurrentIdx = 0;
+	this->playAnimate();
 }
