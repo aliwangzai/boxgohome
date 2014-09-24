@@ -6,7 +6,7 @@
 #include "AdManager.h"
 #include "LevelState.h"
 #include "Utils.h"
-
+#include "VisibleRect.h"
 
 
 LevelComplete::LevelComplete()
@@ -140,8 +140,17 @@ void LevelComplete::databind(void *data)
 		if (currentSelectLevel + 1 > currentMaxLevel)
 		{
 			LevelState::getInstance()->unlockNewLevel();
+			this->playerPassAnimate();
 		}
 	}
+}
+
+void LevelComplete::playerPassAnimate()
+{
+	auto sprite = Sprite::create("ui/bg_light.png");
+	this->addChild(sprite, -1, 100);
+	sprite->setScale(2.0f);
+	sprite->runAction(RepeatForever::create(RotateBy::create(1.0f, 60)));
 }
 
 void LevelComplete::setResultCallback(DialogCallback callback)

@@ -22,6 +22,7 @@ public:
 	static LevelComplete* create(Dialog *dialog);
 
 	void databind(void *data);
+	void playerPassAnimate();
 
 	void setResultCallback(DialogCallback callback);
 	void btn_menuCallback(Ref*sender, Widget::TouchEventType a);

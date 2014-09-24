@@ -21,6 +21,8 @@ public:
 	bool initSound();
 	bool initWithGameWorld(GameWorld* gameWorld);
 
+	void playerStartAnimate();
+
 	void setDefaultValue();
 
 	CREATE_FUNC(GameUI);
@@ -45,6 +47,7 @@ public:
 
 	virtual void update(float dt);
 
+	void startGame();
 	void restart();
 	void stop();
 

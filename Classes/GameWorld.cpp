@@ -49,7 +49,6 @@ bool GameWorld::init()
 	this->initBackground();
 	this->initGameMap();
 
-	this->initListener();
 	this->initBoxSprite();
 	this->initArrowSprite();
 	this->scheduleUpdate();
@@ -116,11 +115,11 @@ bool GameWorld::initGameMap()
 
 bool GameWorld::initListener()
 {
-	auto touchListener = EventListenerTouchOneByOne::create();
-	touchListener->onTouchBegan = CC_CALLBACK_2(GameWorld::onTouchBegan, this);
-	touchListener->onTouchMoved = CC_CALLBACK_2(GameWorld::onTouchMoved, this);
-	touchListener->onTouchEnded = CC_CALLBACK_2(GameWorld::onTouchEnded, this);
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
+	this->m_pEventListener = EventListenerTouchOneByOne::create();
+	m_pEventListener->onTouchBegan = CC_CALLBACK_2(GameWorld::onTouchBegan, this);
+	m_pEventListener->onTouchMoved = CC_CALLBACK_2(GameWorld::onTouchMoved, this);
+	m_pEventListener->onTouchEnded = CC_CALLBACK_2(GameWorld::onTouchEnded, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(m_pEventListener, this);
 	return true;
 }
 
@@ -279,22 +278,30 @@ void GameWorld::nextLevel()
 	LevelState::getInstance()->setSelectedLevel(currentSelectLevel + 1);
 	std::string currentMap = LevelState::getInstance()->getMapName();
 	this->m_pGameMap->loadMapFile(currentMap);
-	this->m_pGameUI->setDefaultValue();
 	this->m_pContactLogic->loadDefaultData();
+	this->m_pGameUI->setDefaultValue();
+	this->loadDefaultData();
+}
+
+void GameWorld::restart()
+{
+	CCLOG("game over ,  restart game");
+	this->m_pContactLogic->loadDefaultData();
+	this->m_pGameMap->loadDefaultData();
+	this->m_pGameUI->setDefaultValue();
+	this->loadDefaultData();
+}
+
+void GameWorld::loadDefaultData()
+{
+	this->_eventDispatcher->removeEventListener(m_pEventListener);
 	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
 	this->m_pBoxSprite->loadDefaultData(valueMap);
 	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
 	this->m_pBoxSprite->setPosition(point);
 }
 
-void GameWorld::restart()
+void GameWorld::startGame()
 {
-	CCLOG("game over ,  restart game");
-	this->m_pGameMap->loadDefaultData();
-	this->m_pContactLogic->loadDefaultData();
-	this->m_pGameUI->setDefaultValue();
-	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
-	this->m_pBoxSprite->loadDefaultData(valueMap);
-	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
-	this->m_pBoxSprite->setPosition(point);
+	this->initListener();
 }

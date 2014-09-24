@@ -48,6 +48,8 @@ public:
 	void lose();
 	void restart();
 	void nextLevel();
+	void startGame();
+	void loadDefaultData();
 	
 private:
 	PhysicsWorld *_physicsWorld;
@@ -57,6 +59,7 @@ private:
 	GameUI		*m_pGameUI;
 	GameMap		*m_pGameMap;
 	ContactLogic *m_pContactLogic;
+	EventListenerTouchOneByOne* m_pEventListener;
 };
 
 #endif

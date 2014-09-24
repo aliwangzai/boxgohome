@@ -30,6 +30,12 @@ bool ContactLogic::initWithGameWorld(GameWorld *gameWorld)
 {
 	this->m_pGameWorld = gameWorld;
 
+	this->initListener();
+	return true;
+}
+
+bool ContactLogic::initListener()
+{
 	auto physicsListener = EventListenerPhysicsContact::create();
 	physicsListener->onContactBegin = CC_CALLBACK_1(ContactLogic::onContactBegin, this);
 	physicsListener->onContactPostSolve = CC_CALLBACK_2(ContactLogic::onContactPostSolve, this);
@@ -38,7 +44,6 @@ bool ContactLogic::initWithGameWorld(GameWorld *gameWorld)
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(physicsListener, this);
 
 	this->scheduleUpdate();
-
 	return true;
 }
 
@@ -113,5 +118,6 @@ void ContactLogic::loadDefaultData()
 {
 	this->m_bIsWin = false;
 	this->m_bIsLose = false;
+
 	this->scheduleUpdate();
 }

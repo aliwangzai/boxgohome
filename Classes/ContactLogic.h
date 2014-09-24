@@ -12,6 +12,7 @@ public:
 	~ContactLogic();
 
 	bool initWithGameWorld(GameWorld *gameWorld);
+	bool initListener();
 	void loadDefaultData();
 
 	static ContactLogic* create(GameWorld *gameWorld);

@@ -65,6 +65,36 @@ bool GameUI::initSound()
 	return true;
 }
 
+void GameUI::playerStartAnimate()
+{
+	for (int i = 3; i >= 0; i--)
+	{
+		char buffer[128];
+		sprintf(buffer, "ui/321go_%d.png", i);
+		auto sprite = Sprite::create(buffer);
+		this->addChild(sprite, 1, 100 + i);
+		sprite->setPosition(VisibleRect::center());
+		sprite->setVisible(false);
+		sprite->setScale(4.0f);
+		sprite->runAction(Sequence::create(
+			DelayTime::create((3 - i) * 0.8f + 0.5f),
+			Show::create(),
+			ScaleTo::create(0.5f, 1.0f),
+			CallFuncN::create([=](Node *node){
+				if (node->getTag() == 100)
+					this->startGame();
+				node->removeFromParent();
+			}),
+			nullptr));
+	}
+}
+
+void GameUI::startGame()
+{
+	this->scheduleUpdate();
+	this->m_pGameWorld->startGame();
+}
+
 bool GameUI::initMoreGame()
 {
 // 	TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
@@ -195,7 +225,7 @@ void GameUI::setDefaultValue()
 	this->setScore(getOldScore());
 	this->setBonus(6000);
 	this->setJumps(5);
-	this->scheduleUpdate();
+	this->playerStartAnimate();
 }
 
 void GameUI::setLevel(int level)
