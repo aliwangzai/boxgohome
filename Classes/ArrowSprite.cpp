@@ -40,6 +40,11 @@ void ArrowSprite::show()
 	this->setBlendFunc(blendFun);
 }
 
+void ArrowSprite::hide()
+{
+	this->setVisible(false);
+}
+
 void ArrowSprite::changeDir(const Vec2 &normalDir)
 {
 	float radians = atan2(normalDir.y, normalDir.x);

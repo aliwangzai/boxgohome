@@ -154,7 +154,7 @@ void GameWorld::onTouchMoved(Touch *pTouch, Event *pEvent)
 void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 {
 	
-	m_pArrowSprite->setVisible(false);
+	m_pArrowSprite->hide();
 	Point localPoint = pTouch->getLocation();
 	Point targetPoint = this->m_pBoxSprite->getPosition();
 	m_vNormalDir = (localPoint - targetPoint).getNormalized();

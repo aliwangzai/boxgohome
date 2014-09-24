@@ -13,6 +13,7 @@ public:
 	bool init();
 
 	void show();
+	void hide();
 	void showCurrentFrame(int distance);
 	void changeDir(const Vec2 &normalDir);
 

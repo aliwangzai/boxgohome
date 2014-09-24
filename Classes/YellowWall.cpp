@@ -66,6 +66,9 @@ void YellowWall::playFlagAnimate()
 
 bool YellowWall::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 {
+	this->unschedule(schedule_selector(YellowWall::updateState));
+	this->m_bIsContactFlag = false;
+	this->m_bIsWin = false;
 	return true;
 }
 
@@ -79,7 +82,7 @@ bool YellowWall::contactLogicPreSolve(PhysicsContact& contact, PhysicsContactPre
 		if (!this->m_bIsContactFlag)
 		{
 			this->m_bIsContactFlag = true;
-			this->schedule(schedule_selector(YellowWall::updateState), 0.2f);
+			this->schedule(schedule_selector(YellowWall::updateState), 0.1f);
 
 		}
 		if (this->m_bIsWin)
@@ -98,5 +101,6 @@ void YellowWall::contactLogicSeperate(PhysicsContact &contact, ContactLogic *log
 
 void YellowWall::updateState(float dt)
 {
+	this->unschedule(schedule_selector(YellowWall::updateState));
 	this->m_bIsWin = true;
 }
