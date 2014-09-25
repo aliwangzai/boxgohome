@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="68">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="2">
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="4">
+   <image width="80" height="25" source="Stone elements/elementWood012.png"/>
+  </tile>
+  <tile id="5">
+   <image width="33" height="33" source="items/93.png"/>
+  </tile>
+  <tile id="6">
+   <image width="33" height="33" source="items/101.png"/>
+  </tile>
+  <tile id="7">
+   <image width="33" height="33" source="items/109.png"/>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="type" value="wood"/>
+   </properties>
+   <image width="68" height="68" source="woodenCrate_01.png"/>
+  </tile>
+  <tile id="11">
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
+  <tile id="12">
+   <image width="45" height="45" source="enemy/alienBlue_square.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="4" x="800" y="200" rotation="89.9677"/>
+  <object gid="4" x="800.045" y="280" rotation="89.9677"/>
+  <object gid="4" x="800.09" y="360" rotation="89.9677"/>
+  <object gid="4" x="800.135" y="440" rotation="89.9677"/>
+  <object gid="4" x="380" y="462.5" rotation="179.838"/>
+  <object gid="4" x="134.497" y="363.249" rotation="89.8221"/>
+  <object gid="4" x="134.745" y="443.249" rotation="89.8221"/>
+  <object gid="4" x="134" y="203.25" rotation="89.8221"/>
+  <object gid="4" x="720" y="225"/>
+  <object gid="4" x="640" y="525"/>
+  <object gid="4" x="560" y="525"/>
+  <object gid="4" x="480" y="525"/>
+  <object gid="4" x="240" y="525"/>
+  <object gid="4" x="160" y="525"/>
+  <object gid="4" x="160" y="225"/>
+  <object gid="4" x="320" y="525"/>
+  <object gid="4" x="320" y="225"/>
+  <object gid="4" x="400" y="225"/>
+  <object gid="4" x="480" y="225"/>
+  <object gid="4" x="134.248" y="283.25" rotation="89.8221"/>
+  <object gid="4" x="560" y="225"/>
+  <object gid="4" x="640" y="225"/>
+  <object gid="4" x="640" y="375"/>
+  <object gid="4" x="720" y="375"/>
+  <object gid="4" x="220" y="400"/>
+  <object gid="4" x="560" y="375"/>
+  <object gid="4" x="440" y="331.25"/>
+  <object gid="4" x="380" y="423"/>
+  <object gid="4" x="400" y="525"/>
+  <object gid="4" x="240" y="225"/>
+  <object gid="9" x="160" y="500"/>
+  <object gid="10" x="760" y="500"/>
+  <object gid="1" x="720" y="525"/>
+  <object gid="11" x="582" y="500"/>
+  <object gid="11" x="650" y="500"/>
+ </objectgroup>
+</map>

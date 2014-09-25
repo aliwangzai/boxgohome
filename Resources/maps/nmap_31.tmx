@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="68">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="durability" value="1"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="durability" value="3"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementWood012.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="wood"/>
+   </properties>
+   <image width="68" height="68" source="woodenCrate_01.png"/>
+  </tile>
+  <tile id="7">
+   <image width="33" height="33" source="items/93.png"/>
+  </tile>
+  <tile id="8">
+   <image width="33" height="33" source="items/101.png"/>
+  </tile>
+  <tile id="9">
+   <image width="33" height="33" source="items/109.png"/>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="11">
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="type" value="enemy_purple"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBlue_square.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="4" x="400" y="362"/>
+  <object gid="4" x="400" y="162"/>
+  <object gid="4" x="480" y="237"/>
+  <object gid="4" x="320" y="237"/>
+  <object gid="1" x="400" y="486"/>
+  <object gid="6" x="440" y="461"/>
+  <object gid="11" x="420" y="137"/>
+  <object gid="2" x="160" y="387"/>
+  <object gid="2" x="640" y="387"/>
+  <object gid="4" x="240" y="305.75"/>
+  <object gid="4" x="560" y="312.25"/>
+  <object gid="4" x="320" y="387"/>
+  <object gid="4" x="480" y="387"/>
+  <object gid="4" x="240" y="562"/>
+  <object gid="4" x="560" y="562"/>
+  <object gid="13" x="260" y="537"/>
+  <object gid="13" x="580" y="537"/>
+ </objectgroup>
+</map>

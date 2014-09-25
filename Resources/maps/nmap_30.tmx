@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="imgaes" tilewidth="80" tileheight="68">
+  <tile id="0">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="jumpCount" value="10"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/93.png"/>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="jumpCount" value="5"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/101.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="jumpCount" value="3"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/109.png"/>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="enemy_gray"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="enemy_purple"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBlue_square.png"/>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="type" value="wood"/>
+   </properties>
+   <image width="68" height="68" source="woodenCrate_01.png"/>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="durability" value="1"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="3" x="313" y="387"/>
+  <object gid="3" x="473" y="306.25" rotation="90"/>
+  <object gid="3" x="418" y="307.25"/>
+  <object gid="3" x="193" y="543.396"/>
+  <object gid="3" x="272.995" y="542.504"/>
+  <object gid="3" x="352.99" y="541.613"/>
+  <object gid="3" x="469" y="234"/>
+  <object gid="11" x="694.249" y="293.793" rotation="99.3614"/>
+  <object gid="11" x="680.414" y="218.943" rotation="79.3614"/>
+  <object gid="11" x="641.675" y="152.871" rotation="59.3614"/>
+  <object gid="11" x="582.11" y="102.532" rotation="39.3614"/>
+  <object gid="11" x="508.811" y="76.0969" rotation="19.3614"/>
+  <object gid="11" x="429.771" y="77"/>
+  <object gid="11" x="681.1" y="370.195" rotation="119.361"/>
+  <object gid="11" x="361.172" y="110.994" rotation="-26.9664"/>
+  <object gid="11" x="307.68" y="167.902" rotation="-46.9664"/>
+  <object gid="11" x="584.418" y="489.03" rotation="159.361"/>
+  <object gid="11" x="432.999" y="541.971"/>
+  <object gid="11" x="642.857" y="438.375" rotation="139.361"/>
+  <object gid="11" x="277.064" y="238.889" rotation="-66.9664"/>
+  <object gid="11" x="272.385" y="316.026" rotation="-86.9664"/>
+  <object gid="11" x="310.659" y="383.972" rotation="-119.797"/>
+  <object gid="11" x="369.299" y="434.305" rotation="-139.797"/>
+  <object gid="8" x="482" y="210.25"/>
+  <object gid="3" x="338" y="307"/>
+  <object gid="1" x="213" y="516.75"/>
+  <object gid="2" x="393" y="386.25"/>
+  <object gid="9" x="433" y="361.25"/>
+  <object gid="10" x="340" y="287.5"/>
+ </objectgroup>
+</map>
