@@ -33,6 +33,7 @@ private:
 
 	Dialog*			m_pDialog;
 	DialogCallback  m_fCallback;
+	Text*			m_pLabelDesc;
 };
 
 #endif

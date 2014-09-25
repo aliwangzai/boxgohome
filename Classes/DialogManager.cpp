@@ -42,6 +42,7 @@ Dialog* DialogManager::showSettingDialog()
 	auto dialog = Dialog::create();
 	auto layer = SettingsDiaog::create(dialog);
 	dialog->setContentPanel(layer);
+	dialog->setEnableClickClose(true);
 	dialog->showDialog();
 	return dialog;
 }

@@ -45,7 +45,7 @@ public:
 	GameUI*	getGameUI() const { return m_pGameUI; }
 
 	void win();
-	void lose();
+	void lose(int tag);
 	void restart();
 	void nextLevel();
 	void startGame();

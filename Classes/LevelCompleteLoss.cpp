@@ -33,9 +33,13 @@ bool LevelCompleteLoss::initWithDialog(Dialog* dialog)
 	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Lose.json"));
 	addChild(layout);
 
+	ImageView *imageView = static_cast<ImageView*>(layout->getChildByName("Image_1"));
+	this->setContentSize(imageView->getSize());
+
 	Button * btn_menu = static_cast<Button*>(layout->getChildByName("btn_menu"));
 	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
 	Button * btn_next = static_cast<Button*>(layout->getChildByName("btn_next"));
+	this->m_pLabelDesc = static_cast<Text*>(layout->getChildByName("label_desc"));
 
 	btn_menu->addTouchEventListener(CC_CALLBACK_2(LevelCompleteLoss::btn_menuCallback,this));
 	btn_reset->addTouchEventListener(CC_CALLBACK_2(LevelCompleteLoss::btn_resetCallback, this));
@@ -76,7 +80,19 @@ bool LevelCompleteLoss::initWithTitle()
 
 void LevelCompleteLoss::databind(void *data)
 {
-
+	int tag = *(int*)data;
+	switch (tag)
+	{
+	case 1:
+		this->m_pLabelDesc->setString("Out of Step");
+		break;
+	case 2:
+		this->m_pLabelDesc->setString("jump from a cliff");
+		break;
+	case 3:
+		this->m_pLabelDesc->setString("Out of time");
+		break;
+	}
 }
 
 void LevelCompleteLoss::setResultCallback(DialogCallback callback)

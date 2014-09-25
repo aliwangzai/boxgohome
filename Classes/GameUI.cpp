@@ -272,7 +272,7 @@ void GameUI::update(float dt)
 	}
 	else
 	{
-		this->m_pGameWorld->lose();
+		this->m_pGameWorld->lose(3);
 		this->unscheduleUpdate();
 	}
 }

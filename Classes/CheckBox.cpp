@@ -78,7 +78,9 @@ void CheckBox::playEndedAnimate()
 
 bool CheckBox::onTouchBegin(Touch *pTouch, Event *pEvent)
 {
-	if (this->getBoundingBox().containsPoint(pTouch->getLocation()))
+	Point localPoint = this->getParent()->convertTouchToNodeSpace(pTouch);
+	Rect rect = this->getBoundingBox();
+	if (rect.containsPoint(localPoint))
 	{
 		this->playClickAnimate();
 		return true;
@@ -88,14 +90,18 @@ bool CheckBox::onTouchBegin(Touch *pTouch, Event *pEvent)
 
 void CheckBox::onTouchMoved(Touch *pTouch, Event *pEvent)
 {
-	if (!this->getBoundingBox().containsPoint(pTouch->getLocation())){
+	Point localPoint = this->getParent()->convertTouchToNodeSpace(pTouch);
+	Rect rect = this->getBoundingBox();
+	if (!rect.containsPoint(localPoint)){
 		this->playEndedAnimate();
 	}
 }
 
 void CheckBox::onTouchEnded(Touch *pTouch, Event *pEvent)
 {
-	if (this->getBoundingBox().containsPoint(pTouch->getLocation()))
+	Point localPoint = this->getParent()->convertTouchToNodeSpace(pTouch);
+	Rect rect = this->getBoundingBox();
+	if (rect.containsPoint(localPoint))
 	{
 		this->m_bCurrentState = !this->m_bCurrentState;
 		if (this->m_bCurrentState)

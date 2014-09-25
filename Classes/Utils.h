@@ -9,6 +9,7 @@ class Utils: public Ref
 private:
 	static bool		m_bSoundSwitch;
 	static bool		m_bMusicSwitch;
+	static bool		m_bTrailSwitch;
 public:
 	static SpriteFrame* getSpriteFrame(std::string szSpriteFrameName);
 
@@ -20,9 +21,11 @@ public:
 
 	static bool getSoundSwitch() { return Utils::m_bSoundSwitch; }
 	static bool getMusicSwitch() { return Utils::m_bMusicSwitch; }
+	static bool getTrailSwitch() { return Utils::m_bTrailSwitch; }
 
 	static void reverseSound(){ Utils::m_bSoundSwitch = !Utils::m_bSoundSwitch; }
 	static void reverseMusic(){ Utils::m_bMusicSwitch = !Utils::m_bMusicSwitch; }
+	static void reverseTrail(){ Utils::m_bTrailSwitch = !Utils::m_bTrailSwitch; }
 
 	static Node* createSound();
 	static Node* createMusic();

@@ -109,13 +109,13 @@ void ContactLogic::update(float dt)
 	if (velocity.getLengthSq() < 5 * 5 && this->m_pGameWorld->getGameUI()->getJumpCount() <= 0)
 	{
 		this->unscheduleUpdate();
-		this->m_pGameWorld->lose();
+		this->m_pGameWorld->lose(1);
 	}
 	Vec2 position = this->m_pGameWorld->getBoxSprite()->getPosition();
 	if (position.y < m_pGameWorld->getBoxSprite()->getContentSize().height / 2 || m_bIsLose)
 	{
 		this->unscheduleUpdate();
-		this->m_pGameWorld->lose();
+		this->m_pGameWorld->lose(2);
 	}
 }
 

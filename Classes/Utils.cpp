@@ -5,6 +5,7 @@
 
 bool Utils::m_bMusicSwitch = true;
 bool Utils::m_bSoundSwitch = true;
+bool Utils::m_bTrailSwitch = true;
 
 
 SpriteFrame* Utils::getSpriteFrame(std::string szSpriteFrameName)
@@ -63,46 +64,45 @@ std::string Utils::getWallByType(int type)
 Node* Utils::createTrail()
 {
 	auto trailBox = CheckBox::create("ui/btn_motionblur.png", "ui/btn_motionblur2.png");
-	//trailBox->setCurrentState(Utils::getSoundSwitch());
+	trailBox->setCurrentState(Utils::getTrailSwitch());
+	trailBox->setCallback([=](bool state){
+		Utils::reverseTrail();
+	});
 	return trailBox;
 }
 
 Node* Utils::createSound()
 {
 	auto soundCheckBox = CheckBox::create("ui/btn_music.png", "ui/btn_music2.png");
+	soundCheckBox->setCurrentState(Utils::getSoundSwitch());
 	soundCheckBox->setCallback([=](bool state){
 		Utils::reverseSound();
 		if (!state){
 			CCLOG("%s", "play sound");
-			AdManager::getInstance()->showBannerAD();
 		}
 		else
 		{
 			CCLOG("%s", "close sound");
-			AdManager::getInstance()->hideBannerAD();
 		}
 	});
-	soundCheckBox->setCurrentState(Utils::getSoundSwitch());
 	return soundCheckBox;
 }
 
 Node* Utils::createMusic()
 {
 	auto musicCheckBox = CheckBox::create("ui/btn_sound.png", "ui/btn_sound2.png");
+	musicCheckBox->setCurrentState(Utils::getMusicSwitch());
 	musicCheckBox->setCallback([=](bool state){
 		Utils::reverseMusic();
 		if (!state)
 		{
 			CCLOG("%s", "play music");
-			AdManager::getInstance()->showBannerAD();
 		}
 		else
 		{
 			CCLOG("%s", "close music");
-			AdManager::getInstance()->hideBannerAD();
 		}
 	});
-	musicCheckBox->setCurrentState(Utils::getMusicSwitch());
 	return musicCheckBox;
 }
 

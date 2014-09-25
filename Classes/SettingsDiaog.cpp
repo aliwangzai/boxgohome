@@ -35,11 +35,13 @@ bool SettingsDiaog::initWithDialog( Dialog* dialog )
 	Layout* layout = static_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Settings.json"));
 	addChild(layout);
 	layout->setAnchorPoint(Vec2(0.5, 0.5));
+
+	ImageView *imageView = static_cast<ImageView*>(layout->getChildByName("Image_1"));
+	this->setContentSize(imageView->getSize());
 	
 	auto trail_pos = static_cast<Layout*>(layout->getChildByName("trail_pos"))->getPosition();
 	auto music_pos = static_cast<Layout*>(layout->getChildByName("music_pos"))->getPosition();
 	auto sound_pos = static_cast<Layout*>(layout->getChildByName("sound_pos"))->getPosition();
-
 
 	auto soundCheckBox = Utils::createSound();
 	soundCheckBox->setPosition(sound_pos);

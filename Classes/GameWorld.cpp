@@ -11,6 +11,7 @@
 #include "TailEffect.h"
 #include "LevelSelector.h"
 #include "AdManager.h"
+#include "Utils.h"
 
 GameWorld::GameWorld()
 :m_pArrowSprite(nullptr),
@@ -85,15 +86,13 @@ bool GameWorld::initBoxSprite()
 	this->m_pBoxSprite = BoxSprite::create(valueMap);
 	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
 	this->m_pBoxSprite->setPosition(point);
-
-	auto tail = TailEffect::create("maps/hero/avatar_01.png");
-	tail->bindSprite(this->m_pBoxSprite);
-	this->addChild(tail);
-
+	if (Utils::getTrailSwitch())
+	{
+		auto tail = TailEffect::create("maps/hero/avatar_01.png");
+		tail->bindSprite(this->m_pBoxSprite);
+		this->addChild(tail);
+	}
 	this->addChild(this->m_pBoxSprite);
-
-
-
 	return true;
 }
 
@@ -254,10 +253,10 @@ void GameWorld::win()
 	});
 }
 
-void GameWorld::lose()
+void GameWorld::lose(int tag)
 {
 	this->m_pGameUI->stop();
-	DialogManager::getInstance()->showLevelCompleteLoss(NULL, [=](void* data){
+	DialogManager::getInstance()->showLevelCompleteLoss(&tag, [=](void* data){
 		int type = (int)data;
 		switch (type)
 		{
