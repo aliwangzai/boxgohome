@@ -14,6 +14,7 @@ public:
 	bool initWithGameWorld(GameWorld *gameWorld);
 	bool initListener();
 	void loadDefaultData();
+	void startGame();
 
 	static ContactLogic* create(GameWorld *gameWorld);
 
@@ -33,6 +34,7 @@ private:
 	GameWorld		*m_pGameWorld;
 	bool				m_bIsWin;
 	bool				m_bIsLose;
+	EventListenerPhysicsContact* m_pEventListener;
 };
 
 #endif

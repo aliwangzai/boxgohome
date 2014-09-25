@@ -29,19 +29,24 @@ ContactLogic* ContactLogic::create(GameWorld *gameWorld)
 bool ContactLogic::initWithGameWorld(GameWorld *gameWorld)
 {
 	this->m_pGameWorld = gameWorld;
-
-	this->initListener();
 	return true;
+}
+
+void ContactLogic::startGame()
+{
+	this->m_bIsLose = false;
+	this->m_bIsWin = false;
+	this->initListener();
 }
 
 bool ContactLogic::initListener()
 {
-	auto physicsListener = EventListenerPhysicsContact::create();
-	physicsListener->onContactBegin = CC_CALLBACK_1(ContactLogic::onContactBegin, this);
-	physicsListener->onContactPostSolve = CC_CALLBACK_2(ContactLogic::onContactPostSolve, this);
-	physicsListener->onContactPreSolve = CC_CALLBACK_2(ContactLogic::onContactPreSolve, this);
-	physicsListener->onContactSeperate = CC_CALLBACK_1(ContactLogic::onContactSeperate, this);
-	_eventDispatcher->addEventListenerWithSceneGraphPriority(physicsListener, this);
+	m_pEventListener = EventListenerPhysicsContact::create();
+	m_pEventListener->onContactBegin = CC_CALLBACK_1(ContactLogic::onContactBegin, this);
+	m_pEventListener->onContactPostSolve = CC_CALLBACK_2(ContactLogic::onContactPostSolve, this);
+	m_pEventListener->onContactPreSolve = CC_CALLBACK_2(ContactLogic::onContactPreSolve, this);
+	m_pEventListener->onContactSeperate = CC_CALLBACK_1(ContactLogic::onContactSeperate, this);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(m_pEventListener, this);
 
 	this->scheduleUpdate();
 	return true;
@@ -116,8 +121,5 @@ void ContactLogic::update(float dt)
 
 void ContactLogic::loadDefaultData()
 {
-	this->m_bIsWin = false;
-	this->m_bIsLose = false;
-
-	this->scheduleUpdate();
+	this->_eventDispatcher->removeEventListener(this->m_pEventListener);
 }

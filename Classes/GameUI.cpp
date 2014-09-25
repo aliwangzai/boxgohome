@@ -91,8 +91,13 @@ void GameUI::playerStartAnimate()
 
 void GameUI::startGame()
 {
-	this->scheduleUpdate();
-	this->m_pGameWorld->startGame();
+	m_pBonusLabel->runAction(Sequence::create(
+		ScaleTo::create(0.1f, 1.5f),
+		CallFunc::create([=](){
+			this->scheduleUpdate();
+			this->m_pGameWorld->startGame();
+		}),
+		nullptr));
 }
 
 bool GameUI::initMoreGame()
@@ -223,8 +228,8 @@ void GameUI::setDefaultValue()
 	this->unscheduleUpdate();
 	this->setLevel(LevelState::getInstance()->getSelectedLevel());
 	this->setScore(getOldScore());
-	this->setBonus(6000);
-	this->setJumps(5);
+	this->setBonus(1000);
+	this->setJumps(3);
 	this->playerStartAnimate();
 }
 

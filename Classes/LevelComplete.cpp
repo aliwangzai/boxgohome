@@ -151,6 +151,9 @@ void LevelComplete::playerPassAnimate()
 	this->addChild(sprite, -1, 100);
 	sprite->setScale(2.0f);
 	sprite->runAction(RepeatForever::create(RotateBy::create(1.0f, 60)));
+	ParticleSystem* particleSystem = ParticleSystemQuad::create("effect/Flower.plist");
+	this->addChild(particleSystem);
+	particleSystem->setPosition(Point(0, VisibleRect::top().y / 2 + 100));
 }
 
 void LevelComplete::setResultCallback(DialogCallback callback)

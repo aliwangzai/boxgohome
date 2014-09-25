@@ -303,5 +303,6 @@ void GameWorld::loadDefaultData()
 
 void GameWorld::startGame()
 {
+	this->m_pContactLogic->startGame();
 	this->initListener();
 }

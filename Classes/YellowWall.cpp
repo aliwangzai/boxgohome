@@ -91,6 +91,10 @@ bool YellowWall::contactLogicPreSolve(PhysicsContact& contact, PhysicsContactPre
 		}
 		return false;
 	}
+	if (body1->getTag() == Type_Flag || body2->getTag() == Type_Flag)
+	{
+		return false;
+	}
 	return true;
 }
 
