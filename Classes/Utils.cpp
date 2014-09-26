@@ -115,14 +115,12 @@ long long Utils::getCurrentTime()
 int Utils::getStar(int score)
 {
 	int sumScore = 3 * 1000 + 1000;
-	if (score >= sumScore / 4 * 3){
+	if (score >= sumScore / 3 * 2){
 		return 3;
-	}else if (score >= sumScore / 4 * 2){
+	}else if (score >= sumScore / 3){
 		return 2;
-	}else if (score >= sumScore / 4){
-		return 1;
 	}else if(score >= 0) {
-		return 0;
+		return 1;
 	}
 	return 0;
 }

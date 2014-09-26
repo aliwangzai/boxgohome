@@ -105,4 +105,5 @@ void PlayGameMenu::onExit()
 	Node::onExit();
 	_eventDispatcher->removeEventListenersForTarget(this);
 	this->unscheduleUpdate();
+	
 }

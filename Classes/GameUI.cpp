@@ -54,14 +54,14 @@ bool GameUI::init()
 
 bool GameUI::initSound()
 {
-	auto soundCheckBox = Utils::createSound();
+	/*auto soundCheckBox = Utils::createSound();
 	auto size = soundCheckBox->getContentSize();
 	soundCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(20, 10));
 	this->addChild(soundCheckBox);
 	
 	auto musicCheckBox = Utils::createMusic();
 	musicCheckBox->setPosition(soundCheckBox->getPosition() + Point(80, 0));
-	this->addChild(musicCheckBox);
+	this->addChild(musicCheckBox);*/
 	return true;
 }
 

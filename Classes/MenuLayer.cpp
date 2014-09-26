@@ -128,14 +128,14 @@ void MenuLayer::onExit()
 
 bool MenuLayer::initSound()
 {
-	auto soundCheckBox = Utils::createSound();
+	/*auto soundCheckBox = Utils::createSound();
 	auto size = soundCheckBox->getContentSize();
 	soundCheckBox->setPosition(VisibleRect::leftBottom() + Point(size / 2) + Point(20, 10));
 	this->addChild(soundCheckBox);
 	
 	auto musicCheckBox = Utils::createMusic();
 	musicCheckBox->setPosition(soundCheckBox->getPosition() + Point(80, 0));
-	this->addChild(musicCheckBox);
+	this->addChild(musicCheckBox);*/
 	return true;
 }
 
@@ -156,7 +156,7 @@ bool MenuLayer::initWithMenu()
 	Button * btn_back = static_cast<Button *>(widget->getChildByName("btn_back"));
 
 
-	btn_play->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
+	btn_play->addTouchEventListener([=](Ref * sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
@@ -177,13 +177,20 @@ bool MenuLayer::initWithMenu()
 		return true;
 	}
 
-	btn_settings->addTouchEventListener([=](Ref * sender , Widget::TouchEventType type) {
+	btn_settings->addTouchEventListener([=](Ref * sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			//pop setting dialog
 			DialogManager::getInstance()->showSettingDialog();
 		}
 
+	});
+
+	btn_back->addTouchEventListener([=](Ref *pSender, Widget::TouchEventType type){
+		if (type == Widget::TouchEventType::ENDED)
+		{
+			Director::getInstance()->replaceScene(Welcome::createScene());
+		}
 	});
 
 	return true;
