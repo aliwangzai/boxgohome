@@ -43,6 +43,9 @@
     <Filter Include="Classes\C2DXShareSDK">
       <UniqueIdentifier>{3d1113db-3541-48f3-8c03-696d13b73080}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\thread">
+      <UniqueIdentifier>{f5473f79-853b-45c2-9cbc-a89edcaa510a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -152,6 +155,10 @@
     </ClCompile>
     <ClCompile Include="..\Classes\C2DXShareSDK\C2DXShareSDK.cpp">
       <Filter>Classes\C2DXShareSDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="..\Classes\Thread.cpp">
+      <Filter>Classes\thread</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +278,10 @@
     </ClInclude>
     <ClInclude Include="..\Classes\C2DXShareSDK\C2DXShareSDKTypeDef.h">
       <Filter>Classes\C2DXShareSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="..\Classes\Thread.h">
+      <Filter>Classes\thread</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
