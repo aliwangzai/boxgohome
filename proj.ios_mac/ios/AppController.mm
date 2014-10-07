@@ -81,7 +81,7 @@ static AppDelegate s_sharedApplication;
     
     //-------------------share sdk
     [ShareSDK importWeChatClass:[WXApi class]];
-    [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
+    //[ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
     
     //------------------- Add Admob interstitial
     interstitial_ = [[GADInterstitial alloc] init];
