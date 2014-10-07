@@ -69,7 +69,16 @@
 		1D0624DA19E410D300D11E75 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D06249819E410D200D11E75 /* ShareSDKiPhoneSimpleShareViewUI.bundle */; };
 		1D0624DB19E410D300D11E75 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06249919E410D200D11E75 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
 		1D0624DC19E410D300D11E75 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06249A19E410D200D11E75 /* ShareSDKShareActionSheet.framework */; };
-		1D0624DE19E4164000D11E75 /* effect in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624DD19E4164000D11E75 /* effect */; };
+		1D0624E919E416E100D11E75 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624DF19E416E100D11E75 /* 1.png */; };
+		1D0624EA19E416E100D11E75 /* 37.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E019E416E100D11E75 /* 37.png */; };
+		1D0624EB19E416E100D11E75 /* 38.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E119E416E100D11E75 /* 38.png */; };
+		1D0624EC19E416E100D11E75 /* blue_land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E219E416E100D11E75 /* blue_land.png */; };
+		1D0624ED19E416E100D11E75 /* effect in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E319E416E100D11E75 /* effect */; };
+		1D0624EE19E416E100D11E75 /* entity in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E419E416E100D11E75 /* entity */; };
+		1D0624EF19E416E100D11E75 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E519E416E100D11E75 /* fonts */; };
+		1D0624F019E416E100D11E75 /* maps in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E619E416E100D11E75 /* maps */; };
+		1D0624F119E416E100D11E75 /* ShareSDK.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E719E416E100D11E75 /* ShareSDK.xml */; };
+		1D0624F219E416E100D11E75 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E819E416E100D11E75 /* ui */; };
 		1D1CF96119C1FDD0001D6A99 /* AdManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CF94D19C1FDD0001D6A99 /* AdManager.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1D740C4E19BF396F00BC4238 /* BaseEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4719BF396F00BC4238 /* BaseEntity.cpp */; };
@@ -77,14 +86,6 @@
 		1D740C5119BF396F00BC4238 /* JumpsItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D740C4C19BF396F00BC4238 /* JumpsItem.cpp */; };
 		1D829B0F19C878B700E723D8 /* UIButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D829B0E19C878B700E723D8 /* UIButton.cpp */; };
 		1DBE668F19C715FA0007A870 /* TailEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DBE668D19C715FA0007A870 /* TailEffect.cpp */; };
-		1DCE58D419C32251002D3497 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58CC19C32251002D3497 /* 1.png */; };
-		1DCE58D519C32251002D3497 /* 37.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58CD19C32251002D3497 /* 37.png */; };
-		1DCE58D619C32251002D3497 /* 38.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58CE19C32251002D3497 /* 38.png */; };
-		1DCE58D719C32251002D3497 /* blue_land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58CF19C32251002D3497 /* blue_land.png */; };
-		1DCE58D819C32251002D3497 /* entity in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58D019C32251002D3497 /* entity */; };
-		1DCE58D919C32251002D3497 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58D119C32251002D3497 /* fonts */; };
-		1DCE58DA19C32251002D3497 /* maps in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58D219C32251002D3497 /* maps */; };
-		1DCE58DB19C32251002D3497 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58D319C32251002D3497 /* ui */; };
 		1DCE58FE19C329CD002D3497 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCE58FC19C329CD002D3497 /* libGoogleAdMobAds.a */; };
 		1DCE58FF19C329CD002D3497 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DCE58FD19C329CD002D3497 /* README.txt */; };
 		1DCE590119C32A22002D3497 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DCE590019C32A22002D3497 /* AdSupport.framework */; };
@@ -406,7 +407,16 @@
 		1D06249819E410D200D11E75 /* ShareSDKiPhoneSimpleShareViewUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKiPhoneSimpleShareViewUI.bundle; sourceTree = "<group>"; };
 		1D06249919E410D200D11E75 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
 		1D06249A19E410D200D11E75 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
-		1D0624DD19E4164000D11E75 /* effect */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effect; sourceTree = "<group>"; };
+		1D0624DF19E416E100D11E75 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		1D0624E019E416E100D11E75 /* 37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 37.png; sourceTree = "<group>"; };
+		1D0624E119E416E100D11E75 /* 38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 38.png; sourceTree = "<group>"; };
+		1D0624E219E416E100D11E75 /* blue_land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_land.png; sourceTree = "<group>"; };
+		1D0624E319E416E100D11E75 /* effect */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effect; sourceTree = "<group>"; };
+		1D0624E419E416E100D11E75 /* entity */ = {isa = PBXFileReference; lastKnownFileType = folder; path = entity; sourceTree = "<group>"; };
+		1D0624E519E416E100D11E75 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		1D0624E619E416E100D11E75 /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
+		1D0624E719E416E100D11E75 /* ShareSDK.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ShareSDK.xml; sourceTree = "<group>"; };
+		1D0624E819E416E100D11E75 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		1D1CF94D19C1FDD0001D6A99 /* AdManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AdManager.cpp; path = ../Classes/AdManager.cpp; sourceTree = "<group>"; };
 		1D1CF94E19C1FDD0001D6A99 /* AdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdManager.h; path = ../Classes/AdManager.h; sourceTree = "<group>"; };
 		1D1CF96019C1FDD0001D6A99 /* UIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIButton.h; path = ../Classes/UIButton.h; sourceTree = "<group>"; };
@@ -422,14 +432,6 @@
 		1DBE668C19C715FA0007A870 /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectPool.h; path = ../Classes/ObjectPool.h; sourceTree = "<group>"; };
 		1DBE668D19C715FA0007A870 /* TailEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TailEffect.cpp; path = ../Classes/TailEffect.cpp; sourceTree = "<group>"; };
 		1DBE668E19C715FA0007A870 /* TailEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TailEffect.h; path = ../Classes/TailEffect.h; sourceTree = "<group>"; };
-		1DCE58CC19C32251002D3497 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		1DCE58CD19C32251002D3497 /* 37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 37.png; sourceTree = "<group>"; };
-		1DCE58CE19C32251002D3497 /* 38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 38.png; sourceTree = "<group>"; };
-		1DCE58CF19C32251002D3497 /* blue_land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_land.png; sourceTree = "<group>"; };
-		1DCE58D019C32251002D3497 /* entity */ = {isa = PBXFileReference; lastKnownFileType = folder; path = entity; sourceTree = "<group>"; };
-		1DCE58D119C32251002D3497 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		1DCE58D219C32251002D3497 /* maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = maps; sourceTree = "<group>"; };
-		1DCE58D319C32251002D3497 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		1DCE58F019C329CD002D3497 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
 		1DCE58F119C329CD002D3497 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		1DCE58F219C329CD002D3497 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
@@ -1121,15 +1123,16 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1D0624DD19E4164000D11E75 /* effect */,
-				1DCE58CC19C32251002D3497 /* 1.png */,
-				1DCE58CD19C32251002D3497 /* 37.png */,
-				1DCE58CE19C32251002D3497 /* 38.png */,
-				1DCE58CF19C32251002D3497 /* blue_land.png */,
-				1DCE58D019C32251002D3497 /* entity */,
-				1DCE58D119C32251002D3497 /* fonts */,
-				1DCE58D219C32251002D3497 /* maps */,
-				1DCE58D319C32251002D3497 /* ui */,
+				1D0624DF19E416E100D11E75 /* 1.png */,
+				1D0624E019E416E100D11E75 /* 37.png */,
+				1D0624E119E416E100D11E75 /* 38.png */,
+				1D0624E219E416E100D11E75 /* blue_land.png */,
+				1D0624E319E416E100D11E75 /* effect */,
+				1D0624E419E416E100D11E75 /* entity */,
+				1D0624E519E416E100D11E75 /* fonts */,
+				1D0624E619E416E100D11E75 /* maps */,
+				1D0624E719E416E100D11E75 /* ShareSDK.xml */,
+				1D0624E819E416E100D11E75 /* ui */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -1303,44 +1306,45 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				1D0624C119E410D300D11E75 /* ShareSDKCoreService.framework.zip in Resources */,
-				1DCE58DA19C32251002D3497 /* maps in Resources */,
 				1D0624D519E410D300D11E75 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
+				1D0624EF19E416E100D11E75 /* fonts in Resources */,
+				1D0624EE19E416E100D11E75 /* entity in Resources */,
 				1D0624A419E410D200D11E75 /* InstapaperResource.bundle in Resources */,
-				1DCE58D519C32251002D3497 /* 37.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				1D0624EB19E416E100D11E75 /* 38.png in Resources */,
+				1D0624F019E416E100D11E75 /* maps in Resources */,
+				1D0624ED19E416E100D11E75 /* effect in Resources */,
+				1D0624F219E416E100D11E75 /* ui in Resources */,
 				1D0624C919E410D300D11E75 /* RennSDK.bundle in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1D0624D819E410D300D11E75 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
+				1D0624E919E416E100D11E75 /* 1.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				1D0624EC19E416E100D11E75 /* blue_land.png in Resources */,
 				1DCE58FF19C329CD002D3497 /* README.txt in Resources */,
 				1D0624D319E410D300D11E75 /* ShareSDKiPadDefaultShareViewUI.bundle in Resources */,
 				1D0624CC19E410D300D11E75 /* WeiboSDK.bundle in Resources */,
-				1DCE58D919C32251002D3497 /* fonts in Resources */,
 				1D0624C619E410D300D11E75 /* PinterestSDKResources.bundle in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				1D0624F119E416E100D11E75 /* ShareSDK.xml in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				1D0624C819E410D300D11E75 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				1D0624C319E410D300D11E75 /* GooglePlus.bundle in Resources */,
 				1D0624BE19E410D300D11E75 /* ShareSDKLocalizable.strings in Resources */,
-				1DCE58DB19C32251002D3497 /* ui in Resources */,
 				1D0624D119E410D300D11E75 /* ShareSDKFlatShareViewUI.bundle in Resources */,
+				1D0624EA19E416E100D11E75 /* 37.png in Resources */,
 				1D0624DA19E410D300D11E75 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
-				1DCE58D819C32251002D3497 /* entity in Resources */,
-				1DCE58D719C32251002D3497 /* blue_land.png in Resources */,
 				1D0624BF19E410D300D11E75 /* Resource.bundle in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
-				1D0624DE19E4164000D11E75 /* effect in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
-				1DCE58D419C32251002D3497 /* 1.png in Resources */,
-				1DCE58D619C32251002D3497 /* 38.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
