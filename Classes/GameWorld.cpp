@@ -235,7 +235,7 @@ void GameWorld::win()
 
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
-		int type = (int)data;
+		int type = *(int*)data;
 		switch (type)
 		{
 		case 1://select game
@@ -257,7 +257,7 @@ void GameWorld::lose(int tag)
 {
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLevelCompleteLoss(&tag, [=](void* data){
-		int type = (int)data;
+		int type = *(int*)data;
 		switch (type)
 		{
 		case 1://select Game

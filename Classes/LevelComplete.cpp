@@ -64,8 +64,8 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	//this->initDataLabel();
     
     dialog->setDisplayCallback([=](void *data){
-        int tag = (int)data;
-        if(tag == DialogEvent::Event_show){
+        int* tag = static_cast<int*>(data);
+        if(*tag == DialogEvent::Event_show){
             AdManager::getInstance()->displayInterstitial();
         }
     });

@@ -4,7 +4,7 @@
 #include "TestLayer.h"
 #include "C2DXShareSDK.h"
 using namespace cn::sharesdk;
-#include "cocostudio\CocoStudio.h"
+#include "cocostudio/CocoStudio.h"
 
 USING_NS_CC;
 

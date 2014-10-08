@@ -81,7 +81,7 @@ static AppDelegate s_sharedApplication;
     
     //-------------------share sdk
     [ShareSDK importWeChatClass:[WXApi class]];
-    [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
+    //[ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
     
     //------------------- Add Admob interstitial
     interstitial_ = [[GADInterstitial alloc] init];
@@ -187,6 +187,7 @@ static AppDelegate s_sharedApplication;
 
 -(void)interstitialDidDismissScreen:(GADInterstitial *) interstitial
 {
+    [interstitial_ release];
     interstitial_ = [[GADInterstitial alloc] init];
     interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
     interstitial_.delegate = self;
