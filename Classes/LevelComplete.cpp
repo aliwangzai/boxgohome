@@ -144,6 +144,7 @@ void LevelComplete::databind(void *data)
 		{
 			LevelState::getInstance()->unlockNewLevel();
 			this->playerPassAnimate();
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/win.mp3");
 		}
 	}
 }

@@ -95,6 +95,7 @@ void LevelCompleteLoss::databind(void *data)
 		this->m_pLabelDesc->setString("Out of time");
 		break;
 	}
+    CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/loss.mp3");
 }
 
 void LevelCompleteLoss::setResultCallback(DialogCallback callback)

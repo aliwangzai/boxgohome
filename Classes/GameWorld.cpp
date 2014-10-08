@@ -55,6 +55,7 @@ bool GameWorld::init()
 	this->scheduleUpdate();
 	this->initGameUI();
 	this->initContactLogic();
+    
 	return true;
 }
 
@@ -186,30 +187,8 @@ void GameWorld::onEnterTransitionDidFinish()
 	Node::onEnterTransitionDidFinish();
 
 	AdManager::getInstance()->showBannerAD();
-
-	/*float delayTime = 0.0f;
-	for (int i = 0; i < 3; i++)
-	{
-		Label *title = Label::createWithBMFont("fonts/base_font.fnt", std::to_string(i + 1));
-		this->addChild(title);
-		title->setPosition(VisibleRect::left());
-		title->setScale(0.5f);
-		auto seqAction = Sequence::create(
-			DelayTime::create(delayTime),
-			EaseIn::create(MoveTo::create(1.0f, VisibleRect::center()), 2.5f),
-			DelayTime::create(0.3f),
-			EaseOut::create(MoveTo::create(1.0f, VisibleRect::right()), 2.5f),
-			nullptr);
-		auto seqAction2 = Sequence::create(
-			DelayTime::create(delayTime),
-			ScaleTo::create(1.0f, 1.5f),
-			DelayTime::create(0.3f),
-			ScaleTo::create(1.0f, 0.5f),
-			nullptr);
-		delayTime += 2.3f;
-		title->runAction(seqAction);
-		title->runAction(seqAction2);
-	}*/
+    
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/gameworld.mp3", true);
 }
 
 void GameWorld::onExit()
@@ -217,6 +196,8 @@ void GameWorld::onExit()
     Node::onExit();
     
 	AdManager::getInstance()->hideBannerAD();
+    
+    CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
 }
 
 void GameWorld::update(float dt)

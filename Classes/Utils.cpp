@@ -78,11 +78,11 @@ Node* Utils::createSound()
 	soundCheckBox->setCallback([=](bool state){
 		Utils::reverseSound();
 		if (!state){
-			CCLOG("%s", "play sound");
+            CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(1.0);
 		}
 		else
 		{
-			CCLOG("%s", "close sound");
+            CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(0.0);
 		}
 	});
 	return soundCheckBox;
@@ -96,11 +96,11 @@ Node* Utils::createMusic()
 		Utils::reverseMusic();
 		if (!state)
 		{
-			CCLOG("%s", "play music");
+            CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(1.0);
 		}
 		else
 		{
-			CCLOG("%s", "close music");
+            CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.0);
 		}
 	});
 	return musicCheckBox;

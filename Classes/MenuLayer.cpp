@@ -159,6 +159,7 @@ bool MenuLayer::initWithMenu()
 	btn_play->addTouchEventListener([=](Ref * sender, Widget::TouchEventType type) {
 		if (type == Widget::TouchEventType::ENDED)
 		{
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
 		}
 	});
@@ -166,6 +167,7 @@ bool MenuLayer::initWithMenu()
 	btn_tur->addTouchEventListener([=](Ref* pSender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 			this->m_pCurrentNode->removeFromParent();
 			this->m_pCurrentNode = TutorialMenu::create();
 			this->addChild(this->m_pCurrentNode);
@@ -181,6 +183,7 @@ bool MenuLayer::initWithMenu()
 		if (type == Widget::TouchEventType::ENDED)
 		{
 			//pop setting dialog
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 			DialogManager::getInstance()->showSettingDialog();
 		}
 
@@ -189,6 +192,7 @@ bool MenuLayer::initWithMenu()
 	btn_back->addTouchEventListener([=](Ref *pSender, Widget::TouchEventType type){
 		if (type == Widget::TouchEventType::ENDED)
 		{
+            CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 			Director::getInstance()->replaceScene(Welcome::createScene());
 		}
 	});
