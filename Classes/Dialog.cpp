@@ -73,7 +73,8 @@ void Dialog::showDialog()
 		auto seqAction = Sequence::create(
 			ScaleTo::create(0.2f, 1.0f),
 			CallFunc::create([=](){
-                if(m_fCallback) m_fCallback((void*)DialogEvent::Event_show);
+				int tag = DialogEvent::Event_show;
+                if(m_fCallback) m_fCallback((void*)&tag);
 			}),
 			nullptr);
 		this->m_pContentPanel->runAction(seqAction);
@@ -87,7 +88,8 @@ void Dialog::hideDialog()
 		auto seqAction = Sequence::create(
 			ScaleTo::create(0.2f, 0.001f),
 			CallFunc::create([=](){
-				if (m_fCallback)m_fCallback((void*)DialogEvent::Event_hide);
+				int tag = DialogEvent::Event_hide;
+				if (m_fCallback)m_fCallback((void*)&tag);
 				_eventDispatcher->removeEventListenersForTarget(this);
 				this->removeFromParent();
 			}),

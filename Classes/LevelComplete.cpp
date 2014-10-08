@@ -64,8 +64,8 @@ bool LevelComplete::initWithDialog(Dialog* dialog)
 	//this->initDataLabel();
     
     dialog->setDisplayCallback([=](void *data){
-        int* tag = static_cast<int*>(data);
-        if(*tag == DialogEvent::Event_show){
+        int tag = *(int*)data;
+        if(tag == DialogEvent::Event_show){
             AdManager::getInstance()->displayInterstitial();
         }
     });
@@ -76,8 +76,9 @@ void LevelComplete::btn_menuCallback(Ref*sender,Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		int tag = 1;
 		this->m_pDialog->hideDialog();
-		m_fCallback((void*)1);
+		m_fCallback((void*)&tag);
 	}
 }
 
@@ -85,8 +86,9 @@ void LevelComplete::btn_resetCallback(Ref*sender, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		int tag = 2;
 		this->m_pDialog->hideDialog();
-		m_fCallback((void*)2);
+		m_fCallback((void*)&tag);
 	}
 }
 
@@ -95,8 +97,9 @@ void LevelComplete::btn_nextCallback(Ref*sender, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		int tag = 3;
 		this->m_pDialog->hideDialog();
-		m_fCallback((void*)3);
+		m_fCallback((void*)&tag);
 	}
 }
 

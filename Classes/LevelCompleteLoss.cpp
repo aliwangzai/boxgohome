@@ -53,8 +53,9 @@ void LevelCompleteLoss::btn_menuCallback( Ref*sender,Widget::TouchEventType type
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		int tag = 1;
 		this->m_pDialog->hideDialog();
-		m_fCallback((void*)1);
+		m_fCallback((void*)&tag);
 	}
 }
 
@@ -62,8 +63,9 @@ void LevelCompleteLoss::btn_resetCallback(Ref*sender, Widget::TouchEventType typ
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		int tag = 2;
 		this->m_pDialog->hideDialog();
-		m_fCallback((void*)2);
+		m_fCallback((void*)&tag);
 	}
 }
 

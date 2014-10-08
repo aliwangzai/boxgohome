@@ -14,7 +14,7 @@ LevelSelector::LevelSelector()
 
 	//configs & develop 
 	max = 50;
-	numColumns =  8;
+	numColumns =  10;
 	padding = Vec2(10 , 10);
 
 	//calc
