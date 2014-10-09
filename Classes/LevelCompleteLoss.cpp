@@ -34,7 +34,7 @@ bool LevelCompleteLoss::initWithDialog(Dialog* dialog)
 	addChild(layout);
 
 	ImageView *imageView = static_cast<ImageView*>(layout->getChildByName("Image_1"));
-	this->setContentSize(imageView->getSize());
+	this->setContentSize(imageView->getLayoutSize());
 
 	Button * btn_menu = static_cast<Button*>(layout->getChildByName("btn_menu"));
 	Button * btn_reset = static_cast<Button*>(layout->getChildByName("btn_reset"));
@@ -53,6 +53,7 @@ void LevelCompleteLoss::btn_menuCallback( Ref*sender,Widget::TouchEventType type
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		int tag = 1;
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)&tag);
@@ -63,6 +64,7 @@ void LevelCompleteLoss::btn_resetCallback(Ref*sender, Widget::TouchEventType typ
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		int tag = 2;
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)&tag);

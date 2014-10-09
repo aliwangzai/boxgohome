@@ -76,6 +76,7 @@ void LevelComplete::btn_menuCallback(Ref*sender,Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		int tag = 1;
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)&tag);
@@ -86,6 +87,7 @@ void LevelComplete::btn_resetCallback(Ref*sender, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		int tag = 2;
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)&tag);
@@ -97,6 +99,7 @@ void LevelComplete::btn_nextCallback(Ref*sender, Widget::TouchEventType type)
 {
 	if (type == Widget::TouchEventType::ENDED)
 	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		int tag = 3;
 		this->m_pDialog->hideDialog();
 		m_fCallback((void*)&tag);

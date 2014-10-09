@@ -84,6 +84,7 @@ MenuItem * LevelSelector::createMenuItem(Menu * m , int level , int x, int y  )
 
 void LevelSelector::onClickMenuItem( Ref * sender )
 {
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 	MenuItemImage * item = (MenuItemImage*)sender;
 	int level = item->getTag();
 	CCLOG("goto level:%d" ,  level);

@@ -69,6 +69,11 @@ void GameUI::playerStartAnimate()
 {
 	for (int i = 3; i >= 0; i--)
 	{
+		Node* node = this->getChildByTag(100 + i);
+		if(node!= nullptr)node->removeFromParent();
+	}
+	for (int i = 3; i >= 0; i--)
+	{
 		char buffer[128];
 		sprintf(buffer, "ui/321go_%d.png", i);
 		auto sprite = Sprite::create(buffer);
@@ -119,12 +124,14 @@ bool GameUI::initMenu()
 	//TTFConfig ttfConfig("fonts/Marker Felt.ttf", 32);
 	///auto restartLabel = Label::createWithTTF(ttfConfig, "Restart");
 	auto restartItem = MenuItemImage::create("ui/btn_reset.png" , "ui/btn_reset.png" ,"ui/btn_reset.png", [=](Ref *pSender){
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		this->m_pGameWorld->restart();
 	});
 	restartItem->setOpacity(100);
 	//restartItem->setColor(Color3B(0, 0, 0));
 	//auto menuLabel = Label::createWithTTF(ttfConfig, "Menu");
 	auto menuItem = MenuItemImage::create("ui/btn_menu.png", "ui/btn_menu.png","ui/btn_menu.png", [=](Ref *pSender){
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		Director::getInstance()->replaceScene(MenuLayer::createScene());
 	});
 	menuItem->setOpacity(100);
