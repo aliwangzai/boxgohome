@@ -19,6 +19,7 @@ public:
 	bool initHero();
 
 	virtual void onEnter();
+	virtual void onExit();
 
 	void playFontAnimate();
 	void playHeroAnimate();

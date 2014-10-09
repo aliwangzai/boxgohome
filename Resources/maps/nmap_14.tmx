@@ -33,42 +33,42 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="160" y="75"/>
-  <object gid="2" x="239" y="75"/>
-  <object gid="2" x="319" y="75"/>
-  <object gid="2" x="399" y="75"/>
-  <object gid="2" x="478" y="75"/>
-  <object gid="2" x="558" y="75"/>
-  <object gid="2" x="638" y="75"/>
-  <object gid="2" x="718" y="75"/>
-  <object gid="2" x="798" y="50" rotation="90"/>
-  <object gid="2" x="798" y="130" rotation="90"/>
-  <object gid="2" x="798" y="289" rotation="90"/>
-  <object gid="2" x="798" y="209" rotation="90"/>
-  <object gid="2" x="799" y="449" rotation="90"/>
-  <object gid="2" x="799" y="369" rotation="90"/>
-  <object gid="2" x="318" y="249"/>
-  <object gid="2" x="159" y="249"/>
-  <object gid="2" x="238" y="249"/>
-  <object gid="2" x="398" y="249"/>
-  <object gid="2" x="639" y="249"/>
-  <object gid="2" x="719" y="249"/>
-  <object gid="5" x="409" y="224"/>
-  <object gid="3" x="212" y="225"/>
-  <object gid="2" x="346" y="554"/>
-  <object gid="2" x="665" y="554"/>
-  <object gid="2" x="187" y="554"/>
-  <object gid="2" x="505" y="554"/>
-  <object gid="2" x="745" y="554"/>
-  <object gid="2" x="266" y="554"/>
-  <object gid="2" x="585" y="554"/>
-  <object gid="2" x="426" y="554"/>
-  <object gid="2" x="163" y="393" rotation="90"/>
-  <object gid="2" x="163" y="473" rotation="90"/>
-  <object gid="5" x="480" y="528"/>
-  <object gid="5" x="480" y="460"/>
-  <object gid="1" x="188" y="529"/>
-  <object gid="4" x="229" y="505">
+  <object gid="2" x="160" y="119"/>
+  <object gid="2" x="239" y="119"/>
+  <object gid="2" x="319" y="119"/>
+  <object gid="2" x="399" y="119"/>
+  <object gid="2" x="478" y="119"/>
+  <object gid="2" x="558" y="119"/>
+  <object gid="2" x="638" y="119"/>
+  <object gid="2" x="718" y="119"/>
+  <object gid="2" x="798" y="94" rotation="90"/>
+  <object gid="2" x="798" y="174" rotation="90"/>
+  <object gid="2" x="798" y="333" rotation="90"/>
+  <object gid="2" x="798" y="253" rotation="90"/>
+  <object gid="2" x="799" y="493" rotation="90"/>
+  <object gid="2" x="799" y="413" rotation="90"/>
+  <object gid="2" x="318" y="293"/>
+  <object gid="2" x="159" y="293"/>
+  <object gid="2" x="238" y="293"/>
+  <object gid="2" x="398" y="293"/>
+  <object gid="2" x="639" y="293"/>
+  <object gid="2" x="719" y="293"/>
+  <object gid="5" x="409" y="268"/>
+  <object gid="3" x="212" y="269"/>
+  <object gid="2" x="346" y="598"/>
+  <object gid="2" x="665" y="598"/>
+  <object gid="2" x="187" y="598"/>
+  <object gid="2" x="505" y="598"/>
+  <object gid="2" x="745" y="598"/>
+  <object gid="2" x="266" y="598"/>
+  <object gid="2" x="585" y="598"/>
+  <object gid="2" x="426" y="598"/>
+  <object gid="2" x="163" y="437" rotation="90"/>
+  <object gid="2" x="163" y="517" rotation="90"/>
+  <object gid="5" x="480" y="572"/>
+  <object gid="5" x="480" y="504"/>
+  <object gid="1" x="188" y="573"/>
+  <object gid="4" x="229" y="549">
    <properties>
     <property name="type" value="flag"/>
    </properties>

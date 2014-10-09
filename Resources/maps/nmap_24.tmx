@@ -34,35 +34,35 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="3" x="133" y="144" rotation="90"/>
-  <object gid="3" x="160" y="225"/>
-  <object gid="3" x="240" y="225"/>
-  <object gid="3" x="320" y="225"/>
-  <object gid="2" x="398" y="225"/>
-  <object gid="3" x="480" y="225"/>
-  <object gid="3" x="561" y="225"/>
-  <object gid="3" x="641" y="225"/>
-  <object gid="3" x="133" y="224" rotation="90"/>
-  <object gid="3" x="133" y="305" rotation="90"/>
-  <object gid="3" x="319" y="384"/>
-  <object gid="3" x="159" y="384"/>
-  <object gid="3" x="239" y="384"/>
-  <object gid="3" x="401" y="385"/>
-  <object gid="3" x="482" y="385"/>
-  <object gid="3" x="562" y="385"/>
-  <object gid="2" x="641" y="385"/>
-  <object gid="3" x="722" y="144" rotation="90"/>
-  <object gid="3" x="722" y="224" rotation="90"/>
-  <object gid="3" x="722" y="305" rotation="90"/>
-  <object gid="5" x="416" y="200"/>
-  <object gid="2" x="126" y="549"/>
-  <object gid="3" x="448" y="550"/>
-  <object gid="3" x="366" y="550"/>
-  <object gid="3" x="286" y="549"/>
-  <object gid="3" x="529" y="550"/>
-  <object gid="3" x="609" y="550"/>
-  <object gid="3" x="206" y="549"/>
-  <object gid="1" x="410" y="524"/>
-  <object gid="4" x="447" y="501"/>
+  <object gid="3" x="133" y="166" rotation="90"/>
+  <object gid="3" x="160" y="247"/>
+  <object gid="3" x="240" y="247"/>
+  <object gid="3" x="320" y="247"/>
+  <object gid="2" x="398" y="247"/>
+  <object gid="3" x="480" y="247"/>
+  <object gid="3" x="561" y="247"/>
+  <object gid="3" x="641" y="247"/>
+  <object gid="3" x="133" y="246" rotation="90"/>
+  <object gid="3" x="133" y="327" rotation="90"/>
+  <object gid="3" x="319" y="406"/>
+  <object gid="3" x="159" y="406"/>
+  <object gid="3" x="239" y="406"/>
+  <object gid="3" x="401" y="407"/>
+  <object gid="3" x="482" y="407"/>
+  <object gid="3" x="562" y="407"/>
+  <object gid="2" x="641" y="407"/>
+  <object gid="3" x="722" y="166" rotation="90"/>
+  <object gid="3" x="722" y="246" rotation="90"/>
+  <object gid="3" x="722" y="327" rotation="90"/>
+  <object gid="5" x="416" y="222"/>
+  <object gid="2" x="126" y="571"/>
+  <object gid="3" x="448" y="572"/>
+  <object gid="3" x="366" y="572"/>
+  <object gid="3" x="286" y="571"/>
+  <object gid="3" x="529" y="572"/>
+  <object gid="3" x="609" y="572"/>
+  <object gid="3" x="206" y="571"/>
+  <object gid="1" x="410" y="546"/>
+  <object gid="4" x="447" y="523"/>
  </objectgroup>
 </map>

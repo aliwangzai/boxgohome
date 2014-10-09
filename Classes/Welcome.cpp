@@ -216,4 +216,13 @@ void Welcome::onEnter()
 	Node::onEnter();
 	
 	AdManager::getInstance()->hideBannerAD();
+
+	CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/welcome.mp3", true);
+}
+
+void Welcome::onExit()
+{
+	Node::onExit();
+
+	CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
 }

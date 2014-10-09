@@ -39,18 +39,18 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="80" y="500"/>
-  <object gid="2" x="160" y="500"/>
-  <object gid="2" x="240" y="500"/>
-  <object gid="2" x="400" y="350"/>
-  <object gid="2" x="480" y="350"/>
-  <object gid="2" x="640" y="150"/>
-  <object gid="2" x="800" y="150"/>
-  <object gid="1" x="720" y="150"/>
-  <object gid="3" x="759" y="128"/>
-  <object gid="5" x="445" y="324"/>
-  <object gid="5" x="445" y="256"/>
-  <object gid="6" x="457" y="187"/>
-  <object gid="4" x="179" y="476"/>
+  <object gid="2" x="80" y="548"/>
+  <object gid="2" x="160" y="548"/>
+  <object gid="2" x="240" y="548"/>
+  <object gid="2" x="400" y="398"/>
+  <object gid="2" x="480" y="398"/>
+  <object gid="2" x="640" y="198"/>
+  <object gid="2" x="800" y="198"/>
+  <object gid="1" x="720" y="198"/>
+  <object gid="3" x="759" y="176"/>
+  <object gid="5" x="445" y="372"/>
+  <object gid="5" x="445" y="304"/>
+  <object gid="6" x="457" y="235"/>
+  <object gid="4" x="179" y="524"/>
  </objectgroup>
 </map>

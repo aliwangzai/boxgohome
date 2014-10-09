@@ -60,18 +60,10 @@
         ShareByAppClient="true"
         Enable="true" />
 
-    <TencentWeibo
-        Id="2" 
-        SortId="2"
-        AppKey="801540166"
-        AppSecret="f774d3736102be5b78fdd0ac0a2e49f3"
-        RedirectUri="http://sharesdk.cn"
-        Enable="true" />
-
     <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
     <QZone
-        Id="3"
-        SortId="3"
+        Id="2"
+        SortId="2"
         AppId="801540166"
         AppKey="f774d3736102be5b78fdd0ac0a2e49f3"
         ShareByAppClient="true"
@@ -90,47 +82,35 @@
 		默认值为false。此外，微信收藏不支持此字段。
 	-->
     <Wechat
+        Id="3"
+        SortId="3"
+        AppId="wxcb7d58e2f333a4ea"
+        BypassApproval="true"
+        Enable="true" />
+    
+    <WechatMoments
         Id="4"
         SortId="4"
         AppId="wxcb7d58e2f333a4ea"
         BypassApproval="true"
         Enable="true" />
     
-    <WechatMoments
-        Id="5"
-        SortId="5"
-        AppId="wxcb7d58e2f333a4ea"
-        BypassApproval="true"
-        Enable="true" />
-        
-	<WechatFavorite
-        Id="6"
-        SortId="6"
-        AppId="wxcb7d58e2f333a4ea"
-        Enable="true" />
-    
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
 	<QQ
-        Id="7"
-        SortId="7"
+        Id="5"
+        SortId="5"
         AppId="801540166"
         AppKey="f774d3736102be5b78fdd0ac0a2e49f3"
         ShareByAppClient="true"
         Enable="true" />
     
     <Facebook
-        Id="8"
-        SortId="8"
-        ConsumerKey="107704292745179"
-        ConsumerSecret="38053202e1a5fe26c80c753071f0b573"
+        Id="6"
+        SortId="6"
+        ConsumerKey="859408857427168"
+        ConsumerSecret="b6867a25cc0f7a7786576c1b0198118f"
+		ShareByAppClient="true"
         Enable="true" />
 
-    <Twitter
-        Id="9"
-        SortId="9"
-        ConsumerKey="mnTGqtXk0TYMXYTN7qUxg"
-        ConsumerSecret="ROkFqr8c3m1HXqS3rm3TJ0WkAJuwBOSaWhPbZ9Ojuc"
-        CallbackUrl="http://www.sharesdk.cn"
-        Enable="true" />
 	
 </DevInfor>

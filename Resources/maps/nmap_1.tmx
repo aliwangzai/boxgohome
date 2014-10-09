@@ -25,6 +25,20 @@
    </properties>
    <image width="45" height="45" source="hero/avatar_01.png"/>
   </tile>
+  <tile id="4">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="durability" value="1"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
   <object gid="2" x="160" y="375"/>
@@ -38,13 +52,8 @@
   <object gid="2" x="80" y="375"/>
   <object gid="2" x="880" y="296" rotation="90"/>
   <object gid="2" x="54" y="296" rotation="90"/>
-  <object gid="2" x="560" y="242"/>
-  <object gid="2" x="640" y="242"/>
-  <object gid="2" x="240" y="242"/>
-  <object gid="2" x="720" y="242"/>
   <object gid="2" x="320" y="242"/>
   <object gid="2" x="800" y="242"/>
-  <object gid="2" x="160" y="242"/>
   <object gid="2" x="400" y="242"/>
   <object gid="2" x="80" y="242"/>
   <object gid="2" x="480" y="242"/>
@@ -53,5 +62,9 @@
   <object gid="1" x="640" y="375"/>
   <object gid="3" x="680" y="351"/>
   <object gid="4" x="113" y="313"/>
+  <object gid="6" x="560" y="242"/>
+  <object gid="6" x="641" y="242"/>
+  <object gid="6" x="720" y="242"/>
+  <object gid="5" x="469" y="258" rotation="90"/>
  </objectgroup>
 </map>

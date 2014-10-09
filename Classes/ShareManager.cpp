@@ -4,7 +4,21 @@ static ShareManager* g_pShareManager = nullptr;
 
 void shareResultHandler(C2DXResponseState state, C2DXPlatType platType, Dictionary *shareInfo, Dictionary *error)
 {
-
+	switch (state) {
+	case C2DXResponseStateBegin:
+		CCLOG("开始分享 -------------------- platType: %d", platType);
+		break;
+	case C2DXResponseStateSuccess:
+		CCLOG("分享成功");
+		break;
+	case C2DXResponseStateFail:
+		CCLOG("分享失败");
+		break;
+	case C2DXResponseStateCancel:
+		CCLOG("取消分享");
+	default:
+		break;
+	}
 }
 
 ShareManager* ShareManager::getInstance()
