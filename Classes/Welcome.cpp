@@ -53,12 +53,18 @@ bool Welcome::initEdgeMap()
 
 bool Welcome::initMenu()
 {
-	TTFConfig ttfConfig("ui/grobold.ttf", 32);
-	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
-	moreGameLabel->setTextColor(Color4B::WHITE);
-	moreGameLabel->enableOutline(Color4B::BLACK, 1);
-	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
-        CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
+// 	TTFConfig ttfConfig("ui/grobold.ttf", 32);
+// 	auto moreGameLabel = Label::createWithTTF(ttfConfig, "More Game");
+// 	moreGameLabel->setTextColor(Color4B::WHITE);
+// 	moreGameLabel->enableOutline(Color4B::BLACK, 1);
+// 	auto moreGameItem = MenuItemLabel::create(moreGameLabel, [=](Ref *pSender){
+//         
+// 	});
+// 	auto menu = Menu::create(moreGameItem, nullptr);
+// 	this->addChild(menu);
+
+	auto shareItem = UIButton::create("ui/btn_share.png" , [](Ref * psender) {
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		ShareManager::getInstance()->setShareAttribute("content", "this is test content");
 		ShareManager::getInstance()->setShareAttribute("image", "http://img0.bdstatic.com/img/image/308342ac65c10385343da168d569113b07ecb8088ef.jpg");
 		ShareManager::getInstance()->setShareAttribute("title", "title");
@@ -67,9 +73,8 @@ bool Welcome::initMenu()
 		ShareManager::getInstance()->setShareAttribute("type", std::to_string(C2DXContentTypeNews));
 		ShareManager::getInstance()->sendShare();
 	});
-	auto menu = Menu::create(moreGameItem, nullptr);
-	this->addChild(menu);
-	menu->setPosition(VisibleRect::rightBottom() + Point(-120, 35));
+	addChild(shareItem);
+	shareItem->setPosition(VisibleRect::rightBottom() + Point(-50, 50));
 
 	auto startItem = UIButton::create("ui/btn_play2.png", [](Ref *pSender){
         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
