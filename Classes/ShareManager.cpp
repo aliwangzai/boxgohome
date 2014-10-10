@@ -6,16 +6,16 @@ void shareResultHandler(C2DXResponseState state, C2DXPlatType platType, Dictiona
 {
 	switch (state) {
 	case C2DXResponseStateBegin:
-		CCLOG("开始分享 -------------------- platType: %d", platType);
+		//CCLOG("开始分享 -------------------- platType: %d", platType);
 		break;
 	case C2DXResponseStateSuccess:
-		CCLOG("分享成功");
+		//CCLOG("分享成功");
 		break;
 	case C2DXResponseStateFail:
-		CCLOG("分享失败");
+		//CCLOG("分享失败");
 		break;
 	case C2DXResponseStateCancel:
-		CCLOG("取消分享");
+		//CCLOG("取消分享");
 	default:
 		break;
 	}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="images" tilewidth="80" tileheight="45">
+  <tile id="0">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game"/>
+</map>
