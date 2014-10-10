@@ -179,4 +179,9 @@ void LevelSelectScene::onEnter()
     Layer::onEnter();
     
 	AdManager::getInstance()->showBannerAD();
+    
+    if(!CocosDenshion::SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying())
+    {
+        CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/welcome.mp3");
+    }
 }
