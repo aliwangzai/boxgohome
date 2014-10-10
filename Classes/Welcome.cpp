@@ -65,10 +65,10 @@ bool Welcome::initMenu()
 
 	auto shareItem = UIButton::create("ui/btn_share.png" , [](Ref * psender) {
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
-		ShareManager::getInstance()->setShareAttribute("content", "this is test content");
-		ShareManager::getInstance()->setShareAttribute("image", "http://img0.bdstatic.com/img/image/308342ac65c10385343da168d569113b07ecb8088ef.jpg");
+		ShareManager::getInstance()->setShareAttribute("content", " help box find home");
+		ShareManager::getInstance()->setShareAttribute("image", "http://t1.qpic.cn/mblogpic/39ba1bc9ca354efd2884/460");
 		ShareManager::getInstance()->setShareAttribute("title", "BoxGoHome");
-		ShareManager::getInstance()->setShareAttribute("description", "description");
+		ShareManager::getInstance()->setShareAttribute("description", "BoxGoHome");
 		ShareManager::getInstance()->setShareAttribute("url", "http://sharesdk.cn");
 		ShareManager::getInstance()->setShareAttribute("type", std::to_string(C2DXContentTypeNews));
 		ShareManager::getInstance()->sendShare();
