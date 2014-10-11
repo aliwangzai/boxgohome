@@ -26,6 +26,11 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.cpp;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 import android.os.Bundle;
@@ -41,21 +46,23 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.xiandiao.gohome.R;
 
 public class AppActivity extends Cocos2dxActivity {
 	
 	protected static final int GUIUPDATEIDENTIFIER = 0x101;
 	protected static final int LOADINTESTITIALAD = 0x102;
+	protected static final String shareImage = "share.jpg";
 	
 	private static final String deviceMD5ID = "37AD57E769A2AEB5D85343BAD6B050A8";
 	private static final String bannerUnitID = "ca-app-pub-2906542859743654/2173098523";
 	private static final String interstitialUnitID = "ca-app-pub-2906542859743654/4494109729";
 	
-	//ºá·ù¹ã¸æ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½
 	private static AdView adBannerView;
 	private static int adViewVisibility = View.GONE; 
 	
-	//²åÒ³Ê½¹ã¸æ
+	//ï¿½ï¿½Ò³Ê½ï¿½ï¿½ï¿½
 	private static InterstitialAd interstitial;
 	
 	private static Handler adViewHandler = new Handler(){
@@ -85,7 +92,7 @@ public class AppActivity extends Cocos2dxActivity {
 		};
 	};
 	
-	//ºá·ù¹ã¸æ³õÊ¼»¯
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 	private void initBannerAD(){
 		adBannerView = new AdView(this);
 		adBannerView.setAdUnitId(bannerUnitID);
@@ -128,6 +135,10 @@ public class AppActivity extends Cocos2dxActivity {
 		
 		this.initInterstitialAD();
 	    
+		this.initShareSDK();
+	}
+	
+	public void initShareSDK(){
 		ShareSDKUtils.prepare();
 	}
 	
