@@ -132,3 +132,19 @@ int Utils::getScore(int level)
 	int oldScore = UserDefault::getInstance()->getIntegerForKey(buffer);
 	return oldScore;
 }
+
+PhysicsBody * Utils::getBody(PhysicsContact &contact ,   int t )
+{
+	PhysicsBody * b1 = contact.getShapeA()->getBody();
+	PhysicsBody * b2 = contact.getShapeB()->getBody();
+	if (b1 != NULL && b1->getTag() == t)
+	{
+		return b1;
+	}else if (b2 != NULL && b2->getTag() == t)
+	{
+		return b2;
+	}
+	return NULL;
+}
+
+

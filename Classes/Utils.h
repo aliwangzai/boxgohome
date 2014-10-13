@@ -38,6 +38,8 @@ public:
 
 	static int getScore(int level);
 	
+
+	static PhysicsBody * getBody(PhysicsContact &contact , int t );
 };
 
 #endif
