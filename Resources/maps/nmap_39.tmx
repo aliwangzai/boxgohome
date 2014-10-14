@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
+ <tileset firstgid="1" name="imgaes" tilewidth="80" tileheight="68">
+  <tile id="0">
+   <properties>
+    <property name="type" value="hero"/>
+   </properties>
+   <image width="45" height="45" source="hero/avatar_01.png"/>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="type" value="target"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementExplosive013.png"/>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="type" value="brick"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementStone013.png"/>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="jumpCount" value="10"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/93.png"/>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="jumpCount" value="5"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/101.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="jumpCount" value="3"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/109.png"/>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="enemy_gray"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="type" value="enemy_purple"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBlue_square.png"/>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="type" value="flag"/>
+   </properties>
+   <image width="17" height="23" source="41.png"/>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="type" value="wood"/>
+   </properties>
+   <image width="68" height="68" source="woodenCrate_01.png"/>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="durability" value="1"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
+ </tileset>
+ <objectgroup name="game">
+  <object gid="11" x="120" y="450"/>
+  <object gid="11" x="200" y="450"/>
+  <object gid="11" x="280" y="450"/>
+  <object gid="2" x="760" y="450"/>
+  <object gid="9" x="800" y="425"/>
+  <object gid="1" x="140" y="381.25"/>
+  <object gid="11" x="280" y="375"/>
+  <object gid="11" x="360" y="350"/>
+  <object gid="11" x="440" y="325"/>
+  <object gid="11" x="520" y="300"/>
+  <object gid="11" x="600" y="275"/>
+  <object gid="11" x="680" y="250"/>
+  <object gid="11" x="760" y="225"/>
+  <object gid="11" x="360" y="425"/>
+  <object gid="11" x="440" y="400"/>
+  <object gid="11" x="520" y="375"/>
+  <object gid="11" x="600" y="400"/>
+  <object gid="10" x="608" y="250"/>
+  <object gid="7" x="700" y="368.75"/>
+  <object gid="3" x="680" y="400"/>
+ </objectgroup>
+</map>
