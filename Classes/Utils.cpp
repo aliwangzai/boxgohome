@@ -133,7 +133,23 @@ int Utils::getScore(int level)
 	return oldScore;
 }
 
-void Utils::replaceScene(Scene* scene) 
+void Utils::replaceScene(Scene* scene)
 {
 	Director::getInstance()->replaceScene(TransitionMoveInB::create(0.5f, scene));
 }
+
+PhysicsBody * Utils::getBody(PhysicsContact &contact ,   int t )
+{
+	PhysicsBody * b1 = contact.getShapeA()->getBody();
+	PhysicsBody * b2 = contact.getShapeB()->getBody();
+	if (b1 != NULL && b1->getTag() == t)
+	{
+		return b1;
+	}else if (b2 != NULL && b2->getTag() == t)
+	{
+		return b2;
+	}
+	return NULL;
+}
+
+

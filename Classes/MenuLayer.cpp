@@ -119,11 +119,17 @@ void MenuLayer::onEnter()
 	Node::onEnter();
 
 	AdManager::getInstance()->hideBannerAD();
+    
+    if(!CocosDenshion::SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying())
+    {
+         CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/welcome.mp3");
+    }
 }
 
 void MenuLayer::onExit()
 {
 	Node::onExit();
+    
 }
 
 bool MenuLayer::initSound()
@@ -146,7 +152,7 @@ bool MenuLayer::initWithMenu()
 
 	Widget* widget = static_cast<Widget*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("ui/Menu.json"));
 	widget->setAnchorPoint(Vec2(0, 0.5f));
-	widget->setPosition(VisibleRect::left() + Vec2(30, 0));
+	widget->setPosition(VisibleRect::left() + Vec2(30, -20));
 	this->addChild(widget, 10);
 
 	Button * btn_play = static_cast<Button *>(widget->getChildByName("btn_play"));

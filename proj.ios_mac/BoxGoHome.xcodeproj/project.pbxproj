@@ -70,8 +70,6 @@
 		1D0624DB19E410D300D11E75 /* ShareSDKiPhoneSimpleShareViewUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06249919E410D200D11E75 /* ShareSDKiPhoneSimpleShareViewUI.framework */; };
 		1D0624DC19E410D300D11E75 /* ShareSDKShareActionSheet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D06249A19E410D200D11E75 /* ShareSDKShareActionSheet.framework */; };
 		1D0624E919E416E100D11E75 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624DF19E416E100D11E75 /* 1.png */; };
-		1D0624EA19E416E100D11E75 /* 37.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E019E416E100D11E75 /* 37.png */; };
-		1D0624EB19E416E100D11E75 /* 38.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E119E416E100D11E75 /* 38.png */; };
 		1D0624EC19E416E100D11E75 /* blue_land.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E219E416E100D11E75 /* blue_land.png */; };
 		1D0624ED19E416E100D11E75 /* effect in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E319E416E100D11E75 /* effect */; };
 		1D0624EE19E416E100D11E75 /* entity in Resources */ = {isa = PBXBuildFile; fileRef = 1D0624E419E416E100D11E75 /* entity */; };
@@ -409,8 +407,6 @@
 		1D06249919E410D200D11E75 /* ShareSDKiPhoneSimpleShareViewUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKiPhoneSimpleShareViewUI.framework; sourceTree = "<group>"; };
 		1D06249A19E410D200D11E75 /* ShareSDKShareActionSheet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKShareActionSheet.framework; sourceTree = "<group>"; };
 		1D0624DF19E416E100D11E75 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		1D0624E019E416E100D11E75 /* 37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 37.png; sourceTree = "<group>"; };
-		1D0624E119E416E100D11E75 /* 38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 38.png; sourceTree = "<group>"; };
 		1D0624E219E416E100D11E75 /* blue_land.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_land.png; sourceTree = "<group>"; };
 		1D0624E319E416E100D11E75 /* effect */ = {isa = PBXFileReference; lastKnownFileType = folder; path = effect; sourceTree = "<group>"; };
 		1D0624E419E416E100D11E75 /* entity */ = {isa = PBXFileReference; lastKnownFileType = folder; path = entity; sourceTree = "<group>"; };
@@ -1127,8 +1123,6 @@
 			children = (
 				1DABE5E519E57237008990C1 /* sound */,
 				1D0624DF19E416E100D11E75 /* 1.png */,
-				1D0624E019E416E100D11E75 /* 37.png */,
-				1D0624E119E416E100D11E75 /* 38.png */,
 				1D0624E219E416E100D11E75 /* blue_land.png */,
 				1D0624E319E416E100D11E75 /* effect */,
 				1D0624E419E416E100D11E75 /* entity */,
@@ -1316,7 +1310,6 @@
 				1DABE5E619E57237008990C1 /* sound in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
-				1D0624EB19E416E100D11E75 /* 38.png in Resources */,
 				1D0624F019E416E100D11E75 /* maps in Resources */,
 				1D0624ED19E416E100D11E75 /* effect in Resources */,
 				1D0624F219E416E100D11E75 /* ui in Resources */,
@@ -1340,7 +1333,6 @@
 				1D0624C319E410D300D11E75 /* GooglePlus.bundle in Resources */,
 				1D0624BE19E410D300D11E75 /* ShareSDKLocalizable.strings in Resources */,
 				1D0624D119E410D300D11E75 /* ShareSDKFlatShareViewUI.bundle in Resources */,
-				1D0624EA19E416E100D11E75 /* 37.png in Resources */,
 				1D0624DA19E410D300D11E75 /* ShareSDKiPhoneSimpleShareViewUI.bundle in Resources */,
 				1D0624BF19E410D300D11E75 /* Resource.bundle in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,

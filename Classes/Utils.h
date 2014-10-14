@@ -40,6 +40,8 @@ public:
 
 	static void replaceScene(Scene *scene);
 	
+
+	static PhysicsBody * getBody(PhysicsContact &contact , int t );
 };
 
 #endif
