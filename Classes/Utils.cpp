@@ -132,3 +132,8 @@ int Utils::getScore(int level)
 	int oldScore = UserDefault::getInstance()->getIntegerForKey(buffer);
 	return oldScore;
 }
+
+void Utils::replaceScene(Scene* scene) 
+{
+	Director::getInstance()->replaceScene(TransitionMoveInB::create(0.5f, scene));
+}
