@@ -26,11 +26,6 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.cpp;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 import android.os.Bundle;
@@ -46,7 +41,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.xiandiao.gohome.R;
 
 public class AppActivity extends Cocos2dxActivity {
 	
@@ -85,7 +79,7 @@ public class AppActivity extends Cocos2dxActivity {
 				}
 				break;
 			case LOADINTESTITIALAD:
-				AdRequest adRequest = new AdRequest.Builder().addTestDevice(deviceMD5ID).build();
+				AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
 			    interstitial.loadAd(adRequest);
 				break;
 			}
@@ -97,7 +91,7 @@ public class AppActivity extends Cocos2dxActivity {
 		adBannerView = new AdView(this);
 		adBannerView.setAdUnitId(bannerUnitID);
 		adBannerView.setAdSize(AdSize.BANNER);
-	    AdRequest adRequest = new AdRequest.Builder().addTestDevice(deviceMD5ID).build();
+	    AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
 	    adBannerView.loadAd(adRequest);
 	    
 	    RelativeLayout relativeLayout = new RelativeLayout(this);
@@ -113,7 +107,7 @@ public class AppActivity extends Cocos2dxActivity {
 		interstitial = new InterstitialAd(this);
 		interstitial.setAdUnitId(interstitialUnitID);
 		
-		AdRequest adRequest = new AdRequest.Builder().addTestDevice(deviceMD5ID).build();
+		AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
 		interstitial.loadAd(adRequest);
 		
 		interstitial.setAdListener(new AdListener() {
