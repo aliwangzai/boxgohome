@@ -37,7 +37,11 @@ public:
 	static int getStar(int score);
 
 	static int getScore(int level);
+
+	static void replaceScene(Scene *scene);
 	
+
+	static PhysicsBody * getBody(PhysicsContact &contact , int t );
 };
 
 #endif

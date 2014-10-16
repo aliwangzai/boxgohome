@@ -166,7 +166,7 @@ bool MenuLayer::initWithMenu()
 		if (type == Widget::TouchEventType::ENDED)
 		{
             CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
-			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
+			Utils::replaceScene(LevelSelectScene::createScene());
 		}
 	});
 
@@ -199,7 +199,7 @@ bool MenuLayer::initWithMenu()
 		if (type == Widget::TouchEventType::ENDED)
 		{
             CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
-			Director::getInstance()->replaceScene(Welcome::createScene());
+			Utils::replaceScene(Welcome::createScene());
 		}
 	});
 

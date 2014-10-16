@@ -40,33 +40,29 @@ bool BrokableWall::init( const ValueMap &valueMap , const ValueMap &gidPropertie
 
 bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *logic )
 {
+	// get BoxSprite Body
+	PhysicsBody * body = Utils::getBody(contact , Type_BoxSprite );
+	float moment = body->getVelocity().getLength();
+	if (m_bIsCanContact && moment >  80)
+	{
+		m_durability--;
+		if (m_durability <= 0)
+		{
+			this->removeFromParent();
+		}
+		else
+		{
+			m_bIsCanContact = false;
+			this->setSpriteFrame(Sprite::create("maps/Stone elements/elementGlass049.png")->displayFrame());
+			this->schedule(schedule_selector(BrokableWall::updateContactState), 0.1f);
+		}
+	}
 	return true;
 }
 
 void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *logic )
 {
-	PhysicsBody* body1 = contact.getShapeA()->getBody();
-	PhysicsBody* body2 = contact.getShapeB()->getBody();
-	if (body1 != nullptr && body2 != nullptr)
-	{
-		if (body1->getTag() == Type_BoxSprite || body2->getTag() == Type_BoxSprite)
-		{
-			Vec2 velocity = body1->getVelocity() + body2->getVelocity();
-			if (m_bIsCanContact && velocity.getLengthSq() > 10 * 10)
-			{
-				m_durability--;
-				if (m_durability <= 0)
-				{
-					this->removeFromParent();
-				}
-				else
-				{
-					m_bIsCanContact = false;
-					this->schedule(schedule_selector(BrokableWall::updateContactState), 0.1f);
-				}
-			}
-		}
-	}
+	
 }
 
 void BrokableWall::updateContactState(float dt)

@@ -172,14 +172,7 @@ void GameWorld::onEnter()
 {
 	Node::onEnter();
 
-	_physicsWorld = this->getScene()->getPhysicsWorld();
-	_physicsWorld->setGravity(Vect(0.0f, -300.0f));
-	//_physicsWorld->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-
-	/*auto node = Node::create();
-	node->setPhysicsBody(PhysicsBody::createEdgeBox(VisibleRect::getVisibleRect().size));
-	node->setPosition(VisibleRect::center());
-	this->addChild(node);*/
+	CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/gameworld.mp3", true);
 }
 
 void GameWorld::onEnterTransitionDidFinish()
@@ -187,8 +180,18 @@ void GameWorld::onEnterTransitionDidFinish()
 	Node::onEnterTransitionDidFinish();
 
 	AdManager::getInstance()->showBannerAD();
-    
-    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/gameworld.mp3", true);
+
+	_physicsWorld = this->getScene()->getPhysicsWorld();
+	_physicsWorld->setGravity(Vect(0.0f, -300.0f));
+
+	//_physicsWorld->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+
+	/*auto node = Node::create();
+	node->setPhysicsBody(PhysicsBody::createEdgeBox(VisibleRect::getVisibleRect().size));
+	node->setPosition(VisibleRect::center());
+	this->addChild(node);*/
+
+	this->m_pGameUI->setDefaultValue();
 }
 
 void GameWorld::onExit()
@@ -220,7 +223,7 @@ void GameWorld::win()
 		switch (type)
 		{
 		case 1://select game
-			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
+			Utils::replaceScene(LevelSelectScene::createScene());
 			break;
 		case 2://restart
 			this->restart();
@@ -242,7 +245,7 @@ void GameWorld::lose(int tag)
 		switch (type)
 		{
 		case 1://select Game
-			Director::getInstance()->replaceScene(LevelSelectScene::createScene());
+			Utils::replaceScene(LevelSelectScene::createScene());
 			break;
 		case 2://restart game
 			this->restart();

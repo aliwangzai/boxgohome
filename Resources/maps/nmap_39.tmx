@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="26" tilewidth="80" tileheight="25">
+<map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
  <tileset firstgid="1" name="imgaes" tilewidth="80" tileheight="68">
   <tile id="0">
    <properties>
@@ -80,20 +80,25 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="720" y="493.75"/>
-  <object gid="9" x="760" y="468.75"/>
-  <object gid="11" x="320" y="418.75"/>
-  <object gid="3" x="160" y="443.75"/>
-  <object gid="11" x="423" y="407.5" rotation="300.488"/>
-  <object gid="11" x="460" y="337.5"/>
-  <object gid="3" x="240" y="468.75"/>
-  <object gid="3" x="320" y="493.75"/>
-  <object gid="3" x="420" y="543.75"/>
-  <object gid="3" x="640" y="218.75" rotation="90"/>
-  <object gid="1" x="180" y="393.75"/>
-  <object gid="3" x="560" y="493.75"/>
-  <object gid="7" x="580" y="468.75"/>
-  <object gid="3" x="640" y="137.5" rotation="90"/>
-  <object gid="3" x="640" y="56.25" rotation="90"/>
+  <object gid="11" x="120" y="450"/>
+  <object gid="11" x="200" y="450"/>
+  <object gid="11" x="280" y="450"/>
+  <object gid="2" x="760" y="450"/>
+  <object gid="9" x="800" y="425"/>
+  <object gid="1" x="140" y="381.25"/>
+  <object gid="11" x="280" y="375"/>
+  <object gid="11" x="360" y="350"/>
+  <object gid="11" x="440" y="325"/>
+  <object gid="11" x="520" y="300"/>
+  <object gid="11" x="600" y="275"/>
+  <object gid="11" x="680" y="250"/>
+  <object gid="11" x="760" y="225"/>
+  <object gid="11" x="360" y="425"/>
+  <object gid="11" x="440" y="400"/>
+  <object gid="11" x="520" y="375"/>
+  <object gid="11" x="600" y="400"/>
+  <object gid="10" x="608" y="250"/>
+  <object gid="7" x="700" y="368.75"/>
+  <object gid="3" x="680" y="400"/>
  </objectgroup>
 </map>

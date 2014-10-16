@@ -47,7 +47,6 @@ bool GameUI::init()
 	this->initMenu();
 	this->initMoreGame();
 	this->initSound();
-	this->setDefaultValue();
 
 	return true;
 }
@@ -132,7 +131,7 @@ bool GameUI::initMenu()
 	//auto menuLabel = Label::createWithTTF(ttfConfig, "Menu");
 	auto menuItem = MenuItemImage::create("ui/btn_menu.png", "ui/btn_menu.png","ui/btn_menu.png", [=](Ref *pSender){
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
-		Director::getInstance()->replaceScene(MenuLayer::createScene());
+		Utils::replaceScene(MenuLayer::createScene());
 	});
 	menuItem->setOpacity(100);
 	//menuItem->setColor(Color3B(0, 0, 0));

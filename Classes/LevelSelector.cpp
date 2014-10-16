@@ -89,7 +89,7 @@ void LevelSelector::onClickMenuItem( Ref * sender )
 	int level = item->getTag();
 	CCLOG("goto level:%d" ,  level);
 	LevelState::getInstance()->setSelectedLevel(level);
-	Director::getInstance()->replaceScene(GameWorld::createScene());
+	Utils::replaceScene(GameWorld::createScene());
 }
 
 /** 

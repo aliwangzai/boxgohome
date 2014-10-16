@@ -9,6 +9,7 @@
 #include "ShareManager.h"
 #include "AdManager.h"
 #include "UIButton.h"
+#include "Utils.h"
 
 Scene* Welcome::createScene()
 {
@@ -78,7 +79,8 @@ bool Welcome::initMenu()
 
 	auto startItem = UIButton::create("ui/btn_play2.png", [](Ref *pSender){
         CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
-		Director::getInstance()->replaceScene(MenuLayer::createScene());
+		auto scene = MenuLayer::createScene();
+		Utils::replaceScene(scene);
 	});
 	this->addChild(startItem);
 	startItem->setPosition(VisibleRect::center() + Point(0, 0));
