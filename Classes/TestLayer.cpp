@@ -26,17 +26,12 @@ bool TestLayer::init()
 {
 	Size winSize = Director::getInstance()->getWinSize();
 
-	auto node = Node::create();
-	this->addChild(node);
+	auto label = Label::createWithSystemFont("helloWorldlkasd\njfla;dfjalksdjfa;sdjlasdjflkasdgjal;sdgja;sdfjalsdkf", "", 32);
+	label->setDimensions(100, 200);
+	int height = label->getHeight();
+	CCLOG("height : %d", height);
+	label->setPosition(winSize / 2);
+	this->addChild(label);
 
-	auto sprite = Sprite::create("HelloWorld.png");
-	node->addChild(sprite);
-	sprite->setPosition(winSize / 2);
-
-	auto sprite2 = Sprite::create("HelloWorld.png");
-	sprite->addChild(sprite2);
-	sprite2->setScale(0.5f);
-
-	node->setOpacity(125);
 	return true;
 }

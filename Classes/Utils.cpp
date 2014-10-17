@@ -135,7 +135,7 @@ int Utils::getScore(int level)
 
 void Utils::replaceScene(Scene* scene)
 {
-	Director::getInstance()->replaceScene(TransitionMoveInB::create(0.5f, scene));
+	Director::getInstance()->replaceScene(TransitionMoveInT::create(0.5f, scene));
 }
 
 PhysicsBody * Utils::getBody(PhysicsContact &contact ,   int t )
