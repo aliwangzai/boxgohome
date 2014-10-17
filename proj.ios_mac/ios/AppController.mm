@@ -30,8 +30,11 @@
 #import <ShareSDK/ShareSDK.h>
 
 #import "WXApi.h"
+#import "WeiboApi.h"
+#import "YXApi.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
+#import <RennSDK/RennSDK.h>
 
 static GADBannerView *bannerView_;
 static GADInterstitial *interstitial_;
@@ -78,11 +81,6 @@ static AppDelegate s_sharedApplication;
     
     rootViewController = _viewController;
     
-    
-    //-------------------share sdk
-    [ShareSDK importWeChatClass:[WXApi class]];
-    [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
-    
     //------------------- Add Admob interstitial
     interstitial_ = [[GADInterstitial alloc] init];
     interstitial_.adUnitID = @"ca-app-pub-2906542859743654/1148533720";
@@ -128,6 +126,17 @@ static AppDelegate s_sharedApplication;
     [window makeKeyAndVisible];
 
     [[UIApplication sharedApplication] setStatusBarHidden:true];
+	
+	
+	//-------------------share sdk
+    [ShareSDK importWeChatClass:[WXApi class]];
+    [ShareSDK importTencentWeiboClass:[WeiboApi class]];
+    [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
+    [ShareSDK importRenRenClass:[RennClient class]];
+    [ShareSDK importYiXinClass:[YXApi class]];
+    
+    [ShareSDK ssoEnabled:NO];
+	
 
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
     cocos2d::GLView *glview = cocos2d::GLView::createWithEAGLView(eaglView);

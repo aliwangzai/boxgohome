@@ -80,34 +80,34 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="3" x="313" y="387"/>
-  <object gid="3" x="473" y="306.25" rotation="90"/>
-  <object gid="3" x="418" y="307.25"/>
-  <object gid="3" x="193" y="543.396"/>
-  <object gid="3" x="272.995" y="542.504"/>
-  <object gid="3" x="352.99" y="541.613"/>
-  <object gid="3" x="469" y="234"/>
-  <object gid="11" x="694.249" y="293.793" rotation="99.3614"/>
-  <object gid="11" x="680.414" y="218.943" rotation="79.3614"/>
-  <object gid="11" x="641.675" y="152.871" rotation="59.3614"/>
-  <object gid="11" x="582.11" y="102.532" rotation="39.3614"/>
-  <object gid="11" x="508.811" y="76.0969" rotation="19.3614"/>
-  <object gid="11" x="429.771" y="77"/>
-  <object gid="11" x="681.1" y="370.195" rotation="119.361"/>
-  <object gid="11" x="361.172" y="110.994" rotation="-26.9664"/>
-  <object gid="11" x="307.68" y="167.902" rotation="-46.9664"/>
-  <object gid="11" x="584.418" y="489.03" rotation="159.361"/>
-  <object gid="11" x="432.999" y="541.971"/>
-  <object gid="11" x="642.857" y="438.375" rotation="139.361"/>
-  <object gid="11" x="277.064" y="238.889" rotation="-66.9664"/>
-  <object gid="11" x="272.385" y="316.026" rotation="-86.9664"/>
-  <object gid="11" x="310.659" y="383.972" rotation="-119.797"/>
-  <object gid="11" x="369.299" y="434.305" rotation="-139.797"/>
-  <object gid="8" x="482" y="210.25"/>
-  <object gid="3" x="338" y="307"/>
-  <object gid="1" x="213" y="516.75"/>
-  <object gid="2" x="393" y="386.25"/>
-  <object gid="9" x="433" y="361.25"/>
-  <object gid="10" x="340" y="287.5"/>
+  <object gid="3" x="313" y="421"/>
+  <object gid="3" x="473" y="340.25" rotation="90"/>
+  <object gid="3" x="418" y="341.25"/>
+  <object gid="3" x="193" y="577.396"/>
+  <object gid="3" x="272.995" y="576.504"/>
+  <object gid="3" x="352.99" y="575.613"/>
+  <object gid="3" x="469" y="268"/>
+  <object gid="11" x="694.249" y="327.793" rotation="99.3614"/>
+  <object gid="11" x="680.414" y="252.943" rotation="79.3614"/>
+  <object gid="11" x="641.675" y="186.871" rotation="59.3614"/>
+  <object gid="11" x="582.11" y="136.532" rotation="39.3614"/>
+  <object gid="11" x="508.811" y="110.097" rotation="19.3614"/>
+  <object gid="11" x="429.771" y="111"/>
+  <object gid="11" x="681.1" y="404.195" rotation="119.361"/>
+  <object gid="11" x="361.172" y="144.994" rotation="-26.9664"/>
+  <object gid="11" x="307.68" y="201.902" rotation="-46.9664"/>
+  <object gid="11" x="584.418" y="523.03" rotation="159.361"/>
+  <object gid="11" x="432.999" y="575.971"/>
+  <object gid="11" x="642.857" y="472.375" rotation="139.361"/>
+  <object gid="11" x="277.064" y="272.889" rotation="-66.9664"/>
+  <object gid="11" x="272.385" y="350.026" rotation="-86.9664"/>
+  <object gid="11" x="310.659" y="417.972" rotation="-119.797"/>
+  <object gid="11" x="369.299" y="468.305" rotation="-139.797"/>
+  <object gid="8" x="482" y="244.25"/>
+  <object gid="3" x="338" y="341"/>
+  <object gid="1" x="213" y="550.75"/>
+  <object gid="2" x="393" y="420.25"/>
+  <object gid="9" x="433" y="395.25"/>
+  <object gid="10" x="340" y="321.5"/>
  </objectgroup>
 </map>

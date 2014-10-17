@@ -25,15 +25,22 @@
    </properties>
    <image width="17" height="23" source="41.png"/>
   </tile>
+  <tile id="4">
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
   <object gid="2" x="158" y="398"/>
   <object gid="2" x="238" y="398"/>
   <object gid="2" x="318" y="397"/>
-  <object gid="2" x="640" y="398"/>
-  <object gid="1" x="721" y="398"/>
-  <object gid="2" x="801" y="398"/>
-  <object gid="4" x="757" y="374"/>
+  <object gid="2" x="640" y="473"/>
+  <object gid="1" x="721" y="473"/>
+  <object gid="2" x="801" y="473"/>
+  <object gid="4" x="757" y="449"/>
   <object gid="3" x="254" y="374"/>
+  <object gid="5" x="408.384" y="396.815" rotation="-21.5428"/>
+  <object gid="5" x="490.925" y="362.543" rotation="-41.4763"/>
+  <object gid="5" x="555.96" y="304.13" rotation="-60.6215"/>
+  <object gid="5" x="599.658" y="226.735" rotation="-78.0235"/>
  </objectgroup>
 </map>

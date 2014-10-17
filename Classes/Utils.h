@@ -10,6 +10,8 @@ private:
 	static bool		m_bSoundSwitch;
 	static bool		m_bMusicSwitch;
 	static bool		m_bTrailSwitch;
+	static float	m_fMusicVolume;
+	static float	m_fSoundVolume;
 public:
 	static SpriteFrame* getSpriteFrame(std::string szSpriteFrameName);
 

@@ -70,7 +70,13 @@ bool Welcome::initMenu()
 		ShareManager::getInstance()->setShareAttribute("image", "http://b195.photo.store.qq.com/psb?/V12ngkFA0ud6Bq/J8XXh6FpQCxUHWdnd4caowgxntbgrsVIBt5B5bi6f0s!/b/dPP5SXRbCwAA&bo=fgLdAQAAAAABB4A!&rf=viewer_4");
 		ShareManager::getInstance()->setShareAttribute("title", "BoxGoHome");
 		ShareManager::getInstance()->setShareAttribute("description", "BoxGoHome");
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+		ShareManager::getInstance()->setShareAttribute("url", "https://play.google.com/store/apps/details?id=com.xiandiao.gohome");
+#elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 		ShareManager::getInstance()->setShareAttribute("url", "http://sharesdk.cn");
+#else (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+		ShareManager::getInstance()->setShareAttribute("url", "http://sharesdk.cn");
+#endif
 		ShareManager::getInstance()->setShareAttribute("type", std::to_string(C2DXContentTypeNews));
 		ShareManager::getInstance()->sendShare();
 	});

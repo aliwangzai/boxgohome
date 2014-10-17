@@ -33,28 +33,28 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="160" y="119"/>
-  <object gid="2" x="239" y="119"/>
-  <object gid="2" x="319" y="119"/>
-  <object gid="2" x="399" y="119"/>
-  <object gid="2" x="478" y="119"/>
-  <object gid="2" x="558" y="119"/>
-  <object gid="2" x="638" y="119"/>
-  <object gid="2" x="718" y="119"/>
+  <object gid="2" x="160" y="163"/>
+  <object gid="2" x="239" y="163"/>
+  <object gid="2" x="319" y="163"/>
+  <object gid="2" x="399" y="163"/>
+  <object gid="2" x="478" y="163"/>
+  <object gid="2" x="558" y="163"/>
+  <object gid="2" x="638" y="163"/>
+  <object gid="2" x="718" y="163"/>
   <object gid="2" x="798" y="94" rotation="90"/>
   <object gid="2" x="798" y="174" rotation="90"/>
   <object gid="2" x="798" y="333" rotation="90"/>
   <object gid="2" x="798" y="253" rotation="90"/>
   <object gid="2" x="799" y="493" rotation="90"/>
   <object gid="2" x="799" y="413" rotation="90"/>
-  <object gid="2" x="318" y="293"/>
-  <object gid="2" x="159" y="293"/>
-  <object gid="2" x="238" y="293"/>
-  <object gid="2" x="398" y="293"/>
-  <object gid="2" x="639" y="293"/>
-  <object gid="2" x="719" y="293"/>
-  <object gid="5" x="409" y="268"/>
-  <object gid="3" x="212" y="269"/>
+  <object gid="2" x="318" y="345"/>
+  <object gid="2" x="159" y="345"/>
+  <object gid="2" x="238" y="345"/>
+  <object gid="2" x="398" y="345"/>
+  <object gid="2" x="639" y="345"/>
+  <object gid="2" x="719" y="345"/>
+  <object gid="5" x="409" y="320"/>
+  <object gid="3" x="212" y="321"/>
   <object gid="2" x="346" y="598"/>
   <object gid="2" x="665" y="598"/>
   <object gid="2" x="187" y="598"/>

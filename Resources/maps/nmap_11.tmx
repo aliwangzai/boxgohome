@@ -25,23 +25,32 @@
    </properties>
    <image width="17" height="23" source="41.png"/>
   </tile>
+  <tile id="4">
+   <properties>
+    <property name="jumpCount" value="3"/>
+    <property name="type" value="jumps_item"/>
+   </properties>
+   <image width="33" height="33" source="items/109.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="81" y="495" rotation="90"/>
-  <object gid="2" x="81" y="417" rotation="90"/>
-  <object gid="2" x="81" y="338" rotation="90"/>
-  <object gid="2" x="81" y="259" rotation="90"/>
-  <object gid="2" x="81" y="180" rotation="90"/>
-  <object gid="2" x="81" y="102" rotation="90"/>
-  <object gid="2" x="104" y="232"/>
-  <object gid="1" x="105" y="448"/>
-  <object gid="4" x="147" y="424"/>
+  <object gid="2" x="81" y="519" rotation="90"/>
+  <object gid="2" x="81" y="441" rotation="90"/>
+  <object gid="2" x="81" y="362" rotation="90"/>
+  <object gid="2" x="81" y="283" rotation="90"/>
+  <object gid="2" x="81" y="204" rotation="90"/>
+  <object gid="2" x="81" y="126" rotation="90"/>
+  <object gid="2" x="104" y="256"/>
+  <object gid="1" x="105" y="499"/>
+  <object gid="4" x="147" y="475"/>
   <object gid="2" x="590" y="391" rotation="90"/>
   <object gid="2" x="590" y="470" rotation="90"/>
   <object gid="2" x="854" y="470" rotation="90"/>
   <object gid="2" x="774" y="550"/>
   <object gid="2" x="694" y="550"/>
   <object gid="2" x="615" y="550"/>
-  <object gid="3" x="121" y="207"/>
+  <object gid="3" x="121" y="231"/>
+  <object gid="2" x="105" y="378"/>
+  <object gid="5" x="621" y="524"/>
  </objectgroup>
 </map>

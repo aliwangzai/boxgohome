@@ -80,25 +80,25 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="11" x="120" y="450"/>
-  <object gid="11" x="200" y="450"/>
-  <object gid="11" x="280" y="450"/>
-  <object gid="2" x="760" y="450"/>
-  <object gid="9" x="800" y="425"/>
-  <object gid="1" x="140" y="381.25"/>
-  <object gid="11" x="280" y="375"/>
-  <object gid="11" x="360" y="350"/>
-  <object gid="11" x="440" y="325"/>
-  <object gid="11" x="520" y="300"/>
-  <object gid="11" x="600" y="275"/>
-  <object gid="11" x="680" y="250"/>
-  <object gid="11" x="760" y="225"/>
-  <object gid="11" x="360" y="425"/>
-  <object gid="11" x="440" y="400"/>
-  <object gid="11" x="520" y="375"/>
-  <object gid="11" x="600" y="400"/>
-  <object gid="10" x="608" y="250"/>
-  <object gid="7" x="700" y="368.75"/>
-  <object gid="3" x="680" y="400"/>
+  <object gid="11" x="120" y="499"/>
+  <object gid="11" x="200" y="499"/>
+  <object gid="11" x="280" y="499"/>
+  <object gid="2" x="760" y="499"/>
+  <object gid="9" x="800" y="474"/>
+  <object gid="1" x="140" y="430.25"/>
+  <object gid="11" x="280" y="424"/>
+  <object gid="11" x="360" y="399"/>
+  <object gid="11" x="440" y="374"/>
+  <object gid="11" x="520" y="349"/>
+  <object gid="11" x="600" y="324"/>
+  <object gid="11" x="680" y="299"/>
+  <object gid="11" x="760" y="274"/>
+  <object gid="11" x="360" y="474"/>
+  <object gid="11" x="440" y="449"/>
+  <object gid="11" x="520" y="424"/>
+  <object gid="11" x="600" y="449"/>
+  <object gid="10" x="608" y="299"/>
+  <object gid="7" x="700" y="417.75"/>
+  <object gid="3" x="680" y="449"/>
  </objectgroup>
 </map>

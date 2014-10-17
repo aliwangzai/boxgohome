@@ -63,28 +63,28 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="6" x="720" y="475"/>
-  <object gid="6" x="480" y="197.5"/>
-  <object gid="6" x="320" y="197.5"/>
-  <object gid="6" x="240" y="197.5"/>
-  <object gid="6" x="160" y="472.623" rotation="-90.0921"/>
-  <object gid="6" x="160.997" y="392.5" rotation="-90.0921"/>
-  <object gid="6" x="400" y="197.5"/>
-  <object gid="6" x="800.328" y="314.249" rotation="90.2349"/>
-  <object gid="6" x="560" y="197.5"/>
-  <object gid="6" x="640" y="197.5"/>
-  <object gid="6" x="320" y="350"/>
-  <object gid="6" x="800" y="394.249" rotation="90.2349"/>
-  <object gid="6" x="640" y="475"/>
-  <object gid="6" x="560" y="475"/>
-  <object gid="6" x="480" y="475"/>
-  <object gid="6" x="400" y="475"/>
-  <object gid="6" x="320" y="475"/>
-  <object gid="6" x="240" y="475"/>
-  <object gid="3" x="160" y="474"/>
-  <object gid="1" x="198" y="449"/>
-  <object gid="2" x="380" y="450"/>
-  <object gid="12" x="335" y="325"/>
-  <object gid="11" x="580" y="450"/>
+  <object gid="6" x="720" y="523"/>
+  <object gid="6" x="480" y="245.5"/>
+  <object gid="6" x="320" y="245.5"/>
+  <object gid="6" x="240" y="245.5"/>
+  <object gid="6" x="160" y="520.623" rotation="-90.0921"/>
+  <object gid="6" x="160.997" y="440.5" rotation="-90.0921"/>
+  <object gid="6" x="400" y="245.5"/>
+  <object gid="6" x="800.328" y="362.249" rotation="90.2349"/>
+  <object gid="6" x="560" y="245.5"/>
+  <object gid="6" x="640" y="245.5"/>
+  <object gid="6" x="320" y="398"/>
+  <object gid="6" x="800" y="442.249" rotation="90.2349"/>
+  <object gid="6" x="640" y="523"/>
+  <object gid="6" x="560" y="523"/>
+  <object gid="6" x="480" y="523"/>
+  <object gid="6" x="400" y="523"/>
+  <object gid="6" x="320" y="523"/>
+  <object gid="6" x="240" y="523"/>
+  <object gid="3" x="160" y="522"/>
+  <object gid="1" x="198" y="497"/>
+  <object gid="2" x="380" y="498"/>
+  <object gid="12" x="335" y="373"/>
+  <object gid="11" x="580" y="498"/>
  </objectgroup>
 </map>
