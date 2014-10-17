@@ -6,6 +6,9 @@
 bool Utils::m_bMusicSwitch = true;
 bool Utils::m_bSoundSwitch = true;
 bool Utils::m_bTrailSwitch = true;
+float Utils::m_fMusicVolume = 1.0f;
+float Utils::m_fSoundVolume = 1.0f;
+
 
 
 SpriteFrame* Utils::getSpriteFrame(std::string szSpriteFrameName)
@@ -75,10 +78,11 @@ Node* Utils::createSound()
 {
 	auto soundCheckBox = CheckBox::create("ui/btn_music.png", "ui/btn_music2.png");
 	soundCheckBox->setCurrentState(Utils::getSoundSwitch());
+	Utils::m_fSoundVolume = CocosDenshion::SimpleAudioEngine::getInstance()->getEffectsVolume();
 	soundCheckBox->setCallback([=](bool state){
 		Utils::reverseSound();
 		if (!state){
-            CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(1.0);
+			CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(Utils::m_fSoundVolume);
 		}
 		else
 		{
@@ -92,14 +96,16 @@ Node* Utils::createMusic()
 {
 	auto musicCheckBox = CheckBox::create("ui/btn_sound.png", "ui/btn_sound2.png");
 	musicCheckBox->setCurrentState(Utils::getMusicSwitch());
+	Utils::m_fMusicVolume = CocosDenshion::SimpleAudioEngine::getInstance()->getBackgroundMusicVolume();
 	musicCheckBox->setCallback([=](bool state){
 		Utils::reverseMusic();
 		if (!state)
 		{
-            CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(1.0);
+            CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(Utils::m_fMusicVolume);
 		}
 		else
 		{
+			
             CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.0);
 		}
 	});

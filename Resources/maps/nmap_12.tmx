@@ -31,6 +31,18 @@
    </properties>
    <image width="68" height="68" source="woodenCrate_01.png"/>
   </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="enemy_gray"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="type" value="enemy_purple"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBlue_square.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
   <object gid="2" x="321" y="236"/>
@@ -43,15 +55,19 @@
   <object gid="2" x="159" y="386"/>
   <object gid="2" x="721" y="386"/>
   <object gid="2" x="799" y="386"/>
-  <object gid="2" x="360" y="573"/>
-  <object gid="2" x="440" y="573"/>
-  <object gid="2" x="519" y="573"/>
+  <object gid="2" x="360" y="523"/>
+  <object gid="2" x="440" y="523"/>
+  <object gid="2" x="519" y="523"/>
   <object gid="5" x="829" y="360"/>
   <object gid="5" x="829" y="292"/>
   <object gid="5" x="829" y="224"/>
   <object gid="5" x="62" y="360"/>
   <object gid="5" x="62" y="292"/>
   <object gid="5" x="62" y="224"/>
-  <object gid="4" x="457" y="548"/>
+  <object gid="4" x="457" y="498"/>
+  <object gid="6" x="737" y="360"/>
+  <object gid="6" x="336" y="210"/>
+  <object gid="7" x="193" y="360"/>
+  <object gid="7" x="578" y="211"/>
  </objectgroup>
 </map>
