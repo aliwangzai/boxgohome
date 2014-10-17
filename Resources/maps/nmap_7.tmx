@@ -33,8 +33,8 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="80" y="549"/>
-  <object gid="2" x="159" y="549"/>
+  <object gid="2" x="115" y="499"/>
+  <object gid="2" x="194" y="499"/>
   <object gid="2" x="696" y="392"/>
   <object gid="2" x="775" y="392"/>
   <object gid="2" x="591" y="153" rotation="90"/>
@@ -42,7 +42,7 @@
   <object gid="2" x="591" y="311" rotation="90"/>
   <object gid="1" x="617" y="392"/>
   <object gid="3" x="658" y="368"/>
-  <object gid="4" x="130" y="519"/>
+  <object gid="4" x="165" y="469"/>
   <object gid="2" x="357" y="323"/>
   <object gid="5" x="375" y="297"/>
  </objectgroup>
