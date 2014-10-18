@@ -25,7 +25,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-		glview = GLView::createWithRect("BoxGoHome", Rect(0.0f, 0.0f, 640, 480));
+		glview = GLView::createWithRect("BoxGoHome", Rect(0.0f, 0.0f, 450, 300));
         director->setOpenGLView(glview);
     }
 

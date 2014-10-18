@@ -31,21 +31,34 @@
    </properties>
    <image width="45" height="45" source="enemy/alienBeige_square.png"/>
   </tile>
+  <tile id="5">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="165" y="205" rotation="90"/>
-  <object gid="2" x="268" y="364"/>
-  <object gid="2" x="347" y="364"/>
-  <object gid="2" x="426" y="364"/>
-  <object gid="2" x="165" y="284" rotation="90"/>
-  <object gid="1" x="189" y="364"/>
-  <object gid="3" x="222" y="340"/>
-  <object gid="4" x="578" y="324"/>
-  <object gid="2" x="505" y="284" rotation="90"/>
-  <object gid="2" x="505" y="205" rotation="90"/>
-  <object gid="2" x="687" y="363"/>
-  <object gid="2" x="608" y="363"/>
-  <object gid="2" x="529" y="363"/>
-  <object gid="5" x="339" y="338"/>
+  <object gid="2" x="165" y="339" rotation="90"/>
+  <object gid="2" x="268" y="498"/>
+  <object gid="2" x="347" y="498"/>
+  <object gid="2" x="426" y="498"/>
+  <object gid="2" x="165" y="418" rotation="90"/>
+  <object gid="1" x="189" y="498"/>
+  <object gid="3" x="222" y="474"/>
+  <object gid="4" x="578" y="458"/>
+  <object gid="2" x="505" y="418" rotation="90"/>
+  <object gid="2" x="505" y="339" rotation="90"/>
+  <object gid="2" x="687" y="497"/>
+  <object gid="2" x="608" y="497"/>
+  <object gid="2" x="529" y="497"/>
+  <object gid="5" x="339" y="472"/>
+  <object gid="6" x="547.096" y="197.02" rotation="16.6425"/>
+  <object gid="6" x="624" y="221" rotation="16.6425"/>
+  <object gid="6" x="701" y="245" rotation="16.6425"/>
+  <object gid="6" x="225" y="243" rotation="-16.64"/>
+  <object gid="6" x="147.096" y="267.02" rotation="-16.64"/>
+  <object gid="6" x="303" y="220" rotation="-16.64"/>
  </objectgroup>
 </map>

@@ -42,6 +42,10 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 {
 	// get BoxSprite Body
 	PhysicsBody * body = Utils::getBody(contact , Type_BoxSprite );
+	if (body == NULL)
+	{
+		return false;
+	}
 	float moment = body->getVelocity().getLength();
 	if (m_bIsCanContact && moment >  80)
 	{

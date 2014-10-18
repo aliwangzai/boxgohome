@@ -81,9 +81,9 @@ void GameUI::playerStartAnimate()
 		sprite->setVisible(false);
 		sprite->setScale(4.0f);
 		sprite->runAction(Sequence::create(
-			DelayTime::create((3 - i) * 0.8f + 0.5f),
+			DelayTime::create((3 - i) * 0.5f + 0.1f),
 			Show::create(),
-			ScaleTo::create(0.5f, 1.0f),
+			CCEaseBackOut::create(ScaleTo::create(0.5f, 1.0f)),
 			CallFuncN::create([=](Node *node){
 				if (node->getTag() == 100)
 					this->startGame();

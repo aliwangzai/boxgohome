@@ -2,29 +2,30 @@
 <map version="1.0" orientation="orthogonal" width="12" height="26" tilewidth="80" tileheight="25">
  <tileset firstgid="1" source="images.tsx"/>
  <objectgroup name="game">
-  <object gid="2" x="80" y="200"/>
-  <object gid="2" x="159" y="200"/>
-  <object gid="2" x="239" y="200"/>
-  <object gid="2" x="319" y="200"/>
-  <object gid="2" x="400" y="200"/>
-  <object gid="2" x="479" y="200"/>
-  <object gid="2" x="480" y="474"/>
-  <object gid="2" x="559" y="474"/>
-  <object gid="2" x="639" y="474"/>
-  <object gid="2" x="719" y="474"/>
-  <object gid="2" x="181" y="475"/>
-  <object gid="2" x="260" y="475"/>
-  <object gid="2" x="79" y="315" rotation="90"/>
-  <object gid="1" x="103" y="474"/>
-  <object gid="3" x="140" y="450"/>
-  <object gid="4" x="138" y="165"/>
-  <object gid="2" x="79" y="394" rotation="90"/>
-  <object gid="5" x="687" y="449"/>
-  <object gid="5" x="687" y="381"/>
-  <object gid="5" x="687" y="313"/>
-  <object gid="5" x="687" y="245"/>
-  <object gid="5" x="687" y="177"/>
-  <object gid="6" x="452" y="174"/>
-  <object gid="7" x="267" y="450"/>
+  <object gid="2" x="127" y="250"/>
+  <object gid="2" x="206" y="250"/>
+  <object gid="2" x="286" y="250"/>
+  <object gid="2" x="366" y="250"/>
+  <object gid="2" x="447" y="250"/>
+  <object gid="2" x="526" y="250"/>
+  <object gid="2" x="527" y="524"/>
+  <object gid="2" x="606" y="524"/>
+  <object gid="2" x="686" y="524"/>
+  <object gid="2" x="766" y="524"/>
+  <object gid="2" x="228" y="525"/>
+  <object gid="2" x="307" y="525"/>
+  <object gid="2" x="126" y="365" rotation="90"/>
+  <object gid="1" x="150" y="524"/>
+  <object gid="3" x="187" y="500"/>
+  <object gid="4" x="185" y="215"/>
+  <object gid="2" x="126" y="444" rotation="90"/>
+  <object gid="5" x="734" y="499"/>
+  <object gid="5" x="734" y="431"/>
+  <object gid="5" x="734" y="363"/>
+  <object gid="5" x="734" y="295"/>
+  <object gid="5" x="734" y="227"/>
+  <object gid="6" x="499" y="224"/>
+  <object gid="7" x="555" y="499"/>
+  <object gid="6" x="290" y="498"/>
  </objectgroup>
 </map>

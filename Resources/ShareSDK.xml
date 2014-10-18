@@ -56,7 +56,7 @@
         SortId="1"
         AppKey="177809661"
         AppSecret="07c57db36210e236ccc1c5f247b8ec1b"
-        RedirectUrl="http://www.sharesdk.cn"
+        RedirectUrl="https://play.google.com/store/apps/details?id=com.xiandiao.gohome"
         ShareByAppClient="true"
         Enable="true" />
 

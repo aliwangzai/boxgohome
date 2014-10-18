@@ -163,6 +163,7 @@ void GameWorld::onTouchEnded(Touch *pTouch, Event *pEvent)
 		bool isSubJump = this->m_pGameUI->jumpsSelfSub();
 		if (isSubJump)
 		{
+			CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/launch.mp3");
 			this->m_pBoxSprite->applyForce(-m_vNormalDir * distance * 3);
 		}
 	}

@@ -433,3 +433,9 @@ proj.android/assets/entity/hero/arrowTexture.plist
 *.xml
 
 *.tsx
+
+*.pbxproj
+
+proj.android/.classpath
+
+*.properties
