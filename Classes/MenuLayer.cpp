@@ -119,10 +119,13 @@ void MenuLayer::onEnter()
 	Node::onEnter();
 
 	AdManager::getInstance()->hideBannerAD();
-    
+}
+
+void MenuLayer::onEnterTransitionDidFinish()
+{
     if(!CocosDenshion::SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying())
     {
-         CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/welcome.mp3");
+        CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/welcome.mp3");
     }
 }
 

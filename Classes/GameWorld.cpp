@@ -217,7 +217,8 @@ void GameWorld::update(float dt)
 void GameWorld::win()
 {
 	CCLOG("oh win !, enter next level");
-
+    if(this->m_nCurrentState != kState_start) return;
+    this->m_nCurrentState = kState_win;
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLvelComplete(this->m_pGameUI, [=](void* data){
 		int type = *(int*)data;
@@ -240,6 +241,8 @@ void GameWorld::win()
 
 void GameWorld::lose(int tag)
 {
+    if(this->m_nCurrentState != kState_start) return;
+    m_nCurrentState = kState_lose;
 	this->m_pGameUI->stop();
 	DialogManager::getInstance()->showLevelCompleteLoss(&tag, [=](void* data){
 		int type = *(int*)data;
@@ -281,8 +284,10 @@ void GameWorld::loadDefaultData()
 	this->_eventDispatcher->removeEventListener(m_pEventListener);
 	ValueMap valueMap = this->m_pGameMap->getHeroValueMap();
 	this->m_pBoxSprite->loadDefaultData(valueMap);
-	Point point = m_pBoxSprite->getPosition() + m_pGameMap->getPosition() - m_pGameMap->getContentSize() / 2;
+	Point point = m_pBoxSprite->getPosition() +m_pGameMap->getPosition()
+            - m_pGameMap->getContentSize() / 2;
 	this->m_pBoxSprite->setPosition(point);
+    this->m_nCurrentState = kState_start;
 }
 
 void GameWorld::startGame()
@@ -290,4 +295,5 @@ void GameWorld::startGame()
 	AdManager::getInstance()->showBannerAD();
 	this->m_pContactLogic->startGame();
 	this->initListener();
+    m_nCurrentState = kState_start;
 }

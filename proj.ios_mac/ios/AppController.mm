@@ -99,7 +99,10 @@ static AppDelegate s_sharedApplication;
     bannerView_.adUnitID = @"ca-app-pub-2906542859743654/6985074520";
     GADRequest *request = [GADRequest request];
     bannerView_.hidden = NO;
-    [bannerView_ setFrame:CGRectMake(90, 0, 320, 50)];
+    
+    CGRect rx = [UIScreen mainScreen].bounds;
+    CGFloat maxLen = MAX(rx.size.width, rx.size.height);
+    [bannerView_ setFrame:CGRectMake((maxLen - 320)/2 + 10, 0, 320, 50)];
     request.testDevices = [NSArray arrayWithObjects:
                                GAD_SIMULATOR_ID,
                                @"YOU IPAD IDF",
@@ -130,12 +133,12 @@ static AppDelegate s_sharedApplication;
 	
 	//-------------------share sdk
     [ShareSDK importWeChatClass:[WXApi class]];
-    [ShareSDK importTencentWeiboClass:[WeiboApi class]];
+    //[ShareSDK importTencentWeiboClass:[WeiboApi class]];
     [ShareSDK importQQClass:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
-    [ShareSDK importRenRenClass:[RennClient class]];
-    [ShareSDK importYiXinClass:[YXApi class]];
+    //[ShareSDK importRenRenClass:[RennClient class]];
+    //[ShareSDK importYiXinClass:[YXApi class]];
     
-    [ShareSDK ssoEnabled:NO];
+    [ShareSDK ssoEnabled:YES];
 	
 
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController

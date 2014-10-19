@@ -15,6 +15,7 @@ public:
 	static Scene* createScene();
 
 	virtual void onEnter();
+    virtual void onEnterTransitionDidFinish();
 	virtual void onExit();
 
 	bool init();

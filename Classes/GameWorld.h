@@ -5,6 +5,13 @@
 #include "chipmunk.h"
 USING_NS_CC;
 
+enum GameState
+{
+    kState_start,
+    kState_win,
+    kState_lose
+};
+
 class ArrowSprite;
 class BoxSprite;
 class GameUI;
@@ -52,6 +59,7 @@ public:
 	void loadDefaultData();
 	
 private:
+    GameState    m_nCurrentState;
 	PhysicsWorld *_physicsWorld;
 	ArrowSprite *m_pArrowSprite;
 	BoxSprite	*m_pBoxSprite;

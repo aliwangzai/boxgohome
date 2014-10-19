@@ -36,7 +36,6 @@ bool Welcome::init()
 
 bool Welcome::initLoadResource()
 {
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("entity/hero/heroTexture.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("entity/hero/arrowTexture.plist");
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("entity/flag/flagTexture.plist");
 
