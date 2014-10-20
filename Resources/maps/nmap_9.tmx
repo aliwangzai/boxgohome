@@ -55,12 +55,13 @@
   <object gid="2" x="562" y="599"/>
   <object gid="1" x="720" y="599"/>
   <object gid="2" x="799" y="600"/>
-  <object gid="2" x="853" y="417" rotation="90"/>
-  <object gid="2" x="853" y="496" rotation="90"/>
+  <object gid="2" x="562" y="415" rotation="90"/>
+  <object gid="2" x="562" y="494" rotation="90"/>
   <object gid="3" x="756" y="576"/>
   <object gid="4" x="555" y="300"/>
   <object gid="5" x="162" y="443"/>
   <object gid="2" x="722" y="324"/>
   <object gid="6" x="740" y="299"/>
+  <object gid="2" x="400" y="333"/>
  </objectgroup>
 </map>

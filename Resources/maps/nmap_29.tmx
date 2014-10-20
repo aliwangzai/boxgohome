@@ -31,6 +31,12 @@
    </properties>
    <image width="17" height="23" source="41.png"/>
   </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="enemy_gray"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
   <object gid="3" x="180.094" y="152.5" rotation="90.0169"/>
@@ -54,5 +60,6 @@
   <object gid="3" x="600" y="421.484" rotation="179.832"/>
   <object gid="3" x="520" y="421.719" rotation="179.832"/>
   <object gid="4" x="440" y="352.5"/>
+  <object gid="6" x="584" y="206"/>
  </objectgroup>
 </map>

@@ -48,8 +48,8 @@
   <object gid="2" x="118" y="162" rotation="90"/>
   <object gid="2" x="301" y="242" rotation="90"/>
   <object gid="2" x="301" y="163" rotation="90"/>
-  <object gid="2" x="879" y="288" rotation="90"/>
-  <object gid="2" x="879" y="367" rotation="90"/>
+  <object gid="2" x="535" y="288" rotation="90"/>
+  <object gid="2" x="535" y="367" rotation="90"/>
   <object gid="5" x="694" y="423"/>
  </objectgroup>
 </map>

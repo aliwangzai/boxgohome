@@ -26,6 +26,10 @@
    <image width="17" height="23" source="41.png"/>
   </tile>
   <tile id="4">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
    <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
   </tile>
  </tileset>

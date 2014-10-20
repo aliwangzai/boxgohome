@@ -85,14 +85,14 @@
         Id="3"
         SortId="3"
         AppId="wxcb7d58e2f333a4ea"
-        BypassApproval="true"
+        BypassApproval="false"
         Enable="true" />
     
     <WechatMoments
         Id="4"
         SortId="4"
         AppId="wxcb7d58e2f333a4ea"
-        BypassApproval="true"
+        BypassApproval="false"
         Enable="true" />
     
 	<!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->

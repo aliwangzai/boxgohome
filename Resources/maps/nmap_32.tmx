@@ -79,10 +79,9 @@
   <object gid="6" x="425" y="574"/>
   <object gid="6" x="561" y="227"/>
   <object gid="6" x="345" y="574"/>
-  <object gid="6" x="265" y="574"/>
   <object gid="6" x="161" y="227"/>
-  <object gid="3" x="184" y="573.75"/>
-  <object gid="1" x="222" y="548.75"/>
+  <object gid="3" x="281" y="448.75"/>
+  <object gid="1" x="319" y="423.75"/>
   <object gid="5" x="800.524" y="393.247" rotation="90.3751"/>
   <object gid="4" x="746" y="576"/>
   <object gid="11" x="289" y="202"/>
@@ -90,11 +89,11 @@
   <object gid="5" x="801.047" y="313.248" rotation="90.3751"/>
   <object gid="5" x="800" y="473.245" rotation="90.3751"/>
   <object gid="5" x="801.571" y="233.25" rotation="90.3751"/>
-  <object gid="13" x="266" y="548.75"/>
   <object gid="12" x="509" y="202"/>
   <object gid="5" x="802" y="154" rotation="90.3751"/>
   <object gid="5" x="160.524" y="411.5" rotation="90.3751"/>
   <object gid="5" x="160.953" y="332.25" rotation="90.3751"/>
   <object gid="5" x="160" y="491.498" rotation="90.3751"/>
+  <object gid="12" x="431" y="547"/>
  </objectgroup>
 </map>
