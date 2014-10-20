@@ -40,7 +40,7 @@ bool BlueWall::contactLogicBegin(PhysicsContact &contact, ContactLogic *logic)
 {
 	PhysicsBody * body = Utils::getBody(contact, Type_BoxSprite);
 	if (body == nullptr)
-		return false;
+		return true;
 
 	float moment = body->getVelocity().getLengthSq();
 	if (moment > 400 * 400)

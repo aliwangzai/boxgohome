@@ -44,7 +44,7 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 	PhysicsBody * body = Utils::getBody(contact , Type_BoxSprite );
 	if (body == NULL)
 	{
-		return false;
+		return true;
 	}
 
 	this->contactEffect(contact);
