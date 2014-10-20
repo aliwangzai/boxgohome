@@ -56,7 +56,7 @@ void BlueWall::contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic
 
 void BlueWall::contactEffect(PhysicsContact &contact)
 {
-	ParticleSystem *particleSystem = ParticleSystemQuad::create("effect/Contact.plist");
+	ParticleSystem *particleSystem = ParticleSystemQuad::create("effect/Contact_Normal.plist");
 	const PhysicsContactData *data = contact.getContactData();
 	Vec2 position = data->points[0];
 	particleSystem->setPosition(position);
