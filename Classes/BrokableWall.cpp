@@ -49,10 +49,10 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 
 	this->contactEffect(contact);
 
-	float moment = body->getVelocity().getLength();
-	if (m_bIsCanContact && moment >  80)
+	float moment = body->getVelocity().getLengthSq();
+	if (m_bIsCanContact && moment >  80 * 80)
 	{
-		m_durability--;
+		m_durability--; 
 		if (m_durability <= 0)
 		{
 			this->removeFromParent();

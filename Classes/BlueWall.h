@@ -13,6 +13,11 @@ public:
 
 	static BlueWall* create(const ValueMap &valueMap , const ValueMap &valueMap2);
 
+	virtual bool contactLogicBegin(PhysicsContact &contact, ContactLogic *logic);
+
+	virtual void contactLogicSeperate(PhysicsContact &contact, ContactLogic *logic);
+
+	void contactEffect(PhysicsContact &contact);
 };
 
 #endif
