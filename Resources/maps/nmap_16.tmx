@@ -52,5 +52,8 @@
   <object gid="5" x="445" y="304"/>
   <object gid="6" x="457" y="235"/>
   <object gid="4" x="179" y="524"/>
+  <object gid="2" x="640" y="124"/>
+  <object gid="2" x="720" y="124"/>
+  <object gid="2" x="800" y="124"/>
  </objectgroup>
 </map>

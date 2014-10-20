@@ -29,7 +29,10 @@
  <objectgroup name="game">
   <object gid="1" x="200" y="223"/>
   <object gid="3" x="239" y="199"/>
-  <object gid="2" x="720" y="502"/>
-  <object gid="4" x="736" y="477"/>
+  <object gid="2" x="639" y="498"/>
+  <object gid="4" x="655" y="473"/>
+  <object gid="2" x="718" y="498"/>
+  <object gid="2" x="615" y="418" rotation="90"/>
+  <object gid="2" x="615" y="338" rotation="90"/>
  </objectgroup>
 </map>

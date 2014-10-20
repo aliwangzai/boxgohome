@@ -37,6 +37,12 @@
    </properties>
    <image width="45" height="45" source="enemy/alienBeige_square.png"/>
   </tile>
+  <tile id="6">
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="7">
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
   <object gid="2" x="160" y="547"/>
@@ -51,5 +57,8 @@
   <object gid="4" x="605" y="347"/>
   <object gid="4" x="605" y="279"/>
   <object gid="6" x="617" y="212"/>
+  <object gid="7" x="200.273" y="173.317" rotation="46.1449"/>
+  <object gid="7" x="262.697" y="234.471" rotation="26.9048"/>
+  <object gid="7" x="338.937" y="272.803" rotation="15.6983"/>
  </objectgroup>
 </map>

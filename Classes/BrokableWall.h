@@ -24,6 +24,7 @@ public:
 
 	void updateContactState(float dt);
 
+	void contactEffect(PhysicsContact &contact);
 };
 
 

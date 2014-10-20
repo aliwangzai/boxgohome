@@ -46,6 +46,9 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 	{
 		return false;
 	}
+
+	this->contactEffect(contact);
+
 	float moment = body->getVelocity().getLength();
 	if (m_bIsCanContact && moment >  80)
 	{
@@ -57,11 +60,27 @@ bool BrokableWall::contactLogicBegin( PhysicsContact &contact, ContactLogic *log
 		else
 		{
 			m_bIsCanContact = false;
-			this->setSpriteFrame(Sprite::create("maps/Stone elements/elementGlass049.png")->displayFrame());
+			this->setSpriteFrame(Sprite::create("maps/Stone elements/elementGlass049.png")->getSpriteFrame());
 			this->schedule(schedule_selector(BrokableWall::updateContactState), 0.1f);
 		}
 	}
 	return true;
+}
+
+void BrokableWall::contactEffect(PhysicsContact &contact)
+{
+	ParticleSystem *particleSystem = ParticleSystemQuad::create("effect/Contact.plist");
+	const PhysicsContactData *data = contact.getContactData();
+	Vec2 position = data->points[0];
+	particleSystem->setPosition(position);
+	particleSystem->runAction(Sequence::create(
+			DelayTime::create(1.5f),
+			CallFuncN::create([=](Node *node){
+				node->removeFromParent();
+			}),
+		nullptr));
+	auto scene = Director::getInstance()->getRunningScene();
+	scene->addChild(particleSystem, 100);
 }
 
 void BrokableWall::contactLogicSeperate( PhysicsContact &contact, ContactLogic *logic )

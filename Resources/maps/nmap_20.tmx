@@ -58,12 +58,5 @@
   <object gid="4" x="497" y="280"/>
   <object gid="5" x="159" y="601"/>
   <object gid="6" x="133" y="521" rotation="90"/>
-  <object gid="6" x="133" y="440" rotation="90"/>
-  <object gid="6" x="134" y="278" rotation="90"/>
-  <object gid="6" x="134" y="359" rotation="90"/>
-  <object gid="6" x="800" y="495" rotation="90"/>
-  <object gid="6" x="801" y="252" rotation="90"/>
-  <object gid="6" x="800" y="414" rotation="90"/>
-  <object gid="6" x="801" y="333" rotation="90"/>
  </objectgroup>
 </map>

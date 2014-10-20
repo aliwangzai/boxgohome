@@ -31,6 +31,12 @@
    </properties>
    <image width="68" height="68" source="woodenCrate_01.png"/>
   </tile>
+  <tile id="5">
+   <properties>
+    <property name="type" value="enemy_gray"/>
+   </properties>
+   <image width="45" height="45" source="enemy/alienBeige_square.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
   <object gid="2" x="160" y="163"/>
@@ -73,5 +79,7 @@
     <property name="type" value="flag"/>
    </properties>
   </object>
+  <object gid="6" x="321" y="572"/>
+  <object gid="6" x="642" y="572"/>
  </objectgroup>
 </map>

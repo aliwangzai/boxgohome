@@ -65,9 +65,9 @@
   <object gid="5" x="62" y="292"/>
   <object gid="5" x="62" y="224"/>
   <object gid="4" x="457" y="498"/>
-  <object gid="6" x="737" y="360"/>
+  <object gid="6" x="738" y="360"/>
   <object gid="6" x="336" y="210"/>
-  <object gid="7" x="193" y="360"/>
+  <object gid="7" x="161" y="360"/>
   <object gid="7" x="578" y="211"/>
  </objectgroup>
 </map>

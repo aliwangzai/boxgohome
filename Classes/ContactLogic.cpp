@@ -106,7 +106,7 @@ void ContactLogic::update(float dt)
 		this->unscheduleUpdate();
 	}
 	Vec2 velocity = this->m_pGameWorld->getBoxSprite()->getPhysicsBody()->getVelocity();
-	if (velocity.getLengthSq() < 5 * 5 && this->m_pGameWorld->getGameUI()->getJumpCount() <= 0)
+	if (velocity.getLengthSq() < 3 * 3 && this->m_pGameWorld->getGameUI()->getJumpCount() <= 0)
 	{
 		this->unscheduleUpdate();
 		this->m_pGameWorld->lose(1);

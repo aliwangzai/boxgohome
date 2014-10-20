@@ -52,16 +52,16 @@
   <object gid="2" x="400" y="472"/>
   <object gid="2" x="480" y="472"/>
   <object gid="2" x="560" y="472"/>
-  <object gid="2" x="640" y="372"/>
-  <object gid="2" x="320" y="372"/>
-  <object gid="2" x="560" y="372"/>
-  <object gid="2" x="240" y="372"/>
-  <object gid="2" x="480" y="372"/>
+  <object gid="2" x="320" y="367"/>
+  <object gid="2" x="560" y="367"/>
+  <object gid="2" x="240" y="367"/>
+  <object gid="2" x="480" y="367"/>
   <object gid="1" x="640" y="472"/>
   <object gid="3" x="680" y="447"/>
-  <object gid="5" x="486" y="346"/>
+  <object gid="5" x="524" y="341"/>
   <object gid="4" x="300" y="415.75"/>
-  <object gid="7" x="400" y="372"/>
-  <object gid="6" x="481" y="370" rotation="90"/>
+  <object gid="7" x="400" y="367"/>
+  <object gid="6" x="640" y="367"/>
+  <object gid="2" x="482" y="367" rotation="90"/>
  </objectgroup>
 </map>
