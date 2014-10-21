@@ -80,30 +80,30 @@
   </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="3" x="80" y="125"/>
-  <object gid="1" x="180" y="150"/>
+  <object gid="3" x="80" y="150"/>
+  <object gid="1" x="180" y="175"/>
   <object gid="3" x="480" y="300"/>
-  <object gid="3" x="240" y="225"/>
-  <object gid="3" x="320" y="250"/>
-  <object gid="3" x="400" y="275"/>
+  <object gid="3" x="240" y="250"/>
+  <object gid="3" x="320" y="275"/>
+  <object gid="3" x="400" y="300"/>
   <object gid="3" x="686" y="231.25"/>
   <object gid="3" x="766" y="231.25"/>
   <object gid="3" x="560" y="325"/>
-  <object gid="3" x="480" y="656.25"/>
+  <object gid="3" x="480" y="649.25"/>
   <object gid="3" x="680" y="450"/>
   <object gid="3" x="160" y="400"/>
-  <object gid="3" x="684" y="611.5"/>
-  <object gid="3" x="764" y="611.5"/>
+  <object gid="3" x="686" y="605.5"/>
+  <object gid="3" x="766" y="605.5"/>
   <object gid="2" x="80" y="325"/>
   <object gid="9" x="120" y="300"/>
-  <object gid="3" x="846" y="369.25" rotation="90"/>
-  <object gid="3" x="846" y="288" rotation="90"/>
+  <object gid="3" x="846" y="367.25" rotation="90"/>
+  <object gid="3" x="846" y="287" rotation="90"/>
   <object gid="3" x="846" y="206.75" rotation="90"/>
-  <object gid="3" x="846" y="450.5" rotation="90"/>
+  <object gid="3" x="846" y="446.5" rotation="90"/>
   <object gid="7" x="180" y="375"/>
+  <object gid="3" x="160" y="225"/>
   <object gid="3" x="160" y="200"/>
-  <object gid="3" x="160" y="175"/>
-  <object gid="3" x="846" y="532.5" rotation="90"/>
+  <object gid="3" x="846" y="525.5" rotation="90"/>
   <object gid="3" x="759" y="268.75" rotation="90"/>
   <object gid="7" x="700" y="425"/>
   <object gid="6" x="580" y="500"/>
