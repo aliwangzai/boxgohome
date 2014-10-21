@@ -29,7 +29,7 @@ bool BlueWall::init(const ValueMap &valueMap , const ValueMap &gidProperties)
 	if (!BaseEntity::initWithFile(img)) return false;
 	getTexture()->setAliasTexParameters();
 	setPositionAndRotation();
-	this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.4f, 1.0f), 0));//密度 弹力 摩擦力
+	this->setPhysicsBody(PhysicsBody::createEdgeBox(this->getContentSize(), PhysicsMaterial(1.0f, 0.1f, 1.0f), 0));//密度 弹力 摩擦力
 
 	setContactTestBitmask(0x0002);
 	setEntityType(Type_Normal);
