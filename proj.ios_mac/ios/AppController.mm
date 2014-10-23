@@ -31,10 +31,8 @@
 
 #import "WXApi.h"
 #import "WeiboApi.h"
-#import "YXApi.h"
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
-#import <RennSDK/RennSDK.h>
 
 static GADBannerView *bannerView_;
 static GADInterstitial *interstitial_;
