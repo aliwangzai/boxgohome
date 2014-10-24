@@ -24,14 +24,22 @@ Scene* TestLayer::createScene()
 
 bool TestLayer::init()
 {
-	Size winSize = Director::getInstance()->getWinSize();
+	/*Size winSize = Director::getInstance()->getWinSize();
 
-	auto label = Label::createWithSystemFont("helloWorldlkasd\njfla;dfjalksdjfa;sdjlasdjflkasdgjal;sdgja;sdfjalsdkf", "", 32);
-	label->setDimensions(100, 200);
-	int height = label->getHeight();
-	CCLOG("height : %d", height);
-	label->setPosition(winSize / 2);
-	this->addChild(label);
+	auto scrollView = ScrollView::create(winSize / 2);
+	scrollView->setBounceable(true);
+	scrollView->setDirection(ScrollView::Direction::VERTICAL);
+	scrollView->setDelegate(this);
+	this->addChild(scrollView);
+	scrollView->setPosition(winSize / 4);
+	scrollView->setContentSize(Size(winSize.width / 2, winSize.height / 2 + 100));
+	scrollView->setContentOffset(Point(0, scrollView->getViewSize().height - scrollView->getContentSize().height));
+
+	auto label = Label::createWithSystemFont("klasfalskdfjalsdflasdklfj\nasldjflaksdjflasjdflkasdfasdf\nklasfalskdfjalsdflasdklfj\nasldjflaksdjflasjdflkasdfasdf\nklasfalskdfjalsdflasdklfj\nasldjflaksdjflasjdflkasdfasdf\nklasfalskdfjalsdflasdklfj\nasldjflaksdjflasjdflkasdfasdf\nklasfalskdfjalsdflasdklfj\nasldjflaksdjflasjdflkasdfasdf\nklasfalskdfjalsdflasdklfj\nasldjflaksdjflasjdflkasdfasdf\n", "", 32);
+	label->setAnchorPoint(Point(0, 1));
+	label->setPositionY(scrollView->getContentSize().height);
+	//label->setDimensions(winSize.width / 2, winSize.height / 2);
+	scrollView->addChild(label);*/
 
 	return true;
 }

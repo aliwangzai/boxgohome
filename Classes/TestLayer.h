@@ -4,7 +4,7 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
-class TestLayer: public Node
+class TestLayer : public Node
 {
 public:
 	TestLayer();
@@ -15,6 +15,10 @@ public:
 	bool init();
 
 	CREATE_FUNC(TestLayer);  
+
+/*	virtual void scrollViewDidScroll(ScrollView* view);
+	
+	virtual void scrollViewDidZoom(ScrollView* view);*/
 };
 
 #endif
