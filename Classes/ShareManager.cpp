@@ -43,7 +43,7 @@ ShareManager::~ShareManager()
 
 void ShareManager::setShareAttribute(std::string key, std::string value)
 {
-	m_pContent->setObject(String::create(value), key);
+	m_pContent->setObject(CCString::create(value), key);
 }
 
 void ShareManager::sendShare()

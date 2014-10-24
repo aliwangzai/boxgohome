@@ -66,7 +66,7 @@ bool Welcome::initMenu()
 	auto shareItem = UIButton::create("ui/btn_share.png" , [](Ref * psender) {
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("sound/press.mp3");
 		ShareManager::getInstance()->setShareAttribute("content", "Catapult the box to help it go back home, Play Now!");
-		ShareManager::getInstance()->setShareAttribute("image", "http://b195.photo.store.qq.com/psb?/V12ngkFA0ud6Bq/J8XXh6FpQCxUHWdnd4caowgxntbgrsVIBt5B5bi6f0s!/b/dPP5SXRbCwAA&bo=fgLdAQAAAAABB4A!&rf=viewer_4");
+		ShareManager::getInstance()->setShareAttribute("image", "http://b383.photo.store.qq.com/psb?/V14A5Hqd22F6Vu/pLIp9K3fHiBbto0dFR49AnvxrUimMQyZhlY7DFqIlSE!/b/dH1gVeTNFgAA&bo=mACYAAAAAAADByI!&rf=viewer_4");
 		ShareManager::getInstance()->setShareAttribute("title", "BoxGoHome");
 		ShareManager::getInstance()->setShareAttribute("description", "BoxGoHome");
 		ShareManager::getInstance()->setShareAttribute("url", "http://blog.sina.com.cn/s/blog_13e458f080102v622.html");

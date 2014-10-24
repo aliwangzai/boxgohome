@@ -14,7 +14,7 @@
 		<string>https://github.com/franklen/boxgohome.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>proj.ios_mac/BoxGoHome.xcodeproj/project.xcworkspace</string>
+	<string>proj.ios_mac/BoxGoHome.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5CC93F2469320DA19846A7E6133CE0C652E3385B</key>
