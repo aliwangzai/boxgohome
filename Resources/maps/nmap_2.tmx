@@ -25,23 +25,46 @@
    </properties>
    <image width="45" height="45" source="hero/avatar_01.png"/>
   </tile>
+  <tile id="4">
+   <properties>
+    <property name="durability" value="2"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass014.png"/>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="durability" value="1"/>
+    <property name="type" value="brokable"/>
+   </properties>
+   <image width="80" height="25" source="Stone elements/elementGlass049.png"/>
+  </tile>
  </tileset>
  <objectgroup name="game">
-  <object gid="2" x="321.797" y="177.409" rotation="90"/>
-  <object gid="2" x="322" y="257" rotation="90"/>
-  <object gid="2" x="322" y="336" rotation="90"/>
-  <object gid="2" x="322" y="415" rotation="90"/>
-  <object gid="2" x="322" y="493" rotation="90"/>
-  <object gid="2" x="348" y="573"/>
-  <object gid="2" x="506" y="573"/>
-  <object gid="2" x="586" y="493" rotation="90"/>
-  <object gid="2" x="587" y="414" rotation="90"/>
-  <object gid="2" x="587" y="334" rotation="90"/>
-  <object gid="2" x="586" y="334"/>
-  <object gid="4" x="599" y="309"/>
-  <object gid="1" x="427" y="548"/>
-  <object gid="3" x="463" y="524"/>
-  <object gid="2" x="427" y="573"/>
-  <object gid="2" x="322" y="97" rotation="90"/>
+  <object gid="2" x="160" y="448"/>
+  <object gid="2" x="240" y="448"/>
+  <object gid="2" x="320" y="448"/>
+  <object gid="2" x="400" y="448"/>
+  <object gid="2" x="480" y="448"/>
+  <object gid="2" x="560" y="448"/>
+  <object gid="2" x="720" y="448"/>
+  <object gid="2" x="800" y="448"/>
+  <object gid="2" x="80" y="448"/>
+  <object gid="2" x="880" y="369" rotation="90"/>
+  <object gid="2" x="54" y="369" rotation="90"/>
+  <object gid="2" x="320" y="315"/>
+  <object gid="2" x="800" y="315"/>
+  <object gid="2" x="400" y="315"/>
+  <object gid="2" x="80" y="315"/>
+  <object gid="2" x="480" y="315"/>
+  <object gid="2" x="54" y="289.75" rotation="90"/>
+  <object gid="2" x="880" y="289.5" rotation="90"/>
+  <object gid="1" x="640" y="448"/>
+  <object gid="3" x="680" y="424"/>
+  <object gid="4" x="113" y="386"/>
+  <object gid="6" x="560" y="315"/>
+  <object gid="6" x="641" y="315"/>
+  <object gid="6" x="720" y="315"/>
+  <object gid="5" x="469" y="331" rotation="90"/>
  </objectgroup>
 </map>
