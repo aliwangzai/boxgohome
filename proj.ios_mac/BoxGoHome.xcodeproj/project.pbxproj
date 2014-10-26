@@ -1417,7 +1417,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					/Volumes/liujian/Study/git_res/boxgohome/ShareSDK/Extend/SinaWeiboSDK,
 					/Volumes/liujian/Study/git_res/boxgohome/ShareSDK/Extend/TencentWeiboSDK,
@@ -1442,8 +1442,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ren wang (4DV3HVTLTV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ren wang (4DV3HVTLTV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ren wang (8HEK49T79L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ren wang (8HEK49T79L)";
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1471,7 +1471,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					/Volumes/liujian/Study/git_res/boxgohome/ShareSDK/Extend/SinaWeiboSDK,
 					/Volumes/liujian/Study/git_res/boxgohome/ShareSDK/Extend/TencentWeiboSDK,
@@ -1485,7 +1485,7 @@
 					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-6.12.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "51c1374c-6b59-4175-a7b6-d976c86a1a0e";
+				PROVISIONING_PROFILE = "7e01886e-c846-4a7a-a649-bcec37ad1f0c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
