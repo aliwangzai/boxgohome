@@ -1386,8 +1386,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ren wang (4DV3HVTLTV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ren wang (4DV3HVTLTV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Ren wang (8HEK49T79L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ren wang (8HEK49T79L)";
 				COMPRESS_PNG_FILES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1431,7 +1431,7 @@
 					"$(PROJECT_DIR)/GoogleMobileAdsSdkiOS-6.12.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "51c1374c-6b59-4175-a7b6-d976c86a1a0e";
+				PROVISIONING_PROFILE = "cee4efa1-726d-4128-abbd-2599ededdb58";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
